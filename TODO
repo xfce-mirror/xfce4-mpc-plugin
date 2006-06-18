@@ -1,0 +1,2 @@
+Rewrite mpd communications to let the user choose with/without libmpd.
+gettext'ize.

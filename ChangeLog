@@ -1,0 +1,8 @@
+11-06-2006 Landry Breuil <landry at fr.homeunix.org>
+   * Initial release 0.1.0
+   * depends on libmpd
+   * Features : 
+   * prev/next/stop/play buttons with gtk stock icons
+   * mousewheel to increase/decrease volume
+   * current title as tooltip
+   * configurable MPD host/port/password

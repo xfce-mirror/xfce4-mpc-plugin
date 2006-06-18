@@ -1,0 +1,62 @@
+dnl configure.ac
+dnl
+dnl xfce4-mpc-plugin - mpd client plugin for the XFce4 panel
+dnl
+
+m4_define([mpc_version], [0.1.0])
+
+AC_INIT([xfce4-mpc-plugin], [mpc_version()],
+	[landry@fr.homeunix.org])
+
+MPC_VERSION=mpc_version()
+AM_INIT_AUTOMAKE([xfce4-mpc-plugin], [$MPC_VERSION])
+AM_CONFIG_HEADER([config.h])
+
+AM_MAINTAINER_MODE
+
+dnl Check for UNIX variants
+AC_AIX
+AC_ISC_POSIX
+AC_MINIX
+
+dnl Check for basic programs
+AC_PROG_CC
+AC_PROG_INSTALL
+AC_PROG_INTLTOOL
+
+dnl Check for standard header files
+AC_HEADER_STDC
+
+dnl configure the panel plugin
+XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-1.0], [4.3.22])
+
+dnl check for libmpd presence
+
+AC_ARG_WITH(libmpd,
+    AC_HELP_STRING([--with-libmpd=path], [path to libmpd directory]),
+        LIBMPD_PATH="$withval", LIBMPD_PATH="")
+
+AC_MSG_CHECKING(whether --libmpd was used)
+if test -n "$LIBMPD_PATH" ; then
+   AC_MSG_RESULT(yes, using $LIBMPD_PATH)
+   LIBMPD_CFLAGS="-I${LIBMPD_PATH}/include/"
+   LIBMPD_LIBS="-L${LIBMPD_PATH}/lib/ -lmpd"
+else
+   AC_MSG_RESULT(no, falling back to pkg-config)
+   PKG_CHECK_MODULES([LIBMPD], [libmpd >= 0.12])
+fi
+
+
+dnl Translations
+XDT_I18N([])
+
+dnl Check for debugging support
+XDT_FEATURE_DEBUG()
+AC_SUBST([LIBMPD_CFLAGS])
+AC_SUBST([LIBMPD_LIBS])
+AC_OUTPUT([
+Makefile
+panel-plugin/Makefile
+po/Makefile.in
+])
+
