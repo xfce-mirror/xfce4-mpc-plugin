@@ -94,3 +94,7 @@
 
 /* Define to 1 if you need to in order for `stat' and other things to work. */
 #undef _POSIX_SOURCE
+
+/* Define to 1 if using and linking against libmpd */
+#undef HAVE_LIBMPD
+

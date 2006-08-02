@@ -17,45 +17,39 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
  
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include <stdio.h>
 #include <string.h>
 
-#include <gtk/gtk.h>
 #include <libxfce4util/libxfce4util.h>
 #include <libxfcegui4/libxfcegui4.h>
-#include <libxfce4panel/xfce-panel-plugin.h>
-
-#include <libmpd/libmpd.h>
 
 #define DEFAULT_MPD_HOST "localhost"
 #define DEFAULT_MPD_PORT 6600
 #define DIALOG_ENTRY_WIDTH 15
 
-typedef struct {
-   XfcePanelPlugin *plugin;
-   GtkTooltips *tips;
-   GtkWidget *frame,*ebox,*box,*prev,*stop,*play,*next;
-   /* mpd handle */
-   MpdObj *mo;
-   gchar* mpd_host;
-   gint mpd_port;
-   gchar * mpd_password;
-   gboolean show_frame;
-/* gboolean stay_connected; */
-} t_mpc;
+#include "xfce4-mpc-plugin.h"
 
-typedef struct {
-   t_mpc *mpc;
-   GtkWidget *textbox_host;
-   GtkWidget *textbox_port;
-   GtkWidget *textbox_password;
-   GtkWidget *checkbox_frame;
-/* GtkWidget *checkbox_connected; */
-} t_mpc_dialog;
+#ifndef HAVE_LIBMPD
+MpdObj* mpd_new(char* host, int port, char* pass)
+{
+}
+void mpd_free(MpdObj* mo){}
+void mpd_connect(MpdObj* mo){}
+int mpd_status_get_volume(MpdObj* mo){}
+void mpd_status_set_volume(MpdObj* mo, int newvol){}
+int mpd_status_update(MpdObj* mo){}
+int mpd_player_get_state(MpdObj* mo){}
+int mpd_player_prev(MpdObj* mo){}
+int mpd_player_next(MpdObj* mo){}
+int mpd_player_stop(MpdObj* mo){}
+int mpd_player_play(MpdObj* mo){}
+mpd_Song* mpd_playlist_get_current_song(MpdObj* mo){}
+int mpd_check_error(MpdObj* mo){}
+void mpd_set_hostname(MpdObj* mo, char* host){}
+void mpd_set_password(MpdObj* mo, char* pass){}
+void mpd_send_password(MpdObj* mo){}
+void mpd_set_port(MpdObj* mo,int port){}
+#endif
 
 static void
 mpc_free (XfcePanelPlugin * plugin, t_mpc * mpc)
@@ -233,27 +227,18 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc * mpc)
 
    xfce_panel_plugin_block_menu (plugin);
 
-   dlg = gtk_dialog_new_with_buttons (_("Properties"),
-                                       GTK_WINDOW (gtk_widget_get_toplevel
-                                                   (GTK_WIDGET (plugin))),
-                                       GTK_DIALOG_DESTROY_WITH_PARENT |
-                                       GTK_DIALOG_NO_SEPARATOR,
-                                       GTK_STOCK_CLOSE, GTK_RESPONSE_OK,
-                                       NULL);
+   dlg = xfce_titled_dialog_new_with_buttons (_("Mpd Client Plugin"),
+                                              NULL,
+                                              GTK_DIALOG_NO_SEPARATOR,
+                                              GTK_STOCK_CLOSE,
+                                              GTK_RESPONSE_OK,
+                                              NULL);
+   xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (dlg), _("Properties"));
+
+   gtk_window_set_position   (GTK_WINDOW (dlg), GTK_WIN_POS_CENTER);
+   gtk_window_set_icon_name  (GTK_WINDOW (dlg), "xfce-multimedia");
 
    g_signal_connect (dlg, "response", G_CALLBACK (mpc_dialog_response), dialog);
-
-   gtk_container_set_border_width (GTK_CONTAINER (dlg), 2);
-
-   pb = xfce_themed_icon_load ("xfce4-panel", 48);
-   gtk_window_set_icon (GTK_WINDOW (dlg), pb);
-   g_object_unref (pb);
-
-   header = xfce_create_header (NULL, _("Mpd Client Plugin"));
-   gtk_widget_set_size_request (GTK_BIN (header)->child, -1, 32);
-   gtk_container_set_border_width (GTK_CONTAINER (header), 5);
-   gtk_widget_show (header);
-   gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->vbox), header, FALSE, TRUE, 0);
 
    vbox = gtk_vbox_new (FALSE, 8);
    gtk_container_set_border_width (GTK_CONTAINER (vbox), 5);
