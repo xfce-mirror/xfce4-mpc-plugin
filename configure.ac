@@ -31,25 +31,29 @@ dnl configure the panel plugin
 XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-1.0], [4.3.22])
 
 dnl check for libmpd presence
-AC_DEFINE(HAVE_LIBMPD, 0)
-
+AM_CONDITIONAL(HAVE_LIBMPD, true)
 AC_ARG_WITH(libmpd,
     AC_HELP_STRING([--with-libmpd=path], [path to libmpd base directory]),
         LIBMPD_PATH="$withval", LIBMPD_PATH="")
 
-AC_MSG_CHECKING([whether --libmpd was used])
+AC_MSG_CHECKING([whether --with-libmpd was used])
 if test x"$LIBMPD_PATH" != x"" ; then
-   AC_MSG_RESULT([yes, using $LIBMPD_PATH])
-   LIBMPD_CFLAGS="-I${LIBMPD_PATH}/include/"
-   LIBMPD_LIBS="-L${LIBMPD_PATH}/lib/ -lmpd"
-   AM_CONDITIONAL(HAVE_LIBMPD, true)
-   AC_SUBST([LIBMPD_CFLAGS])
-   AC_SUBST([LIBMPD_LIBS])
+   if test x"$LIBMPD_PATH" = x"no" ; then
+      AC_MSG_RESULT([yes, disabled])
+      echo "* Build with libmpd: no, falling back to our implementation"
+   else
+      AC_MSG_RESULT([yes, using $LIBMPD_PATH])
+      LIBMPD_CFLAGS="-I${LIBMPD_PATH}/include/"
+      LIBMPD_LIBS="-L${LIBMPD_PATH}/lib/ -lmpd"
+      AC_DEFINE(HAVE_LIBMPD, 1)
+      AC_SUBST([LIBMPD_CFLAGS])
+      AC_SUBST([LIBMPD_LIBS])
+   fi
 else
    AC_MSG_RESULT([no, falling back to pkg-config])
    XDT_CHECK_OPTIONAL_PACKAGE([LIBMPD], [libmpd], [0.12], [libmpd], [libmpd])
    if test x"$LIBMPD_FOUND" = x"yes"; then
-      AM_CONDITIONAL(HAVE_LIBMPD, true)
+      AC_DEFINE(HAVE_LIBMPD, 1)
       echo "* Build with libmpd: yes"
    else
       echo "* Build with libmpd: no, falling back to our implementation"

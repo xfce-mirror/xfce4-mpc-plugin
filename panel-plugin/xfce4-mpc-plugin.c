@@ -20,43 +20,234 @@
 #include <stdio.h>
 #include <string.h>
 
-#include <libxfce4util/libxfce4util.h>
+/* double inclusion ?*/
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 #include <libxfcegui4/libxfcegui4.h>
 
 #define DEFAULT_MPD_HOST "localhost"
 #define DEFAULT_MPD_PORT 6600
 #define DIALOG_ENTRY_WIDTH 15
+#define STRLENGTH 32
 
 #include "xfce4-mpc-plugin.h"
 
 #ifndef HAVE_LIBMPD
+
+#include <netinet/in.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netdb.h>
+#include <errno.h>
+#include <fcntl.h>
+
 MpdObj* mpd_new(char* host, int port, char* pass)
 {
+   MpdObj* mo = g_new0(MpdObj,1);
+
+   DBG("host=%s, port=%d, pass=%s", host, port, pass);
+   
+   mo->host = g_strndup(host,STRLENGTH);
+   mo->port = port;
+   mo->pass = g_strndup(pass,STRLENGTH);
+   mo->socket = 0;
+   mo->status = 0;
+   mo->curvol = 0;
+   mo->error = 0;
+   mo->buffer[0] = '\0';
+   mo->buflen = 0;
+
+   return mo;
 }
-void mpd_free(MpdObj* mo){}
-void mpd_connect(MpdObj* mo){}
-int mpd_status_get_volume(MpdObj* mo){}
-void mpd_status_set_volume(MpdObj* mo, int newvol){}
-int mpd_status_update(MpdObj* mo){}
-int mpd_player_get_state(MpdObj* mo){}
-int mpd_player_prev(MpdObj* mo){}
-int mpd_player_next(MpdObj* mo){}
-int mpd_player_stop(MpdObj* mo){}
-int mpd_player_play(MpdObj* mo){}
-mpd_Song* mpd_playlist_get_current_song(MpdObj* mo){}
-int mpd_check_error(MpdObj* mo){}
-void mpd_set_hostname(MpdObj* mo, char* host){}
-void mpd_set_password(MpdObj* mo, char* pass){}
+void mpd_free(MpdObj* mo)
+{
+   DBG("!");
+   
+   if (mo->socket)
+      close(mo->socket);
+   g_free(mo->host);
+   g_free(mo->pass);
+   g_free(mo);
+}
+void mpd_connect(MpdObj* mo)
+{
+   struct hostent* remote_he;
+   struct sockaddr* remote_sa;
+   struct sockaddr_in remote_si;
+   int flags,err,nbread;
+   char* temp;
+   struct timeval tv;
+   fd_set fds;
+
+   mo->buffer[0] = '\0';
+   mo->buflen = 0;
+
+   /* ??? */
+   if (mo->socket) close(mo->socket);
+
+   DBG("!");
+  
+   if (!(remote_he = (struct hostent*) gethostbyname(mo->host)))
+   {
+      mo->error = MPD_ERROR_UNKHOST;
+      DBG("ERROR @gethostbyname(), err=%s",strerror(errno));
+      return;
+   }
+   memset(&remote_si, 0, sizeof(struct sockaddr_in));
+   remote_si.sin_family = AF_INET;
+   remote_si.sin_port = htons(mo->port);
+   memcpy((char *)&remote_si.sin_addr.s_addr,( char *)remote_he->h_addr, remote_he->h_length);
+
+   remote_sa = (struct sockaddr *)&remote_si;
+
+   if ((mo->socket = socket(AF_INET,SOCK_STREAM,0)) < 0)
+   {
+      mo->error = MPD_ERROR_NOSOCK;
+      DBG("ERROR @socket(), err=%s",strerror(errno));
+      return;
+   }
+   
+   flags = fcntl(mo->socket, F_GETFL, 0);
+   fcntl(mo->socket, F_SETFL, flags | O_NONBLOCK);
+   if (connect(mo->socket,remote_sa, sizeof(struct sockaddr_in)) < 0 && errno != EINPROGRESS)
+   {
+      mo->error = MPD_ERROR_CONNPORT;
+      DBG("ERROR @connect(), err=%s",strerror(errno));
+      return;
+   }
+
+   while(!(temp = strstr(mo->buffer,"\n"))) 
+   {
+      tv.tv_sec = 1;
+      tv.tv_usec = 0;
+      FD_ZERO(&fds);
+      FD_SET(mo->socket,&fds);
+      if((err = select(mo->socket+1,&fds,NULL,NULL,&tv)) == 1) 
+      {
+	 if ((nbread = recv(mo->socket,&(mo->buffer[mo->buflen]), MAXBUFLEN-mo->buflen,0)) <= 0)
+	 {
+	    mo->error = MPD_ERROR_NORESPONSE;
+	    DBG("ERROR @recv(), err=%s",strerror(errno));
+	    return;
+	 }
+	 mo->buflen+=nbread;
+	 mo->buffer[mo->buflen] = '\0';
+      }
+      else if(err < 0)
+      {
+	 if (errno == EINTR)
+	    continue;
+	 mo->error = MPD_ERROR_CONNPORT;
+	 DBG("ERROR @select(), err=%s",strerror(errno));
+	 return;
+      }
+      else
+      {
+	 mo->error = MPD_ERROR_NORESPONSE;
+	 DBG("ERROR @select(), timeoute'ed -> err=%s",strerror(errno));
+	 return;
+      }
+   }
+
+
+   if (strncmp(mo->buffer,MPD_WELCOME_MESSAGE, strlen(MPD_WELCOME_MESSAGE)))
+   {
+      mo->error = MPD_ERROR_NOTMPD;
+      DBG("ERROR @strncmp() -> answer didn't come from mpd");
+      return;
+   }
+
+   DBG("Received welcome message :\"%s\"",mo->buffer);
+   
+   *temp = '\0';
+   strcpy(mo->buffer, temp+1);
+   mo->buflen = strlen(mo->buffer);
+}
+
+void mpd_disconnect(MpdObj* mo)
+{
+   DBG("!");
+   if (mo->socket) 
+      close(mo->socket);
+}
+
+int mpd_status_get_volume(MpdObj* mo)
+{
+   DBG("! return %d",mo->curvol);
+   return mo->curvol;
+}
+
+void mpd_status_set_volume(MpdObj* mo, int newvol)
+{
+   DBG("!");
+   /* write setvol 'newvol' to socket */
+}
+
+int mpd_status_update(MpdObj* mo)
+{
+   DBG("!");
+   /* write 'status' to socket */
+   /* return MPD_ERROR_* if error */
+   return MPD_OK;
+}
+
+mpd_Song* mpd_playlist_get_current_song(MpdObj* mo)
+{
+   mpd_Song* ms = g_new0(mpd_Song,1);
+   
+   DBG("!");
+   
+   /* write 'currentsong' to socket */
+   /* return NULL if error */
+   return ms;
+}
+
+int mpd_player_get_state(MpdObj* mo)
+{
+   DBG("! return %d",mo->status);
+   return mo->status;
+}
+
+int mpd_player_prev(MpdObj* mo){return MPD_OK;}
+int mpd_player_next(MpdObj* mo){return MPD_OK;}
+int mpd_player_stop(MpdObj* mo){return MPD_OK;}
+int mpd_player_pause(MpdObj* mo){return MPD_OK;}
+
+int mpd_check_error(MpdObj* mo)
+{
+   DBG("! return %d",mo->error);
+   return mo->error;
+}
+
 void mpd_send_password(MpdObj* mo){}
-void mpd_set_port(MpdObj* mo,int port){}
-#endif
+void mpd_set_hostname(MpdObj* mo, char* host)
+{
+   DBG("! new hostname=%s",host);
+   g_free(mo->host);
+   mo->host = g_strndup(host,STRLENGTH);
+}
+
+void mpd_set_password(MpdObj* mo, char* pass)
+{
+   DBG("! new password=%s",pass);
+   g_free(mo->pass);
+   mo->pass = g_strndup(pass,STRLENGTH);
+}
+
+void mpd_set_port(MpdObj* mo,int port)
+{
+   DBG("! new port=%d",port);
+   mo->port = port;
+}
+#endif /* !HAVE_LIBMPD */ 
 
 static void
 mpc_free (XfcePanelPlugin * plugin, t_mpc * mpc)
 {
-#if DEBUG
-   puts("mpc_free()");
-#endif
+   DBG ("!");
+   
    g_object_unref (mpc->tips);
    mpd_free(mpc->mo);
    g_free (mpc);
@@ -65,17 +256,15 @@ mpc_free (XfcePanelPlugin * plugin, t_mpc * mpc)
 static void 
 mpc_set_orientation (XfcePanelPlugin * plugin, GtkOrientation orientation, t_mpc * mpc)
 {
-#if DEBUG
-   puts("mpc_set_orientation()");
-#endif
-   xfce_hvbox_set_orientation(mpc->box,orientation);
+   DBG ("!");
+   
+   xfce_hvbox_set_orientation(XFCE_HVBOX(mpc->box), orientation);
 }
 
-static gboolean mpc_set_size (XfcePanelPlugin * plugin, int size, t_mpc * mpc)
+static gboolean 
+mpc_set_size (XfcePanelPlugin * plugin, int size, t_mpc * mpc)
 {
-#if DEBUG
-   printf("mpc_set_size(),size=%d\n",size);
-#endif
+   DBG ("size=%d",size);
    
    if (size > 26)
    {
@@ -90,14 +279,13 @@ static gboolean mpc_set_size (XfcePanelPlugin * plugin, int size, t_mpc * mpc)
    return TRUE;
 }
 
-static void mpc_read_config (XfcePanelPlugin * plugin, t_mpc * mpc)
+static void 
+mpc_read_config (XfcePanelPlugin * plugin, t_mpc * mpc)
 {
    char *file;
    XfceRc *rc;
 
-#if DEBUG
-   puts("mpc_read_config()");
-#endif
+   DBG ("!");
 
    if (!(file = xfce_panel_plugin_lookup_rc_file (plugin)))
       return;
@@ -107,15 +295,19 @@ static void mpc_read_config (XfcePanelPlugin * plugin, t_mpc * mpc)
 
    if (!rc)
       return;
-    
+
    xfce_rc_set_group (rc, "Settings");
+   
+   if (mpc->mpd_host != NULL)
+      g_free (mpc->mpd_host);
+   if (mpc->mpd_password != NULL)
+      g_free (mpc->mpd_password);
 
    mpc->mpd_host = (gchar*) xfce_rc_read_entry (rc, "mpd_host",  DEFAULT_MPD_HOST);
    mpc->mpd_port = xfce_rc_read_int_entry (rc, "mpd_port", DEFAULT_MPD_PORT);
-   mpc->mpd_password = (gchar*) xfce_rc_read_entry (rc, "mpd_password", NULL);
+   mpc->mpd_password = (gchar*) xfce_rc_read_entry (rc, "mpd_password", "");
    mpc->show_frame = xfce_rc_read_bool_entry (rc, "show_frame", TRUE);
-/* mpc->stay_connected = xfce_rc_read_bool_entry (rc, "stay_connected", TRUE); */
-   
+   DBG ("Settings : %s@%s:%d\nframe:%d", mpc->mpd_password, mpc->mpd_host, mpc->mpd_port, mpc->show_frame);
    xfce_rc_close (rc);
 }
 
@@ -125,9 +317,7 @@ static void mpc_write_config (XfcePanelPlugin * plugin, t_mpc * mpc)
    XfceRc *rc;
    char *file;
 
-#if DEBUG
-   puts("mpc_write_config()");
-#endif
+   DBG ("!");
 
    if (!(file = xfce_panel_plugin_save_location (plugin, TRUE)))
       return;
@@ -146,45 +336,49 @@ static void mpc_write_config (XfcePanelPlugin * plugin, t_mpc * mpc)
 
    xfce_rc_write_entry (rc, "mpd_host", mpc->mpd_host);
    xfce_rc_write_int_entry (rc, "mpd_port", mpc->mpd_port);
-   if (mpc->mpd_password) 
-      xfce_rc_write_entry (rc, "mpd_password", mpc->mpd_password);
+   xfce_rc_write_entry (rc, "mpd_password", mpc->mpd_password);
    xfce_rc_write_bool_entry (rc, "show_frame", mpc->show_frame);
-/* xfce_rc_write_bool_entry (rc, "stay_connected", mpc->stay_connected); */
 
    xfce_rc_close (rc);
+}
+
+static gboolean
+mpc_plugin_reconnect (t_mpc *mpc)
+{
+   DBG ("!");
+
+   mpd_connect (mpc->mo);
+   if (mpc->mpd_password)
+      mpd_send_password (mpc->mo);
+
+   return !mpd_check_error (mpc->mo);
 }
 
 static void
 mpc_dialog_apply_options (t_mpc_dialog *dialog)
 {
-#if DEBUG
-   puts("mpc_dialog_apply_options()");
-#endif
+   DBG ("!");
+
    t_mpc *mpc = dialog->mpc;
-   const gchar * temp = gtk_entry_get_text(GTK_ENTRY(dialog->textbox_password));
-   mpc->mpd_host = g_strdup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_host)));
+   mpc->mpd_host = g_strndup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_host)),STRLENGTH);
    mpc->mpd_port = atoi(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_port)));
-   mpc->mpd_password = (strlen(temp)) ? g_strdup(temp) : NULL;
-#if DEBUG
-   printf("values: host=%s, port=%d, passwd=%s\n", mpc->mpd_host, mpc->mpd_port, mpc->mpd_password);
-#endif
+   mpc->mpd_password = g_strndup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_password)),STRLENGTH);
+   
+   DBG ("Apply: host=%s, port=%d, passwd=%s", mpc->mpd_host, mpc->mpd_port, mpc->mpd_password);
+
+   mpd_disconnect(mpc->mo);
    mpd_set_hostname(mpc->mo,mpc->mpd_host);
    mpd_set_port(mpc->mo,mpc->mpd_port);
+   mpd_set_password(mpc->mo,mpc->mpd_password);
    mpd_connect(mpc->mo);
-   if (mpc->mpd_password)
-   {
-      mpd_set_password(mpc->mo,mpc->mpd_password);
-      mpd_send_password(mpc->mo);
-   }
 }
 
 static void
 mpc_dialog_response (GtkWidget * dlg, int response, t_mpc_dialog * dialog)
 {
    t_mpc *mpc = dialog->mpc;
-#if DEBUG
-   puts("mpc_dialog_response()");
-#endif
+
+   DBG ("!");
 
    mpc_dialog_apply_options (dialog);
    g_free (dialog);
@@ -197,30 +391,23 @@ mpc_dialog_response (GtkWidget * dlg, int response, t_mpc_dialog * dialog)
 static void
 mpc_dialog_show_frame_toggled (GtkWidget *w, t_mpc_dialog *dialog)
 {
-
    t_mpc* mpc = dialog->mpc; 
-#if DEBUG
-   puts("mpc_dialog_show_frame_toggled()");
-#endif
+   
+   DBG ("!");
 
    mpc->show_frame = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->checkbox_frame));
    gtk_frame_set_shadow_type (GTK_FRAME (mpc->frame), (mpc->show_frame) ? GTK_SHADOW_IN : GTK_SHADOW_NONE);
 }
-/*static void
-mpc_dialog_stay_connected_toggled (GtkWidget *w, t_mpc_dialog *dialog)
-{
-   t_mpc* mpc = dialog->mpc; 
-   mpc->stay_connected = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->checkbox_connected));
-}*/
 
 static void
-mpc_create_options (XfcePanelPlugin * plugin, t_mpc * mpc)
+mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
 {
-   GtkWidget *dlg, *header, *vbox, *table;
-   GdkPixbuf *pb;
+   GtkWidget *dlg, *vbox, *table;
    gchar str_port[20];
    t_mpc_dialog *dialog;
-
+   
+   DBG("!");
+   
    dialog = g_new0 (t_mpc_dialog, 1);
 
    dialog->mpc = mpc;
@@ -277,42 +464,28 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc * mpc)
 
    g_signal_connect (dialog->checkbox_frame, "toggled", G_CALLBACK (mpc_dialog_show_frame_toggled), dialog);
     
-/*   dialog->checkbox_connected = gtk_check_button_new_with_mnemonic (_("Stay _connected"));
-   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(dialog->checkbox_connected),mpc->stay_connected);
-   gtk_widget_show (dialog->checkbox_connected);
-   gtk_box_pack_start (GTK_BOX (vbox), dialog->checkbox_connected, FALSE, FALSE, 0);
-
-   g_signal_connect (dialog->checkbox_connected, "toggled", G_CALLBACK (mpc_dialog_stay_connected_toggled), dialog);*/
-
-    /* show the dialog */
+   /* show the dialog */
    gtk_widget_show (dlg);
 }
 
 static void 
-enter_cb(GtkWidget *widget, GdkEventCrossing* event, gpointer data) 
+enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc) 
 {
    mpd_Song *song;
-   char str[512];
-   MpdObj *mo = ((t_mpc*) data)->mo;
-#if DEBUG
-   puts("enter_cb()");
-#endif
+   gchar str[512];
+   
+   DBG("!");
 
-   if (mpd_status_update(mo) != MPD_OK)
+   if (mpd_status_update(mpc->mo) != MPD_OK)
    {
-#if DEBUG
-      puts("reconnecting..");
-#endif
-      mpd_connect(mo);
-      if (((t_mpc*) data)->mpd_password)
-	 mpd_send_password(mo);
-      if (mpd_check_error(mo) || mpd_status_update(mo) != MPD_OK)
+      if (!mpc_plugin_reconnect (mpc) || mpd_status_update (mpc->mo) != MPD_OK)
       {
-	 gtk_tooltips_set_tip (((t_mpc*)data)->tips, widget, _(".... not connected ?"), NULL);
+	 gtk_tooltips_set_tip (mpc->tips, widget, _(".... not connected ?"), NULL);
 	 return;
       }
    }
-   switch (mpd_player_get_state(mo))
+
+   switch (mpd_player_get_state(mpc->mo))
    {
       case MPD_PLAYER_PLAY:  
 	 sprintf(str, "Mpd Playing");
@@ -327,151 +500,114 @@ enter_cb(GtkWidget *widget, GdkEventCrossing* event, gpointer data)
 	 sprintf(str, "Mpd state ?");
 	 break;
    }
-   song = mpd_playlist_get_current_song(mo);
+   song = mpd_playlist_get_current_song(mpc->mo);
    if (song) 
-      sprintf(str,"%s - [%s - %s] -/- (#%s) %s", str, song->artist, song->album, song->track, song->title);
-   gtk_tooltips_set_tip (((t_mpc*)data)->tips, widget, str, NULL);
+      g_sprintf(str,"%s - [%s - %s] -/- (#%s) %s", str, song->artist, song->album, song->track, song->title);
+   else
+      g_sprintf(str,"%s - Failed to get song info ?");
+   gtk_tooltips_set_tip (mpc->tips, widget, str, NULL);
 }
 
 static void 
-prev(GtkWidget *widget, GdkEventButton* event, gpointer data) 
+toggle(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc)
 {
-   MpdObj *mo = ((t_mpc*) data)->mo;
-   if (event->button != 1) return;
-   if (mpd_player_prev(mo) != MPD_OK)
+   DBG("!");
+
+   if (event->button != 1) 
+      return;
+   
+   if (mpd_status_update (mpc->mo) != MPD_OK)
+      if (!mpc_plugin_reconnect (mpc))
+         return;
+   
+   switch (mpd_player_get_state(mpc->mo))
    {
-#if DEBUG
-      puts("reconnecting..");
-#endif
-      mpd_connect(mo);
-      if (((t_mpc*) data)->mpd_password)
-	 mpd_send_password(mo);
-      if (!mpd_check_error(mo))
-      {
-#if DEBUG
-	 puts("calling mpd_player_prev() after reconnect");
-#endif
-	 mpd_player_prev(mo);
-      }
-   }  
-#if DEBUG
-   else puts("mpd_player_prev() ok");
-#endif
+      case MPD_PLAYER_PAUSE:
+      case MPD_PLAYER_PLAY:
+         mpd_player_pause(mpc->mo); /* toggles play/pause */
+         break;
+      case MPD_PLAYER_STOP:
+      default:
+         mpd_player_play(mpc->mo); /* if stopped, mpd_player_pause() doesn't restart playing */
+         break;
+   }
 }
 
 static void 
-play(GtkWidget *widget, GdkEventButton* event, gpointer data)
+prev(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc) 
 {
-   MpdObj *mo = ((t_mpc*) data)->mo;
-   if (event->button != 1) return;
-   if (mpd_player_play(mo) != MPD_OK)
+   if (event->button != 1) 
+      return;
+   
+   if (mpd_player_prev(mpc->mo) != MPD_OK)
    {
-#if DEBUG
-      puts("reconnecting..");
-#endif
-      mpd_connect(mo);
-      if (((t_mpc*) data)->mpd_password)
-	 mpd_send_password(mo);
-      if (!mpd_check_error(mo))
+      if (mpc_plugin_reconnect (mpc))
       {
-#if DEBUG
-	 puts("calling mpd_player_play() after reconnect");
-#endif
-	 mpd_player_play(mo);
+         DBG("calling mpd_player_prev() after reconnect");
+	 mpd_player_prev(mpc->mo);
       }
-   }  
-#if DEBUG
-   else puts("mpd_player_play() ok");
-#endif
+   }
+   else
+      DBG("mpd_player_prev() ok");
 }
 
 static void 
-stop(GtkWidget *widget, GdkEventButton* event, gpointer data) 
+stop(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc) 
 {
-   MpdObj *mo = ((t_mpc*) data)->mo;
-   if (event->button != 1) return;
-   if (mpd_player_stop(mo) != MPD_OK)
+   if (event->button != 1) 
+      return;
+   
+   if (mpd_player_stop(mpc->mo) != MPD_OK)
    {
-#if DEBUG
-      puts("reconnecting..");
-#endif
-      mpd_connect(mo);
-      if (((t_mpc*) data)->mpd_password)
-	 mpd_send_password(mo);
-      if (!mpd_check_error(mo))
+      if (mpc_plugin_reconnect(mpc))
       {
-#if DEBUG
-	 puts("calling mpd_player_stop() after reconnect");
-#endif
-	 mpd_player_stop(mo);
+         DBG("calling mpd_player_stop() after reconnect");
+	 mpd_player_stop(mpc->mo);
       }
-   }  
-#if DEBUG
-   else puts("mpd_player_stop() ok");
-#endif
+   }
+   else
+      DBG("mpd_player_stop() ok");
 }
 
 static void 
-next(GtkWidget *widget, GdkEventButton* event, gpointer data) 
+next(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc) 
 {
-   MpdObj *mo = ((t_mpc*) data)->mo;
-   if (event->button != 1) return;
-   if (mpd_player_next(mo) != MPD_OK)
+   if (event->button != 1) 
+      return;
+   
+   if (mpd_player_next(mpc->mo) != MPD_OK)
    {
-#if DEBUG
-      puts("reconnecting..");
-#endif
-      mpd_connect(mo);
-      if (((t_mpc*) data)->mpd_password)
-	 mpd_send_password(mo);
-      if (!mpd_check_error(mo))
+      if (mpc_plugin_reconnect (mpc))
       {
-#if DEBUG
-	 puts("calling mpd_player_next() after reconnect");
-#endif
-	 mpd_player_next(mo);
+         DBG("calling mpd_player_next() after reconnect");
+	 mpd_player_next(mpc->mo);
       }
-   }  
-#if DEBUG
-   else puts("mpd_player_next() ok");
-#endif
+   }
+   else
+      DBG("mpd_player_next() ok");
 }
 
 static void 
-scroll_cb(GtkWidget *widget, GdkEventScroll* event, gpointer data)
+scroll_cb(GtkWidget *widget, GdkEventScroll* event, t_mpc* mpc)
 {
-   MpdObj *mo = ((t_mpc*) data)->mo;
    int curvol=-1;
-#if DEBUG
-   puts("scroll_cb()");
-#endif
-
-   if (mpd_status_update(mo) != MPD_OK)
+   
+   if (event->type != GDK_SCROLL)
+      return;
+   else if (mpd_status_update (mpc->mo) != MPD_OK)
    {
-#if DEBUG
-      puts("reconnecting..");
-#endif
-      mpd_connect(mo);
-      if (((t_mpc*) data)->mpd_password)
-	 mpd_send_password(mo);
-      if (mpd_check_error(mo) || mpd_status_update(mo) != MPD_OK)
+      if (!mpc_plugin_reconnect (mpc) || mpd_status_update (mpc->mo) != MPD_OK)
       {
-	 gtk_tooltips_set_tip (((t_mpc*)data)->tips, widget, _(".... not connected ?"), NULL);
+	 gtk_tooltips_set_tip (mpc->tips, widget, _(".... not connected ?"), NULL);
 	 return;
       }
    }
 
-   curvol = mpd_status_get_volume(mo);
-#if DEBUG
-   printf("current volume=%d\n",curvol);
-#endif
-   
-   if (event->type != GDK_SCROLL)
-      return;
-   else if (event->direction == GDK_SCROLL_DOWN) 
-      mpd_status_set_volume(mo,curvol-5);
-   else if (event->direction == GDK_SCROLL_UP) 
-      mpd_status_set_volume(mo,curvol+5);
+   curvol = mpd_status_get_volume(mpc->mo);
+   DBG("current volume=%d", curvol);
+   curvol = ((event->direction == GDK_SCROLL_DOWN) ? curvol-5 : curvol+5);
+   DBG("setting new volume=%d", curvol);
+   mpd_status_set_volume(mpc->mo,curvol);
 }
 
 static void 
@@ -481,6 +617,7 @@ new_button_with_img(XfcePanelPlugin * plugin, GtkWidget *parent, GtkWidget *butt
 
    button = (GtkWidget*) xfce_create_panel_button();
    image = gtk_image_new_from_stock(icon,GTK_ICON_SIZE_BUTTON);
+
    gtk_button_set_image(GTK_BUTTON(button),image);
    xfce_panel_plugin_add_action_widget (plugin, button);
    gtk_widget_show (GTK_WIDGET(button));
@@ -492,10 +629,9 @@ static t_mpc*
 mpc_create (XfcePanelPlugin * plugin)
 {
    t_mpc *mpc;
-#if DEBUG
-   puts("mpc_create()");
-#endif
 
+   DBG("!");
+   
    mpc = g_new0 (t_mpc, 1);
    
    mpc->plugin = plugin;
@@ -520,7 +656,7 @@ mpc_create (XfcePanelPlugin * plugin)
    
    new_button_with_img(plugin, mpc->box, mpc->prev, GTK_STOCK_MEDIA_PREVIOUS, G_CALLBACK(prev), mpc);
    new_button_with_img(plugin, mpc->box, mpc->stop, GTK_STOCK_MEDIA_STOP, G_CALLBACK(stop), mpc);
-   new_button_with_img(plugin, mpc->box, mpc->play, GTK_STOCK_MEDIA_PLAY, G_CALLBACK(play), mpc);
+   new_button_with_img(plugin, mpc->box, mpc->toggle, GTK_STOCK_MEDIA_PAUSE, G_CALLBACK(toggle), mpc);
    new_button_with_img(plugin, mpc->box, mpc->next, GTK_STOCK_MEDIA_NEXT, G_CALLBACK(next), mpc);
 
    gtk_widget_show_all (mpc->box);
@@ -532,32 +668,36 @@ static void
 mpc_construct (XfcePanelPlugin * plugin)
 {
    t_mpc *mpc;
+
+   DBG("!");
 #if DEBUG
-   puts("mpc_construct()");
+/*   setvbuf(stdout, NULL, _IONBF, 0); */
+#ifdef HAVE_LIBMPD
+   debug_set_level(10);
+#endif
 #endif
 
    xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
     /* create widgets */
    mpc = mpc_create (plugin);
-   mpc->mpd_host = DEFAULT_MPD_HOST;
+   mpc->mpd_host = g_strdup(DEFAULT_MPD_HOST);
    mpc->mpd_port = DEFAULT_MPD_PORT;
-   mpc->mpd_password = NULL;
+   mpc->mpd_password = g_strdup("");
    mpc->show_frame = TRUE;
    /* mpc->stay_connected = TRUE; */
 
    mpc_read_config (plugin, mpc);
    
    /* create a connection*/
-#if DEBUG
-   debug_set_level(10);
-#endif
    mpc->mo = mpd_new(mpc->mpd_host,mpc->mpd_port,mpc->mpd_password);
+/* no need to connect now, as we show configure dialog first then reconnect
    mpd_connect(mpc->mo);
    if (mpc->mpd_password)
       mpd_send_password(mpc->mo);
-   
+*/   
    gtk_container_add (GTK_CONTAINER (plugin), mpc->frame);
+   gtk_frame_set_shadow_type (GTK_FRAME (mpc->frame), ((mpc->show_frame) ? GTK_SHADOW_IN : GTK_SHADOW_NONE));
 
     /* connect signal handlers */
    g_signal_connect (plugin, "free-data", G_CALLBACK (mpc_free), mpc);
