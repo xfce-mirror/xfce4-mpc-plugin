@@ -303,9 +303,9 @@ mpc_read_config (XfcePanelPlugin * plugin, t_mpc * mpc)
    if (mpc->mpd_password != NULL)
       g_free (mpc->mpd_password);
 
-   mpc->mpd_host = (gchar*) xfce_rc_read_entry (rc, "mpd_host",  DEFAULT_MPD_HOST);
+   mpc->mpd_host = g_strdup(xfce_rc_read_entry (rc, "mpd_host",  DEFAULT_MPD_HOST));
    mpc->mpd_port = xfce_rc_read_int_entry (rc, "mpd_port", DEFAULT_MPD_PORT);
-   mpc->mpd_password = (gchar*) xfce_rc_read_entry (rc, "mpd_password", "");
+   mpc->mpd_password = g_strdup(xfce_rc_read_entry (rc, "mpd_password", ""));
    mpc->show_frame = xfce_rc_read_bool_entry (rc, "show_frame", TRUE);
    DBG ("Settings : %s@%s:%d\nframe:%d", mpc->mpd_password, mpc->mpd_host, mpc->mpd_port, mpc->show_frame);
    xfce_rc_close (rc);
@@ -348,7 +348,7 @@ mpc_plugin_reconnect (t_mpc *mpc)
    DBG ("!");
 
    mpd_connect (mpc->mo);
-   if (mpc->mpd_password)
+   if (strlen(mpc->mpd_password))
       mpd_send_password (mpc->mo);
 
    return !mpd_check_error (mpc->mo);
@@ -451,7 +451,7 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
    dialog->textbox_password = gtk_entry_new();
    gtk_entry_set_visibility(GTK_ENTRY(dialog->textbox_password),FALSE);
    gtk_entry_set_width_chars(GTK_ENTRY(dialog->textbox_password),DIALOG_ENTRY_WIDTH);
-   if (mpc->mpd_password) gtk_entry_set_text(GTK_ENTRY(dialog->textbox_password),mpc->mpd_password);
+   gtk_entry_set_text(GTK_ENTRY(dialog->textbox_password),mpc->mpd_password);
    gtk_table_attach_defaults(GTK_TABLE(table),dialog->textbox_password,1,2,2,3);
     
    gtk_widget_show_all (table);
@@ -504,7 +504,7 @@ enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
    if (song) 
       g_sprintf(str,"%s - [%s - %s] -/- (#%s) %s", str, song->artist, song->album, song->track, song->title);
    else
-      g_sprintf(str,"%s - Failed to get song info ?");
+      g_sprintf(str,"%s - Failed to get song info ?", str);
    gtk_tooltips_set_tip (mpc->tips, widget, str, NULL);
 }
 
