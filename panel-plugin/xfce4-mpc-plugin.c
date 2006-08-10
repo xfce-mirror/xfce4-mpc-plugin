@@ -61,6 +61,7 @@ MpdObj* mpd_new(char* host, int port, char* pass)
 
    return mo;
 }
+
 void mpd_free(MpdObj* mo)
 {
    DBG("!");
@@ -71,6 +72,7 @@ void mpd_free(MpdObj* mo)
    g_free(mo->pass);
    g_free(mo);
 }
+
 void mpd_connect(MpdObj* mo)
 {
    struct hostent* remote_he;
@@ -179,10 +181,96 @@ int mpd_status_get_volume(MpdObj* mo)
    return mo->curvol;
 }
 
+void mpd_wait_for_OK(MpdObj *mo)
+{
+   struct timeval tv;
+   char *temp;
+   int err,nbread;
+   err = nbread = 0;
+   fd_set fds;
+   
+   DBG("!");
+   
+   while(!(temp = strstr(mo->buffer,"\n"))) 
+   {
+      tv.tv_sec = 2;
+      tv.tv_usec = 0;
+      FD_ZERO(&fds);
+      FD_SET(mo->socket,&fds);
+      if((err = select(mo->socket+1,&fds,NULL,NULL,&tv)) == 1) 
+      {
+	 if ((nbread = recv(mo->socket,&(mo->buffer[mo->buflen]), MAXBUFLEN-mo->buflen,0)) <= 0)
+	 {
+	    mo->error = MPD_ERROR_NORESPONSE;
+	    DBG("ERROR @recv(), err=%s",strerror(errno));
+	    return;
+	 }
+	 mo->buflen+=nbread;
+	 mo->buffer[mo->buflen] = '\0';
+      }
+      else if(err < 0)
+      {
+	 if (errno == EINTR)
+	    continue;
+	 mo->error = MPD_ERROR_CONNPORT;
+	 DBG("ERROR @select(), err=%s",strerror(errno));
+	 return;
+      }
+      else
+      {
+	 mo->error = MPD_ERROR_NORESPONSE;
+	 DBG("ERROR @select(), timeoute'ed -> err=%s",strerror(errno));
+	 return;
+      }
+   }
+   
+   DBG("Received \"%s\"",mo->buffer);
+
+   if (strcmp(mo->buffer,"OK\n") != 0)
+   {
+      mo->error = MPD_NOTOK;
+      DBG("ERROR : did not received OK");
+      return;
+   }
+
+   DBG("Received OK from mpd \\o/");
+   
+   *temp = '\0';
+   strcpy(mo->buffer, temp+1);
+}
+
+int mpd_send_single_cmd(MpdObj*mo, char* cmd)
+{
+   int nbwri = 0;
+
+   /* write setvol 'newvol' to socket */
+   if (mo->socket) 
+   {
+      DBG("Sending \"%s\"",cmd);
+      if ((nbwri = send(mo->socket, cmd, strlen(cmd), 0)) <= 0)
+      {
+	 mo->error = MPD_ERROR_SENDING;
+	 DBG("ERROR @send(), err=%s",strerror(errno));
+	 return MPD_FAILED;
+      }
+      DBG("Sent %d bytes",nbwri);
+      /* wait for OK */
+      mpd_wait_for_OK(mo);
+   }
+   else
+   {
+      mo->error = MPD_ERROR_NOSOCK;
+      DBG("ERROR : socket == NULL ?");
+      return MPD_FAILED;
+   }
+   return MPD_OK;
+}
+
 void mpd_status_set_volume(MpdObj* mo, int newvol)
 {
-   DBG("!");
-   /* write setvol 'newvol' to socket */
+   char outbuf[15];
+   sprintf(outbuf,"setvol %d\n",newvol);
+   mpd_send_single_cmd(mo,outbuf);
 }
 
 int mpd_status_update(MpdObj* mo)
@@ -210,10 +298,38 @@ int mpd_player_get_state(MpdObj* mo)
    return mo->status;
 }
 
-int mpd_player_prev(MpdObj* mo){return MPD_OK;}
-int mpd_player_next(MpdObj* mo){return MPD_OK;}
-int mpd_player_stop(MpdObj* mo){return MPD_OK;}
-int mpd_player_pause(MpdObj* mo){return MPD_OK;}
+int mpd_player_prev(MpdObj* mo)
+{
+   DBG("!");
+   return mpd_send_single_cmd(mo,"previous\n");
+}
+
+int mpd_player_next(MpdObj* mo)
+{
+   DBG("!");
+   return mpd_send_single_cmd(mo,"next\n");
+}
+
+int mpd_player_stop(MpdObj* mo)
+{
+   DBG("!");
+   return mpd_send_single_cmd(mo,"stop\n");
+}
+
+int mpd_player_pause(MpdObj* mo)
+{
+   DBG("!");
+   if (mo->status != MPD_PLAYER_PLAY)
+      return mpd_send_single_cmd(mo,"pause 0\n");
+   else
+      return mpd_send_single_cmd(mo,"pause 1\n");
+}
+
+int mpd_player_play(MpdObj* mo)
+{
+   DBG("!");
+   return mpd_send_single_cmd(mo,"play\n");
+}
 
 int mpd_check_error(MpdObj* mo)
 {
@@ -222,6 +338,8 @@ int mpd_check_error(MpdObj* mo)
 }
 
 void mpd_send_password(MpdObj* mo){}
+
+
 void mpd_set_hostname(MpdObj* mo, char* host)
 {
    DBG("! new hostname=%s",host);

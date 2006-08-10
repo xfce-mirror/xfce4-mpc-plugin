@@ -33,16 +33,20 @@
 #define MPD_PLAYER_PLAY 2
 #define MPD_PLAYER_PAUSE 3
 #define MPD_OK 0
+#define MPD_FAILED 1
+#define MPD_NOTOK 2
 #define MPD_WELCOME_MESSAGE "OK MPD "
 #define MAXBUFLEN 1000
 
-#define MPD_ERROR_NOSOCK  9
-#define MPD_ERROR_TIMEOUT  10 /* timeout trying to talk to mpd */
-#define MPD_ERROR_SYSTEM   11 /* system error */
-#define MPD_ERROR_UNKHOST  12 /* unknown host */
-#define MPD_ERROR_CONNPORT 13 /* problems connecting to port on host */
-#define MPD_ERROR_NOTMPD   14 /* mpd not running on port at host */
+#define MPD_ERROR_NOSOCK      9
+#define MPD_ERROR_TIMEOUT     10 /* timeout trying to talk to mpd */
+#define MPD_ERROR_SYSTEM      11 /* system error */
+#define MPD_ERROR_UNKHOST     12 /* unknown host */
+#define MPD_ERROR_CONNPORT    13 /* problems connecting to port on host */
+#define MPD_ERROR_NOTMPD      14 /* mpd not running on port at host */
 #define MPD_ERROR_NORESPONSE  15 /* no response on attempting to connect */
+#define MPD_ERROR_SENDING     16 /* error sending command */
+
 typedef struct {
    gchar* host;
    int port;
