@@ -193,7 +193,7 @@ void mpd_wait_for_OK(MpdObj *mo)
    
    while(!(temp = strstr(mo->buffer,"\n"))) 
    {
-      tv.tv_sec = 2;
+      tv.tv_sec = 1;
       tv.tv_usec = 0;
       FD_ZERO(&fds);
       FD_SET(mo->socket,&fds);
@@ -205,6 +205,7 @@ void mpd_wait_for_OK(MpdObj *mo)
 	    DBG("ERROR @recv(), err=%s",strerror(errno));
 	    return;
 	 }
+	 DBG("Read %d bytes, buff=\"%s\"",nbread,mo->buffer);
 	 mo->buflen+=nbread;
 	 mo->buffer[mo->buflen] = '\0';
       }
@@ -237,6 +238,7 @@ void mpd_wait_for_OK(MpdObj *mo)
    
    *temp = '\0';
    strcpy(mo->buffer, temp+1);
+   mo->buflen = strlen(mo->buffer);
 }
 
 int mpd_send_single_cmd(MpdObj*mo, char* cmd)
