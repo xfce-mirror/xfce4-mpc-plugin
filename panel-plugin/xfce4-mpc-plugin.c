@@ -128,12 +128,18 @@ void mpd_connect(MpdObj* mo)
       FD_SET(mo->socket,&fds);
       if((err = select(mo->socket+1,&fds,NULL,NULL,&tv)) == 1) 
       {
-	 if ((nbread = recv(mo->socket,&(mo->buffer[mo->buflen]), MAXBUFLEN-mo->buflen,0)) <= 0)
+	 if ((nbread = recv(mo->socket,&(mo->buffer[mo->buflen]), MAXBUFLEN-mo->buflen,0)) < 0)
 	 {
 	    mo->error = MPD_ERROR_NORESPONSE;
 	    DBG("ERROR @recv(), err=%s",strerror(errno));
 	    return;
 	 }
+	 if (nbread == 0)
+	 {   
+	    mo->error = MPD_ERROR_CONNCLOSED;
+	    DBG("ERROR @recv(), connection closed by server");
+	    return;
+	 }	 
 	 mo->buflen+=nbread;
 	 mo->buffer[mo->buflen] = '\0';
       }
@@ -161,11 +167,12 @@ void mpd_connect(MpdObj* mo)
       return;
    }
 
-   DBG("Received welcome message :\"%s\"",mo->buffer);
+   DBG("Received welcome message :\"%s\"", mo->buffer);
    
    *temp = '\0';
    strcpy(mo->buffer, temp+1);
    mo->buflen = strlen(mo->buffer);
+   mo->error = 0;
 }
 
 void mpd_disconnect(MpdObj* mo)
@@ -181,71 +188,57 @@ int mpd_status_get_volume(MpdObj* mo)
    return mo->curvol;
 }
 
-void mpd_wait_for_OK(MpdObj *mo)
+void mpd_wait_for_answer(MpdObj *mo)
 {
    struct timeval tv;
-   char *temp;
    int err,nbread;
    err = nbread = 0;
    fd_set fds;
    
    DBG("!");
    
-   while(!(temp = strstr(mo->buffer,"\n"))) 
+   tv.tv_sec = 1;
+   tv.tv_usec = 0;
+   FD_ZERO(&fds);
+   FD_SET(mo->socket,&fds);
+   if((err = select(mo->socket+1,&fds,NULL,NULL,&tv)) == 1) 
    {
-      tv.tv_sec = 1;
-      tv.tv_usec = 0;
-      FD_ZERO(&fds);
-      FD_SET(mo->socket,&fds);
-      if((err = select(mo->socket+1,&fds,NULL,NULL,&tv)) == 1) 
+      if ((nbread = recv(mo->socket,&(mo->buffer[mo->buflen]), MAXBUFLEN-mo->buflen,0)) < 0)
       {
-	 if ((nbread = recv(mo->socket,&(mo->buffer[mo->buflen]), MAXBUFLEN-mo->buflen,0)) <= 0)
-	 {
-	    mo->error = MPD_ERROR_NORESPONSE;
-	    DBG("ERROR @recv(), err=%s",strerror(errno));
-	    return;
-	 }
-	 DBG("Read %d bytes, buff=\"%s\"",nbread,mo->buffer);
-	 mo->buflen+=nbread;
-	 mo->buffer[mo->buflen] = '\0';
-      }
-      else if(err < 0)
-      {
-	 if (errno == EINTR)
-	    continue;
-	 mo->error = MPD_ERROR_CONNPORT;
-	 DBG("ERROR @select(), err=%s",strerror(errno));
+         mo->error = MPD_ERROR_NORESPONSE;
+	 DBG("ERROR @recv(), err=%s",strerror(errno));
 	 return;
       }
-      else
-      {
-	 mo->error = MPD_ERROR_NORESPONSE;
-	 DBG("ERROR @select(), timeoute'ed -> err=%s",strerror(errno));
+      if (nbread == 0)
+      {   
+	 mo->error = MPD_ERROR_CONNCLOSED;
+	 DBG("ERROR @recv(), connection closed by server");
 	 return;
       }
+	 
+      DBG("Read %d bytes, buff=\"%s\"",nbread,mo->buffer);
+      mo->buflen+=nbread;
+      mo->buffer[mo->buflen] = '\0';
    }
-   
-   DBG("Received \"%s\"",mo->buffer);
-
-   if (strcmp(mo->buffer,"OK\n") != 0)
+   else if(err < 0)
    {
-      mo->error = MPD_NOTOK;
-      DBG("ERROR : did not received OK");
+      mo->error = MPD_ERROR_CONNPORT;
+      DBG("ERROR @select(), err=%s",strerror(errno));
       return;
    }
-
-   DBG("Received OK from mpd \\o/");
-   
-   *temp = '\0';
-   strcpy(mo->buffer, temp+1);
-   mo->buflen = strlen(mo->buffer);
+   else
+   {
+      mo->error = MPD_ERROR_NORESPONSE;
+      DBG("ERROR @select(), timeoute'ed -> err=%s",strerror(errno));
+      return;
+   }
+   mo->error = 0;
 }
 
 int mpd_send_single_cmd(MpdObj*mo, char* cmd)
 {
    int nbwri = 0;
 
-   /* write setvol 'newvol' to socket */
    if (mo->socket) 
    {
       DBG("Sending \"%s\"",cmd);
@@ -253,45 +246,160 @@ int mpd_send_single_cmd(MpdObj*mo, char* cmd)
       {
 	 mo->error = MPD_ERROR_SENDING;
 	 DBG("ERROR @send(), err=%s",strerror(errno));
-	 return MPD_FAILED;
       }
       DBG("Sent %d bytes",nbwri);
       /* wait for OK */
-      mpd_wait_for_OK(mo);
+      mpd_wait_for_answer(mo);
+      
+      if(!mo->error)
+      {
+	 if (strcmp(mo->buffer,"OK\n") != 0)
+         {
+	    mo->error = MPD_FAILED;
+            DBG("ERROR : did not received OK");
+	 }
+	 *mo->buffer = '\0';
+         mo->buflen = 0;
+      }
    }
    else
    {
       mo->error = MPD_ERROR_NOSOCK;
       DBG("ERROR : socket == NULL ?");
-      return MPD_FAILED;
    }
-   return MPD_OK;
+   return ((!mo->error) ? MPD_OK : MPD_FAILED);
 }
 
 void mpd_status_set_volume(MpdObj* mo, int newvol)
 {
    char outbuf[15];
+   /* write setvol 'newvol' to socket */
    sprintf(outbuf,"setvol %d\n",newvol);
    mpd_send_single_cmd(mo,outbuf);
 }
 
 int mpd_status_update(MpdObj* mo)
 {
+   int nbwri = 0;
+   char *eol,*ptr;
+   char cmd[10], key[15], value[200];
+
    DBG("!");
+   
+   mo->status = 0;
+   
+   sprintf(cmd,"status\n");
+
    /* write 'status' to socket */
-   /* return MPD_ERROR_* if error */
-   return MPD_OK;
+   if (mo->socket) 
+   {
+      DBG("Sending \"%s\"",cmd);
+      if ((nbwri = send(mo->socket, cmd, strlen(cmd), 0)) < 0)
+      {
+	 mo->error = MPD_ERROR_SENDING;
+	 DBG("ERROR @send(), err=%s",strerror(errno));
+	 return mo->error;
+      }
+      DBG("Sent %d bytes",nbwri);
+      
+      mpd_wait_for_answer(mo);
+      
+      if (!mo->error)
+      {
+         while (strcmp(mo->buffer,"OK\n"))
+         {
+	    /*HACK @#!*/
+	    ptr = strstr(mo->buffer, ":");
+	    eol = strstr(mo->buffer, "\n");
+	    strncpy(key, mo->buffer, ptr - mo->buffer);
+	    key[ptr - mo->buffer]='\0';
+	    strncpy(value,ptr + 2 , eol - ptr - 2);
+	    value[eol - ptr - 2]='\0';
+
+	    DBG("key=\"%s\",value=\"%s\"", key, value);
+	    if      (0 == strcmp("volume",key)) mo->curvol = atoi(value);
+	    else if (0 == strcmp("state", key)) 
+	    {
+	       if      (0 == strcmp("play", value)) mo->status = MPD_PLAYER_PLAY;
+	       else if (0 == strcmp("pause",value)) mo->status = MPD_PLAYER_PAUSE;
+	       else if (0 == strcmp("stop", value)) mo->status = MPD_PLAYER_STOP;
+	    }
+	    *eol = '\0';
+	    strcpy(mo->buffer, eol+1);
+	    mo->buflen = strlen(mo->buffer);
+	 }
+	 *mo->buffer = '\0';
+         mo->buflen = 0;
+      }
+   }
+   else
+   {
+      mo->error = MPD_ERROR_NOSOCK;
+      DBG("ERROR : socket == NULL ?");
+   }
+   /* return NULL if error */
+   return ((!mo->error) ? MPD_OK : MPD_FAILED);
 }
 
 mpd_Song* mpd_playlist_get_current_song(MpdObj* mo)
 {
    mpd_Song* ms = g_new0(mpd_Song,1);
-   
+   int nbwri = 0;
+   char *eol,*ptr;
+   char cmd[15], key[15], value[200];
+
    DBG("!");
    
+   ms->artist= ms->album = ms->title = ms->track = NULL;
+   
+   sprintf(cmd,"currentsong\n");
+
    /* write 'currentsong' to socket */
+   if (mo->socket) 
+   {
+      DBG("Sending \"%s\"",cmd);
+      if ((nbwri = send(mo->socket, cmd, strlen(cmd), 0)) < 0)
+      {
+	 mo->error = MPD_ERROR_SENDING;
+	 DBG("ERROR @send(), err=%s",strerror(errno));
+	 return NULL;
+      }
+      DBG("Sent %d bytes",nbwri);
+      
+      mpd_wait_for_answer(mo);
+      
+      if (!mo->error)
+      {
+         while (strcmp(mo->buffer,"OK\n"))
+         {
+	    /*HACK @#!*/
+	    ptr = strstr(mo->buffer, ":");
+	    eol = strstr(mo->buffer, "\n");
+	    strncpy(key, mo->buffer, ptr - mo->buffer);
+	    key[ptr - mo->buffer]='\0';
+	    strncpy(value,ptr + 2 , eol - ptr - 2);
+	    value[eol - ptr - 2]='\0';
+
+	    DBG("key=\"%s\",value=\"%s\"", key, value);
+	    if      (!ms->artist && 0 == strcmp("Artist",key)) ms->artist= strdup(value);
+	    else if (!ms->album  && 0 == strcmp("Album", key)) ms->album = strdup(value);
+	    else if (!ms->title  && 0 == strcmp("Title", key)) ms->title = strdup(value);
+	    else if (!ms->track  && 0 == strcmp("Track", key)) ms->track = strdup(value);
+	    *eol = '\0';
+	    strcpy(mo->buffer, eol+1);
+	    mo->buflen = strlen(mo->buffer);
+	 }
+	 *mo->buffer = '\0';
+         mo->buflen = 0;
+      }
+   }
+   else
+   {
+      mo->error = MPD_ERROR_NOSOCK;
+      DBG("ERROR : socket == NULL ?");
+   }
    /* return NULL if error */
-   return ms;
+   return ((!mo->error) ? ms : NULL);
 }
 
 int mpd_player_get_state(MpdObj* mo)

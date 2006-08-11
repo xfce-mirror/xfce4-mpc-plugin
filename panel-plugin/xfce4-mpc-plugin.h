@@ -46,6 +46,7 @@
 #define MPD_ERROR_NOTMPD      14 /* mpd not running on port at host */
 #define MPD_ERROR_NORESPONSE  15 /* no response on attempting to connect */
 #define MPD_ERROR_SENDING     16 /* error sending command */
+#define MPD_ERROR_CONNCLOSED  17 /* connection closed by mpd */
 
 typedef struct {
    gchar* host;
