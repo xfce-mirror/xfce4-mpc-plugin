@@ -61,7 +61,7 @@ else
 fi
 
 dnl Translations
-XDT_I18N([])
+XDT_I18N([cs])
 
 dnl Check for debugging support
 XDT_FEATURE_DEBUG()
