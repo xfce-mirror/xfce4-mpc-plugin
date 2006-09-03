@@ -1,0 +1,52 @@
+# Polish translations for xfce4-mpc-plugin package.
+# Piotr Maliński <admin@rk.edu.pl>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-mpc-plugin 0.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-08-09 00:20+0200\n"
+"PO-Revision-Date: 2006-04-08 12:19+0900\n"
+"Last-Translator: Piotr Maliński <admin@rk.edu.pl>\n"
+"Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:645
+msgid "Mpd Client Plugin"
+msgstr "Wtyczka klienta Mpd"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:651
+msgid "Properties"
+msgstr "Właściwości"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:664
+msgid "Host : "
+msgstr "Host : "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:665
+msgid "Port : "
+msgstr "Port : "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:666
+msgid "Password : "
+msgstr "Hasło : "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:688
+msgid "Show _frame"
+msgstr "Pokaż_ramkę"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:711
+#: ../panel-plugin/xfce4-mpc-plugin.c:829
+msgid ".... not connected ?"
+msgstr "... nie połączony ?"
+
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:1
+msgid "A client for MPD, The Music Player Daemon"
+msgstr "Klient MPD, Music Player Daemon"
+
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
+msgid "MPD Client Plugin"
+msgstr "Wtyczka klienta MPD"
+
