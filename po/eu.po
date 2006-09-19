@@ -1,0 +1,53 @@
+# Basque translations for xfce package.
+# Copyright (C) 2006 THE xfce'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the xfce package.
+# pi <pi@beobide.net>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce 4-mpc-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-09-10 21:29+0200\n"
+"PO-Revision-Date: 2006-09-19 09:35+0200\n"
+"Last-Translator: Piarres Beobide <pi@beobide.net>\n"
+"Language-Team: Basque <librezale@lbrezale.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:645
+msgid "Mpd Client Plugin"
+msgstr "Mpd Bezero Plugin-a"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:651
+msgid "Properties"
+msgstr "Propietateak"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:664
+msgid "Host : "
+msgstr "Ostalaria: "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:665
+msgid "Port : "
+msgstr "Ataka : "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:666
+msgid "Password : "
+msgstr "Pasahitza :"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:688
+msgid "Show _frame"
+msgstr "_Markoa ikusi"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:711
+#: ../panel-plugin/xfce4-mpc-plugin.c:829
+msgid ".... not connected ?"
+msgstr ".... konektatu gabe ?"
+
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:1
+msgid "A client for MPD, The Music Player Daemon"
+msgstr "MPD (Music Player Daemon) bezeroa"
+
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
+msgid "MPD Client Plugin"
+msgstr "MPD Bezero Plugin-a"
