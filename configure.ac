@@ -31,7 +31,7 @@ dnl configure the panel plugin
 XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-1.0], [4.3.22])
 
 dnl check for libmpd presence
-AM_CONDITIONAL(HAVE_LIBMPD, true)
+AM_CONDITIONAL(HAVE_LIBMPD, false)
 AC_ARG_WITH(libmpd,
     AC_HELP_STRING([--with-libmpd=path], [path to libmpd base directory]),
         LIBMPD_PATH="$withval", LIBMPD_PATH="")

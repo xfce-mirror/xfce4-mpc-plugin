@@ -3,14 +3,19 @@ plugin_PROGRAMS = xfce4-mpc-plugin
 
 xfce4_mpc_plugin_CFLAGS =						\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"				\
-	@LIBXFCE4PANEL_CFLAGS@						\
-	@LIBMPD_CFLAGS@
+	@LIBXFCE4PANEL_CFLAGS@
 
 xfce4_mpc_plugin_LDFLAGS =						\
-	@LIBXFCE4PANEL_LIBS@						\
-	@LIBMPD_LIBS@
-	
+	@LIBXFCE4PANEL_LIBS@
+
+
 xfce4_mpc_plugin_SOURCES = xfce4-mpc-plugin.c
+if HAVE_LIBMPD
+xfce4_mpc_plugin_CFLAGS += @LIBMPD_CFLAGS@
+xfce4_mpc_plugin_LDFLAGS += @LIBMPD_LIBS@
+else
+xfce4_mpc_plugin_SOURCES += simple-libmpd.c
+endif
 
 # .desktop file
 #
