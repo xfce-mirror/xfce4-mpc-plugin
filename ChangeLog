@@ -1,3 +1,7 @@
+   * release 0.2.0
+   * written a simple interface with mpd when libmpd is not available
+   * cleaned/modularized code
+   * add repeat/random toggle in right-click menu
    * use xfce_* functions for config dialog
    * replaced play call/button with pause -> better
    * don't connect at startup (plugin is not configured)

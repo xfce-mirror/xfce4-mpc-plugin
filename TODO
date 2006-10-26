@@ -1,2 +1,2 @@
-Rewrite mpd communications to let the user choose with/without libmpd.
-gettext'ize.
+- add a simple track selection window (no complete playlist mgmt)
+- run a standalone configurable client on demand (dbl click ?)

@@ -24,6 +24,7 @@
 
 #include <libxfcegui4/libxfcegui4.h>
 #include <string.h>
+#include <glib/gprintf.h>
 
 #define DEFAULT_MPD_HOST "localhost"
 #define DEFAULT_MPD_PORT 6600
