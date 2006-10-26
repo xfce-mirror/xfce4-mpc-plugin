@@ -1,3 +1,4 @@
+26-10-2006 Landry Breuil <landry at fr.homeunix.org>
    * release 0.2.0
    * written a simple interface with mpd when libmpd is not available
    * cleaned/modularized code
