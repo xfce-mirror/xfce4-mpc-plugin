@@ -34,10 +34,11 @@
 typedef struct {
    XfcePanelPlugin *plugin;
    GtkTooltips *tips;
-   GtkWidget *frame,*ebox,*box,*prev,*stop,*toggle,*next,*random,*repeat;
+   GtkWidget *frame,*ebox,*box,*prev,*stop,*toggle,*next,*random,*repeat,*appl;
    gboolean show_frame;
    /* mpd handle */
    MpdObj *mo;
+   gchar* client_appl;
    gchar* mpd_host;
    gint mpd_port;
    gchar * mpd_password;
@@ -50,6 +51,7 @@ typedef struct {
    GtkWidget *textbox_host;
    GtkWidget *textbox_port;
    GtkWidget *textbox_password;
+   GtkWidget *textbox_client_appl;
    GtkWidget *checkbox_frame;
 } t_mpc_dialog;
 

@@ -60,7 +60,7 @@ mpc_set_size (XfcePanelPlugin * plugin, int size, t_mpc * mpc)
    {
       gtk_container_set_border_width (GTK_CONTAINER (mpc->frame), 2);
       if (xfce_panel_plugin_get_orientation (plugin) == GTK_ORIENTATION_HORIZONTAL)
-	 gtk_widget_set_size_request (GTK_WIDGET (mpc->frame), -1, size-2 );
+         gtk_widget_set_size_request (GTK_WIDGET (mpc->frame), -1, size-2 );
       else
          gtk_widget_set_size_request (GTK_WIDGET (mpc->frame), size-4 , -1);
    }
@@ -97,11 +97,12 @@ mpc_read_config (XfcePanelPlugin * plugin, t_mpc * mpc)
    mpc->mpd_port = xfce_rc_read_int_entry (rc, "mpd_port", DEFAULT_MPD_PORT);
    mpc->mpd_password = g_strdup(xfce_rc_read_entry (rc, "mpd_password", ""));
    mpc->show_frame = xfce_rc_read_bool_entry (rc, "show_frame", TRUE);
-   DBG ("Settings : %s@%s:%d\nframe:%d", mpc->mpd_password, mpc->mpd_host, mpc->mpd_port, mpc->show_frame);
+   mpc->client_appl = g_strdup(xfce_rc_read_entry (rc, "client_appl",  ""));
+   DBG ("Settings : %s@%s:%d\nframe:%d\nappl:%s", mpc->mpd_password, mpc->mpd_host, mpc->mpd_port, mpc->show_frame, mpc->client_appl);
    xfce_rc_close (rc);
 }
 
-	
+
 static void mpc_write_config (XfcePanelPlugin * plugin, t_mpc * mpc)
 {
    XfceRc *rc;
@@ -128,6 +129,7 @@ static void mpc_write_config (XfcePanelPlugin * plugin, t_mpc * mpc)
    xfce_rc_write_int_entry (rc, "mpd_port", mpc->mpd_port);
    xfce_rc_write_entry (rc, "mpd_password", mpc->mpd_password);
    xfce_rc_write_bool_entry (rc, "show_frame", mpc->show_frame);
+   xfce_rc_write_entry (rc, "client_appl", mpc->client_appl);
 
    xfce_rc_close (rc);
 }
@@ -148,13 +150,19 @@ static void
 mpc_dialog_apply_options (t_mpc_dialog *dialog)
 {
    DBG ("!");
+   GtkWidget *label;
+   char str[30];
 
    t_mpc *mpc = dialog->mpc;
    mpc->mpd_host = g_strndup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_host)),STRLENGTH);
    mpc->mpd_port = atoi(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_port)));
    mpc->mpd_password = g_strndup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_password)),STRLENGTH);
-   
-   DBG ("Apply: host=%s, port=%d, passwd=%s", mpc->mpd_host, mpc->mpd_port, mpc->mpd_password);
+   mpc->client_appl = g_strndup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_client_appl)),STRLENGTH);
+   label = gtk_bin_get_child(GTK_BIN(mpc->appl)); 
+   g_sprintf(str, "%s %s", _("Launch"), mpc->client_appl);
+   gtk_label_set_text(GTK_LABEL(label),str);
+
+   DBG ("Apply: host=%s, port=%d, passwd=%s, appl=%s", mpc->mpd_host, mpc->mpd_port, mpc->mpd_password, mpc->client_appl);
 
    mpd_disconnect(mpc->mo);
    mpd_set_hostname(mpc->mo,mpc->mpd_host);
@@ -224,10 +232,11 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
    gtk_widget_show (vbox);
    gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->vbox), vbox, TRUE, TRUE, 0);
     
-   table = gtk_table_new(3,2,FALSE);
+   table = gtk_table_new(4,2,FALSE);
    gtk_table_attach_defaults(GTK_TABLE(table),gtk_label_new(_("Host : ")),0,1,0,1);
    gtk_table_attach_defaults(GTK_TABLE(table),gtk_label_new(_("Port : ")),0,1,1,2);
    gtk_table_attach_defaults(GTK_TABLE(table),gtk_label_new(_("Password : ")),0,1,2,3);
+   gtk_table_attach_defaults(GTK_TABLE(table),gtk_label_new(_("Client : ")),0,1,3,4);
 
    dialog->textbox_host = gtk_entry_new();
    gtk_entry_set_width_chars(GTK_ENTRY(dialog->textbox_host),DIALOG_ENTRY_WIDTH);
@@ -245,6 +254,11 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
    gtk_entry_set_width_chars(GTK_ENTRY(dialog->textbox_password),DIALOG_ENTRY_WIDTH);
    gtk_entry_set_text(GTK_ENTRY(dialog->textbox_password),mpc->mpd_password);
    gtk_table_attach_defaults(GTK_TABLE(table),dialog->textbox_password,1,2,2,3);
+   
+   dialog->textbox_client_appl = gtk_entry_new();
+   gtk_entry_set_width_chars(GTK_ENTRY(dialog->textbox_client_appl),DIALOG_ENTRY_WIDTH);
+   gtk_entry_set_text(GTK_ENTRY(dialog->textbox_client_appl),mpc->client_appl);
+   gtk_table_attach_defaults(GTK_TABLE(table),dialog->textbox_client_appl,1,2,3,4);
     
    gtk_widget_show_all (table);
    gtk_box_pack_start (GTK_BOX (vbox), table, FALSE, FALSE, 0);
@@ -258,6 +272,13 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
     
    /* show the dialog */
    gtk_widget_show (dlg);
+}
+
+static void 
+mpc_launch_client(GtkWidget *widget, t_mpc* mpc)
+{
+   DBG("Going to xfce_exec(\"%s\")", mpc->client_appl);
+   xfce_exec(mpc->client_appl, FALSE, TRUE, NULL);
 }
 
 static void 
@@ -473,10 +494,14 @@ mpc_create (XfcePanelPlugin * plugin)
    g_signal_connect (G_OBJECT(mpc->random), "toggled", G_CALLBACK (mpc_random_toggled), mpc);
    mpc->repeat = gtk_check_menu_item_new_with_label (_("Repeat"));
    g_signal_connect (G_OBJECT(mpc->repeat), "toggled", G_CALLBACK (mpc_repeat_toggled), mpc);
+   mpc->appl = gtk_menu_item_new_with_label (_("Launch"));
+   g_signal_connect (G_OBJECT(mpc->appl), "activate", G_CALLBACK (mpc_launch_client), mpc);
    xfce_panel_plugin_menu_insert_item(plugin,GTK_MENU_ITEM(mpc->random));
    xfce_panel_plugin_menu_insert_item(plugin,GTK_MENU_ITEM(mpc->repeat));
+   xfce_panel_plugin_menu_insert_item(plugin,GTK_MENU_ITEM(mpc->appl));
    gtk_widget_show (mpc->repeat);
    gtk_widget_show (mpc->random);
+   gtk_widget_show (mpc->appl);
    gtk_widget_show_all (mpc->box);
     
    return mpc;
@@ -502,6 +527,7 @@ mpc_construct (XfcePanelPlugin * plugin)
    mpc->mpd_host = g_strdup(DEFAULT_MPD_HOST);
    mpc->mpd_port = DEFAULT_MPD_PORT;
    mpc->mpd_password = g_strdup("");
+   mpc->client_appl = g_strdup("");
    mpc->show_frame = TRUE;
    /* mpc->stay_connected = TRUE; */
 
