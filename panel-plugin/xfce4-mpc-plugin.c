@@ -74,6 +74,8 @@ mpc_read_config (XfcePanelPlugin * plugin, t_mpc * mpc)
 {
    char *file;
    XfceRc *rc;
+   GtkWidget *label;
+   char str[30];
 
    DBG ("!");
 
@@ -98,6 +100,9 @@ mpc_read_config (XfcePanelPlugin * plugin, t_mpc * mpc)
    mpc->mpd_password = g_strdup(xfce_rc_read_entry (rc, "mpd_password", ""));
    mpc->show_frame = xfce_rc_read_bool_entry (rc, "show_frame", TRUE);
    mpc->client_appl = g_strdup(xfce_rc_read_entry (rc, "client_appl",  ""));
+   label = gtk_bin_get_child(GTK_BIN(mpc->appl)); 
+   g_sprintf(str, "%s %s", _("Launch"), mpc->client_appl);
+   gtk_label_set_text(GTK_LABEL(label),str);
    DBG ("Settings : %s@%s:%d\nframe:%d\nappl:%s", mpc->mpd_password, mpc->mpd_host, mpc->mpd_port, mpc->show_frame, mpc->client_appl);
    xfce_rc_close (rc);
 }
