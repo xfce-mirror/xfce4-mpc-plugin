@@ -345,83 +345,169 @@ enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
    /* g_free(song); FIXME ?? */
 }
 
+static void
+playlist_title_dblclicked (GtkTreeView *treeview, GtkTreePath *path, GtkTreeViewColumn *col, t_mpc* mpc)
+{
+#ifdef HAVE_LIBMPD
+   GtkTreeModel *model;
+   GtkTreeIter iter;
+   gint id = 0, pos = 0;
+
+   model = gtk_tree_view_get_model(treeview);
+   if (gtk_tree_model_get_iter(model, &iter, path))
+   {
+      gtk_tree_model_get(model, &iter, 2, &pos, 3, &id, -1);
+      DBG("Dbl-clicked id %d (pos=%d)",id, pos);
+      mpd_player_play_id(mpc->mo, id);
+   }
+   gtk_widget_destroy(mpc->playlist);
+#endif
+}
+
+static void
+show_playlist (t_mpc* mpc)
+{
+#ifdef HAVE_LIBMPD
+   DBG("!");
+   GtkWidget *scrolledwin,*treeview;
+   GtkListStore *liststore;
+   GtkTreeIter iter;
+   GtkTreePath *path_to_cur;
+   GtkCellRenderer *renderer;
+   gchar str[512];
+   int current, i;
+   MpdData *mpd_data;
+
+   mpc->playlist = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+   gtk_window_set_default_size(GTK_WINDOW(mpc->playlist), 300, 530);
+   gtk_window_set_icon_name(GTK_WINDOW(mpc->playlist),"xfce-multimedia");
+   gtk_window_set_title(GTK_WINDOW(mpc->playlist),_("Mpd playlist"));
+   gtk_window_set_keep_above(GTK_WINDOW(mpc->playlist),TRUE); /* UGLY !!! */
+   scrolledwin = gtk_scrolled_window_new(NULL, NULL);
+   gtk_container_add(GTK_CONTAINER(mpc->playlist),GTK_WIDGET(scrolledwin));
+
+   treeview = gtk_tree_view_new ();
+   gtk_tree_view_set_headers_visible(GTK_TREE_VIEW(treeview), FALSE);
+   gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(treeview), TRUE);
+   g_signal_connect(treeview, "row-activated", G_CALLBACK(playlist_title_dblclicked), mpc);
+   gtk_container_add(GTK_CONTAINER(scrolledwin),treeview);
+
+   liststore = gtk_list_store_new(4, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_INT, G_TYPE_INT);
+   gtk_tree_view_set_model (GTK_TREE_VIEW (treeview), GTK_TREE_MODEL(liststore));
+
+   renderer = gtk_cell_renderer_pixbuf_new ();
+   gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (treeview), -1, "Icon", renderer, "stock-id", 0, NULL);
+   renderer = gtk_cell_renderer_text_new ();
+   gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (treeview), -1, "Title", renderer, "text", 1, NULL);
+
+   mpc_plugin_reconnect(mpc);
+
+   current = mpd_player_get_current_song_pos (mpc->mo);
+   DBG ("Current song pos in the list: %d", current);
+
+   for (i=0, mpd_data = mpd_playlist_get_changes (mpc->mo, -1); mpd_data != NULL; i++, mpd_data=mpd_data_get_next (mpd_data))
+   {
+      g_sprintf(str,"%s - %s", mpd_data->song->artist, mpd_data->song->title);
+
+      gtk_list_store_append (liststore, &iter);
+      if (current == i)
+      {
+         gtk_list_store_set (liststore, &iter, 0, "gtk-media-play", 1, str, 2, mpd_data->song->pos, 3, mpd_data->song->id, -1);
+         path_to_cur = gtk_tree_model_get_path(GTK_TREE_MODEL(liststore), &iter);
+         gtk_tree_view_scroll_to_cell(GTK_TREE_VIEW(treeview), path_to_cur, NULL, TRUE, 0.5, 0);
+         gtk_tree_view_set_cursor(GTK_TREE_VIEW(treeview), path_to_cur, NULL, FALSE);
+         gtk_tree_path_free(path_to_cur);
+      }
+      else
+         gtk_list_store_set (liststore, &iter, 0, NULL, 1, str, 2, mpd_data->song->pos, 3, mpd_data->song->id, -1);
+   }
+   gtk_widget_show_all(mpc->playlist);
+#endif
+}
+
 static void 
 toggle(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc)
 {
-   DBG("!");
-
-   if (event->button != 1) 
-      return;
-   
-   if (mpd_status_update (mpc->mo) != MPD_OK)
-      if (!mpc_plugin_reconnect (mpc))
-         return;
-   
-   switch (mpd_player_get_state(mpc->mo))
+   if (1 == event->button)
    {
-      case MPD_PLAYER_PAUSE:
-      case MPD_PLAYER_PLAY:
-         mpd_player_pause(mpc->mo); /* toggles play/pause */
-         break;
-      case MPD_PLAYER_STOP:
-      default:
-         mpd_player_play(mpc->mo); /* if stopped, mpd_player_pause() doesn't restart playing */
-         break;
+      if (mpd_status_update (mpc->mo) != MPD_OK)
+         if (!mpc_plugin_reconnect (mpc))
+            return;
+
+      switch (mpd_player_get_state(mpc->mo))
+      {
+         case MPD_PLAYER_PAUSE:
+         case MPD_PLAYER_PLAY:
+            mpd_player_pause(mpc->mo); /* toggles play/pause */
+            break;
+         case MPD_PLAYER_STOP:
+         default:
+            mpd_player_play(mpc->mo); /* if stopped, mpd_player_pause() doesn't restart playing */
+            break;
+      }
    }
+   else
+      show_playlist(mpc);
 }
 
 static void 
 prev(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc) 
 {
-   if (event->button != 1) 
-      return;
-   
-   if (mpd_player_prev(mpc->mo) != MPD_OK)
+   if (1 == event->button)
    {
-      if (mpc_plugin_reconnect (mpc))
+      if (mpd_player_prev(mpc->mo) != MPD_OK)
       {
-         DBG("calling mpd_player_prev() after reconnect");
-	 mpd_player_prev(mpc->mo);
+         if (mpc_plugin_reconnect(mpc))
+         {
+            DBG("calling mpd_player_prev() after reconnect");
+            mpd_player_prev(mpc->mo);
+         }
       }
+      else
+         DBG("mpd_player_prev() ok");
    }
    else
-      DBG("mpd_player_prev() ok");
+      show_playlist(mpc);
 }
 
 static void 
 stop(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc) 
 {
-   if (event->button != 1) 
-      return;
-   
-   if (mpd_player_stop(mpc->mo) != MPD_OK)
+   if (1 == event->button)
    {
-      if (mpc_plugin_reconnect(mpc))
+      if (mpd_player_stop(mpc->mo) != MPD_OK)
       {
-         DBG("calling mpd_player_stop() after reconnect");
-	 mpd_player_stop(mpc->mo);
+         if (mpc_plugin_reconnect(mpc))
+         {
+            DBG("calling mpd_player_stop() after reconnect");
+            mpd_player_stop(mpc->mo);
+         }
       }
+      else
+         DBG("mpd_player_stop() ok");
    }
    else
-      DBG("mpd_player_stop() ok");
+      show_playlist(mpc);
 }
 
 static void 
 next(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc) 
 {
-   if (event->button != 1) 
-      return;
-   
-   if (mpd_player_next(mpc->mo) != MPD_OK)
+   if (1 == event->button)
    {
-      if (mpc_plugin_reconnect (mpc))
+      if (mpd_player_next(mpc->mo) != MPD_OK)
       {
-         DBG("calling mpd_player_next() after reconnect");
-	 mpd_player_next(mpc->mo);
+         if (mpc_plugin_reconnect(mpc))
+         {
+            DBG("calling mpd_player_next() after reconnect");
+            mpd_player_next(mpc->mo);
+         }
       }
+      else
+         DBG("mpd_player_next() ok");
    }
    else
-      DBG("mpd_player_next() ok");
+      show_playlist(mpc);
 }
 
 static void 
@@ -435,8 +521,8 @@ scroll_cb(GtkWidget *widget, GdkEventScroll* event, t_mpc* mpc)
    {
       if (!mpc_plugin_reconnect (mpc) || mpd_status_update (mpc->mo) != MPD_OK)
       {
-	 gtk_tooltips_set_tip (mpc->tips, widget, _(".... not connected ?"), NULL);
-	 return;
+         gtk_tooltips_set_tip (mpc->tips, widget, _(".... not connected ?"), NULL);
+         return;
       }
    }
 
@@ -534,7 +620,7 @@ mpc_construct (XfcePanelPlugin * plugin)
    mpc->mpd_password = g_strdup("");
    mpc->client_appl = g_strdup("");
    mpc->show_frame = TRUE;
-   /* mpc->stay_connected = TRUE; */
+   mpc->playlist = NULL;
 
    mpc_read_config (plugin, mpc);
    

@@ -35,6 +35,7 @@ typedef struct {
    XfcePanelPlugin *plugin;
    GtkTooltips *tips;
    GtkWidget *frame,*ebox,*box,*prev,*stop,*toggle,*next,*random,*repeat,*appl;
+   GtkWidget *playlist;
    gboolean show_frame;
    /* mpd handle */
    MpdObj *mo;
