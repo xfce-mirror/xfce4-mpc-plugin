@@ -53,6 +53,7 @@ MpdObj* mpd_new(char* host, int port, char* pass)
    mo->repeat = 0;
    mo->random = 0;
    mo->curvol = 0;
+   mo->cursong = 0;
    mo->error = 0;
    mo->buffer[0] = '\0';
    mo->buflen = 0;
@@ -267,7 +268,7 @@ void* send_complex_cmd(MpdObj* mo, char* cmd, void* (*parse_answer_fct)())
 {
    int nbwri;
    void *res = NULL;
-   /* write 'status' to socket */
+   /* write 'cmd' to socket */
    if (mo->socket) 
    {
       DBG("Sending \"%s\"",cmd);
@@ -315,6 +316,7 @@ void * parse_status_answer(MpdObj *mo)
       if      (0 == strcmp("volume",key)) mo->curvol = atoi(value);
       else if (0 == strcmp("repeat",key)) mo->repeat = atoi(value);
       else if (0 == strcmp("random",key)) mo->random = atoi(value);
+      else if (0 == strcmp("song",key)) mo->cursong = atoi(value);
       else if (0 == strcmp("state", key)) 
       {
          if      (0 == strcmp("play", value)) mo->status = MPD_PLAYER_PLAY;
@@ -366,6 +368,14 @@ void* parse_currentsong_answer(MpdObj *mo)
    return (void*) ms;
 }
 
+void* parse_playlistinfo_answer(MpdObj *mo)
+{
+   MpdData* md = (MpdData*) calloc(1, sizeof(MpdData));
+   /* mimic parse_currentsong_answer on a large loop */
+   /* TODO HERE */
+   return (void*) md;
+}
+
 mpd_Song* mpd_playlist_get_current_song(MpdObj* mo)
 {
    mpd_Song* ms;
@@ -373,6 +383,35 @@ mpd_Song* mpd_playlist_get_current_song(MpdObj* mo)
    ms = (mpd_Song*) send_complex_cmd(mo, "currentsong\n", parse_currentsong_answer);
    /* return NULL if error */
    return ((!mo->error) ? ms : NULL);
+}
+
+int mpd_player_get_current_song_pos(MpdObj* mo)
+{
+   DBG("!");
+   return ((mpd_status_update(mo) != MPD_OK) ? -1 : mo->cursong);
+}
+
+MpdData* mpd_playlist_get_changes(MpdObj* mo, int old_playlist_id)
+{
+   MpdData* md;
+   DBG("!");
+   md = (MpdData*) send_complex_cmd(mo, "playlistinfo\n", parse_playlistinfo_answer);
+   /* return NULL if error */
+   return ((!mo->error) ? md : NULL);
+}
+
+MpdData* mpd_data_get_next(MpdData* md)
+{
+   md->cur++;
+   /* return NULL if after last */
+   if (md->cur == md->nb)
+   {
+      /* free recursively(md) */
+      /* TODO HERE */
+      return NULL;
+   }
+   md->song = md->allsongs[md->cur];
+   return md;
 }
 
 void mpd_status_set_volume(MpdObj* mo, int newvol)
@@ -450,6 +489,14 @@ int mpd_player_play(MpdObj* mo)
 {
    DBG("!");
    return mpd_send_single_cmd(mo,"play\n");
+}
+
+int mpd_player_play_id(MpdObj* mo, int id)
+{
+   char outbuf[15];
+   DBG("!");
+   sprintf(outbuf,"play %d\n",id);
+   return mpd_send_single_cmd(mo,outbuf);
 }
 
 int mpd_check_error(MpdObj* mo)

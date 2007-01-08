@@ -16,7 +16,7 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
- 
+
 /* double inclusion ?*/
 #ifdef HAVE_CONFIG_H
 #include <config.h>
@@ -37,25 +37,25 @@ static void
 mpc_free (XfcePanelPlugin * plugin, t_mpc * mpc)
 {
    DBG ("!");
-   
+
    g_object_unref (mpc->tips);
    mpd_free(mpc->mo);
    g_free (mpc);
 }
 
-static void 
+static void
 mpc_set_orientation (XfcePanelPlugin * plugin, GtkOrientation orientation, t_mpc * mpc)
 {
    DBG ("!");
-   
+
    xfce_hvbox_set_orientation(XFCE_HVBOX(mpc->box), orientation);
 }
 
-static gboolean 
+static gboolean
 mpc_set_size (XfcePanelPlugin * plugin, int size, t_mpc * mpc)
 {
    DBG ("size=%d",size);
-   
+
    if (size > 26)
    {
       gtk_container_set_border_width (GTK_CONTAINER (mpc->frame), 2);
@@ -69,7 +69,7 @@ mpc_set_size (XfcePanelPlugin * plugin, int size, t_mpc * mpc)
    return TRUE;
 }
 
-static void 
+static void
 mpc_read_config (XfcePanelPlugin * plugin, t_mpc * mpc)
 {
    char *file;
@@ -89,7 +89,7 @@ mpc_read_config (XfcePanelPlugin * plugin, t_mpc * mpc)
       return;
 
    xfce_rc_set_group (rc, "Settings");
-   
+
    if (mpc->mpd_host != NULL)
       g_free (mpc->mpd_host);
    if (mpc->mpd_password != NULL)
@@ -127,7 +127,7 @@ static void mpc_write_config (XfcePanelPlugin * plugin, t_mpc * mpc)
    /* if necessary, get rid of old settings */
    if (xfce_rc_has_group (rc, "Settings"))
       xfce_rc_delete_group (rc, "Settings", TRUE);
-   
+
    xfce_rc_set_group (rc, "Settings");
 
    xfce_rc_write_entry (rc, "mpd_host", mpc->mpd_host);
@@ -187,7 +187,7 @@ mpc_dialog_response (GtkWidget * dlg, int response, t_mpc_dialog * dialog)
 
    mpc_dialog_apply_options (dialog);
    g_free (dialog);
-    
+
    gtk_widget_destroy (dlg);
    xfce_panel_plugin_unblock_menu (mpc->plugin);
    mpc_write_config (mpc->plugin, mpc);
@@ -196,8 +196,8 @@ mpc_dialog_response (GtkWidget * dlg, int response, t_mpc_dialog * dialog)
 static void
 mpc_dialog_show_frame_toggled (GtkWidget *w, t_mpc_dialog *dialog)
 {
-   t_mpc* mpc = dialog->mpc; 
-   
+   t_mpc* mpc = dialog->mpc;
+
    DBG ("!");
 
    mpc->show_frame = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->checkbox_frame));
@@ -210,9 +210,9 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
    GtkWidget *dlg, *vbox, *table;
    gchar str_port[20];
    t_mpc_dialog *dialog;
-   
+
    DBG("!");
-   
+
    dialog = g_new0 (t_mpc_dialog, 1);
 
    dialog->mpc = mpc;
@@ -236,7 +236,7 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
    gtk_container_set_border_width (GTK_CONTAINER (vbox), 5);
    gtk_widget_show (vbox);
    gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->vbox), vbox, TRUE, TRUE, 0);
-    
+
    table = gtk_table_new(4,2,FALSE);
    gtk_table_attach_defaults(GTK_TABLE(table),gtk_label_new(_("Host : ")),0,1,0,1);
    gtk_table_attach_defaults(GTK_TABLE(table),gtk_label_new(_("Port : ")),0,1,1,2);
@@ -247,24 +247,24 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
    gtk_entry_set_width_chars(GTK_ENTRY(dialog->textbox_host),DIALOG_ENTRY_WIDTH);
    gtk_entry_set_text(GTK_ENTRY(dialog->textbox_host),mpc->mpd_host);
    gtk_table_attach_defaults(GTK_TABLE(table),dialog->textbox_host,1,2,0,1);
-    
+
    dialog->textbox_port = gtk_entry_new();
    gtk_entry_set_width_chars(GTK_ENTRY(dialog->textbox_port),DIALOG_ENTRY_WIDTH);
    g_snprintf(str_port,sizeof(str_port),"%d",mpc->mpd_port);
    gtk_entry_set_text(GTK_ENTRY(dialog->textbox_port),str_port);
    gtk_table_attach_defaults(GTK_TABLE(table),dialog->textbox_port,1,2,1,2);
-   
+
    dialog->textbox_password = gtk_entry_new();
    gtk_entry_set_visibility(GTK_ENTRY(dialog->textbox_password),FALSE);
    gtk_entry_set_width_chars(GTK_ENTRY(dialog->textbox_password),DIALOG_ENTRY_WIDTH);
    gtk_entry_set_text(GTK_ENTRY(dialog->textbox_password),mpc->mpd_password);
    gtk_table_attach_defaults(GTK_TABLE(table),dialog->textbox_password,1,2,2,3);
-   
+
    dialog->textbox_client_appl = gtk_entry_new();
    gtk_entry_set_width_chars(GTK_ENTRY(dialog->textbox_client_appl),DIALOG_ENTRY_WIDTH);
    gtk_entry_set_text(GTK_ENTRY(dialog->textbox_client_appl),mpc->client_appl);
    gtk_table_attach_defaults(GTK_TABLE(table),dialog->textbox_client_appl,1,2,3,4);
-    
+
    gtk_widget_show_all (table);
    gtk_box_pack_start (GTK_BOX (vbox), table, FALSE, FALSE, 0);
 
@@ -274,70 +274,70 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
    gtk_box_pack_start (GTK_BOX (vbox), dialog->checkbox_frame, FALSE, FALSE, 0);
 
    g_signal_connect (dialog->checkbox_frame, "toggled", G_CALLBACK (mpc_dialog_show_frame_toggled), dialog);
-    
+
    /* show the dialog */
    gtk_widget_show (dlg);
 }
 
-static void 
+static void
 mpc_launch_client(GtkWidget *widget, t_mpc* mpc)
 {
    DBG("Going to xfce_exec(\"%s\")", mpc->client_appl);
    xfce_exec(mpc->client_appl, FALSE, TRUE, NULL);
 }
 
-static void 
+static void
 mpc_random_toggled(GtkWidget *widget, t_mpc* mpc)
 {
    DBG("!");
    mpd_player_set_random(mpc->mo, gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(widget)));
 }
 
-static void 
+static void
 mpc_repeat_toggled(GtkWidget *widget, t_mpc* mpc)
 {
    DBG("!");
    mpd_player_set_repeat(mpc->mo, gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(widget)));
 }
 
-static void 
+static void
 enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc) 
 {
    mpd_Song *song;
    gchar str[512];
-   
+
    DBG("!");
 
    if (mpd_status_update(mpc->mo) != MPD_OK)
    {
       if (!mpc_plugin_reconnect (mpc) || mpd_status_update (mpc->mo) != MPD_OK)
       {
-	 gtk_tooltips_set_tip (mpc->tips, widget, _(".... not connected ?"), NULL);
-	 return;
+         gtk_tooltips_set_tip (mpc->tips, widget, _(".... not connected ?"), NULL);
+         return;
       }
    }
 
    switch (mpd_player_get_state(mpc->mo))
    {
-      case MPD_PLAYER_PLAY:  
-	 sprintf(str, "Mpd Playing");
-	 break;
-      case MPD_PLAYER_PAUSE:   
-	 sprintf(str, "Mpd Paused");
-	 break;
+      case MPD_PLAYER_PLAY:
+         sprintf(str, "Mpd Playing");
+         break;
+      case MPD_PLAYER_PAUSE:
+         sprintf(str, "Mpd Paused");
+         break;
       case MPD_PLAYER_STOP:
-	 sprintf(str, "Mpd Stopped");
-	 break;
+         sprintf(str, "Mpd Stopped");
+         break;
       default:
-	 sprintf(str, "Mpd state ?");
-	 break;
+         sprintf(str, "Mpd state ?");
+         break;
    }
    song = mpd_playlist_get_current_song(mpc->mo);
-   if (song) 
+   if (song)
       g_sprintf(str,"%s - [%s - %s] -/- (#%s) %s", str, song->artist, song->album, song->track, song->title);
    else
       g_sprintf(str,"%s - Failed to get song info ?", str);
-   
+
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->random), mpd_player_get_random(mpc->mo));
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->repeat), mpd_player_get_repeat(mpc->mo));
 
@@ -348,7 +348,6 @@ enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
 static void
 playlist_title_dblclicked (GtkTreeView *treeview, GtkTreePath *path, GtkTreeViewColumn *col, t_mpc* mpc)
 {
-#ifdef HAVE_LIBMPD
    GtkTreeModel *model;
    GtkTreeIter iter;
    gint id = 0, pos = 0;
@@ -361,13 +360,11 @@ playlist_title_dblclicked (GtkTreeView *treeview, GtkTreePath *path, GtkTreeView
       mpd_player_play_id(mpc->mo, id);
    }
    gtk_widget_destroy(mpc->playlist);
-#endif
 }
 
 static void
 show_playlist (t_mpc* mpc)
 {
-#ifdef HAVE_LIBMPD
    DBG("!");
    GtkWidget *scrolledwin,*treeview;
    GtkListStore *liststore;
@@ -419,13 +416,12 @@ show_playlist (t_mpc* mpc)
          gtk_tree_path_free(path_to_cur);
       }
       else
-         gtk_list_store_set (liststore, &iter, 0, NULL, 1, str, 2, mpd_data->song->pos, 3, mpd_data->song->id, -1);
+         gtk_list_store_set (liststore, &iter, 0, "gtk-cdrom", 1, str, 2, mpd_data->song->pos, 3, mpd_data->song->id, -1);
    }
    gtk_widget_show_all(mpc->playlist);
-#endif
 }
 
-static void 
+static void
 toggle(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc)
 {
    if (1 == event->button)
@@ -450,8 +446,8 @@ toggle(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc)
       show_playlist(mpc);
 }
 
-static void 
-prev(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc) 
+static void
+prev(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc)
 {
    if (1 == event->button)
    {
@@ -470,8 +466,8 @@ prev(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc)
       show_playlist(mpc);
 }
 
-static void 
-stop(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc) 
+static void
+stop(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc)
 {
    if (1 == event->button)
    {
@@ -490,8 +486,8 @@ stop(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc)
       show_playlist(mpc);
 }
 
-static void 
-next(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc) 
+static void
+next(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc)
 {
    if (1 == event->button)
    {
@@ -510,11 +506,11 @@ next(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc)
       show_playlist(mpc);
 }
 
-static void 
+static void
 scroll_cb(GtkWidget *widget, GdkEventScroll* event, t_mpc* mpc)
 {
    int curvol=-1;
-   
+
    if (event->type != GDK_SCROLL)
       return;
    else if (mpd_status_update (mpc->mo) != MPD_OK)
@@ -533,7 +529,7 @@ scroll_cb(GtkWidget *widget, GdkEventScroll* event, t_mpc* mpc)
    mpd_status_set_volume(mpc->mo,curvol);
 }
 
-static void 
+static void
 new_button_with_img(XfcePanelPlugin * plugin, GtkWidget *parent, GtkWidget *button, gchar *icon, gpointer cb, gpointer data) 
 {
    GtkWidget *image;
@@ -548,20 +544,20 @@ new_button_with_img(XfcePanelPlugin * plugin, GtkWidget *parent, GtkWidget *butt
    gtk_box_pack_start (GTK_BOX(parent), button, TRUE,TRUE,0);
 }
 
-static t_mpc* 
+static t_mpc*
 mpc_create (XfcePanelPlugin * plugin)
 {
    t_mpc *mpc;
 
    DBG("!");
-   
+
    mpc = g_new0 (t_mpc, 1);
-   
+
    mpc->plugin = plugin;
    mpc->tips = gtk_tooltips_new ();
    g_object_ref (mpc->tips);
    gtk_object_sink (GTK_OBJECT (mpc->tips));
-    
+
    mpc->frame = gtk_frame_new (NULL);
    gtk_frame_set_shadow_type (GTK_FRAME (mpc->frame), GTK_SHADOW_IN);
    gtk_widget_show (mpc->frame);
@@ -570,17 +566,17 @@ mpc_create (XfcePanelPlugin * plugin)
    g_signal_connect (G_OBJECT(mpc->ebox), "enter_notify_event", G_CALLBACK(enter_cb), mpc);
    g_signal_connect (G_OBJECT(mpc->ebox), "scroll_event", G_CALLBACK(scroll_cb), mpc);
    gtk_widget_show (mpc->ebox);
-   
+
    mpc->box = (GtkWidget*) xfce_hvbox_new(xfce_panel_plugin_get_orientation(plugin), FALSE, 0);
-   
+
    gtk_container_add (GTK_CONTAINER(mpc->ebox), mpc->box);
    gtk_container_add (GTK_CONTAINER(mpc->frame), mpc->ebox);
-   
+
    new_button_with_img(plugin, mpc->box, mpc->prev, GTK_STOCK_MEDIA_PREVIOUS, G_CALLBACK(prev), mpc);
    new_button_with_img(plugin, mpc->box, mpc->stop, GTK_STOCK_MEDIA_STOP, G_CALLBACK(stop), mpc);
    new_button_with_img(plugin, mpc->box, mpc->toggle, GTK_STOCK_MEDIA_PAUSE, G_CALLBACK(toggle), mpc);
    new_button_with_img(plugin, mpc->box, mpc->next, GTK_STOCK_MEDIA_NEXT, G_CALLBACK(next), mpc);
-   
+
    mpc->random = gtk_check_menu_item_new_with_label (_("Random"));
    g_signal_connect (G_OBJECT(mpc->random), "toggled", G_CALLBACK (mpc_random_toggled), mpc);
    mpc->repeat = gtk_check_menu_item_new_with_label (_("Repeat"));
@@ -594,7 +590,7 @@ mpc_create (XfcePanelPlugin * plugin)
    gtk_widget_show (mpc->random);
    gtk_widget_show (mpc->appl);
    gtk_widget_show_all (mpc->box);
-    
+
    return mpc;
 }
 
@@ -623,14 +619,10 @@ mpc_construct (XfcePanelPlugin * plugin)
    mpc->playlist = NULL;
 
    mpc_read_config (plugin, mpc);
-   
+
    /* create a connection*/
    mpc->mo = mpd_new(mpc->mpd_host,mpc->mpd_port,mpc->mpd_password);
-/* no need to connect now, as we show configure dialog first then reconnect
-   mpd_connect(mpc->mo);
-   if (mpc->mpd_password)
-      mpd_send_password(mpc->mo);
-*/   
+
    gtk_container_add (GTK_CONTAINER (plugin), mpc->frame);
    gtk_frame_set_shadow_type (GTK_FRAME (mpc->frame), ((mpc->show_frame) ? GTK_SHADOW_IN : GTK_SHADOW_NONE));
 

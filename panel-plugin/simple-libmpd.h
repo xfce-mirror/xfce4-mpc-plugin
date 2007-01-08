@@ -46,6 +46,7 @@ typedef struct {
    int socket;
    int status;
    int curvol;
+   int cursong;
    int repeat;
    int random;
    int error;
@@ -58,7 +59,17 @@ typedef struct {
    char* album;
    char* track;
    char* title;
+   int pos;
+   int id;
 } mpd_Song;
+
+typedef struct {
+   /* here, i must cheat, too hard to follow libmpd's behaviour */
+   mpd_Song* song;
+   mpd_Song** allsongs;
+   int nb;
+   int cur;
+} MpdData;
 
 MpdObj* mpd_new(char*, int, char*);
 void mpd_free(MpdObj*);
@@ -73,6 +84,10 @@ int mpd_player_next(MpdObj*);
 int mpd_player_stop(MpdObj*);
 int mpd_player_pause(MpdObj*);
 int mpd_player_play(MpdObj*);
+int mpd_player_play_id(MpdObj*, int);
+int mpd_player_get_current_song_pos(MpdObj*);
+MpdData* mpd_playlist_get_changes(MpdObj*, int);
+MpdData* mpd_data_get_next(MpdData*);
 mpd_Song* mpd_playlist_get_current_song(MpdObj*);
 int mpd_check_error(MpdObj*);
 void mpd_set_hostname(MpdObj*, char*);
