@@ -1,7 +1,7 @@
 /* simple-libmpd.h
- * 
- * Copyright (c) 2006 Landry Breuil (landry at fr.homeunix.org / gaston at gcu.info)
- * This code is licenced under a BSD-style licence. 
+ *
+ * Copyright (c) 2006-2007 Landry Breuil (landry at fr.homeunix.org / gaston at gcu.info)
+ * This code is licenced under a BSD-style licence.
  * (OpenBSD variant modeled after the ISC licence)
  * All rights reserved.
  * Permission to use, copy, modify, and distribute this software for any
@@ -17,7 +17,7 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-/* for gchar and g_new conveniences */ 
+/* for gchar and g_new conveniences */
 #include <gtk/gtk.h>
 
 #define MPD_PLAYER_STOP 1
@@ -39,20 +39,6 @@
 #define MPD_ERROR_SENDING     16 /* error sending command */
 #define MPD_ERROR_CONNCLOSED  17 /* connection closed by mpd */
 
-typedef struct {
-   gchar* host;
-   int port;
-   gchar* pass;
-   int socket;
-   int status;
-   int curvol;
-   int cursong;
-   int repeat;
-   int random;
-   int error;
-   char buffer[MAXBUFLEN+1];
-   int buflen;
-} MpdObj;
 
 typedef struct {
    char* artist;
@@ -64,9 +50,29 @@ typedef struct {
 } mpd_Song;
 
 typedef struct {
-   /* here, i must cheat, too hard to follow libmpd's behaviour */
+   gchar* host;
+   int port;
+   gchar* pass;
+   int socket;
+   int status;
+   int curvol;
+   int song;
+   int songid;
+   int repeat;
+   int random;
+   int playlistlength;
+   mpd_Song* cursong;
+   int error;
+   char buffer[MAXBUFLEN*2];
+   int buflen;
+} MpdObj;
+
+/* here, i must cheat, too hard to follow libmpd's behaviour */
+typedef struct {
+   /* ptr to current song */
    mpd_Song* song;
-   mpd_Song** allsongs;
+   /* vector of all songs in playlist */
+   mpd_Song* allsongs;
    int nb;
    int cur;
 } MpdData;

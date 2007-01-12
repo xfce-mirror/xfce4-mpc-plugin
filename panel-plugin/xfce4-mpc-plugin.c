@@ -1,7 +1,7 @@
 /* xfce4-mpc-plugin.c
- * 
- * Copyright (c) 2006 Landry Breuil (landry at fr.homeunix.org / gaston at gcu.info)
- * This code is licenced under a BSD-style licence. 
+ *
+ * Copyright (c) 2006-2007 Landry Breuil (landry at fr.homeunix.org / gaston at gcu.info)
+ * This code is licenced under a BSD-style licence.
  * (OpenBSD variant modeled after the ISC licence)
  * All rights reserved.
  * Permission to use, copy, modify, and distribute this software for any
@@ -100,7 +100,7 @@ mpc_read_config (XfcePanelPlugin * plugin, t_mpc * mpc)
    mpc->mpd_password = g_strdup(xfce_rc_read_entry (rc, "mpd_password", ""));
    mpc->show_frame = xfce_rc_read_bool_entry (rc, "show_frame", TRUE);
    mpc->client_appl = g_strdup(xfce_rc_read_entry (rc, "client_appl",  ""));
-   label = gtk_bin_get_child(GTK_BIN(mpc->appl)); 
+   label = gtk_bin_get_child(GTK_BIN(mpc->appl));
    g_sprintf(str, "%s %s", _("Launch"), mpc->client_appl);
    gtk_label_set_text(GTK_LABEL(label),str);
    DBG ("Settings : %s@%s:%d\nframe:%d\nappl:%s", mpc->mpd_password, mpc->mpd_host, mpc->mpd_port, mpc->show_frame, mpc->client_appl);
@@ -163,7 +163,7 @@ mpc_dialog_apply_options (t_mpc_dialog *dialog)
    mpc->mpd_port = atoi(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_port)));
    mpc->mpd_password = g_strndup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_password)),STRLENGTH);
    mpc->client_appl = g_strndup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_client_appl)),STRLENGTH);
-   label = gtk_bin_get_child(GTK_BIN(mpc->appl)); 
+   label = gtk_bin_get_child(GTK_BIN(mpc->appl));
    g_sprintf(str, "%s %s", _("Launch"), mpc->client_appl);
    gtk_label_set_text(GTK_LABEL(label),str);
 
@@ -301,7 +301,7 @@ mpc_repeat_toggled(GtkWidget *widget, t_mpc* mpc)
 }
 
 static void
-enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc) 
+enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
 {
    mpd_Song *song;
    gchar str[512];
@@ -317,19 +317,21 @@ enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
       }
    }
 
+   g_sprintf(str, "Volume : %d%%", mpd_status_get_volume(mpc->mo));
+
    switch (mpd_player_get_state(mpc->mo))
    {
       case MPD_PLAYER_PLAY:
-         sprintf(str, "Mpd Playing");
+         g_sprintf(str, "%s - Mpd Playing",str);
          break;
       case MPD_PLAYER_PAUSE:
-         sprintf(str, "Mpd Paused");
+         g_sprintf(str, "%s - Mpd Paused",str);
          break;
       case MPD_PLAYER_STOP:
-         sprintf(str, "Mpd Stopped");
+         g_sprintf(str, "%s - Mpd Stopped",str);
          break;
       default:
-         sprintf(str, "Mpd state ?");
+         g_sprintf(str, "%s - Mpd state ?",str);
          break;
    }
    song = mpd_playlist_get_current_song(mpc->mo);
@@ -342,7 +344,6 @@ enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->repeat), mpd_player_get_repeat(mpc->mo));
 
    gtk_tooltips_set_tip (mpc->tips, widget, str, NULL);
-   /* g_free(song); FIXME ?? */
 }
 
 static void
@@ -401,8 +402,9 @@ show_playlist (t_mpc* mpc)
 
    current = mpd_player_get_current_song_pos (mpc->mo);
    DBG ("Current song pos in the list: %d", current);
-
-   for (i=0, mpd_data = mpd_playlist_get_changes (mpc->mo, -1); mpd_data != NULL; i++, mpd_data=mpd_data_get_next (mpd_data))
+   mpd_data = mpd_playlist_get_changes (mpc->mo, -1);
+   DBG ("Got playlist, creating window");
+   for (i=0 ; (mpd_data = mpd_data_get_next (mpd_data)) ; i++)
    {
       g_sprintf(str,"%s - %s", mpd_data->song->artist, mpd_data->song->title);
 
@@ -530,7 +532,7 @@ scroll_cb(GtkWidget *widget, GdkEventScroll* event, t_mpc* mpc)
 }
 
 static void
-new_button_with_img(XfcePanelPlugin * plugin, GtkWidget *parent, GtkWidget *button, gchar *icon, gpointer cb, gpointer data) 
+new_button_with_img(XfcePanelPlugin * plugin, GtkWidget *parent, GtkWidget *button, gchar *icon, gpointer cb, gpointer data)
 {
    GtkWidget *image;
 
@@ -601,7 +603,6 @@ mpc_construct (XfcePanelPlugin * plugin)
 
    DBG("!");
 #if DEBUG
-/*   setvbuf(stdout, NULL, _IONBF, 0); */
 #ifdef HAVE_LIBMPD
    debug_set_level(10);
 #endif
@@ -609,7 +610,7 @@ mpc_construct (XfcePanelPlugin * plugin)
 
    xfce_textdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR, "UTF-8");
 
-    /* create widgets */
+   /* create widgets */
    mpc = mpc_create (plugin);
    mpc->mpd_host = g_strdup(DEFAULT_MPD_HOST);
    mpc->mpd_port = DEFAULT_MPD_PORT;
