@@ -373,7 +373,7 @@ show_playlist (t_mpc* mpc)
    GtkTreePath *path_to_cur;
    GtkCellRenderer *renderer;
    gchar str[512];
-   int current, i;
+   int current;
    MpdData *mpd_data;
 
    mpc->playlist = gtk_window_new(GTK_WINDOW_TOPLEVEL);
@@ -404,12 +404,12 @@ show_playlist (t_mpc* mpc)
    DBG ("Current song pos in the list: %d", current);
    mpd_data = mpd_playlist_get_changes (mpc->mo, -1);
    DBG ("Got playlist, creating window");
-   for (i=0 ; (mpd_data = mpd_data_get_next (mpd_data)) ; i++)
+   for (;(mpd_data = mpd_data_get_next (mpd_data));)
    {
       g_sprintf(str,"%s - %s", mpd_data->song->artist, mpd_data->song->title);
 
       gtk_list_store_append (liststore, &iter);
-      if (current == i)
+      if (current == mpd_data->song->pos)
       {
          gtk_list_store_set (liststore, &iter, 0, "gtk-media-play", 1, str, 2, mpd_data->song->pos, 3, mpd_data->song->id, -1);
          path_to_cur = gtk_tree_model_get_path(GTK_TREE_MODEL(liststore), &iter);
