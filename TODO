@@ -1,2 +1,2 @@
-- add a simple track selection window (no complete playlist mgmt)
-- run a standalone configurable client on demand (dbl click ?)
+- improve playlist management, keep it persistent instead of creating it on each middle-click
+- add configurable title display string (with %artist%, %title%, %track%, %album%...) in tooltip and playlist

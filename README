@@ -4,20 +4,25 @@ Xfce4-Mpc-Plugin
 This is a simple Musicpd (http://www.musicpd.org) client plugin for the Xfce 4.4 panel.
 Features :
 - next/stop/play/pause/previous buttons
-- current status/playing track when mouse passes over the plugin
+- current volume/status/playing track when mouse passes over the plugin
 - decrease/increase volume with mousewheel
+- show a simple playlist window upon middle-click, permitting to select a track to play
 - toggle random/repeat in right-click menu
+- launch configurable client (gmpc, xterm -e ncmpc,..) through right-click menu
 
 To build it, you have two options :
-- against libmpd libraries : 
+- against libmpd libraries :
 Get'em from your OS' repository/ports, or from source here : http://cms.qballcow.nl
 It will be autodetected by pkg-config.
 If libmpd is not installed in a standard directory, use --with-libmpd=path_to_libmpd.
-- without libmpd :
-In 0.2.0, i implemented a simple interface with mpd, using plain old sockets.
+- without libmpd, using simple-libmpd :
+Since 0.2.0, i implemented a simple interface with mpd, using plain old sockets.
 If libmpd is not found, it will be used as a fallback (or if you specify --without-libmpd)
 
 ./configure && make && su -c make install should suffice in most cases.
+
+If it crashes, recompile it with --enable-debug=full, add it to the panel, attach gdb to it
+(gdb -p `pidof xfce4-mpc-plugin` , continue) and report a bug with a complete backtrace.
 
 This little piece of code is licensed under a BSD-style licence.
 (OpenBSD variant modeled after the ISC licence)

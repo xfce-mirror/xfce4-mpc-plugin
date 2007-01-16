@@ -1,3 +1,9 @@
+16-01-2007 Landry Breuil <landry at fr.homeunix.org>
+   * release 0.3.0
+   * added configurable client (gmpc, xterm -e ncmpc,..) entry in context menu (uses xfce_exec())
+   * added simple playlist window on middle-click permitting to select a track to play
+   * completed simple-libmpd to improve communication with mpd
+
 26-10-2006 Landry Breuil <landry at fr.homeunix.org>
    * release 0.2.0
    * written a simple interface with mpd when libmpd is not available
