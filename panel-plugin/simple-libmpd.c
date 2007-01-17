@@ -80,7 +80,7 @@ void mpd_connect(MpdObj* mo)
    struct hostent* remote_he;
    struct sockaddr* remote_sa;
    struct sockaddr_in remote_si;
-   int flags,err,nbread;
+   int err,nbread;
    struct timeval tv;
    fd_set fds;
 
@@ -112,9 +112,7 @@ void mpd_connect(MpdObj* mo)
       return;
    }
 
-   flags = fcntl(mo->socket, F_GETFL, 0);
-   fcntl(mo->socket, F_SETFL, flags | O_NONBLOCK);
-   if (connect(mo->socket,remote_sa, sizeof(struct sockaddr_in)) < 0 && errno != EINPROGRESS)
+   if (connect(mo->socket,remote_sa, sizeof(struct sockaddr_in)) < 0)
    {
       mo->error = MPD_ERROR_CONNPORT;
       DBG("ERROR @connect(), err=%s",strerror(errno));
