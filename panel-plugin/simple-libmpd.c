@@ -125,7 +125,7 @@ void mpd_connect(MpdObj* mo)
    FD_SET(mo->socket,&fds);
    if((err = select(mo->socket+1,&fds,NULL,NULL,&tv)) == 1)
    {
-      if ((nbread = recv(mo->socket, mo->buffer, MAXBUFLEN, 0)) < 0)
+      if ((nbread = recv(mo->socket, mo->recv_buffer, MAXBUFLEN, 0)) < 0)
       {
          mo->error = MPD_ERROR_NORESPONSE;
          DBG("ERROR @recv(), err=%s",strerror(errno));
@@ -138,6 +138,7 @@ void mpd_connect(MpdObj* mo)
           return;
       }
       mo->buflen = nbread;
+      strncpy(mo->buffer, mo->recv_buffer, mo->buflen);
       mo->buffer[mo->buflen] = '\0';
    }
    else if(err < 0)
@@ -195,7 +196,7 @@ int mpd_wait_for_answer(MpdObj *mo)
    FD_SET(mo->socket,&fds);
    if((err = select(mo->socket+1,&fds,NULL,NULL,&tv)) == 1)
    {
-      if ((nbread = recv(mo->socket, mo->buffer, MAXBUFLEN, 0)) < 0)
+      if ((nbread = recv(mo->socket, mo->recv_buffer, MAXBUFLEN, 0)) < 0)
       {
          mo->error = MPD_ERROR_NORESPONSE;
          DBG("ERROR @recv(), err=%s",strerror(errno));
@@ -210,6 +211,7 @@ int mpd_wait_for_answer(MpdObj *mo)
 
       DBG("Read %d bytes, buff=\"%s\"", nbread, mo->buffer);
       mo->buflen = nbread;
+      strncpy(mo->buffer, mo->recv_buffer, mo->buflen);
       mo->buffer[mo->buflen] = '\0';
    }
    else if(err < 0)
@@ -284,8 +286,8 @@ void send_complex_cmd(MpdObj* mo, char* cmd, void (*parse_answer_fct)(), void *r
       DBG("Sent %d bytes",nbwri);
 
       nbread = mpd_wait_for_answer(mo);
-      /* special case for long answers with 'playlistinfo' */
-      while (nbread == MAXBUFLEN)
+      /* special case for long answers with 'playlistinfo' - hack to loop until we have received the final OK\n*/
+      while (nbread == MAXBUFLEN || 0 != strcmp(mo->buffer + strlen(mo->buffer) - 3,"OK\n"))
       {
          /* save the end of the buffer from last occurence of 'file:', and replace it with 'OK\n' */
          ptr = g_strrstr(mo->buffer, "file:");
@@ -376,7 +378,6 @@ void parse_one_song(MpdObj *mo, void* param)
    mpd_Song* ms = (mpd_Song*) param;
    char *eol,*ptr;
    char key[15], value[200];
-
    ms->artist = ms->album = ms->title = ms->track = NULL;
    ms->id = ms->pos = 0;
 

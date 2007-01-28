@@ -398,7 +398,11 @@ show_playlist (t_mpc* mpc)
    renderer = gtk_cell_renderer_text_new ();
    gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (treeview), -1, "Title", renderer, "text", 1, NULL);
 
-   mpc_plugin_reconnect(mpc);
+   if (!mpc_plugin_reconnect(mpc))
+   {
+      gtk_widget_destroy(mpc->playlist);
+      return;
+   }
 
    current = mpd_player_get_current_song_pos (mpc->mo);
    DBG ("Current song pos in the list: %d", current);
