@@ -209,7 +209,7 @@ int mpd_wait_for_answer(MpdObj *mo)
          return -1;
       }
 
-      DBG("Read %d bytes, buff=\"%s\"", nbread, mo->buffer);
+      DBG("Read %d bytes, buff=\"%s\"", nbread, mo->recv_buffer);
       mo->buflen = nbread;
       strncpy(mo->buffer, mo->recv_buffer, mo->buflen);
       mo->buffer[mo->buflen] = '\0';
@@ -286,9 +286,8 @@ void send_complex_cmd(MpdObj* mo, char* cmd, void (*parse_answer_fct)(), void *r
       DBG("Sent %d bytes",nbwri);
 
       nbread = mpd_wait_for_answer(mo);
-      usleep(1000);
       /* special case for long answers with 'playlistinfo' - hack to loop until we have received the final OK\n*/
-      while (nbread == MAXBUFLEN || 0 != strcmp(mo->buffer + strlen(mo->buffer) - 3,"OK\n"))
+      while (!mo->error && ( nbread == MAXBUFLEN || 0 != strcmp(mo->buffer + strlen(mo->buffer) - 3,"OK\n")))
       {
          /* save the end of the buffer from last occurence of 'file:', and replace it with 'OK\n' */
          ptr = g_strrstr(mo->buffer, "file:");
@@ -300,8 +299,7 @@ void send_complex_cmd(MpdObj* mo, char* cmd, void (*parse_answer_fct)(), void *r
          DBG("tmp_buffer contains \"%s\"", tmp_buffer);
          DBG("buffer now contains \"%s\"", mo->buffer);
          /* parse buffer */
-         if (!mo->error)
-            (*parse_answer_fct)(mo, res);
+         (*parse_answer_fct)(mo, res);
 
          /* re-read stuff */
          nbread = mpd_wait_for_answer(mo);
