@@ -286,6 +286,7 @@ void send_complex_cmd(MpdObj* mo, char* cmd, void (*parse_answer_fct)(), void *r
       DBG("Sent %d bytes",nbwri);
 
       nbread = mpd_wait_for_answer(mo);
+      usleep(1000);
       /* special case for long answers with 'playlistinfo' - hack to loop until we have received the final OK\n*/
       while (nbread == MAXBUFLEN || 0 != strcmp(mo->buffer + strlen(mo->buffer) - 3,"OK\n"))
       {
