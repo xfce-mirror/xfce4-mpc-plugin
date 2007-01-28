@@ -1,3 +1,8 @@
+28-01-2007 Landry Breuil <landry at fr.homeunix.org>
+   * release 0.3.1
+   * fixed bugs in simple-libmpd.c, causing several crashes
+   * prevent creation of playlist window when mpd could not be contacted
+
 16-01-2007 Landry Breuil <landry at fr.homeunix.org>
    * release 0.3.0
    * added configurable client (gmpc, xterm -e ncmpc,..) entry in context menu (uses xfce_exec())
