@@ -5,7 +5,7 @@ xfce4_mpc_plugin_CFLAGS =						\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"				\
 	@LIBXFCE4PANEL_CFLAGS@
 
-xfce4_mpc_plugin_LDFLAGS =						\
+xfce4_mpc_plugin_LDADD =						\
 	@LIBXFCE4PANEL_LIBS@
 
 
