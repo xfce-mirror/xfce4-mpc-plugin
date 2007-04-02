@@ -10,9 +10,9 @@ xfce4_mpc_plugin_LDADD =						\
 
 
 xfce4_mpc_plugin_SOURCES = xfce4-mpc-plugin.c xfce4-mpc-plugin.h
-if HAVE_LIBMPD
+if USE_LIBMPD
 xfce4_mpc_plugin_CFLAGS += @LIBMPD_CFLAGS@
-xfce4_mpc_plugin_LDFLAGS += @LIBMPD_LIBS@
+xfce4_mpc_plugin_LDADD += @LIBMPD_LIBS@
 else
 xfce4_mpc_plugin_SOURCES += simple-libmpd.c simple-libmpd.h
 endif
