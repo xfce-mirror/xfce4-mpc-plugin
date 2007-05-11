@@ -408,7 +408,7 @@ show_playlist (t_mpc* mpc)
    DBG ("Current song pos in the list: %d", current);
    mpd_data = mpd_playlist_get_changes (mpc->mo, -1);
    DBG ("Got playlist, creating window");
-   for (;(mpd_data = mpd_data_get_next (mpd_data));)
+   do
    {
       g_sprintf(str,"%s - %s", mpd_data->song->artist, mpd_data->song->title);
 
@@ -423,7 +423,7 @@ show_playlist (t_mpc* mpc)
       }
       else
          gtk_list_store_set (liststore, &iter, 0, "gtk-cdrom", 1, str, 2, mpd_data->song->pos, 3, mpd_data->song->id, -1);
-   }
+   } while (mpd_data = mpd_data_get_next (mpd_data));
    gtk_widget_show_all(mpc->playlist);
 }
 
