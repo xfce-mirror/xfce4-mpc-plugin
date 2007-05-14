@@ -423,7 +423,7 @@ show_playlist (t_mpc* mpc)
       }
       else
          gtk_list_store_set (liststore, &iter, 0, "gtk-cdrom", 1, str, 2, mpd_data->song->pos, 3, mpd_data->song->id, -1);
-   } while (mpd_data = mpd_data_get_next (mpd_data));
+   } while (NULL != (mpd_data = mpd_data_get_next (mpd_data)));
    gtk_widget_show_all(mpc->playlist);
 }
 
@@ -607,7 +607,7 @@ mpc_construct (XfcePanelPlugin * plugin)
 
    DBG("!");
 #if DEBUG
-#ifdef HAVE_LIBMPD
+#if HAVE_LIBMPD
    debug_set_level(10);
 #endif
 #endif
