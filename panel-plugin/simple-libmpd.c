@@ -330,37 +330,31 @@ void send_complex_cmd(MpdObj* mo, char* cmd, void (*parse_answer_fct)(), void *r
 
 void parse_status_answer(MpdObj *mo, void* unused_param)
 {
-   char *eol,*ptr;
-   char key[15], value[200];
-
-   while (strcmp(mo->buffer,"OK\n"))
+   gchar **lines, **tokens;
+   int i;
+   mo->songid = -1;
+   lines = g_strsplit(mo->buffer, "\n", 0);
+   for (i = 0 ; mo->songid != -1 && lines[i] != NULL ; i++)
    {
-      /*HACK @#!*/
-      ptr = strstr(mo->buffer, ":");
-      eol = strstr(mo->buffer, "\n");
-      strncpy(key, mo->buffer, ptr - mo->buffer);
-      key[ptr - mo->buffer]='\0';
-      strncpy(value,ptr + 2 , eol - ptr - 2);
-      value[eol - ptr - 2]='\0';
-
-      DBG("key=\"%s\",value=\"%s\"", key, value);
-      if      (0 == strcmp("volume",key)) mo->curvol = atoi(value);
-      else if (0 == strcmp("repeat",key)) mo->repeat = atoi(value);
-      else if (0 == strcmp("random",key)) mo->random = atoi(value);
-      else if (0 == strcmp("playlistlength",key)) mo->playlistlength = atoi(value);
-      else if (0 == strcmp("state", key))
+      tokens = g_strsplit(lines[i], ":", 0);
+      DBG("key=\"%s\",value=\"%s\"", tokens[0], tokens[1] + 1);
+      if      (0 == strcmp("volume",tokens[0])) mo->curvol = atoi(tokens[1] + 1);
+      else if (0 == strcmp("repeat",tokens[0])) mo->repeat = atoi(tokens[1] + 1);
+      else if (0 == strcmp("random",tokens[0])) mo->random = atoi(tokens[1] + 1);
+      else if (0 == strcmp("playlistlength",tokens[0])) mo->playlistlength = atoi(tokens[1] + 1);
+      else if (0 == strcmp("state", tokens[0]))
       {
-         if      (0 == strcmp("play", value)) mo->status = MPD_PLAYER_PLAY;
-         else if (0 == strcmp("pause",value)) mo->status = MPD_PLAYER_PAUSE;
-         else if (0 == strcmp("stop", value)) mo->status = MPD_PLAYER_STOP;
+         if      (0 == strcmp("play", tokens[1] + 1)) mo->status = MPD_PLAYER_PLAY;
+         else if (0 == strcmp("pause",tokens[1] + 1)) mo->status = MPD_PLAYER_PAUSE;
+         else if (0 == strcmp("stop", tokens[1] + 1)) mo->status = MPD_PLAYER_STOP;
       }
-      else if (0 == strcmp("song",key)) mo->song = atoi(value);
-      else if (0 == strcmp("songid",key)) mo->songid = atoi(value);
-
-      *eol = '\0';
-      strcpy(mo->buffer, eol+1); /*overlap ! */
-      mo->buflen = strlen(mo->buffer);
+      else if (0 == strcmp("song",tokens[0])) mo->song = atoi(tokens[1] + 1);
+      else if (0 == strcmp("songid",tokens[0])) mo->songid = atoi(tokens[1] + 1);
+      g_strfreev(tokens);
    }
+   g_strfreev(lines);
+   *mo->buffer = '\0';
+   mo->buflen = 0;
 }
 
 int mpd_status_update(MpdObj* mo)
@@ -375,43 +369,64 @@ int mpd_status_update(MpdObj* mo)
 void parse_one_song(MpdObj *mo, void* param)
 {
    mpd_Song* ms = (mpd_Song*) param;
-   char *eol,*ptr;
-   char key[15], value[200];
+   gchar **lines, **tokens;
+   int i;
    ms->artist = ms->album = ms->title = ms->track = NULL;
    ms->id = ms->pos = 0;
 
-   while (!ms->id)
+   lines = g_strsplit(mo->buffer, "\n", 0);
+   for (i = 0 ; !ms->id && lines[i] != NULL ; i++)
    {
-      /*HACK @#!*/
-      ptr = strstr(mo->buffer, ":");
-      eol = strstr(mo->buffer, "\n");
-      strncpy(key, mo->buffer, ptr - mo->buffer);
-      key[ptr - mo->buffer]='\0';
-      strncpy(value,ptr + 2 , eol - ptr - 2);
-      value[eol - ptr - 2]='\0';
-
-      DBG("key=\"%s\",value=\"%s\"", key, value);
-      if      (!ms->artist && 0 == strcmp("Artist",key)) ms->artist= strdup(value);
-      else if (!ms->album  && 0 == strcmp("Album", key)) ms->album = strdup(value);
-      else if (!ms->title  && 0 == strcmp("Title", key)) ms->title = strdup(value);
-      else if (!ms->track  && 0 == strcmp("Track", key)) ms->track = strdup(value);
-      else if (!ms->pos    && 0 == strcmp("Pos",   key)) ms->pos   = atoi(value);
-      else if (!ms->id     && 0 == strcmp("Id",    key)) ms->id    = atoi(value);
-      *eol = '\0';
-      strcpy(mo->buffer, eol+1); /* overlap ! */
-      mo->buflen = strlen(mo->buffer);
+      tokens = g_strsplit(lines[i], ":", 0);
+      DBG("key=\"%s\",value=\"%s\"", tokens[0], tokens[1] + 1);
+      if      (!ms->artist && 0 == strcmp("Artist",tokens[0])) ms->artist= g_strdup(tokens[1] + 1);
+      else if (!ms->album  && 0 == strcmp("Album", tokens[0])) ms->album = g_strdup(tokens[1] + 1);
+      else if (!ms->title  && 0 == strcmp("Title", tokens[0])) ms->title = g_strdup(tokens[1] + 1);
+      else if (!ms->track  && 0 == strcmp("Track", tokens[0])) ms->track = g_strdup(tokens[1] + 1);
+      else if (!ms->pos    && 0 == strcmp("Pos",   tokens[0])) ms->pos   = atoi(tokens[1]);
+      else if (!ms->id     && 0 == strcmp("Id",    tokens[0])) ms->id    = atoi(tokens[1]);
+      g_strfreev(tokens);
    }
+   g_strfreev(lines);
+   *mo->buffer = '\0';
+   mo->buflen = 0;
 }
 
 void parse_playlistinfo_answer(MpdObj *mo, void *param)
 {
    MpdData* md = (MpdData*) param;
-   while (strcmp(mo->buffer,"OK\n"))
+   mpd_Song* ms = &md->allsongs[0];
+   gchar **lines, **tokens;
+   int i = 0;
+   ms->artist = ms->album = ms->title = ms->track = NULL;
+   ms->id = ms->pos = 0;
+
+   lines = g_strsplit(mo->buffer, "\n", 0);
+   for (i = 0 ; !strcmp(lines[i],"OK") ; i++)
    {
       DBG("Going to parse song #%d", md->nb);
-      parse_one_song(mo, (void*) &(md->allsongs[md->nb]));
-      md->nb++;
+
+      tokens = g_strsplit(lines[i], ":", 0);
+      DBG("key=\"%s\",value=\"%s\"", tokens[0], tokens[1] + 1);
+      if      (!ms->artist && 0 == strcmp("Artist",tokens[0])) ms->artist= g_strdup(tokens[1] + 1);
+      else if (!ms->album  && 0 == strcmp("Album", tokens[0])) ms->album = g_strdup(tokens[1] + 1);
+      else if (!ms->title  && 0 == strcmp("Title", tokens[0])) ms->title = g_strdup(tokens[1] + 1);
+      else if (!ms->track  && 0 == strcmp("Track", tokens[0])) ms->track = g_strdup(tokens[1] + 1);
+      else if (!ms->pos    && 0 == strcmp("Pos",   tokens[0])) ms->pos   = atoi(tokens[1]);
+      else if (!ms->id     && 0 == strcmp("Id",    tokens[0])) ms->id    = atoi(tokens[1]);
+
+      if (ms->id)
+      {
+         md->nb++;
+         ms = &md->allsongs[md->nb];
+         ms->artist = ms->album = ms->title = ms->track = NULL;
+         ms->id = ms->pos = 0;
+      }
+      g_strfreev(tokens);
    }
+   g_strfreev(lines);
+   *mo->buffer = '\0';
+   mo->buflen = 0;
    DBG("Got 'OK', md->nb = %d", md->nb);
 }
 
