@@ -336,25 +336,25 @@ void parse_status_answer(MpdObj *mo, void* unused_param)
    lines = g_strsplit(mo->buffer, "\n", 0);
    for (i = 0 ; mo->songid != -1 && lines[i] != NULL ; i++)
    {
-      tokens = g_strsplit(lines[i], ":", 0);
-      DBG("key=\"%s\",value=\"%s\"", tokens[0], tokens[1] + 1);
-      if      (0 == strcmp("volume",tokens[0])) mo->curvol = atoi(tokens[1] + 1);
-      else if (0 == strcmp("repeat",tokens[0])) mo->repeat = atoi(tokens[1] + 1);
-      else if (0 == strcmp("random",tokens[0])) mo->random = atoi(tokens[1] + 1);
-      else if (0 == strcmp("playlistlength",tokens[0])) mo->playlistlength = atoi(tokens[1] + 1);
+      tokens = g_strsplit(lines[i], ":", 2);
+      /* remove leading whitespace */
+      tokens[1] = g_strchug(tokens[1]);
+      DBG("key=\"%s\",value=\"%s\"", tokens[0], tokens[1]);
+      if      (0 == strcmp("volume",tokens[0])) mo->curvol = atoi(tokens[1]);
+      else if (0 == strcmp("repeat",tokens[0])) mo->repeat = atoi(tokens[1]);
+      else if (0 == strcmp("random",tokens[0])) mo->random = atoi(tokens[1]);
+      else if (0 == strcmp("playlistlength",tokens[0])) mo->playlistlength = atoi(tokens[1]);
       else if (0 == strcmp("state", tokens[0]))
       {
-         if      (0 == strcmp("play", tokens[1] + 1)) mo->status = MPD_PLAYER_PLAY;
-         else if (0 == strcmp("pause",tokens[1] + 1)) mo->status = MPD_PLAYER_PAUSE;
-         else if (0 == strcmp("stop", tokens[1] + 1)) mo->status = MPD_PLAYER_STOP;
+         if      (0 == strcmp("play", tokens[1])) mo->status = MPD_PLAYER_PLAY;
+         else if (0 == strcmp("pause",tokens[1])) mo->status = MPD_PLAYER_PAUSE;
+         else if (0 == strcmp("stop", tokens[1])) mo->status = MPD_PLAYER_STOP;
       }
-      else if (0 == strcmp("song",tokens[0])) mo->song = atoi(tokens[1] + 1);
-      else if (0 == strcmp("songid",tokens[0])) mo->songid = atoi(tokens[1] + 1);
+      else if (0 == strcmp("song",tokens[0])) mo->song = atoi(tokens[1]);
+      else if (0 == strcmp("songid",tokens[0])) mo->songid = atoi(tokens[1]);
       g_strfreev(tokens);
    }
    g_strfreev(lines);
-   *mo->buffer = '\0';
-   mo->buflen = 0;
 }
 
 int mpd_status_update(MpdObj* mo)
@@ -377,19 +377,19 @@ void parse_one_song(MpdObj *mo, void* param)
    lines = g_strsplit(mo->buffer, "\n", 0);
    for (i = 0 ; !ms->id && lines[i] != NULL ; i++)
    {
-      tokens = g_strsplit(lines[i], ":", 0);
-      DBG("key=\"%s\",value=\"%s\"", tokens[0], tokens[1] + 1);
-      if      (!ms->artist && 0 == strcmp("Artist",tokens[0])) ms->artist= g_strdup(tokens[1] + 1);
-      else if (!ms->album  && 0 == strcmp("Album", tokens[0])) ms->album = g_strdup(tokens[1] + 1);
-      else if (!ms->title  && 0 == strcmp("Title", tokens[0])) ms->title = g_strdup(tokens[1] + 1);
-      else if (!ms->track  && 0 == strcmp("Track", tokens[0])) ms->track = g_strdup(tokens[1] + 1);
+      tokens = g_strsplit(lines[i], ":", 2);
+      /* remove leading whitespace */
+      tokens[1] = g_strchug(tokens[1]);
+      DBG("key=\"%s\",value=\"%s\"", tokens[0], tokens[1]);
+      if      (!ms->artist && 0 == strcmp("Artist",tokens[0])) ms->artist= g_strdup(tokens[1]);
+      else if (!ms->album  && 0 == strcmp("Album", tokens[0])) ms->album = g_strdup(tokens[1]);
+      else if (!ms->title  && 0 == strcmp("Title", tokens[0])) ms->title = g_strdup(tokens[1]);
+      else if (!ms->track  && 0 == strcmp("Track", tokens[0])) ms->track = g_strdup(tokens[1]);
       else if (!ms->pos    && 0 == strcmp("Pos",   tokens[0])) ms->pos   = atoi(tokens[1]);
       else if (!ms->id     && 0 == strcmp("Id",    tokens[0])) ms->id    = atoi(tokens[1]);
       g_strfreev(tokens);
    }
    g_strfreev(lines);
-   *mo->buffer = '\0';
-   mo->buflen = 0;
 }
 
 void parse_playlistinfo_answer(MpdObj *mo, void *param)
@@ -401,17 +401,19 @@ void parse_playlistinfo_answer(MpdObj *mo, void *param)
    ms->artist = ms->album = ms->title = ms->track = NULL;
    ms->id = ms->pos = 0;
 
-   lines = g_strsplit(mo->buffer, "\n", 0);
+   lines = g_strsplit(mo->buffer, "\n", 2);
    for (i = 0 ; !strcmp(lines[i],"OK") ; i++)
    {
       DBG("Going to parse song #%d", md->nb);
 
       tokens = g_strsplit(lines[i], ":", 0);
-      DBG("key=\"%s\",value=\"%s\"", tokens[0], tokens[1] + 1);
-      if      (!ms->artist && 0 == strcmp("Artist",tokens[0])) ms->artist= g_strdup(tokens[1] + 1);
-      else if (!ms->album  && 0 == strcmp("Album", tokens[0])) ms->album = g_strdup(tokens[1] + 1);
-      else if (!ms->title  && 0 == strcmp("Title", tokens[0])) ms->title = g_strdup(tokens[1] + 1);
-      else if (!ms->track  && 0 == strcmp("Track", tokens[0])) ms->track = g_strdup(tokens[1] + 1);
+      /* remove leading whitespace */
+      tokens[1] = g_strchug(tokens[1]);
+      DBG("key=\"%s\",value=\"%s\"", tokens[0], tokens[1]);
+      if      (!ms->artist && 0 == strcmp("Artist",tokens[0])) ms->artist= g_strdup(tokens[1]);
+      else if (!ms->album  && 0 == strcmp("Album", tokens[0])) ms->album = g_strdup(tokens[1]);
+      else if (!ms->title  && 0 == strcmp("Title", tokens[0])) ms->title = g_strdup(tokens[1]);
+      else if (!ms->track  && 0 == strcmp("Track", tokens[0])) ms->track = g_strdup(tokens[1]);
       else if (!ms->pos    && 0 == strcmp("Pos",   tokens[0])) ms->pos   = atoi(tokens[1]);
       else if (!ms->id     && 0 == strcmp("Id",    tokens[0])) ms->id    = atoi(tokens[1]);
 
@@ -425,8 +427,6 @@ void parse_playlistinfo_answer(MpdObj *mo, void *param)
       g_strfreev(tokens);
    }
    g_strfreev(lines);
-   *mo->buffer = '\0';
-   mo->buflen = 0;
    DBG("Got 'OK', md->nb = %d", md->nb);
 }
 
