@@ -125,7 +125,7 @@ void mpd_connect(MpdObj* mo)
    FD_SET(mo->socket,&fds);
    if((err = select(mo->socket+1,&fds,NULL,NULL,&tv)) == 1)
    {
-      if ((nbread = recv(mo->socket, mo->recv_buffer, MAXBUFLEN, 0)) < 0)
+      if ((nbread = recv(mo->socket, mo->buffer, MAXBUFLEN, 0)) < 0)
       {
          mo->error = MPD_ERROR_NORESPONSE;
          DBG("ERROR @recv(), err=%s",strerror(errno));
@@ -138,7 +138,6 @@ void mpd_connect(MpdObj* mo)
           return;
       }
       mo->buflen = nbread;
-      strncpy(mo->buffer, mo->recv_buffer, mo->buflen);
       mo->buffer[mo->buflen] = '\0';
    }
    else if(err < 0)
@@ -196,7 +195,7 @@ int mpd_wait_for_answer(MpdObj *mo)
    FD_SET(mo->socket,&fds);
    if((err = select(mo->socket+1,&fds,NULL,NULL,&tv)) == 1)
    {
-      if ((nbread = recv(mo->socket, mo->recv_buffer, MAXBUFLEN, 0)) < 0)
+      if ((nbread = recv(mo->socket, mo->buffer, MAXBUFLEN, 0)) < 0)
       {
          mo->error = MPD_ERROR_NORESPONSE;
          DBG("ERROR @recv(), err=%s",strerror(errno));
@@ -209,10 +208,9 @@ int mpd_wait_for_answer(MpdObj *mo)
          return -1;
       }
 
-      DBG("Read %d bytes, buff=\"%s\"", nbread, mo->recv_buffer);
       mo->buflen = nbread;
-      strncpy(mo->buffer, mo->recv_buffer, mo->buflen);
       mo->buffer[mo->buflen] = '\0';
+      DBG("Read %d bytes, buff=\"%s\"", nbread, mo->buffer);
    }
    else if(err < 0)
    {
@@ -334,7 +332,7 @@ void parse_status_answer(MpdObj *mo, void* unused_param)
    int i;
    mo->songid = -1;
    lines = g_strsplit(mo->buffer, "\n", 0);
-   for (i = 0 ; mo->songid != -1 && lines[i] != NULL ; i++)
+   for (i = 0 ; lines[i] && mo->songid == -1 ; i++)
    {
       tokens = g_strsplit(lines[i], ":", 2);
       /* remove leading whitespace */
@@ -375,7 +373,7 @@ void parse_one_song(MpdObj *mo, void* param)
    ms->id = ms->pos = 0;
 
    lines = g_strsplit(mo->buffer, "\n", 0);
-   for (i = 0 ; !ms->id && lines[i] != NULL ; i++)
+   for (i = 0 ; lines[i] && !ms->id ; i++)
    {
       tokens = g_strsplit(lines[i], ":", 2);
       /* remove leading whitespace */
@@ -395,36 +393,34 @@ void parse_one_song(MpdObj *mo, void* param)
 void parse_playlistinfo_answer(MpdObj *mo, void *param)
 {
    MpdData* md = (MpdData*) param;
-   mpd_Song* ms = &md->allsongs[0];
+   mpd_Song* ms;
    gchar **lines, **tokens;
    int i = 0;
-   ms->artist = ms->album = ms->title = ms->track = NULL;
-   ms->id = ms->pos = 0;
 
-   lines = g_strsplit(mo->buffer, "\n", 2);
-   for (i = 0 ; !strcmp(lines[i],"OK") ; i++)
+   lines = g_strsplit(mo->buffer, "\n", 0);
+   while(lines[i] && strcmp(lines[i],"OK"))
    {
+      ms = &md->allsongs[md->nb];
+      ms->artist = ms->album = ms->title = ms->track = NULL;
+      ms->id = ms->pos = 0;
       DBG("Going to parse song #%d", md->nb);
 
-      tokens = g_strsplit(lines[i], ":", 0);
-      /* remove leading whitespace */
-      tokens[1] = g_strchug(tokens[1]);
-      DBG("key=\"%s\",value=\"%s\"", tokens[0], tokens[1]);
-      if      (!ms->artist && 0 == strcmp("Artist",tokens[0])) ms->artist= g_strdup(tokens[1]);
-      else if (!ms->album  && 0 == strcmp("Album", tokens[0])) ms->album = g_strdup(tokens[1]);
-      else if (!ms->title  && 0 == strcmp("Title", tokens[0])) ms->title = g_strdup(tokens[1]);
-      else if (!ms->track  && 0 == strcmp("Track", tokens[0])) ms->track = g_strdup(tokens[1]);
-      else if (!ms->pos    && 0 == strcmp("Pos",   tokens[0])) ms->pos   = atoi(tokens[1]);
-      else if (!ms->id     && 0 == strcmp("Id",    tokens[0])) ms->id    = atoi(tokens[1]);
-
-      if (ms->id)
+      while(lines[i] && !ms->id)
       {
-         md->nb++;
-         ms = &md->allsongs[md->nb];
-         ms->artist = ms->album = ms->title = ms->track = NULL;
-         ms->id = ms->pos = 0;
+         tokens = g_strsplit(lines[i], ":", 2);
+         /* remove leading whitespace */
+         tokens[1] = g_strchug(tokens[1]);
+         DBG("key=\"%s\",value=\"%s\"", tokens[0], tokens[1]);
+         if      (!ms->artist && 0 == strcmp("Artist",tokens[0])) ms->artist= g_strdup(tokens[1]);
+         else if (!ms->album  && 0 == strcmp("Album", tokens[0])) ms->album = g_strdup(tokens[1]);
+         else if (!ms->title  && 0 == strcmp("Title", tokens[0])) ms->title = g_strdup(tokens[1]);
+         else if (!ms->track  && 0 == strcmp("Track", tokens[0])) ms->track = g_strdup(tokens[1]);
+         else if (!ms->pos    && 0 == strcmp("Pos",   tokens[0])) ms->pos   = atoi(tokens[1]);
+         else if (!ms->id     && 0 == strcmp("Id",    tokens[0])) ms->id    = atoi(tokens[1]);
+         i++;
+         g_strfreev(tokens);
       }
-      g_strfreev(tokens);
+      md->nb++;
    }
    g_strfreev(lines);
    DBG("Got 'OK', md->nb = %d", md->nb);

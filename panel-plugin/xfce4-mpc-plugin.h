@@ -22,7 +22,7 @@
 #include <libxfce4panel/xfce-hvbox.h>
 #include <libxfce4panel/xfce-panel-convenience.h>
 
-#ifdef HAVE_LIBMPD
+#if HAVE_LIBMPD
 #include <libmpd/libmpd.h>
 #if DEBUG
 #include <libmpd/debug_printf.h>

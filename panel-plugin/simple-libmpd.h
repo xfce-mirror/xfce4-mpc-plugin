@@ -64,7 +64,6 @@ typedef struct {
    mpd_Song* cursong;
    int error;
    char buffer[MAXBUFLEN*2];
-   char recv_buffer[MAXBUFLEN];
    int buflen;
 } MpdObj;
 
