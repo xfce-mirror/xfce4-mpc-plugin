@@ -1,3 +1,9 @@
+30-05-2007 Landry Breuil <landry at fr.homeunix.org>
+   * release 0.3.2
+   * fixed various bugs when running against MPD 0.12.2 or 0.13 (thanks drac)
+   * fixed stupid bug, first track was not shown in playlist
+   * rewritten parser in simple-libmpd.c using g_* funcs
+
 28-01-2007 Landry Breuil <landry at fr.homeunix.org>
    * release 0.3.1
    * fixed bugs in simple-libmpd.c, causing several crashes
