@@ -65,7 +65,13 @@ mpc_set_size (XfcePanelPlugin * plugin, int size, t_mpc * mpc)
          gtk_widget_set_size_request (GTK_WIDGET (mpc->frame), size-4 , -1);
    }
    else
+   {
       gtk_container_set_border_width (GTK_CONTAINER (mpc->frame), 0);
+      if (xfce_panel_plugin_get_orientation (plugin) == GTK_ORIENTATION_HORIZONTAL)
+         gtk_widget_set_size_request (GTK_WIDGET (mpc->frame), -1, size);
+      else
+         gtk_widget_set_size_request (GTK_WIDGET (mpc->frame), size, -1);
+   }
    return TRUE;
 }
 
