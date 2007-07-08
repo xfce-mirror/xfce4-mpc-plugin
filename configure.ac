@@ -66,7 +66,7 @@ else
 fi
 AM_CONDITIONAL(USE_LIBMPD, [test "$use_libmpd" = true])
 dnl Translations
-XDT_I18N([cs fr pl])
+XDT_I18N([cs en_GB eu fr hu pl pt_PT sq])
 
 dnl Check for debugging support
 XDT_FEATURE_DEBUG()
