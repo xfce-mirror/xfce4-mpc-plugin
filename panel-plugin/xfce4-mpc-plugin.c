@@ -341,9 +341,9 @@ enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
          break;
    }
    song = mpd_playlist_get_current_song(mpc->mo);
-   if (song)
+   if (song && song->id != -1)
       g_sprintf(str,"%s - [%s - %s] -/- (#%s) %s", str, song->artist, song->album, song->track, song->title);
-   else
+   else if (!song)
       g_sprintf(str,"%s - Failed to get song info ?", str);
 
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->random), mpd_player_get_random(mpc->mo));
@@ -454,7 +454,7 @@ toggle(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc)
             break;
       }
    }
-   else
+   else if (0 != mpd_playlist_get_playlist_length(mpc->mo))
       show_playlist(mpc);
 }
 
@@ -474,7 +474,7 @@ prev(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc)
       else
          DBG("mpd_player_prev() ok");
    }
-   else
+   else if (0 != mpd_playlist_get_playlist_length(mpc->mo))
       show_playlist(mpc);
 }
 
@@ -494,7 +494,7 @@ stop(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc)
       else
          DBG("mpd_player_stop() ok");
    }
-   else
+   else if (0 != mpd_playlist_get_playlist_length(mpc->mo))
       show_playlist(mpc);
 }
 
@@ -514,7 +514,7 @@ next(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc)
       else
          DBG("mpd_player_next() ok");
    }
-   else
+   else if (0 != mpd_playlist_get_playlist_length(mpc->mo))
       show_playlist(mpc);
 }
 
