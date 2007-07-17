@@ -449,6 +449,11 @@ mpd_Song* mpd_playlist_get_current_song(MpdObj* mo)
    return ((!mo->error) ? mo->cursong : NULL);
 }
 
+int mpd_playlist_get_playlist_length(MpdObj* mo)
+{
+   return mo->playlistlength;
+}
+
 int mpd_player_get_current_song_pos(MpdObj* mo)
 {
    DBG("!");

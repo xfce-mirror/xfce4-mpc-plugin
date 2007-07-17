@@ -95,6 +95,7 @@ int mpd_player_get_current_song_pos(MpdObj*);
 MpdData* mpd_playlist_get_changes(MpdObj*, int);
 MpdData* mpd_data_get_next(MpdData*);
 mpd_Song* mpd_playlist_get_current_song(MpdObj*);
+int mpd_playlist_get_playlist_length(MpdObj*);
 int mpd_check_error(MpdObj*);
 void mpd_set_hostname(MpdObj*, char*);
 void mpd_set_password(MpdObj*, char*);
