@@ -5,7 +5,7 @@ dnl
 
 m4_define([mpc_version], [0.3.2])
 
-AC_INIT([xfce4-mpc-plugin], [mpc_version()],
+AC_INIT([xfce4-mpc-plugin], [mpc_version],
 	[landry@fr.homeunix.org])
 
 MPC_VERSION=mpc_version()
