@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-mpc-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-09-10 21:29+0200\n"
+"PO-Revision-Date: 2007-10-27 15:35+0500\n"
+"Last-Translator: Muhammad Ali Makki <makk.ma@gmail.com>\n"
+"Language-Team: Urdu <makki.ma@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Urdu\n"
+"X-Poedit-Country: PAKISTAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:645
+msgid "Mpd Client Plugin"
+msgstr "Mpd کلائنٹ پلگ ان"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:651
+msgid "Properties"
+msgstr "خصوصیات"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:664
+msgid "Host : "
+msgstr "ہوسٹ:"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:665
+msgid "Port : "
+msgstr "پورٹ:"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:666
+msgid "Password : "
+msgstr "پاس ورڈ:"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:688
+msgid "Show _frame"
+msgstr "_فریم ظاہر کریں:"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:711
+#: ../panel-plugin/xfce4-mpc-plugin.c:829
+msgid ".... not connected ?"
+msgstr ".... غیر متصل ؟"
+
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:1
+msgid "A client for MPD, The Music Player Daemon"
+msgstr "کلائنٹ برائے MPD، موسیقی پلیئر ڈیمون"
+
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
+msgid "MPD Client Plugin"
+msgstr "MPD کلائنٹ پلگ ان"
+
