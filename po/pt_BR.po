@@ -1,0 +1,54 @@
+# Brazilian Portuguese translation of the xfce4-mpc-plugin package.
+# Copyright (C) 2007 Landry Breuil <landry@fr.homeunix.org>
+# This file is distributed under the same license as the xfce4-mpc-plugin package.
+# Andrius da Costa Ribas <andriusmao@gmail.com>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-mpc-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-09-10 21:29+0200\n"
+"PO-Revision-Date: 2007-09-09 12:35+0200\n"
+"Last-Translator: Andrius da Costa Ribas <andriusmao@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:645
+msgid "Mpd Client Plugin"
+msgstr "Plug-in do Cliente Mpd"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:651
+msgid "Properties"
+msgstr "Propriedades"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:664
+msgid "Host : "
+msgstr "Máquina : "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:665
+msgid "Port : "
+msgstr "Porta : "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:666
+msgid "Password : "
+msgstr "Senha : "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:688
+msgid "Show _frame"
+msgstr "Mostrar _quadro"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:711
+#: ../panel-plugin/xfce4-mpc-plugin.c:829
+msgid ".... not connected ?"
+msgstr ".... não conectado ?"
+
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:1
+msgid "A client for MPD, The Music Player Daemon"
+msgstr "Um cliente para o MPD. O Serviço Reprodutdor de Músicas"
+
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
+msgid "MPD Client Plugin"
+msgstr "Plug-in para o Cliente MPD"
