@@ -2,14 +2,15 @@
 # Copyright (C) 2007 Landry Breuil <landry@fr.homeunix.org>
 # This file is distributed under the same license as the xfce4-mpc-plugin package.
 # Andrius da Costa Ribas <andriusmao@gmail.com>, 2007.
+# Fábio Nogueira <deb-user-ba@ubuntu.com>, 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-mpc-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-09-10 21:29+0200\n"
-"PO-Revision-Date: 2007-09-09 12:35+0200\n"
-"Last-Translator: Andrius da Costa Ribas <andriusmao@gmail.com>\n"
+"PO-Revision-Date: 2007-11-06 13:07-0400\n"
+"Last-Translatoro Nogueira <deb-user-ba@ubuntu.com>: \n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -47,7 +48,7 @@ msgstr ".... não conectado ?"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:1
 msgid "A client for MPD, The Music Player Daemon"
-msgstr "Um cliente para o MPD. O Serviço Reprodutdor de Músicas"
+msgstr "Um cliente para o MPD. O Serviço Reprodutor de Músicas"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
 msgid "MPD Client Plugin"
