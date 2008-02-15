@@ -382,7 +382,7 @@ show_playlist (t_mpc* mpc)
    int current;
    MpdData *mpd_data;
 
-   if (NULL == mpc->playlist)
+   if (NULL == mpc->playlist && 0 != mpd_playlist_get_playlist_length(mpc->mo))
    {
       DBG ("Creating playlist window");
       mpc->playlist = gtk_window_new(GTK_WINDOW_TOPLEVEL);
@@ -459,7 +459,7 @@ toggle(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc)
             break;
       }
    }
-   else if (0 != mpd_playlist_get_playlist_length(mpc->mo))
+   else
       show_playlist(mpc);
 }
 
@@ -479,7 +479,7 @@ prev(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc)
       else
          DBG("mpd_player_prev() ok");
    }
-   else if (0 != mpd_playlist_get_playlist_length(mpc->mo))
+   else
       show_playlist(mpc);
 }
 
@@ -499,7 +499,7 @@ stop(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc)
       else
          DBG("mpd_player_stop() ok");
    }
-   else if (0 != mpd_playlist_get_playlist_length(mpc->mo))
+   else
       show_playlist(mpc);
 }
 
@@ -519,7 +519,7 @@ next(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc)
       else
          DBG("mpd_player_next() ok");
    }
-   else if (0 != mpd_playlist_get_playlist_length(mpc->mo))
+   else
       show_playlist(mpc);
 }
 
