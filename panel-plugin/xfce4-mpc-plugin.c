@@ -373,7 +373,7 @@ static void
 show_playlist (t_mpc* mpc)
 {
    DBG("!");
-   GtkWidget *scrolledwin,*treeview;
+   GtkWidget *scrolledwin, *treeview;
    GtkListStore *liststore;
    GtkTreeIter iter;
    GtkTreePath *path_to_cur;
@@ -382,55 +382,60 @@ show_playlist (t_mpc* mpc)
    int current;
    MpdData *mpd_data;
 
-   mpc->playlist = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-   gtk_window_set_default_size(GTK_WINDOW(mpc->playlist), 300, 530);
-   gtk_window_set_icon_name(GTK_WINDOW(mpc->playlist),"xfce-multimedia");
-   gtk_window_set_title(GTK_WINDOW(mpc->playlist),_("Mpd playlist"));
-   gtk_window_set_keep_above(GTK_WINDOW(mpc->playlist),TRUE); /* UGLY !!! */
-   scrolledwin = gtk_scrolled_window_new(NULL, NULL);
-   gtk_container_add(GTK_CONTAINER(mpc->playlist),GTK_WIDGET(scrolledwin));
-
-   treeview = gtk_tree_view_new ();
-   gtk_tree_view_set_headers_visible(GTK_TREE_VIEW(treeview), FALSE);
-   gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(treeview), TRUE);
-   g_signal_connect(treeview, "row-activated", G_CALLBACK(playlist_title_dblclicked), mpc);
-   gtk_container_add(GTK_CONTAINER(scrolledwin),treeview);
-
-   liststore = gtk_list_store_new(4, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_INT, G_TYPE_INT);
-   gtk_tree_view_set_model (GTK_TREE_VIEW (treeview), GTK_TREE_MODEL(liststore));
-
-   renderer = gtk_cell_renderer_pixbuf_new ();
-   gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (treeview), -1, "Icon", renderer, "stock-id", 0, NULL);
-   renderer = gtk_cell_renderer_text_new ();
-   gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (treeview), -1, "Title", renderer, "text", 1, NULL);
-
-   if (!mpc_plugin_reconnect(mpc))
+   if (NULL == mpc->playlist)
    {
-      gtk_widget_destroy(mpc->playlist);
-      return;
-   }
+      DBG ("Creating playlist window");
+      mpc->playlist = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+      gtk_window_set_default_size(GTK_WINDOW(mpc->playlist), 300, 530);
+      gtk_window_set_icon_name(GTK_WINDOW(mpc->playlist),"xfce-multimedia");
+      gtk_window_set_title(GTK_WINDOW(mpc->playlist),_("Mpd playlist"));
+      gtk_window_set_keep_above(GTK_WINDOW(mpc->playlist),TRUE); /* UGLY !!! */
+      g_signal_connect(mpc->playlist, "destroy", G_CALLBACK(gtk_widget_destroyed), &mpc->playlist);
+      scrolledwin = gtk_scrolled_window_new(NULL, NULL);
+      gtk_container_add(GTK_CONTAINER(mpc->playlist),GTK_WIDGET(scrolledwin));
 
-   current = mpd_player_get_current_song_pos (mpc->mo);
-   DBG ("Current song pos in the list: %d", current);
-   mpd_data = mpd_playlist_get_changes (mpc->mo, -1);
-   DBG ("Got playlist, creating window");
-   do
-   {
-      g_sprintf(str,"%s - %s", mpd_data->song->artist, mpd_data->song->title);
+      treeview = gtk_tree_view_new ();
+      gtk_tree_view_set_headers_visible(GTK_TREE_VIEW(treeview), FALSE);
+      gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(treeview), TRUE);
+      g_signal_connect(treeview, "row-activated", G_CALLBACK(playlist_title_dblclicked), mpc);
+      gtk_container_add(GTK_CONTAINER(scrolledwin),treeview);
 
-      gtk_list_store_append (liststore, &iter);
-      if (current == mpd_data->song->pos)
+      liststore = gtk_list_store_new(4, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_INT, G_TYPE_INT);
+      gtk_tree_view_set_model (GTK_TREE_VIEW (treeview), GTK_TREE_MODEL(liststore));
+
+      renderer = gtk_cell_renderer_pixbuf_new ();
+      gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (treeview), -1, "Icon", renderer, "stock-id", 0, NULL);
+      renderer = gtk_cell_renderer_text_new ();
+      gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (treeview), -1, "Title", renderer, "text", 1, NULL);
+
+      if (!mpc_plugin_reconnect(mpc))
       {
-         gtk_list_store_set (liststore, &iter, 0, "gtk-media-play", 1, str, 2, mpd_data->song->pos, 3, mpd_data->song->id, -1);
-         path_to_cur = gtk_tree_model_get_path(GTK_TREE_MODEL(liststore), &iter);
-         gtk_tree_view_scroll_to_cell(GTK_TREE_VIEW(treeview), path_to_cur, NULL, TRUE, 0.5, 0);
-         gtk_tree_view_set_cursor(GTK_TREE_VIEW(treeview), path_to_cur, NULL, FALSE);
-         gtk_tree_path_free(path_to_cur);
+         gtk_widget_destroy(mpc->playlist);
+         return;
       }
-      else
-         gtk_list_store_set (liststore, &iter, 0, "gtk-cdrom", 1, str, 2, mpd_data->song->pos, 3, mpd_data->song->id, -1);
-   } while (NULL != (mpd_data = mpd_data_get_next (mpd_data)));
-   gtk_widget_show_all(mpc->playlist);
+
+      current = mpd_player_get_current_song_pos (mpc->mo);
+      DBG ("Current song pos in the list: %d", current);
+      mpd_data = mpd_playlist_get_changes (mpc->mo, -1);
+      DBG ("Got playlist, filling treeview");
+      do
+      {
+         g_sprintf(str,"%s - %s", mpd_data->song->artist, mpd_data->song->title);
+
+         gtk_list_store_append (liststore, &iter);
+         if (current == mpd_data->song->pos)
+         {
+            gtk_list_store_set (liststore, &iter, 0, "gtk-media-play", 1, str, 2, mpd_data->song->pos, 3, mpd_data->song->id, -1);
+            path_to_cur = gtk_tree_model_get_path(GTK_TREE_MODEL(liststore), &iter);
+            gtk_tree_view_scroll_to_cell(GTK_TREE_VIEW(treeview), path_to_cur, NULL, TRUE, 0.5, 0);
+            gtk_tree_view_set_cursor(GTK_TREE_VIEW(treeview), path_to_cur, NULL, FALSE);
+            gtk_tree_path_free(path_to_cur);
+         }
+         else
+            gtk_list_store_set (liststore, &iter, 0, "gtk-cdrom", 1, str, 2, mpd_data->song->pos, 3, mpd_data->song->id, -1);
+      } while (NULL != (mpd_data = mpd_data_get_next (mpd_data)));
+      gtk_widget_show_all(mpc->playlist);
+   }
 }
 
 static void
