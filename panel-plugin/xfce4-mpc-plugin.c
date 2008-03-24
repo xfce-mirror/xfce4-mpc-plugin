@@ -396,14 +396,19 @@ show_playlist (t_mpc* mpc)
    int current;
    MpdData *mpd_data;
 
-   if (NULL == mpc->playlist && 0 != mpd_playlist_get_playlist_length(mpc->mo))
+   if (mpc->playlist)
+   {
+      gtk_window_present(GTK_WINDOW(mpc->playlist));
+      return;
+   }
+   /* create playlist window only if playlist is not empty */
+   if (0 != mpd_playlist_get_playlist_length(mpc->mo))
    {
       DBG ("Creating playlist window");
       mpc->playlist = gtk_window_new(GTK_WINDOW_TOPLEVEL);
       gtk_window_set_default_size(GTK_WINDOW(mpc->playlist), 400, 600);
       gtk_window_set_icon_name(GTK_WINDOW(mpc->playlist),"xfce-multimedia");
       gtk_window_set_title(GTK_WINDOW(mpc->playlist),_("Mpd playlist"));
-      gtk_window_set_keep_above(GTK_WINDOW(mpc->playlist),TRUE); /* UGLY !!! */
       g_signal_connect(mpc->playlist, "destroy", G_CALLBACK(gtk_widget_destroyed), &mpc->playlist);
       scrolledwin = gtk_scrolled_window_new(NULL, NULL);
       gtk_container_add(GTK_CONTAINER(mpc->playlist),GTK_WIDGET(scrolledwin));
