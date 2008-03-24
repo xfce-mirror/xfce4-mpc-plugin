@@ -306,6 +306,20 @@ mpc_repeat_toggled(GtkWidget *widget, t_mpc* mpc)
    mpd_player_set_repeat(mpc->mo, gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(widget)));
 }
 
+void
+format_song_display(mpd_Song* song, gchar* str)
+{
+   /* buf may contain stuff, care to append text */
+   if (!song->artist || !song->title)
+      g_sprintf(str,"%s%s", str, song->file);
+   else if (!song->album)
+      g_sprintf(str,"%s%s - %s", str, song->artist, song->title);
+   else if (!song->track)
+      g_sprintf(str,"%s%s - %s -/- %s", str, song->artist, song->album, song->title);
+   else
+      g_sprintf(str,"%s%s - %s -/- (#%s) %s", str, song->artist, song->album, song->track, song->title);
+}
+
 static void
 enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
 {
@@ -328,25 +342,23 @@ enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
    switch (mpd_player_get_state(mpc->mo))
    {
       case MPD_PLAYER_PLAY:
-         g_sprintf(str, "%s - Mpd Playing",str);
+         g_sprintf(str, "%s - Mpd Playing\n",str);
          break;
       case MPD_PLAYER_PAUSE:
-         g_sprintf(str, "%s - Mpd Paused",str);
+         g_sprintf(str, "%s - Mpd Paused\n",str);
          break;
       case MPD_PLAYER_STOP:
-         g_sprintf(str, "%s - Mpd Stopped",str);
+         g_sprintf(str, "%s - Mpd Stopped\n",str);
          break;
       default:
-         g_sprintf(str, "%s - Mpd state ?",str);
+         g_sprintf(str, "%s - Mpd state ?\n",str);
          break;
    }
    song = mpd_playlist_get_current_song(mpc->mo);
-   if (song && song->id != -1 && song->title)
-      g_sprintf(str,"%s\n%s - %s -/- (#%s) %s", str, song->artist, song->album, song->track, song->title);
-   else if (!song)
-      g_sprintf(str,"%s\nFailed to get song info ?", str);
-   else if (!song->title)
-      g_sprintf(str,"%s\n%s", str, song->file);
+   if (song && song->id != -1)
+      format_song_display(song, str);
+   else
+      g_sprintf(str,"%sFailed to get song info ?", str);
 
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->random), mpd_player_get_random(mpc->mo));
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->repeat), mpd_player_get_repeat(mpc->mo));
@@ -388,7 +400,7 @@ show_playlist (t_mpc* mpc)
    {
       DBG ("Creating playlist window");
       mpc->playlist = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-      gtk_window_set_default_size(GTK_WINDOW(mpc->playlist), 300, 530);
+      gtk_window_set_default_size(GTK_WINDOW(mpc->playlist), 400, 600);
       gtk_window_set_icon_name(GTK_WINDOW(mpc->playlist),"xfce-multimedia");
       gtk_window_set_title(GTK_WINDOW(mpc->playlist),_("Mpd playlist"));
       gtk_window_set_keep_above(GTK_WINDOW(mpc->playlist),TRUE); /* UGLY !!! */
@@ -422,7 +434,8 @@ show_playlist (t_mpc* mpc)
       DBG ("Got playlist, filling treeview");
       do
       {
-         g_sprintf(str,"%s - %s", mpd_data->song->artist, mpd_data->song->title);
+         str[0]='\0';
+         format_song_display(mpd_data->song, str);
 
          gtk_list_store_append (liststore, &iter);
          if (current == mpd_data->song->pos)
