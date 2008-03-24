@@ -341,10 +341,12 @@ enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
          break;
    }
    song = mpd_playlist_get_current_song(mpc->mo);
-   if (song && song->id != -1)
-      g_sprintf(str,"%s - [%s - %s] -/- (#%s) %s", str, song->artist, song->album, song->track, song->title);
+   if (song && song->id != -1 && song->title)
+      g_sprintf(str,"%s\n%s - %s -/- (#%s) %s", str, song->artist, song->album, song->track, song->title);
    else if (!song)
-      g_sprintf(str,"%s - Failed to get song info ?", str);
+      g_sprintf(str,"%s\nFailed to get song info ?", str);
+   else if (!song->title)
+      g_sprintf(str,"%s\n%s", str, song->file);
 
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->random), mpd_player_get_random(mpc->mo));
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->repeat), mpd_player_get_repeat(mpc->mo));
