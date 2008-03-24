@@ -10,8 +10,8 @@ AC_INIT([xfce4-mpc-plugin], [mpc_version],
 
 MPC_VERSION=mpc_version()
 AM_INIT_AUTOMAKE([xfce4-mpc-plugin], [$MPC_VERSION], [-Wall -Werror foreign])
-dnl AM_CONFIG_HEADER([config.h])
-AC_CONFIG_HEADERS([config.h])
+AM_CONFIG_HEADER([config.h])
+dnl AC_CONFIG_HEADERS([config.h])
 
 AM_MAINTAINER_MODE
 
