@@ -41,6 +41,7 @@
 
 
 typedef struct {
+   char* file;
    char* artist;
    char* album;
    char* track;

@@ -289,6 +289,12 @@ void send_complex_cmd(MpdObj* mo, char* cmd, void (*parse_answer_fct)(), void *r
       {
          /* save the end of the buffer from last occurence of 'file:', and replace it with 'OK\n' */
          ptr = g_strrstr(mo->buffer, "file:");
+         if (!ptr)
+         {
+            mo->error = MPD_ERROR_CONNCLOSED;
+            DBG("ERROR parsing reply");
+            return;
+         }
 
          tmp_buffer = (char*) calloc (MAXBUFLEN*2, sizeof(char));
          strcpy(tmp_buffer, ptr);
@@ -332,7 +338,7 @@ void parse_status_answer(MpdObj *mo, void* unused_param)
    int i;
    mo->songid = -1;
    lines = g_strsplit(mo->buffer, "\n", 0);
-   for (i = 0 ; lines[i] && strcmp(lines[i], "OK") ; i++)
+   for (i = 0 ; lines[i] && strncmp(lines[i], "OK", 2) ; i++)
    {
       tokens = g_strsplit(lines[i], ":", 2);
       /* remove leading whitespace */
@@ -369,7 +375,7 @@ void parse_one_song(MpdObj *mo, void* param)
    mpd_Song* ms = (mpd_Song*) param;
    gchar **lines, **tokens;
    int i;
-   ms->artist = ms->album = ms->title = ms->track = NULL;
+   ms->file = ms->artist = ms->album = ms->title = ms->track = NULL;
    ms->id = ms->pos = -1;
 
    lines = g_strsplit(mo->buffer, "\n", 0);
@@ -379,7 +385,8 @@ void parse_one_song(MpdObj *mo, void* param)
       /* remove leading whitespace */
       tokens[1] = g_strchug(tokens[1]);
       DBG("key=\"%s\",value=\"%s\"", tokens[0], tokens[1]);
-      if      (!ms->artist && 0 == strcmp("Artist",tokens[0])) ms->artist= g_strdup(tokens[1]);
+      if      (!ms->file   && 0 == strcmp("file",  tokens[0])) ms->file  = g_strdup(tokens[1]);
+      else if (!ms->artist && 0 == strcmp("Artist",tokens[0])) ms->artist= g_strdup(tokens[1]);
       else if (!ms->album  && 0 == strcmp("Album", tokens[0])) ms->album = g_strdup(tokens[1]);
       else if (!ms->title  && 0 == strcmp("Title", tokens[0])) ms->title = g_strdup(tokens[1]);
       else if (!ms->track  && 0 == strcmp("Track", tokens[0])) ms->track = g_strdup(tokens[1]);
@@ -403,7 +410,7 @@ void parse_playlistinfo_answer(MpdObj *mo, void *param)
    while(lines[i] && strcmp(lines[i],"OK"))
    {
       ms = &md->allsongs[md->nb];
-      ms->artist = ms->album = ms->title = ms->track = NULL;
+      ms->file = ms->artist = ms->album = ms->title = ms->track = NULL;
       ms->id = ms->pos = -1;
       DBG("Going to parse song #%d", md->nb);
 
@@ -413,7 +420,8 @@ void parse_playlistinfo_answer(MpdObj *mo, void *param)
          /* remove leading whitespace */
          tokens[1] = g_strchug(tokens[1]);
          DBG("key=\"%s\",value=\"%s\"", tokens[0], tokens[1]);
-         if      (!ms->artist && 0 == strcmp("Artist",tokens[0])) ms->artist= g_strdup(tokens[1]);
+         if      (!ms->file   && 0 == strcmp("file",  tokens[0])) ms->file  = g_strdup(tokens[1]);
+         else if (!ms->artist && 0 == strcmp("Artist",tokens[0])) ms->artist= g_strdup(tokens[1]);
          else if (!ms->album  && 0 == strcmp("Album", tokens[0])) ms->album = g_strdup(tokens[1]);
          else if (!ms->title  && 0 == strcmp("Title", tokens[0])) ms->title = g_strdup(tokens[1]);
          else if (!ms->track  && 0 == strcmp("Track", tokens[0])) ms->track = g_strdup(tokens[1]);
@@ -433,6 +441,7 @@ mpd_Song* mpd_playlist_get_current_song(MpdObj* mo)
    DBG("!");
    if (mo->cursong != NULL && mo->cursong->id != mo->songid)
    {
+      if (mo->cursong->file)   free(mo->cursong->file);
       if (mo->cursong->artist) free(mo->cursong->artist);
       if (mo->cursong->album)  free(mo->cursong->album);
       if (mo->cursong->title)  free(mo->cursong->title);
@@ -479,6 +488,7 @@ MpdData* mpd_data_get_next(MpdData* md)
    {
       for (md->cur--; md->cur; md->cur--)
       {
+         if (md->allsongs[md->cur].file) free(md->allsongs[md->cur].file);
          if (md->allsongs[md->cur].artist) free(md->allsongs[md->cur].artist);
          if (md->allsongs[md->cur].album) free(md->allsongs[md->cur].album);
          if (md->allsongs[md->cur].title) free(md->allsongs[md->cur].title);
