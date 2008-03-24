@@ -1,6 +1,6 @@
 /* xfce4-mpc-plugin.c
  *
- * Copyright (c) 2006-2007 Landry Breuil (landry at fr.homeunix.org / gaston at gcu.info)
+ * Copyright (c) 2006-2008 Landry Breuil (landry at fr.homeunix.org / gaston at gcu.info)
  * This code is licenced under a BSD-style licence.
  * (OpenBSD variant modeled after the ISC licence)
  * All rights reserved.
@@ -567,7 +567,7 @@ new_button_with_img(XfcePanelPlugin * plugin, GtkWidget *parent, GtkWidget *butt
    GtkWidget *image;
 
    button = (GtkWidget*) xfce_create_panel_button();
-   image = gtk_image_new_from_stock(icon,GTK_ICON_SIZE_BUTTON);
+   image = gtk_image_new_from_stock(icon,GTK_ICON_SIZE_BUTTON); /* FIXME for small panels */
 
    gtk_button_set_image(GTK_BUTTON(button),image);
    xfce_panel_plugin_add_action_widget (plugin, button);
@@ -627,6 +627,35 @@ mpc_create (XfcePanelPlugin * plugin)
 }
 
 static void
+mpc_show_about(XfcePanelPlugin *plugin, t_mpc* mpc)
+{
+   XfceAboutInfo *ainfo;
+   GdkPixbuf *icon;
+
+   if (mpc->about)
+   {
+      gtk_window_present(GTK_WINDOW(mpc->about));
+      return;
+   }
+   ainfo = xfce_about_info_new(_("Xfce4 Mpc Plugin"), PACKAGE_VERSION,
+                               _("A simple panel-plugin client for Music Player Daemon"),
+                               _("Copyright (c) 2006-2008 Landry Breuil\n"),
+                               XFCE_LICENSE_BSD);
+   xfce_about_info_add_credit(ainfo, "Landry Breuil", "landry@fr.homeunix.org", _("Maintainer, Original Author"));
+   xfce_about_info_set_homepage(ainfo, "http://goodies.xfce.org/projects/panel-plugins/xfce4-mpc-plugin");
+
+   icon = xfce_themed_icon_load("xfce-multimedia", 32);
+
+   mpc->about = xfce_about_dialog_new_with_values(NULL, ainfo, icon);
+   gtk_widget_show_all(mpc->about);
+   g_signal_connect(G_OBJECT(mpc->about), "response", G_CALLBACK(gtk_widget_destroy), NULL);
+   g_signal_connect(G_OBJECT(mpc->about), "destroy", G_CALLBACK(gtk_widget_destroyed), &mpc->about);
+
+   if(icon)
+      g_object_unref(G_OBJECT(icon));
+}
+
+static void
 mpc_construct (XfcePanelPlugin * plugin)
 {
    t_mpc *mpc;
@@ -666,6 +695,8 @@ mpc_construct (XfcePanelPlugin * plugin)
    xfce_panel_plugin_menu_show_configure (plugin);
 
    g_signal_connect (plugin, "configure-plugin", G_CALLBACK (mpc_create_options), mpc);
+   xfce_panel_plugin_menu_show_about(plugin);
+   g_signal_connect (plugin, "about", G_CALLBACK (mpc_show_about), mpc);
 }
 
 

@@ -1,6 +1,6 @@
 /* simple-libmpd.c
  *
- * Copyright (c) 2006-2007 Landry Breuil (landry at fr.homeunix.org / gaston at gcu.info)
+ * Copyright (c) 2006-2008 Landry Breuil (landry at fr.homeunix.org / gaston at gcu.info)
  * This code is licenced under a BSD-style licence.
  * (OpenBSD variant modeled after the ISC licence)
  * All rights reserved.

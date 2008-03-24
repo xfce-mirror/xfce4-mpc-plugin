@@ -1,6 +1,6 @@
 /* xfce4-mpc-plugin.h
  *
- * Copyright (c) 2006-2007 Landry Breuil (landry at fr.homeunix.org / gaston at gcu.info)
+ * Copyright (c) 2006-2008 Landry Breuil (landry at fr.homeunix.org / gaston at gcu.info)
  * This code is licenced under a BSD-style licence.
  * (OpenBSD variant modeled after the ISC licence)
  * All rights reserved.
@@ -34,7 +34,7 @@
 typedef struct {
    XfcePanelPlugin *plugin;
    GtkTooltips *tips;
-   GtkWidget *frame,*ebox,*box,*prev,*stop,*toggle,*next,*random,*repeat,*appl;
+   GtkWidget *frame,*ebox,*box,*prev,*stop,*toggle,*next,*random,*repeat,*appl,*about;
    GtkWidget *playlist;
    gboolean show_frame;
    /* mpd handle */
