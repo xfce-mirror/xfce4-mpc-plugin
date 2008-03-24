@@ -3,14 +3,15 @@ dnl
 dnl xfce4-mpc-plugin - mpd client plugin for the XFce4 panel
 dnl
 
-m4_define([mpc_version], [0.3.2])
+m4_define([mpc_version], [0.3.3])
 
 AC_INIT([xfce4-mpc-plugin], [mpc_version],
 	[landry@fr.homeunix.org])
 
 MPC_VERSION=mpc_version()
 AM_INIT_AUTOMAKE([xfce4-mpc-plugin], [$MPC_VERSION], [-Wall -Werror foreign])
-AM_CONFIG_HEADER([config.h])
+dnl AM_CONFIG_HEADER([config.h])
+AC_CONFIG_HEADERS([config.h])
 
 AM_MAINTAINER_MODE
 
