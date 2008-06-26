@@ -1,0 +1,59 @@
+# Galician translation of xfce4-mpc-plugin
+# Copyright (C) 2008 Leandro Regueiro
+# This file is distributed under the same license as the xfce package.
+#
+# Leandro Regueiro <leandro.regueiro@gmail.com>, 2008.
+#
+# Proxecto Trasno - Adaptación do software libre á lingua galega:  Se desexas
+# colaborar connosco, podes atopar máis información en <http://trasno.net>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-09-10 21:29+0200\n"
+"PO-Revision-Date: 2008-06-24 17:48+0100\n"
+"Last-Translator: Leandro Regueiro <leandro DOT regueiro AT gmail DOT com>\n"
+"Language-Team: Galician <proxecto@trasno.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:645
+msgid "Mpd Client Plugin"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:651
+msgid "Properties"
+msgstr "Propiedades"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:664
+msgid "Host : "
+msgstr "Máquina: "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:665
+msgid "Port : "
+msgstr "Porto: "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:666
+msgid "Password : "
+msgstr "Contrasinal: "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:688
+msgid "Show _frame"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:711
+#: ../panel-plugin/xfce4-mpc-plugin.c:829
+msgid ".... not connected ?"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:1
+msgid "A client for MPD, The Music Player Daemon"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
+msgid "MPD Client Plugin"
+msgstr ""
+
