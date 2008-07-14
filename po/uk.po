@@ -1,0 +1,92 @@
+# Ukrainian translation of xfce4-mpc-plugin.
+# Copyright (C) 2008 Dmitry Nikitin
+# This file is distributed under the same license as the xfce4-mpc-plugin package.
+#
+# Dmitry Nikitin <luckas_fb@mail.ru>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-mpc-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-14 09:31+0000\n"
+"PO-Revision-Date: 2008-07-09 10:35+0300\n"
+"Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
+"Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:110
+#: ../panel-plugin/xfce4-mpc-plugin.c:173
+#: ../panel-plugin/xfce4-mpc-plugin.c:621
+msgid "Launch"
+msgstr "Запустити"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:228
+msgid "Mpd Client Plugin"
+msgstr "Модуль для клієнта Mpd"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:234
+msgid "Properties"
+msgstr "Властивості"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:247
+msgid "Host : "
+msgstr "Сервер : "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:248
+msgid "Port : "
+msgstr "Порт : "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:249
+msgid "Password : "
+msgstr "Пароль : "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:250
+msgid "Client : "
+msgstr "Клієнт : "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:277
+msgid "Show _frame"
+msgstr "Відображати _фрейм"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:335
+#: ../panel-plugin/xfce4-mpc-plugin.c:557
+msgid ".... not connected ?"
+msgstr ".... не під'єднано ?"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:411
+msgid "Mpd playlist"
+msgstr "Список програвання Mpd"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:617
+msgid "Random"
+msgstr "Випадково"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:619
+msgid "Repeat"
+msgstr "Повторити"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:645
+msgid "Xfce4 Mpc Plugin"
+msgstr "Модуль Mpc для Xfce4"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:646
+msgid "A simple panel-plugin client for Music Player Daemon"
+msgstr "Простий клієнт для MPD, The Music Player Daemon"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:647
+msgid "Copyright (c) 2006-2008 Landry Breuil\n"
+msgstr "Copyright (c) 2006-2008 Landry Breuil\n"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:649
+msgid "Maintainer, Original Author"
+msgstr "Відповідальний за випуск - автор"
+
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:1
+msgid "A client for MPD, The Music Player Daemon"
+msgstr "Клієнт для MPD, The Music Player Daemon"
+
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
+msgid "MPD Client Plugin"
+msgstr "Плагін для клієнта MPD"
