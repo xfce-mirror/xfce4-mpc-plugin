@@ -47,4 +47,3 @@ msgstr ""
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
 msgid "MPD Client Plugin"
 msgstr ""
-
