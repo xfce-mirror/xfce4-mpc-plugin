@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-mpc-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 21:29+0200\n"
+"POT-Creation-Date: 2008-07-27 08:50-0400\n"
 "PO-Revision-Date: 2007-06-30 16:56+0100\n"
 "Last-Translator: Nuno Miguel <nunis@netcabo.pt>\n"
 "Language-Team: \n"
@@ -15,34 +15,73 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:645
+#: ../panel-plugin/xfce4-mpc-plugin.c:110
+#: ../panel-plugin/xfce4-mpc-plugin.c:173
+#: ../panel-plugin/xfce4-mpc-plugin.c:621
+msgid "Launch"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:228
 msgid "Mpd Client Plugin"
 msgstr "Plugin Cliente Mpd"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:651
+#: ../panel-plugin/xfce4-mpc-plugin.c:234
 msgid "Properties"
 msgstr "Propriedades"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:664
+#: ../panel-plugin/xfce4-mpc-plugin.c:247
 msgid "Host : "
 msgstr "Host :"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:665
+#: ../panel-plugin/xfce4-mpc-plugin.c:248
 msgid "Port : "
 msgstr "Porta :"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:666
+#: ../panel-plugin/xfce4-mpc-plugin.c:249
 msgid "Password : "
 msgstr "Senha :"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:688
+#: ../panel-plugin/xfce4-mpc-plugin.c:250
+msgid "Client : "
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:277
 msgid "Show _frame"
 msgstr "Mostrar _janela"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:711
-#: ../panel-plugin/xfce4-mpc-plugin.c:829
+#: ../panel-plugin/xfce4-mpc-plugin.c:335
+#: ../panel-plugin/xfce4-mpc-plugin.c:557
 msgid ".... not connected ?"
 msgstr ".... não ligado ?"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:411
+msgid "Mpd playlist"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:617
+msgid "Random"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:619
+msgid "Repeat"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:645
+msgid "Xfce4 Mpc Plugin"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:646
+#, fuzzy
+msgid "A simple panel-plugin client for Music Player Daemon"
+msgstr "Um cliente para MPD, A Daemon de Leitor de Música"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:647
+msgid "Copyright (c) 2006-2008 Landry Breuil\n"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:649
+msgid "Maintainer, Original Author"
+msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:1
 msgid "A client for MPD, The Music Player Daemon"
@@ -51,4 +90,3 @@ msgstr "Um cliente para MPD, A Daemon de Leitor de Música"
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
 msgid "MPD Client Plugin"
 msgstr "Plugin Cliente MPD"
-
