@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-07-27 08:49-0400\n"
-"PO-Revision-Date: 2006-09-10 22:09+0100\n"
+"PO-Revision-Date: 2008-09-01 05:14+0100\n"
 "Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
 "Language-Team: Hungarian\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 #: ../panel-plugin/xfce4-mpc-plugin.c:173
 #: ../panel-plugin/xfce4-mpc-plugin.c:621
 msgid "Launch"
-msgstr ""
+msgstr "Futtat"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:228
 msgid "Mpd Client Plugin"
@@ -41,7 +41,7 @@ msgstr "Jelszó :"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:250
 msgid "Client : "
-msgstr ""
+msgstr "Kliens : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:277
 msgid "Show _frame"
@@ -54,32 +54,31 @@ msgstr ".... nem csatlakozik ?"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:411
 msgid "Mpd playlist"
-msgstr ""
+msgstr "Mpd lejátszólista"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:617
 msgid "Random"
-msgstr ""
+msgstr "Véletlen"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:619
 msgid "Repeat"
-msgstr ""
+msgstr "Ismétlés"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:645
 msgid "Xfce4 Mpc Plugin"
-msgstr ""
+msgstr "Xfce4 Mpc beillesztés"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:646
-#, fuzzy
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr "Egy kliens az MPD zene-lejátszó démonhoz"
+msgstr "Egy egyszerű panel-beillesztés az MPD démonhoz"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:647
 msgid "Copyright (c) 2006-2008 Landry Breuil\n"
-msgstr ""
+msgstr "Copyright (c) 2006-2008 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:649
 msgid "Maintainer, Original Author"
-msgstr ""
+msgstr "Karbantartó, eredeti szerző"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:1
 msgid "A client for MPD, The Music Player Daemon"
@@ -88,3 +87,4 @@ msgstr "Egy kliens az MPD zene-lejátszó démonhoz"
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
 msgid "MPD Client Plugin"
 msgstr "MPD-kliens beillesztés"
+
