@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xfce4-mpc-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-07-27 08:50-0400\n"
-"PO-Revision-Date: 2007-06-30 16:56+0100\n"
+"PO-Revision-Date: 2008-09-13 19:15+0100\n"
 "Last-Translator: Nuno Miguel <nunis@netcabo.pt>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 #: ../panel-plugin/xfce4-mpc-plugin.c:173
 #: ../panel-plugin/xfce4-mpc-plugin.c:621
 msgid "Launch"
-msgstr ""
+msgstr "Lançar"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:228
 msgid "Mpd Client Plugin"
@@ -43,7 +43,7 @@ msgstr "Senha :"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:250
 msgid "Client : "
-msgstr ""
+msgstr "Cliente:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:277
 msgid "Show _frame"
@@ -56,32 +56,31 @@ msgstr ".... não ligado ?"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:411
 msgid "Mpd playlist"
-msgstr ""
+msgstr "Lista Mpd"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:617
 msgid "Random"
-msgstr ""
+msgstr "Aleatório"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:619
 msgid "Repeat"
-msgstr ""
+msgstr "Repetir"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:645
 msgid "Xfce4 Mpc Plugin"
-msgstr ""
+msgstr "Xfce4 Mpc Plugin"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:646
-#, fuzzy
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr "Um cliente para MPD, A Daemon de Leitor de Música"
+msgstr "Um simples plugin de painel cliente para Music Player Daemon"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:647
 msgid "Copyright (c) 2006-2008 Landry Breuil\n"
-msgstr ""
+msgstr "Copyright (c) 2006-2008 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:649
 msgid "Maintainer, Original Author"
-msgstr ""
+msgstr "Mantenedor, Autor Original"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:1
 msgid "A client for MPD, The Music Player Daemon"
@@ -90,3 +89,4 @@ msgstr "Um cliente para MPD, A Daemon de Leitor de Música"
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
 msgid "MPD Client Plugin"
 msgstr "Plugin Cliente MPD"
+
