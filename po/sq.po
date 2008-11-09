@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: xfce4-mpc-plugin 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-07-27 08:50-0400\n"
-"PO-Revision-Date: 2007-01-30 21:18+0200\n"
+"PO-Revision-Date: 2008-11-04 23:26+0200\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
 "Language-Team: Albanian <translation-team-sq@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 #: ../panel-plugin/xfce4-mpc-plugin.c:173
 #: ../panel-plugin/xfce4-mpc-plugin.c:621
 msgid "Launch"
-msgstr ""
+msgstr "Nise"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:228
 msgid "Mpd Client Plugin"
@@ -43,7 +43,7 @@ msgstr "Fjalëkalim : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:250
 msgid "Client : "
-msgstr ""
+msgstr "Klient : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:277
 msgid "Show _frame"
@@ -56,32 +56,31 @@ msgstr "... jo i lidhur ?"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:411
 msgid "Mpd playlist"
-msgstr ""
+msgstr "Luajlistë Mpd"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:617
 msgid "Random"
-msgstr ""
+msgstr "Kuturu"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:619
 msgid "Repeat"
-msgstr ""
+msgstr "Përsërite"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:645
 msgid "Xfce4 Mpc Plugin"
-msgstr ""
+msgstr "Shtojca Mpc Xfce4"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:646
-#, fuzzy
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr "Klient për MPD, \"The Music Player Daemon\""
+msgstr "Shtojcë klient paneli e thjeshtë për \"The Music Player Daemon\""
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:647
 msgid "Copyright (c) 2006-2008 Landry Breuil\n"
-msgstr ""
+msgstr "Të Drejta Kopjimi (c) 2006-2008 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:649
 msgid "Maintainer, Original Author"
-msgstr ""
+msgstr "Mirëmbajtës, Autor Origjinal"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:1
 msgid "A client for MPD, The Music Player Daemon"
@@ -90,3 +89,4 @@ msgstr "Klient për MPD, \"The Music Player Daemon\""
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
 msgid "MPD Client Plugin"
 msgstr "Shtojcë Klienti MPD"
+
