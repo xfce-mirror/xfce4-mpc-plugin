@@ -37,17 +37,15 @@
 #include <errno.h>
 #include <fcntl.h>
 
-#define STRLENGTH 32
-
 MpdObj* mpd_new(char* host, int port, char* pass)
 {
    MpdObj* mo = g_new0(MpdObj,1);
 
    DBG("host=%s, port=%d, pass=%s", host, port, pass);
 
-   mo->host = g_strndup(host,STRLENGTH);
+   mo->host = g_strdup(host);
    mo->port = port;
-   mo->pass = g_strndup(pass,STRLENGTH);
+   mo->pass = g_strdup(pass);
    mo->socket = 0;
    mo->status = 0;
    mo->repeat = 0;
@@ -508,7 +506,7 @@ void mpd_status_set_volume(MpdObj* mo, int newvol)
    char outbuf[15];
    /* write setvol 'newvol' to socket */
    DBG("!");
-   sprintf(outbuf,"setvol %d\n",newvol);
+   snprintf(outbuf, sizeof(outbuf), "setvol %d\n",newvol);
    mpd_send_single_cmd(mo,outbuf);
 }
 
@@ -528,7 +526,7 @@ int mpd_player_set_random(MpdObj* mo, int random)
 {
    char outbuf[15];
    DBG("!");
-   sprintf(outbuf,"random %d\n",random);
+   snprintf(outbuf, sizeof(outbuf), "random %d\n",random);
    return mpd_send_single_cmd(mo,outbuf);
 
 }
@@ -537,7 +535,7 @@ int mpd_player_set_repeat(MpdObj* mo, int repeat)
 {
    char outbuf[15];
    DBG("!");
-   sprintf(outbuf,"repeat %d\n",repeat);
+   snprintf(outbuf, sizeof(outbuf), "repeat %d\n",repeat);
    return mpd_send_single_cmd(mo,outbuf);
 }
 
@@ -584,7 +582,7 @@ int mpd_player_play_id(MpdObj* mo, int id)
 {
    char outbuf[15];
    DBG("!");
-   sprintf(outbuf,"playid %d\n",id);
+   snprintf(outbuf, sizeof(outbuf), "playid %d\n",id);
    return mpd_send_single_cmd(mo,outbuf);
 }
 
@@ -597,9 +595,16 @@ int mpd_check_error(MpdObj* mo)
 void mpd_send_password(MpdObj* mo)
 {
    DBG("!");
-   char outbuf[30];
+   char outbuf[256];
    /* write password 'password' to socket */
-   sprintf(outbuf,"password %s\n",mo->pass);
+   int wrote = snprintf(outbuf, sizeof(outbuf), "password %s\n",mo->pass);
+   if (wrote > 255) {
+	/* the password is too long to fit though there doesn't seem to be a
+	 * nice way to report this error :-/ */
+	fprintf(stderr, "xfce4-mpc-plugin: password too long!\n");
+	mo->error = MPD_ERROR_SYSTEM;
+	return;
+   }
    mpd_send_single_cmd(mo,outbuf);
 }
 
@@ -607,14 +612,14 @@ void mpd_set_hostname(MpdObj* mo, char* host)
 {
    DBG("! new hostname=%s",host);
    g_free(mo->host);
-   mo->host = g_strndup(host,STRLENGTH);
+   mo->host = g_strdup(host);
 }
 
 void mpd_set_password(MpdObj* mo, char* pass)
 {
    DBG("! new password=%s",pass);
    g_free(mo->pass);
-   mo->pass = g_strndup(pass,STRLENGTH);
+   mo->pass = g_strdup(pass);
 }
 
 void mpd_set_port(MpdObj* mo,int port)

@@ -29,7 +29,6 @@
 #define DEFAULT_MPD_HOST "localhost"
 #define DEFAULT_MPD_PORT 6600
 #define DIALOG_ENTRY_WIDTH 15
-#define STRLENGTH 32
 
 #include "xfce4-mpc-plugin.h"
 
@@ -107,7 +106,7 @@ mpc_read_config (XfcePanelPlugin * plugin, t_mpc * mpc)
    mpc->show_frame = xfce_rc_read_bool_entry (rc, "show_frame", TRUE);
    mpc->client_appl = g_strdup(xfce_rc_read_entry (rc, "client_appl",  ""));
    label = gtk_bin_get_child(GTK_BIN(mpc->appl));
-   g_sprintf(str, "%s %s", _("Launch"), mpc->client_appl);
+   g_snprintf(str, sizeof(str), "%s %s", _("Launch"), mpc->client_appl);
    gtk_label_set_text(GTK_LABEL(label),str);
    DBG ("Settings : %s@%s:%d\nframe:%d\nappl:%s", mpc->mpd_password, mpc->mpd_host, mpc->mpd_port, mpc->show_frame, mpc->client_appl);
    xfce_rc_close (rc);
@@ -165,12 +164,12 @@ mpc_dialog_apply_options (t_mpc_dialog *dialog)
    char str[30];
 
    t_mpc *mpc = dialog->mpc;
-   mpc->mpd_host = g_strndup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_host)),STRLENGTH);
+   mpc->mpd_host = g_strdup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_host)));
    mpc->mpd_port = atoi(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_port)));
-   mpc->mpd_password = g_strndup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_password)),STRLENGTH);
-   mpc->client_appl = g_strndup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_client_appl)),STRLENGTH);
+   mpc->mpd_password = g_strdup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_password)));
+   mpc->client_appl = g_strdup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_client_appl)));
    label = gtk_bin_get_child(GTK_BIN(mpc->appl));
-   g_sprintf(str, "%s %s", _("Launch"), mpc->client_appl);
+   g_snprintf(str, sizeof(str), "%s %s", _("Launch"), mpc->client_appl);
    gtk_label_set_text(GTK_LABEL(label),str);
 
    DBG ("Apply: host=%s, port=%d, passwd=%s, appl=%s", mpc->mpd_host, mpc->mpd_port, mpc->mpd_password, mpc->client_appl);
@@ -311,13 +310,13 @@ format_song_display(mpd_Song* song, gchar* str)
 {
    /* buf may contain stuff, care to append text */
    if (!song->artist || !song->title)
-      g_sprintf(str,"%s%s", str, song->file);
+      g_snprintf(str, sizeof(str), "%s%s", str, song->file);
    else if (!song->album)
-      g_sprintf(str,"%s%s - %s", str, song->artist, song->title);
+      g_snprintf(str, sizeof(str), "%s%s - %s", str, song->artist, song->title);
    else if (!song->track)
-      g_sprintf(str,"%s%s - %s -/- %s", str, song->artist, song->album, song->title);
+      g_snprintf(str, sizeof(str), "%s%s - %s -/- %s", str, song->artist, song->album, song->title);
    else
-      g_sprintf(str,"%s%s - %s -/- (#%s) %s", str, song->artist, song->album, song->track, song->title);
+      g_snprintf(str, sizeof(str), "%s%s - %s -/- (#%s) %s", str, song->artist, song->album, song->track, song->title);
 }
 
 static void
@@ -337,28 +336,28 @@ enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
       }
    }
 
-   g_sprintf(str, "Volume : %d%%", mpd_status_get_volume(mpc->mo));
+   g_snprintf(str, sizeof(str), "Volume : %d%%", mpd_status_get_volume(mpc->mo));
 
    switch (mpd_player_get_state(mpc->mo))
    {
       case MPD_PLAYER_PLAY:
-         g_sprintf(str, "%s - Mpd Playing\n",str);
+         g_snprintf(str, sizeof(str), "%s - Mpd Playing\n",str);
          break;
       case MPD_PLAYER_PAUSE:
-         g_sprintf(str, "%s - Mpd Paused\n",str);
+         g_snprintf(str, sizeof(str), "%s - Mpd Paused\n",str);
          break;
       case MPD_PLAYER_STOP:
-         g_sprintf(str, "%s - Mpd Stopped\n",str);
+         g_snprintf(str, sizeof(str), "%s - Mpd Stopped\n",str);
          break;
       default:
-         g_sprintf(str, "%s - Mpd state ?\n",str);
+         g_snprintf(str, sizeof(str), "%s - Mpd state ?\n",str);
          break;
    }
    song = mpd_playlist_get_current_song(mpc->mo);
    if (song && song->id != -1)
       format_song_display(song, str);
    else
-      g_sprintf(str,"%sFailed to get song info ?", str);
+      g_snprintf(str, sizeof(str), "%sFailed to get song info ?", str);
 
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->random), mpd_player_get_random(mpc->mo));
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->repeat), mpd_player_get_repeat(mpc->mo));
