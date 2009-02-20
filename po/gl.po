@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-07-27 08:49-0400\n"
-"PO-Revision-Date: 2008-06-24 17:48+0100\n"
+"PO-Revision-Date: 2009-02-11 16:14+0100\n"
 "Last-Translator: Leandro Regueiro <leandro DOT regueiro AT gmail DOT com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
@@ -48,7 +48,7 @@ msgstr "Contrasinal: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:250
 msgid "Client : "
-msgstr ""
+msgstr "Cliente: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:277
 msgid "Show _frame"
@@ -57,19 +57,19 @@ msgstr ""
 #: ../panel-plugin/xfce4-mpc-plugin.c:335
 #: ../panel-plugin/xfce4-mpc-plugin.c:557
 msgid ".... not connected ?"
-msgstr ""
+msgstr ".... non conectado?"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:411
 msgid "Mpd playlist"
-msgstr ""
+msgstr "Lista de reprodución de Mpd"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:617
 msgid "Random"
-msgstr ""
+msgstr "Aleatorio"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:619
 msgid "Repeat"
-msgstr ""
+msgstr "Repetir"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:645
 msgid "Xfce4 Mpc Plugin"
@@ -81,11 +81,11 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:647
 msgid "Copyright (c) 2006-2008 Landry Breuil\n"
-msgstr ""
+msgstr "Copyright (c) 2006-2008 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:649
 msgid "Maintainer, Original Author"
-msgstr ""
+msgstr "Mantedor, autor orixinal"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:1
 msgid "A client for MPD, The Music Player Daemon"
@@ -94,3 +94,4 @@ msgstr ""
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
 msgid "MPD Client Plugin"
 msgstr ""
+
