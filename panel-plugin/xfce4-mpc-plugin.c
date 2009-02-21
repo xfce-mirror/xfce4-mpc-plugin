@@ -161,7 +161,7 @@ mpc_dialog_apply_options (t_mpc_dialog *dialog)
 {
    DBG ("!");
    GtkWidget *label;
-   char str[30];
+   char str[128];
 
    t_mpc *mpc = dialog->mpc;
    mpc->mpd_host = g_strdup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_host)));

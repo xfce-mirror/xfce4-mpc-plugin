@@ -1,2 +1,5 @@
 - improve playlist management, keep it persistent instead of creating it on each middle-click
 - add configurable title display string (with %artist%, %title%, %track%, %album%...) in tooltip and playlist
+- support multiple outputs enabling/disabling
+- add volume progressbar/slider ?
+- fix all strings length checking
