@@ -1,10 +1,14 @@
+2009-03-01  Maximilian Schleiss <maximilian@xfce.org>
+
+	* es.po, LINGUAS: Spanish translation added (Abel Martín)
+
 2009-02-20  Maximilian Schleiss <maximilian@xfce.org>
 
 	* gl.po: Galician translation update (Leandro Regueiro)
 
 2009-02-20  Eren Türkay <erenturkay@xfce.org>
 
-    * tr.po: Add Turkish translation by Samed Beyribey
+	* tr.po: Add Turkish translation by Samed Beyribey
 
 2009-02-07  Maximilian Schleiss <maximilian@xfce.org>
 
