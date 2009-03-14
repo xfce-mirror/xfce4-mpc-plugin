@@ -1,8 +1,8 @@
 # Galician translation of xfce4-mpc-plugin
-# Copyright (C) 2008 Leandro Regueiro
+# Copyright (C) 2008-2009 Leandro Regueiro
 # This file is distributed under the same license as the xfce package.
 #
-# Leandro Regueiro <leandro.regueiro@gmail.com>, 2008.
+# Leandro Regueiro <leandro.regueiro@gmail.com>, 2008, 2009.
 #
 # Proxecto Trasno - Adaptación do software libre á lingua galega:  Se desexas
 # colaborar connosco, podes atopar máis información en <http://trasno.net>
@@ -10,9 +10,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-27 08:49-0400\n"
-"PO-Revision-Date: 2009-02-11 16:14+0100\n"
+"Report-Msgid-Bugs-To: xfce-i18n@xfce.org\n"
+"POT-Creation-Date: 2008-07-27 08:50-0400\n"
+"PO-Revision-Date: 2009-03-07 13:00+0100\n"
 "Last-Translator: Leandro Regueiro <leandro DOT regueiro AT gmail DOT com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
@@ -24,11 +24,11 @@ msgstr ""
 #: ../panel-plugin/xfce4-mpc-plugin.c:173
 #: ../panel-plugin/xfce4-mpc-plugin.c:621
 msgid "Launch"
-msgstr ""
+msgstr "Iniciar"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:228
 msgid "Mpd Client Plugin"
-msgstr ""
+msgstr "Engadido de cliente de Mpd"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:234
 msgid "Properties"
@@ -52,7 +52,7 @@ msgstr "Cliente: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:277
 msgid "Show _frame"
-msgstr ""
+msgstr "Mostrar o _marco"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:335
 #: ../panel-plugin/xfce4-mpc-plugin.c:557
@@ -73,11 +73,11 @@ msgstr "Repetir"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:645
 msgid "Xfce4 Mpc Plugin"
-msgstr ""
+msgstr "Engadido Mpc de Xfce4"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:646
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr ""
+msgstr "Un sinxelo engadido cliente de Music Player Daemon para o panel"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:647
 msgid "Copyright (c) 2006-2008 Landry Breuil\n"
@@ -89,9 +89,9 @@ msgstr "Mantedor, autor orixinal"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:1
 msgid "A client for MPD, The Music Player Daemon"
-msgstr ""
+msgstr "Un cliente de MPD, o Music Player Daemon"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
 msgid "MPD Client Plugin"
-msgstr ""
+msgstr "Engadido de cliente de MPD"
 
