@@ -1,0 +1,94 @@
+# German translations for xfce4-mpc-plugin package
+# German messages for xfce4-mpc-plugin.
+# Copyright (C) 2009 THE xfce4-mpc-plugin'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the xfce4-mpc-plugin package.
+# Simon Schneider <simon@schneiderimtal.de>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-mpc-plugin 4-mpc-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-27 08:50-0400\n"
+"PO-Revision-Date: 2009-03-13 00:14+0000\n"
+"Last-Translator: Simon Schneider <simon@schneiderimtal.de>\n"
+"Language-Team: German <xfce-i18n-de@xfce.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:110
+#: ../panel-plugin/xfce4-mpc-plugin.c:173
+#: ../panel-plugin/xfce4-mpc-plugin.c:621
+msgid "Launch"
+msgstr "starten"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:228
+msgid "Mpd Client Plugin"
+msgstr "Erweiterung für den Mpd-Klienten"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:234
+msgid "Properties"
+msgstr "Eigenschaften"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:247
+msgid "Host : "
+msgstr "Host: "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:248
+msgid "Port : "
+msgstr "Port: "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:249
+msgid "Password : "
+msgstr "Passwort: "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:250
+msgid "Client : "
+msgstr "Klient: "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:277
+msgid "Show _frame"
+msgstr "_Rahmen anzeigen"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:335
+#: ../panel-plugin/xfce4-mpc-plugin.c:557
+msgid ".... not connected ?"
+msgstr "... nicht verbunden?"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:411
+msgid "Mpd playlist"
+msgstr "Mpd-Playliste"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:617
+msgid "Random"
+msgstr "Zufall"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:619
+msgid "Repeat"
+msgstr "Wiederholen"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:645
+msgid "Xfce4 Mpc Plugin"
+msgstr "Xfce-Mpc-Erweiterung"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:646
+msgid "A simple panel-plugin client for Music Player Daemon"
+msgstr "Eine einfache Erweiterung für die Leiste für den Music Player Daemon"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:647
+msgid "Copyright (c) 2006-2008 Landry Breuil\n"
+msgstr "Copyright·(c)·2006-2008·Landry·Breuil\n"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:649
+msgid "Maintainer, Original Author"
+msgstr "Entwickler, Originalautor"
+
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:1
+msgid "A client for MPD, The Music Player Daemon"
+msgstr "Ein Klient für MPD, den Music Player Daemon"
+
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
+msgid "MPD Client Plugin"
+msgstr "MPD-Klient-Erweiterung"
+
