@@ -306,26 +306,24 @@ mpc_repeat_toggled(GtkWidget *widget, t_mpc* mpc)
 }
 
 void
-format_song_display(mpd_Song* song, gchar* str)
+format_song_display(mpd_Song* song, GString *str)
 {
-   gchar *orig = g_strdup(str);
    /* buf may contain stuff, care to append text */
    if (!song->artist || !song->title)
-      g_snprintf(str, 512, "%s%s", orig, song->file);
+      g_string_append_printf(str, "%s", song->file);
    else if (!song->album)
-      g_snprintf(str, 512, "%s%s - %s", orig, song->artist, song->title);
+      g_string_append_printf(str, "%s - %s", song->artist, song->title);
    else if (!song->track)
-      g_snprintf(str, 512, "%s%s - %s -/- %s", orig, song->artist, song->album, song->title);
+      g_string_append_printf(str, "%s - %s -/- %s", song->artist, song->album, song->title);
    else
-      g_snprintf(str, 512, "%s%s - %s -/- (#%s) %s", orig, song->artist, song->album, song->track, song->title);
-   g_free(orig);
+      g_string_append_printf(str, "%s - %s -/- (#%s) %s", song->artist, song->album, song->track, song->title);
 }
 
 static void
 enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
 {
    mpd_Song *song;
-   gchar str[512];
+   GString *str;
 
    DBG("!");
 
@@ -337,34 +335,35 @@ enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
          return;
       }
    }
-
-   g_snprintf(str, sizeof(str), "Volume : %d%%", mpd_status_get_volume(mpc->mo));
+   str = g_string_new("Volume : ");
+   g_string_append_printf(str, "%d%% - Mpd ", mpd_status_get_volume(mpc->mo));
 
    switch (mpd_player_get_state(mpc->mo))
    {
       case MPD_PLAYER_PLAY:
-         g_snprintf(str, sizeof(str), "%s - Mpd Playing\n",str);
+         g_string_append(str, "Playing\n");
          break;
       case MPD_PLAYER_PAUSE:
-         g_snprintf(str, sizeof(str), "%s - Mpd Paused\n",str);
+         g_string_append(str, "Paused\n");
          break;
       case MPD_PLAYER_STOP:
-         g_snprintf(str, sizeof(str), "%s - Mpd Stopped\n",str);
+         g_string_append(str, "Stopped\n");
          break;
       default:
-         g_snprintf(str, sizeof(str), "%s - Mpd state ?\n",str);
+         g_string_append(str, "state ?\n");
          break;
    }
    song = mpd_playlist_get_current_song(mpc->mo);
    if (song && song->id != -1)
       format_song_display(song, str);
    else
-      g_snprintf(str, sizeof(str), "%sFailed to get song info ?", str);
+      g_string_append(str, "Failed to get song info ?");
 
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->random), mpd_player_get_random(mpc->mo));
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->repeat), mpd_player_get_repeat(mpc->mo));
 
-   gtk_widget_set_tooltip_text (widget, str);
+   gtk_widget_set_tooltip_text (widget, str->str);
+   g_string_free(str, TRUE);
 }
 
 static void
@@ -393,10 +392,11 @@ show_playlist (t_mpc* mpc)
    GtkTreeIter iter;
    GtkTreePath *path_to_cur;
    GtkCellRenderer *renderer;
-   gchar str[512];
+   GString *str;
    int current;
    MpdData *mpd_data;
 
+   str = g_string_new('\0');
    if (mpc->playlist)
    {
       gtk_window_present(GTK_WINDOW(mpc->playlist));
@@ -440,23 +440,24 @@ show_playlist (t_mpc* mpc)
       DBG ("Got playlist, filling treeview");
       do
       {
-         str[0]='\0';
+         g_string_erase(str, 0, -1);
          format_song_display(mpd_data->song, str);
 
          gtk_list_store_append (liststore, &iter);
          if (current == mpd_data->song->pos)
          {
-            gtk_list_store_set (liststore, &iter, 0, "gtk-media-play", 1, str, 2, mpd_data->song->pos, 3, mpd_data->song->id, -1);
+            gtk_list_store_set (liststore, &iter, 0, "gtk-media-play", 1, str->str, 2, mpd_data->song->pos, 3, mpd_data->song->id, -1);
             path_to_cur = gtk_tree_model_get_path(GTK_TREE_MODEL(liststore), &iter);
             gtk_tree_view_scroll_to_cell(GTK_TREE_VIEW(treeview), path_to_cur, NULL, TRUE, 0.5, 0);
             gtk_tree_view_set_cursor(GTK_TREE_VIEW(treeview), path_to_cur, NULL, FALSE);
             gtk_tree_path_free(path_to_cur);
          }
          else
-            gtk_list_store_set (liststore, &iter, 0, "gtk-cdrom", 1, str, 2, mpd_data->song->pos, 3, mpd_data->song->id, -1);
+            gtk_list_store_set (liststore, &iter, 0, "gtk-cdrom", 1, str->str, 2, mpd_data->song->pos, 3, mpd_data->song->id, -1);
       } while (NULL != (mpd_data = mpd_data_get_next (mpd_data)));
       gtk_widget_show_all(mpc->playlist);
    }
+   g_string_free(str, TRUE);
 }
 
 static void
