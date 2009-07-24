@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xfce4-mpc-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-24 18:13+0200\n"
-"PO-Revision-Date: 2009-07-24 10:56+0200\n"
+"PO-Revision-Date: 2009-07-25 01:07+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
 "Language-Team: Hungarian <gnome at gnome dot hu>\n"
 "MIME-Version: 1.0\n"
@@ -44,35 +44,34 @@ msgid "Password : "
 msgstr "Jelszó:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:269
-#, fuzzy
 msgid "MPD Client : "
-msgstr "Kliens:"
+msgstr "MPD kliens:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:270
 msgid "Tooltip Format : "
-msgstr ""
+msgstr "Buboréksúgó formátuma:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:271
 msgid "Playlist Format : "
-msgstr ""
+msgstr "Lejátszólista formátuma:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:305
 msgid "Hostname or IP address"
-msgstr ""
+msgstr "Gépnév vagy IP-cím"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:306
 msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr ""
+msgstr "Grafikus MPD kliens a bővítmény helyi menüjéből való indításhoz"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:307
 msgid "Variables : %artist%, %album%, %track% and %title%"
-msgstr ""
+msgstr "Változók: %artist%, %album%, %track% és %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:308
 msgid ""
 "Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title"
 "%"
-msgstr ""
+msgstr "Változók: %vol%, %status%, %newline%, %artist%, %album%, %track% és %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:313
 msgid "Show _frame"
@@ -81,7 +80,7 @@ msgstr "Ke_ret megjelenítése"
 #: ../panel-plugin/xfce4-mpc-plugin.c:382
 #: ../panel-plugin/xfce4-mpc-plugin.c:612
 msgid ".... not connected ?"
-msgstr "... nincs csatlakoztatva?"
+msgstr "… nincs kapcsolódva?"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:465
 msgid "Mpd playlist"
@@ -118,3 +117,4 @@ msgstr "Kliens az MPD-hez, a Music Player Daemonhoz"
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
 msgid "MPD Client Plugin"
 msgstr "MPD-kliens bővítmény"
+
