@@ -347,6 +347,8 @@ mpc_repeat_toggled(GtkWidget *widget, t_mpc* mpc)
 void
 str_replace(GString *str, gchar* pattern, gchar* replacement)
 {
+   if (!replacement)
+      return;
    gchar *nstr = exo_str_replace(str->str, pattern, replacement);
    g_string_assign(str, nstr);
    g_free(nstr);
