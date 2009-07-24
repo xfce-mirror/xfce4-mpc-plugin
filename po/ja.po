@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-mpc-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-07-27 08:50-0400\n"
+"POT-Creation-Date: 2009-07-24 18:13+0200\n"
 "PO-Revision-Date: 2008-10-13 12:16+0900\n"
 "Last-Translator: Nobuhiro Iwamatsu <iwamatsu@nigauri.org>\n"
 "Language-Team: Japanese <xfce-i18n@xfce.org@xfce.org>\n"
@@ -16,70 +16,97 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:110
-#: ../panel-plugin/xfce4-mpc-plugin.c:173
-#: ../panel-plugin/xfce4-mpc-plugin.c:621
+#: ../panel-plugin/xfce4-mpc-plugin.c:116
+#: ../panel-plugin/xfce4-mpc-plugin.c:192
+#: ../panel-plugin/xfce4-mpc-plugin.c:673
 msgid "Launch"
 msgstr "開始する"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:228
+#: ../panel-plugin/xfce4-mpc-plugin.c:247
 msgid "Mpd Client Plugin"
 msgstr "Mpd クライアントプラグイン"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:234
+#: ../panel-plugin/xfce4-mpc-plugin.c:253
 msgid "Properties"
 msgstr "設定"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:247
+#: ../panel-plugin/xfce4-mpc-plugin.c:266
 msgid "Host : "
 msgstr "ホスト : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:248
+#: ../panel-plugin/xfce4-mpc-plugin.c:267
 msgid "Port : "
 msgstr "ポート : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:249
+#: ../panel-plugin/xfce4-mpc-plugin.c:268
 msgid "Password : "
 msgstr "パスワード : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:250
-msgid "Client : "
+#: ../panel-plugin/xfce4-mpc-plugin.c:269
+#, fuzzy
+msgid "MPD Client : "
 msgstr "クライアント : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:277
+#: ../panel-plugin/xfce4-mpc-plugin.c:270
+msgid "Tooltip Format : "
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:271
+msgid "Playlist Format : "
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:305
+msgid "Hostname or IP address"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:306
+msgid "Graphical MPD Client to launch in plugin context menu"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:307
+msgid "Variables : %artist%, %album%, %track% and %title%"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:308
+msgid ""
+"Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title"
+"%"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:313
 msgid "Show _frame"
 msgstr "フレームを表示する(_F)"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:335
-#: ../panel-plugin/xfce4-mpc-plugin.c:557
+#: ../panel-plugin/xfce4-mpc-plugin.c:382
+#: ../panel-plugin/xfce4-mpc-plugin.c:612
 msgid ".... not connected ?"
 msgstr ".... 接続されていません ?"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:411
+#: ../panel-plugin/xfce4-mpc-plugin.c:465
 msgid "Mpd playlist"
 msgstr "Mpd プレイリスト"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:617
+#: ../panel-plugin/xfce4-mpc-plugin.c:669
 msgid "Random"
 msgstr "ランダム"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:619
+#: ../panel-plugin/xfce4-mpc-plugin.c:671
 msgid "Repeat"
 msgstr "リピート"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:645
+#: ../panel-plugin/xfce4-mpc-plugin.c:697
 msgid "Xfce4 Mpc Plugin"
 msgstr "Xfce4 Mpc プラグイン"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:646
+#: ../panel-plugin/xfce4-mpc-plugin.c:698
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "Music Player Daemon 用のシンプルなパネルプラグインクライアント"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:647
+#: ../panel-plugin/xfce4-mpc-plugin.c:699
 msgid "Copyright (c) 2006-2008 Landry Breuil\n"
 msgstr "Copyright (c) 2006-2008 Landry Breuil\n"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:649
+#: ../panel-plugin/xfce4-mpc-plugin.c:701
 msgid "Maintainer, Original Author"
 msgstr "メンテナ、オリジナルの原作者"
 
@@ -90,4 +117,3 @@ msgstr "MPD用クライアント、Music Player Daemon"
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
 msgid "MPD Client Plugin"
 msgstr "MPD クライアントプラグイン"
-

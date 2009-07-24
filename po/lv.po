@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce 4-mpc-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-10 21:29+0200\n"
+"POT-Creation-Date: 2009-07-24 18:13+0200\n"
 "PO-Revision-Date: 2007-11-17 01:21+0300\n"
 "Last-Translator: Rihards Priedītis <rprieditis@inbox.lv>\n"
 "Language-Team: Latvian <rprieditis@inbox.lv>\n"
@@ -15,34 +15,100 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:645
+#: ../panel-plugin/xfce4-mpc-plugin.c:116
+#: ../panel-plugin/xfce4-mpc-plugin.c:192
+#: ../panel-plugin/xfce4-mpc-plugin.c:673
+msgid "Launch"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:247
 msgid "Mpd Client Plugin"
 msgstr "Mpd Klienta Spraudnis"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:651
+#: ../panel-plugin/xfce4-mpc-plugin.c:253
 msgid "Properties"
 msgstr "Rekvizīti"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:664
+#: ../panel-plugin/xfce4-mpc-plugin.c:266
 msgid "Host : "
 msgstr "Resursdators:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:665
+#: ../panel-plugin/xfce4-mpc-plugin.c:267
 msgid "Port : "
 msgstr "Ports:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:666
+#: ../panel-plugin/xfce4-mpc-plugin.c:268
 msgid "Password : "
 msgstr "Parole:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:688
+#: ../panel-plugin/xfce4-mpc-plugin.c:269
+#, fuzzy
+msgid "MPD Client : "
+msgstr "MPD Klienta Spraudnis"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:270
+msgid "Tooltip Format : "
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:271
+msgid "Playlist Format : "
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:305
+msgid "Hostname or IP address"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:306
+msgid "Graphical MPD Client to launch in plugin context menu"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:307
+msgid "Variables : %artist%, %album%, %track% and %title%"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:308
+msgid ""
+"Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title"
+"%"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:313
 msgid "Show _frame"
 msgstr "Rādīt _rāmi"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:711
-#: ../panel-plugin/xfce4-mpc-plugin.c:829
+#: ../panel-plugin/xfce4-mpc-plugin.c:382
+#: ../panel-plugin/xfce4-mpc-plugin.c:612
 msgid ".... not connected ?"
 msgstr ".... nav savienots?"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:465
+msgid "Mpd playlist"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:669
+msgid "Random"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:671
+msgid "Repeat"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:697
+msgid "Xfce4 Mpc Plugin"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:698
+#, fuzzy
+msgid "A simple panel-plugin client for Music Player Daemon"
+msgstr "Klients MPD, Mūzikas Atskaņošanas Dēmons"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:699
+msgid "Copyright (c) 2006-2008 Landry Breuil\n"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:701
+msgid "Maintainer, Original Author"
+msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:1
 msgid "A client for MPD, The Music Player Daemon"
@@ -51,4 +117,3 @@ msgstr "Klients MPD, Mūzikas Atskaņošanas Dēmons"
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
 msgid "MPD Client Plugin"
 msgstr "MPD Klienta Spraudnis"
-
