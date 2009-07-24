@@ -33,7 +33,6 @@
 
 typedef struct {
    XfcePanelPlugin *plugin;
-   GtkTooltips *tips;
    GtkWidget *frame,*ebox,*box,*prev,*stop,*toggle,*next,*random,*repeat,*appl,*about;
    GtkWidget *playlist;
    gboolean show_frame;

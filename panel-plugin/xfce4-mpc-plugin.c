@@ -24,6 +24,7 @@
 
 #include <libxfcegui4/libxfcegui4.h>
 #include <string.h>
+#include <stdlib.h>
 #include <glib/gprintf.h>
 
 #define DEFAULT_MPD_HOST "localhost"
@@ -37,7 +38,6 @@ mpc_free (XfcePanelPlugin * plugin, t_mpc * mpc)
 {
    DBG ("!");
 
-   g_object_unref (mpc->tips);
    mpd_free(mpc->mo);
    g_free (mpc);
 }
@@ -308,15 +308,17 @@ mpc_repeat_toggled(GtkWidget *widget, t_mpc* mpc)
 void
 format_song_display(mpd_Song* song, gchar* str)
 {
+   gchar *orig = g_strdup(str);
    /* buf may contain stuff, care to append text */
    if (!song->artist || !song->title)
-      g_snprintf(str, sizeof(str), "%s%s", str, song->file);
+      g_snprintf(str, 512, "%s%s", orig, song->file);
    else if (!song->album)
-      g_snprintf(str, sizeof(str), "%s%s - %s", str, song->artist, song->title);
+      g_snprintf(str, 512, "%s%s - %s", orig, song->artist, song->title);
    else if (!song->track)
-      g_snprintf(str, sizeof(str), "%s%s - %s -/- %s", str, song->artist, song->album, song->title);
+      g_snprintf(str, 512, "%s%s - %s -/- %s", orig, song->artist, song->album, song->title);
    else
-      g_snprintf(str, sizeof(str), "%s%s - %s -/- (#%s) %s", str, song->artist, song->album, song->track, song->title);
+      g_snprintf(str, 512, "%s%s - %s -/- (#%s) %s", orig, song->artist, song->album, song->track, song->title);
+   g_free(orig);
 }
 
 static void
@@ -331,7 +333,7 @@ enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
    {
       if (!mpc_plugin_reconnect (mpc) || mpd_status_update (mpc->mo) != MPD_OK)
       {
-         gtk_tooltips_set_tip (mpc->tips, widget, _(".... not connected ?"), NULL);
+         gtk_widget_set_tooltip_text (widget, _(".... not connected ?"));
          return;
       }
    }
@@ -362,7 +364,7 @@ enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->random), mpd_player_get_random(mpc->mo));
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->repeat), mpd_player_get_repeat(mpc->mo));
 
-   gtk_tooltips_set_tip (mpc->tips, widget, str, NULL);
+   gtk_widget_set_tooltip_text (widget, str);
 }
 
 static void
@@ -553,7 +555,7 @@ scroll_cb(GtkWidget *widget, GdkEventScroll* event, t_mpc* mpc)
    {
       if (!mpc_plugin_reconnect (mpc) || mpd_status_update (mpc->mo) != MPD_OK)
       {
-         gtk_tooltips_set_tip (mpc->tips, widget, _(".... not connected ?"), NULL);
+         gtk_widget_set_tooltip_text(widget, _(".... not connected ?"));
          return;
       }
    }
@@ -590,9 +592,6 @@ mpc_create (XfcePanelPlugin * plugin)
    mpc = g_new0 (t_mpc, 1);
 
    mpc->plugin = plugin;
-   mpc->tips = gtk_tooltips_new ();
-   g_object_ref (mpc->tips);
-   gtk_object_sink (GTK_OBJECT (mpc->tips));
 
    mpc->frame = gtk_frame_new (NULL);
    gtk_frame_set_shadow_type (GTK_FRAME (mpc->frame), GTK_SHADOW_IN);
