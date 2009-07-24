@@ -109,7 +109,7 @@ mpc_read_config (XfcePanelPlugin * plugin, t_mpc * mpc)
    mpc->mpd_password = g_strdup(xfce_rc_read_entry (rc, "mpd_password", ""));
    mpc->show_frame = xfce_rc_read_bool_entry (rc, "show_frame", TRUE);
    mpc->client_appl = g_strdup(xfce_rc_read_entry (rc, "client_appl", "SETME"));
-   mpc->tooltip_format = g_strdup(xfce_rc_read_entry (rc, "tooltip_format", "Volume : %vol% - Mpd %status%\\n%artist% - %album% -/- (#%track%) %title%"));
+   mpc->tooltip_format = g_strdup(xfce_rc_read_entry (rc, "tooltip_format", "Volume : %vol%% - Mpd %status%%newline%%%artist% - %album% -/- (#%track%) %title%"));
    mpc->playlist_format = g_strdup(xfce_rc_read_entry (rc, "playlist_format", "%artist% - %album% -/- (#%track%) %title%"));
 
    label = gtk_bin_get_child(GTK_BIN(mpc->appl));
@@ -184,7 +184,7 @@ mpc_dialog_apply_options (t_mpc_dialog *dialog)
    if (0 == strlen(mpc->client_appl))
       mpc->client_appl = g_strdup("SETME");
    if (0 == strlen(mpc->tooltip_format))
-      mpc->tooltip_format = g_strdup("Volume : %vol% - Mpd %status%\\n%artist% - %album% -/- (#%track%) %title%");
+      mpc->tooltip_format = g_strdup("Volume : %vol%% - Mpd %status%%newline%%artist% - %album% -/- (#%track%) %title%");
    if (0 == strlen(mpc->playlist_format))
       mpc->playlist_format = g_strdup("%artist% - %album% -/- (#%track%) %title%");
 
@@ -305,7 +305,7 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
    gtk_widget_set_tooltip_text (dialog->textbox_host, _("Hostname or IP address"));
    gtk_widget_set_tooltip_text (dialog->textbox_client_appl, _("Graphical MPD Client to launch in plugin context menu"));
    gtk_widget_set_tooltip_text (dialog->textbox_playlist_format, _("Variables : %artist%, %album%, %track% and %title%"));
-   gtk_widget_set_tooltip_text (dialog->textbox_tooltip_format, _("Variables : %vol%, %status%, %artist%, %album%, %track% and %title%"));
+   gtk_widget_set_tooltip_text (dialog->textbox_tooltip_format, _("Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title%"));
 
    gtk_widget_show_all (table);
    gtk_box_pack_start (GTK_BOX (vbox), table, FALSE, FALSE, 0);
@@ -342,26 +342,37 @@ mpc_repeat_toggled(GtkWidget *widget, t_mpc* mpc)
    mpd_player_set_repeat(mpc->mo, gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(widget)));
 }
 
+
 void
-format_song_display(mpd_Song* song, GString *str)
+str_replace(GString *str, gchar* pattern, gchar* replacement)
 {
-   /* buf may contain stuff, care to append text */
-   if (!song->artist || !song->title)
-      g_string_append_printf(str, "%s", song->file);
-   else if (!song->album)
-      g_string_append_printf(str, "%s - %s", song->artist, song->title);
-   else if (!song->track)
-      g_string_append_printf(str, "%s - %s -/- %s", song->artist, song->album, song->title);
-   else
-      g_string_append_printf(str, "%s - %s -/- (#%s) %s", song->artist, song->album, song->track, song->title);
+   gchar **arr;
+   if (replacement == NULL)
+      replacement = "";
+   arr = g_strsplit (str->str, pattern, -1);
+   if (arr != NULL && arr[0] != NULL)
+      g_string_assign(str, g_strjoinv (replacement, arr));
+}
+
+void
+format_song_display(mpd_Song* song, GString *str, t_mpc* mpc)
+{
+   if (0 == str->len)
+      g_string_assign(str, mpc->playlist_format);
+
+   /* replace %artist% by song->artist, etc */
+   str_replace(str, "%artist%", song->artist);
+   str_replace(str, "%album%", song->album);
+   str_replace(str, "%title%", song->title);
+   str_replace(str, "%track%", song->track);
 }
 
 static void
 enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
 {
    mpd_Song *song;
-   GString *str;
-
+   GString *str = NULL;
+   gchar vol[20];
    DBG("!");
 
    if (mpd_status_update(mpc->mo) != MPD_OK)
@@ -372,29 +383,34 @@ enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
          return;
       }
    }
-   str = g_string_new("Volume : ");
-   g_string_append_printf(str, "%d%% - Mpd ", mpd_status_get_volume(mpc->mo));
+   str = g_string_new(mpc->tooltip_format);
 
+   /* replace %vol% by mpd_status_get_volume(mpc->mo) */
+   g_sprintf(vol, "%d", mpd_status_get_volume(mpc->mo));
+   str_replace(str, "%vol%", vol);
+   /* newlines */
+   str_replace(str, "%newline%", "\n");
+   /* replace %status% by mpd status string */
    switch (mpd_player_get_state(mpc->mo))
    {
       case MPD_PLAYER_PLAY:
-         g_string_append(str, "Playing\n");
+         str_replace(str, "%status%", "Playing");
          break;
       case MPD_PLAYER_PAUSE:
-         g_string_append(str, "Paused\n");
+         str_replace(str, "%status%", "Paused");
          break;
       case MPD_PLAYER_STOP:
-         g_string_append(str, "Stopped\n");
+         str_replace(str, "%status%", "Stopped");
          break;
       default:
-         g_string_append(str, "state ?\n");
+         str_replace(str, "%status%", "state ?");
          break;
    }
    song = mpd_playlist_get_current_song(mpc->mo);
    if (song && song->id != -1)
-      format_song_display(song, str);
+      format_song_display(song, str, mpc);
    else
-      g_string_append(str, "Failed to get song info ?");
+      g_string_assign(str, "Failed to get song info ?");
 
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->random), mpd_player_get_random(mpc->mo));
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->repeat), mpd_player_get_repeat(mpc->mo));
@@ -478,7 +494,7 @@ show_playlist (t_mpc* mpc)
       do
       {
          g_string_erase(str, 0, -1);
-         format_song_display(mpd_data->song, str);
+         format_song_display(mpd_data->song, str, mpc);
 
          gtk_list_store_append (liststore, &iter);
          if (current == mpd_data->song->pos)
@@ -717,7 +733,7 @@ mpc_construct (XfcePanelPlugin * plugin)
    mpc->mpd_port = DEFAULT_MPD_PORT;
    mpc->mpd_password = g_strdup("");
    mpc->client_appl = g_strdup("SETME");
-   mpc->tooltip_format = "Volume : %vol% - Mpd %status%\\n%artist% - %album% -/- (#%track%) %title%";
+   mpc->tooltip_format = "Volume : %vol%% - Mpd %status%%newline%%artist% - %album% -/- (#%track%) %title%";
    mpc->playlist_format = "%artist% - %album% -/- (#%track%) %title%";
    mpc->show_frame = TRUE;
    mpc->playlist = NULL;
