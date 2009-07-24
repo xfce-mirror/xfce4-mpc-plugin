@@ -302,7 +302,11 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
    gtk_entry_set_text(GTK_ENTRY(dialog->textbox_playlist_format),mpc->playlist_format);
    gtk_table_attach_defaults(GTK_TABLE(table),dialog->textbox_playlist_format,1,2,5,6);
 
-   /* set tooltip for format entries */
+   gtk_widget_set_tooltip_text (dialog->textbox_host, _("Hostname or IP address"));
+   gtk_widget_set_tooltip_text (dialog->textbox_client_appl, _("Graphical MPD Client to launch in plugin context menu"));
+   gtk_widget_set_tooltip_text (dialog->textbox_playlist_format, _("Variables : %artist%, %album%, %track% and %title%"));
+   gtk_widget_set_tooltip_text (dialog->textbox_tooltip_format, _("Variables : %vol%, %status%, %artist%, %album%, %track% and %title%"));
+
    gtk_widget_show_all (table);
    gtk_box_pack_start (GTK_BOX (vbox), table, FALSE, FALSE, 0);
 
