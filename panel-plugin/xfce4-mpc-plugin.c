@@ -23,6 +23,7 @@
 #endif
 
 #include <libxfcegui4/libxfcegui4.h>
+#include <exo/exo.h>
 #include <string.h>
 #include <stdlib.h>
 #include <glib/gprintf.h>
@@ -346,12 +347,9 @@ mpc_repeat_toggled(GtkWidget *widget, t_mpc* mpc)
 void
 str_replace(GString *str, gchar* pattern, gchar* replacement)
 {
-   gchar **arr;
-   if (replacement == NULL)
-      replacement = "";
-   arr = g_strsplit (str->str, pattern, -1);
-   if (arr != NULL && arr[0] != NULL)
-      g_string_assign(str, g_strjoinv (replacement, arr));
+   gchar *nstr = exo_str_replace(str->str, pattern, replacement);
+   g_string_assign(str, nstr);
+   g_free(nstr);
 }
 
 void

@@ -34,6 +34,7 @@ AC_HEADER_STDC
 
 dnl configure the panel plugin
 XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-1.0], [4.3.22])
+XDT_CHECK_PACKAGE([EXO], [exo-0.3], [0.3.1.1])
 
 dnl check for libmpd presence
 AC_ARG_WITH(libmpd,
