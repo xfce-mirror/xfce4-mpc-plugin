@@ -42,6 +42,8 @@ typedef struct {
    gchar* mpd_host;
    gint mpd_port;
    gchar * mpd_password;
+   gchar * tooltip_format;
+   gchar * playlist_format;
    gboolean mpd_repeat;
    gboolean mpd_random;
 } t_mpc;
@@ -52,6 +54,8 @@ typedef struct {
    GtkWidget *textbox_port;
    GtkWidget *textbox_password;
    GtkWidget *textbox_client_appl;
+   GtkWidget *textbox_tooltip_format;
+   GtkWidget *textbox_playlist_format;
    GtkWidget *checkbox_frame;
 } t_mpc_dialog;
 

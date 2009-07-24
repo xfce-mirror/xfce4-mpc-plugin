@@ -3,7 +3,7 @@ dnl
 dnl xfce4-mpc-plugin - mpd client plugin for the XFce4 panel
 dnl
 
-m4_define([mpc_version], [0.3.3])
+m4_define([mpc_version], [0.3.4])
 
 AC_INIT([xfce4-mpc-plugin], [mpc_version],
 	[landry@fr.homeunix.org])

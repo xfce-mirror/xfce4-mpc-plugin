@@ -29,7 +29,7 @@
 
 #define DEFAULT_MPD_HOST "localhost"
 #define DEFAULT_MPD_PORT 6600
-#define DIALOG_ENTRY_WIDTH 15
+#define DIALOG_ENTRY_WIDTH 20
 
 #include "xfce4-mpc-plugin.h"
 
@@ -99,16 +99,24 @@ mpc_read_config (XfcePanelPlugin * plugin, t_mpc * mpc)
       g_free (mpc->mpd_host);
    if (mpc->mpd_password != NULL)
       g_free (mpc->mpd_password);
+   if (mpc->tooltip_format != NULL)
+      g_free (mpc->tooltip_format);
+   if (mpc->playlist_format != NULL)
+      g_free (mpc->playlist_format);
 
    mpc->mpd_host = g_strdup(xfce_rc_read_entry (rc, "mpd_host",  DEFAULT_MPD_HOST));
    mpc->mpd_port = xfce_rc_read_int_entry (rc, "mpd_port", DEFAULT_MPD_PORT);
    mpc->mpd_password = g_strdup(xfce_rc_read_entry (rc, "mpd_password", ""));
    mpc->show_frame = xfce_rc_read_bool_entry (rc, "show_frame", TRUE);
-   mpc->client_appl = g_strdup(xfce_rc_read_entry (rc, "client_appl",  ""));
+   mpc->client_appl = g_strdup(xfce_rc_read_entry (rc, "client_appl", "SETME"));
+   mpc->tooltip_format = g_strdup(xfce_rc_read_entry (rc, "tooltip_format", "Volume : %vol% - Mpd %status%\\n%artist% - %album% -/- (#%track%) %title%"));
+   mpc->playlist_format = g_strdup(xfce_rc_read_entry (rc, "playlist_format", "%artist% - %album% -/- (#%track%) %title%"));
+
    label = gtk_bin_get_child(GTK_BIN(mpc->appl));
    g_snprintf(str, sizeof(str), "%s %s", _("Launch"), mpc->client_appl);
    gtk_label_set_text(GTK_LABEL(label),str);
-   DBG ("Settings : %s@%s:%d\nframe:%d\nappl:%s", mpc->mpd_password, mpc->mpd_host, mpc->mpd_port, mpc->show_frame, mpc->client_appl);
+
+   DBG ("Settings read : %s@%s:%d\nframe:%d\nappl:%s\ntooltip:%s\nplaylist:%s", mpc->mpd_password, mpc->mpd_host, mpc->mpd_port, mpc->show_frame, mpc->client_appl, mpc->tooltip_format, mpc->playlist_format);
    xfce_rc_close (rc);
 }
 
@@ -140,6 +148,8 @@ static void mpc_write_config (XfcePanelPlugin * plugin, t_mpc * mpc)
    xfce_rc_write_entry (rc, "mpd_password", mpc->mpd_password);
    xfce_rc_write_bool_entry (rc, "show_frame", mpc->show_frame);
    xfce_rc_write_entry (rc, "client_appl", mpc->client_appl);
+   xfce_rc_write_entry (rc, "tooltip_format", mpc->tooltip_format);
+   xfce_rc_write_entry (rc, "playlist_format", mpc->playlist_format);
 
    xfce_rc_close (rc);
 }
@@ -168,11 +178,21 @@ mpc_dialog_apply_options (t_mpc_dialog *dialog)
    mpc->mpd_port = atoi(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_port)));
    mpc->mpd_password = g_strdup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_password)));
    mpc->client_appl = g_strdup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_client_appl)));
+   mpc->tooltip_format = g_strdup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_tooltip_format)));
+   mpc->playlist_format = g_strdup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_playlist_format)));
+
+   if (0 == strlen(mpc->client_appl))
+      mpc->client_appl = g_strdup("SETME");
+   if (0 == strlen(mpc->tooltip_format))
+      mpc->tooltip_format = g_strdup("Volume : %vol% - Mpd %status%\\n%artist% - %album% -/- (#%track%) %title%");
+   if (0 == strlen(mpc->playlist_format))
+      mpc->playlist_format = g_strdup("%artist% - %album% -/- (#%track%) %title%");
+
    label = gtk_bin_get_child(GTK_BIN(mpc->appl));
    g_snprintf(str, sizeof(str), "%s %s", _("Launch"), mpc->client_appl);
    gtk_label_set_text(GTK_LABEL(label),str);
 
-   DBG ("Apply: host=%s, port=%d, passwd=%s, appl=%s", mpc->mpd_host, mpc->mpd_port, mpc->mpd_password, mpc->client_appl);
+   DBG ("Apply: host=%s, port=%d, passwd=%s, appl=%s\ntooltip=%s\nplaylist=%s", mpc->mpd_host, mpc->mpd_port, mpc->mpd_password, mpc->client_appl, mpc->tooltip_format, mpc->playlist_format);
 
    mpd_disconnect(mpc->mo);
    mpd_set_hostname(mpc->mo,mpc->mpd_host);
@@ -242,11 +262,13 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
    gtk_widget_show (vbox);
    gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->vbox), vbox, TRUE, TRUE, 0);
 
-   table = gtk_table_new(4,2,FALSE);
+   table = gtk_table_new(6,2,FALSE);
    gtk_table_attach_defaults(GTK_TABLE(table),gtk_label_new(_("Host : ")),0,1,0,1);
    gtk_table_attach_defaults(GTK_TABLE(table),gtk_label_new(_("Port : ")),0,1,1,2);
    gtk_table_attach_defaults(GTK_TABLE(table),gtk_label_new(_("Password : ")),0,1,2,3);
-   gtk_table_attach_defaults(GTK_TABLE(table),gtk_label_new(_("Client : ")),0,1,3,4);
+   gtk_table_attach_defaults(GTK_TABLE(table),gtk_label_new(_("MPD Client : ")),0,1,3,4);
+   gtk_table_attach_defaults(GTK_TABLE(table),gtk_label_new(_("Tooltip Format : ")),0,1,4,5);
+   gtk_table_attach_defaults(GTK_TABLE(table),gtk_label_new(_("Playlist Format : ")),0,1,5,6);
 
    dialog->textbox_host = gtk_entry_new();
    gtk_entry_set_width_chars(GTK_ENTRY(dialog->textbox_host),DIALOG_ENTRY_WIDTH);
@@ -270,6 +292,17 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
    gtk_entry_set_text(GTK_ENTRY(dialog->textbox_client_appl),mpc->client_appl);
    gtk_table_attach_defaults(GTK_TABLE(table),dialog->textbox_client_appl,1,2,3,4);
 
+   dialog->textbox_tooltip_format = gtk_entry_new();
+   gtk_entry_set_width_chars(GTK_ENTRY(dialog->textbox_tooltip_format),DIALOG_ENTRY_WIDTH);
+   gtk_entry_set_text(GTK_ENTRY(dialog->textbox_tooltip_format),mpc->tooltip_format);
+   gtk_table_attach_defaults(GTK_TABLE(table),dialog->textbox_tooltip_format,1,2,4,5);
+
+   dialog->textbox_playlist_format = gtk_entry_new();
+   gtk_entry_set_width_chars(GTK_ENTRY(dialog->textbox_playlist_format),DIALOG_ENTRY_WIDTH);
+   gtk_entry_set_text(GTK_ENTRY(dialog->textbox_playlist_format),mpc->playlist_format);
+   gtk_table_attach_defaults(GTK_TABLE(table),dialog->textbox_playlist_format,1,2,5,6);
+
+   /* set tooltip for format entries */
    gtk_widget_show_all (table);
    gtk_box_pack_start (GTK_BOX (vbox), table, FALSE, FALSE, 0);
 
@@ -675,10 +708,13 @@ mpc_construct (XfcePanelPlugin * plugin)
 
    /* create widgets */
    mpc = mpc_create (plugin);
+   /* default values when no configuration is found */
    mpc->mpd_host = g_strdup(DEFAULT_MPD_HOST);
    mpc->mpd_port = DEFAULT_MPD_PORT;
    mpc->mpd_password = g_strdup("");
-   mpc->client_appl = g_strdup("");
+   mpc->client_appl = g_strdup("SETME");
+   mpc->tooltip_format = "Volume : %vol% - Mpd %status%\\n%artist% - %album% -/- (#%track%) %title%";
+   mpc->playlist_format = "%artist% - %album% -/- (#%track%) %title%";
    mpc->show_frame = TRUE;
    mpc->playlist = NULL;
 
