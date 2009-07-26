@@ -44,6 +44,15 @@ mpc_free (XfcePanelPlugin * plugin, t_mpc * mpc)
 }
 
 static void
+button_set_sized_image(GtkWidget *button, gchar *icon, gint size)
+{
+   GtkWidget *image;
+   image = gtk_image_new_from_pixbuf(xfce_themed_icon_load(icon, size));
+   gtk_button_set_image(GTK_BUTTON(button), image);
+   gtk_widget_show (button);
+}
+
+static void
 mpc_set_orientation (XfcePanelPlugin * plugin, GtkOrientation orientation, t_mpc * mpc)
 {
    DBG ("!");
@@ -72,6 +81,11 @@ mpc_set_size (XfcePanelPlugin * plugin, int size, t_mpc * mpc)
       else
          gtk_widget_set_size_request (GTK_WIDGET (mpc->frame), size, -1);
    }
+
+   button_set_sized_image(mpc->prev, "gtk-media-previous-ltr", size - 2);
+   button_set_sized_image(mpc->next, "gtk-media-next-ltr", size - 2);
+   button_set_sized_image(mpc->toggle, "gtk-media-pause", size - 2);
+   button_set_sized_image(mpc->stop, "gtk-media-stop", size - 2);
    return TRUE;
 }
 
@@ -621,19 +635,14 @@ scroll_cb(GtkWidget *widget, GdkEventScroll* event, t_mpc* mpc)
    mpd_status_set_volume(mpc->mo,curvol);
 }
 
-static void
-new_button_with_img(XfcePanelPlugin * plugin, GtkWidget *parent, GtkWidget *button, gchar *icon, gpointer cb, gpointer data)
+static GtkWidget*
+new_button_with_cbk(XfcePanelPlugin * plugin, GtkWidget *parent, gpointer cb, gpointer data)
 {
-   GtkWidget *image;
-
-   button = (GtkWidget*) xfce_create_panel_button();
-   image = gtk_image_new_from_stock(icon,GTK_ICON_SIZE_BUTTON); /* FIXME for small panels */
-
-   gtk_button_set_image(GTK_BUTTON(button),image);
+   GtkWidget *button = xfce_create_panel_button();
    xfce_panel_plugin_add_action_widget (plugin, button);
-   gtk_widget_show (GTK_WIDGET(button));
    g_signal_connect (G_OBJECT(button), "button_press_event", G_CALLBACK(cb), data);
    gtk_box_pack_start (GTK_BOX(parent), button, TRUE,TRUE,0);
+   return button;
 }
 
 static t_mpc*
@@ -661,10 +670,10 @@ mpc_create (XfcePanelPlugin * plugin)
    gtk_container_add (GTK_CONTAINER(mpc->ebox), mpc->box);
    gtk_container_add (GTK_CONTAINER(mpc->frame), mpc->ebox);
 
-   new_button_with_img(plugin, mpc->box, mpc->prev, GTK_STOCK_MEDIA_PREVIOUS, G_CALLBACK(prev), mpc);
-   new_button_with_img(plugin, mpc->box, mpc->stop, GTK_STOCK_MEDIA_STOP, G_CALLBACK(stop), mpc);
-   new_button_with_img(plugin, mpc->box, mpc->toggle, GTK_STOCK_MEDIA_PAUSE, G_CALLBACK(toggle), mpc);
-   new_button_with_img(plugin, mpc->box, mpc->next, GTK_STOCK_MEDIA_NEXT, G_CALLBACK(next), mpc);
+   mpc->prev = new_button_with_cbk(plugin, mpc->box, G_CALLBACK(prev), mpc);
+   mpc->stop = new_button_with_cbk(plugin, mpc->box, G_CALLBACK(stop), mpc);
+   mpc->toggle = new_button_with_cbk(plugin, mpc->box, G_CALLBACK(toggle), mpc);
+   mpc->next = new_button_with_cbk(plugin, mpc->box, G_CALLBACK(next), mpc);
 
    mpc->random = gtk_check_menu_item_new_with_label (_("Random"));
    g_signal_connect (G_OBJECT(mpc->random), "toggled", G_CALLBACK (mpc_random_toggled), mpc);
