@@ -49,7 +49,6 @@ button_set_sized_image(GtkWidget *button, gchar *icon, gint size)
    GtkWidget *image;
    image = gtk_image_new_from_pixbuf(xfce_themed_icon_load(icon, size));
    gtk_button_set_image(GTK_BUTTON(button), image);
-   gtk_widget_show (button);
 }
 
 static void
@@ -64,28 +63,17 @@ static gboolean
 mpc_set_size (XfcePanelPlugin * plugin, int size, t_mpc * mpc)
 {
    DBG ("size=%d",size);
+   gtk_container_set_border_width (GTK_CONTAINER (mpc->frame), (size > 26 ? 2 : 0));
 
-   if (size > 26)
-   {
-      gtk_container_set_border_width (GTK_CONTAINER (mpc->frame), 2);
-      if (xfce_panel_plugin_get_orientation (plugin) == GTK_ORIENTATION_HORIZONTAL)
-         gtk_widget_set_size_request (GTK_WIDGET (mpc->frame), -1, size-2 );
-      else
-         gtk_widget_set_size_request (GTK_WIDGET (mpc->frame), size-4 , -1);
-   }
+   if (xfce_panel_plugin_get_orientation (plugin) == GTK_ORIENTATION_HORIZONTAL)
+     gtk_widget_set_size_request (GTK_WIDGET (mpc->frame), -1, size);
    else
-   {
-      gtk_container_set_border_width (GTK_CONTAINER (mpc->frame), 0);
-      if (xfce_panel_plugin_get_orientation (plugin) == GTK_ORIENTATION_HORIZONTAL)
-         gtk_widget_set_size_request (GTK_WIDGET (mpc->frame), -1, size);
-      else
-         gtk_widget_set_size_request (GTK_WIDGET (mpc->frame), size, -1);
-   }
+     gtk_widget_set_size_request (GTK_WIDGET (mpc->frame), size, -1);
 
-   button_set_sized_image(mpc->prev, "gtk-media-previous-ltr", size - 2);
-   button_set_sized_image(mpc->next, "gtk-media-next-ltr", size - 2);
-   button_set_sized_image(mpc->toggle, "gtk-media-pause", size - 2);
-   button_set_sized_image(mpc->stop, "gtk-media-stop", size - 2);
+   button_set_sized_image(mpc->prev, "gtk-media-previous-ltr", size - 3);
+   button_set_sized_image(mpc->next, "gtk-media-next-ltr", size - 3);
+   button_set_sized_image(mpc->toggle, "gtk-media-pause", size - 3);
+   button_set_sized_image(mpc->stop, "gtk-media-stop", size - 3);
    return TRUE;
 }
 
@@ -641,7 +629,7 @@ new_button_with_cbk(XfcePanelPlugin * plugin, GtkWidget *parent, gpointer cb, gp
    GtkWidget *button = xfce_create_panel_button();
    xfce_panel_plugin_add_action_widget (plugin, button);
    g_signal_connect (G_OBJECT(button), "button_press_event", G_CALLBACK(cb), data);
-   gtk_box_pack_start (GTK_BOX(parent), button, TRUE,TRUE,0);
+   gtk_box_pack_start (GTK_BOX(parent), button, TRUE, TRUE, 0);
    return button;
 }
 
@@ -665,7 +653,7 @@ mpc_create (XfcePanelPlugin * plugin)
    g_signal_connect (G_OBJECT(mpc->ebox), "scroll_event", G_CALLBACK(scroll_cb), mpc);
    gtk_widget_show (mpc->ebox);
 
-   mpc->box = (GtkWidget*) xfce_hvbox_new(xfce_panel_plugin_get_orientation(plugin), FALSE, 0);
+   mpc->box = xfce_hvbox_new(xfce_panel_plugin_get_orientation(plugin), FALSE, 0);
 
    gtk_container_add (GTK_CONTAINER(mpc->ebox), mpc->box);
    gtk_container_add (GTK_CONTAINER(mpc->frame), mpc->ebox);
