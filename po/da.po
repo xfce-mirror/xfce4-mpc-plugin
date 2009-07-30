@@ -2,13 +2,13 @@
 # Copyright (C) 2007 THE xfce4-mpc-plugin'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce4-mpc-plugin package.
 # Jens Hyllegaard <jens.hyllegaard@gmail.com>, 2007.
-# Per Kongstad <p_kongstad@op.pl>, 2008.
+# Per Kongstad <p_kongstad@op.pl>, 2008, 09.
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-mpc-plugin 0.3.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-24 18:13+0200\n"
-"PO-Revision-Date: 2008-09-30 12:15+0100\n"
+"PO-Revision-Date: 2009-07-30 10:22+0100\n"
 "Last-Translator: Per Kongstad <p_kongstad@op.pl>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr "Start"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:247
 msgid "Mpd Client Plugin"
-msgstr "Mpd-klientudvidelsesmodul"
+msgstr "Klientudvidelsesmodul til MPD"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:253
 msgid "Properties"
@@ -45,35 +45,32 @@ msgid "Password : "
 msgstr "Adgangskode : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:269
-#, fuzzy
 msgid "MPD Client : "
-msgstr "Klient : "
+msgstr "MPD-klient : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:270
 msgid "Tooltip Format : "
-msgstr ""
+msgstr "Værktøjstipformat : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:271
 msgid "Playlist Format : "
-msgstr ""
+msgstr "Spillelisteformat : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:305
 msgid "Hostname or IP address"
-msgstr ""
+msgstr "Værtsnavn eller IP-adresse"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:306
 msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr ""
+msgstr "Grafisk MPD-klient til at starte udvidelsesmodul fra kontekstmenu"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:307
 msgid "Variables : %artist%, %album%, %track% and %title%"
-msgstr ""
+msgstr "Variabler : %artist%, %album%, %track% og %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:308
-msgid ""
-"Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title"
-"%"
-msgstr ""
+msgid "Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title%"
+msgstr "Variabler : %vol%, %status%, %newline%, %artist%, %album%, %track% og %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:313
 msgid "Show _frame"
@@ -86,7 +83,7 @@ msgstr ".... ikke tilsluttet ?"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:465
 msgid "Mpd playlist"
-msgstr "Mpd spilleliste"
+msgstr "MPD spilleliste"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:669
 msgid "Random"
@@ -98,7 +95,7 @@ msgstr "Gentag"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:697
 msgid "Xfce4 Mpc Plugin"
-msgstr "Xfce4-Mpc-udvidelsesmodul"
+msgstr "Mpc-udvidelsesmodul til Xfce4"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:698
 msgid "A simple panel-plugin client for Music Player Daemon"
@@ -110,7 +107,7 @@ msgstr "Copyright (c) 2006-2008 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:701
 msgid "Maintainer, Original Author"
-msgstr "Vedligeholder, originale forfatter"
+msgstr "Vedligeholder, oprindelige forfatter"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:1
 msgid "A client for MPD, The Music Player Daemon"
@@ -118,4 +115,4 @@ msgstr "En klient til MPD, musikafspilnings-dæmonen"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
 msgid "MPD Client Plugin"
-msgstr "MPD-klientudvidelsesmodul"
+msgstr "Klientudvidelsesmodul til MPD"
