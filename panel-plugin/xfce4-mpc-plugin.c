@@ -106,6 +106,8 @@ mpc_read_config (XfcePanelPlugin * plugin, t_mpc * mpc)
       g_free (mpc->tooltip_format);
    if (mpc->playlist_format != NULL)
       g_free (mpc->playlist_format);
+   if (mpc->client_appl != NULL)
+      g_free (mpc->client_appl);
 
    mpc->mpd_host = g_strdup(xfce_rc_read_entry (rc, "mpd_host",  DEFAULT_MPD_HOST));
    mpc->mpd_port = xfce_rc_read_int_entry (rc, "mpd_port", DEFAULT_MPD_PORT);
@@ -730,8 +732,8 @@ mpc_construct (XfcePanelPlugin * plugin)
    mpc->mpd_port = DEFAULT_MPD_PORT;
    mpc->mpd_password = g_strdup("");
    mpc->client_appl = g_strdup("SETME");
-   mpc->tooltip_format = "Volume : %vol%% - Mpd %status%%newline%%artist% - %album% -/- (#%track%) %title%";
-   mpc->playlist_format = "%artist% - %album% -/- (#%track%) %title%";
+   mpc->tooltip_format = g_strdup("Volume : %vol%% - Mpd %status%%newline%%artist% - %album% -/- (#%track%) %title%");
+   mpc->playlist_format = g_strdup("%artist% - %album% -/- (#%track%) %title%");
    mpc->show_frame = TRUE;
    mpc->playlist = NULL;
 
