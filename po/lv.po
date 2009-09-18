@@ -1,29 +1,33 @@
 # Latvian translations for xfce package.
 # Copyright (C) 2006 THE xfce'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce packakage.
-# Rihards Prieditis <rprieditis@inbox.lv>, 2007.
 #
+# Rihards Prieditis <rprieditis@inbox.lv>, 2007.
+# Rihards Prieditis <rprieditis@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce 4-mpc-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-24 18:13+0200\n"
-"PO-Revision-Date: 2007-11-17 01:21+0300\n"
-"Last-Translator: Rihards Priedītis <rprieditis@inbox.lv>\n"
-"Language-Team: Latvian <rprieditis@inbox.lv>\n"
+"PO-Revision-Date: 2009-09-18 22:34+0100\n"
+"Last-Translator: Rihards Prieditis <rprieditis@gmail.com>\n"
+"Language-Team: Latvian <translation-team-lv@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:116
 #: ../panel-plugin/xfce4-mpc-plugin.c:192
 #: ../panel-plugin/xfce4-mpc-plugin.c:673
 msgid "Launch"
-msgstr ""
+msgstr "Palaist"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:247
 msgid "Mpd Client Plugin"
-msgstr "Mpd Klienta Spraudnis"
+msgstr "Mpd klienta spraudnis"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:253
 msgid "Properties"
@@ -31,50 +35,51 @@ msgstr "Rekvizīti"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:266
 msgid "Host : "
-msgstr "Resursdators:"
+msgstr "Resursdators: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:267
 msgid "Port : "
-msgstr "Ports:"
+msgstr "Ports: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:268
 msgid "Password : "
-msgstr "Parole:"
+msgstr "Parole: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:269
-#, fuzzy
 msgid "MPD Client : "
-msgstr "MPD Klienta Spraudnis"
+msgstr "MPD klients: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:270
 msgid "Tooltip Format : "
-msgstr ""
+msgstr "Paskaidres formāts: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:271
 msgid "Playlist Format : "
-msgstr ""
+msgstr "Atskaņošanas formāts: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:305
 msgid "Hostname or IP address"
-msgstr ""
+msgstr "Resursdators vai IP adrese"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:306
 msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr ""
+msgstr "Grafiskais MPD klientes, lai palaistu spraudni konteksta izvēlnē"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:307
 msgid "Variables : %artist%, %album%, %track% and %title%"
-msgstr ""
+msgstr "Mainīgie: %artist%, %album%, %track% and %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:308
 msgid ""
 "Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title"
 "%"
 msgstr ""
+"Mainīgie : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title"
+"%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:313
 msgid "Show _frame"
-msgstr "Rādīt _rāmi"
+msgstr "Rādīt _kadru"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:382
 #: ../panel-plugin/xfce4-mpc-plugin.c:612
@@ -83,37 +88,37 @@ msgstr ".... nav savienots?"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:465
 msgid "Mpd playlist"
-msgstr ""
+msgstr "Mpd atskaņošanas saraksts"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:669
 msgid "Random"
-msgstr ""
+msgstr "Nejauši"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:671
 msgid "Repeat"
-msgstr ""
+msgstr "Atkārtot"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:697
 msgid "Xfce4 Mpc Plugin"
-msgstr ""
+msgstr "Xfce Mpc spraudnis"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:698
-#, fuzzy
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr "Klients MPD, Mūzikas Atskaņošanas Dēmons"
+msgstr "Mūzikas atskaņošanas dēmona vienkāršs spraudnis panelī"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:699
 msgid "Copyright (c) 2006-2008 Landry Breuil\n"
-msgstr ""
+msgstr "Autortiesības (c) 2006-2008 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:701
 msgid "Maintainer, Original Author"
-msgstr ""
+msgstr "Uzturētājs, sākotnējais autors"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:1
 msgid "A client for MPD, The Music Player Daemon"
-msgstr "Klients MPD, Mūzikas Atskaņošanas Dēmons"
+msgstr "Klients MPD, mūzikas atskaņošanas dēmons"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
 msgid "MPD Client Plugin"
-msgstr "MPD Klienta Spraudnis"
+msgstr "MPD klienta spraudnis"
+
