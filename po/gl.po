@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-24 18:13+0200\n"
-"PO-Revision-Date: 2009-04-14 21:43+0100\n"
+"PO-Revision-Date: 2009-07-27 12:34+0100\n"
 "Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
@@ -47,35 +47,32 @@ msgid "Password : "
 msgstr "Contrasinal: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:269
-#, fuzzy
 msgid "MPD Client : "
-msgstr "Cliente: "
+msgstr "Cliente de MPD: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:270
 msgid "Tooltip Format : "
-msgstr ""
+msgstr "Formato da notificación: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:271
 msgid "Playlist Format : "
-msgstr ""
+msgstr "Formato da lista de reprodución: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:305
 msgid "Hostname or IP address"
-msgstr ""
+msgstr "Nome de máquina ou enderezo IP"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:306
 msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr ""
+msgstr "Cliente gráfico de MPD para iniciar no menú contextual de engadidos"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:307
 msgid "Variables : %artist%, %album%, %track% and %title%"
-msgstr ""
+msgstr "Variables : %artist%, %album%, %track% e %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:308
-msgid ""
-"Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title"
-"%"
-msgstr ""
+msgid "Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title%"
+msgstr "Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% e %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:313
 msgid "Show _frame"
@@ -121,3 +118,4 @@ msgstr "Un cliente de MPD, o Music Player Daemon"
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
 msgid "MPD Client Plugin"
 msgstr "Engadido de cliente de MPD"
+
