@@ -1,7 +1,7 @@
 Xfce4-Mpc-Plugin
 ----------------
 
-This is a simple Musicpd (http://www.musicpd.org) client plugin for the Xfce 4.4 panel.
+This is a simple Musicpd (http://www.musicpd.org) client plugin for the Xfce panel.
 Features :
 - next/stop/play/pause/previous buttons
 - current volume/status/playing track when mouse passes over the plugin
