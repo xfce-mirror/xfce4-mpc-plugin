@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xfce4-mpc-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-24 18:13+0200\n"
-"PO-Revision-Date: 2009-01-29 17:08+0100\n"
+"PO-Revision-Date: 2009-12-29 21:07+0100\n"
 "Last-Translator: Cristian Marchi <cri.penta@gmail.com>\n"
 "Language-Team: Italian <xfce-it-translators@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr "Avvia"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:247
 msgid "Mpd Client Plugin"
-msgstr "Plugin per il client MPD"
+msgstr "Plugin per il client Mpd"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:253
 msgid "Properties"
@@ -42,35 +42,33 @@ msgid "Password : "
 msgstr "Password: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:269
-#, fuzzy
 msgid "MPD Client : "
-msgstr "Client: "
+msgstr "Client MPD: "
 
+# Descrive le informazioni (titolo, anno,  artista ecc...) da visualizzare come tooltip.
 #: ../panel-plugin/xfce4-mpc-plugin.c:270
 msgid "Tooltip Format : "
-msgstr ""
+msgstr "Formato delle info:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:271
 msgid "Playlist Format : "
-msgstr ""
+msgstr "Formato della scaletta:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:305
 msgid "Hostname or IP address"
-msgstr ""
+msgstr "Nome host o indirizzo IP"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:306
 msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr ""
+msgstr "Client MPD grafico da lanciare nel menu contestuale del plugin"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:307
 msgid "Variables : %artist%, %album%, %track% and %title%"
-msgstr ""
+msgstr "Variabili : %artist%, %album%, %track% e %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:308
-msgid ""
-"Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title"
-"%"
-msgstr ""
+msgid "Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title%"
+msgstr "Variabili : %vol%, %status%, %newline%, %artist%, %album%, %track% e %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:313
 msgid "Show _frame"
@@ -83,7 +81,7 @@ msgstr "...non connesso?"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:465
 msgid "Mpd playlist"
-msgstr "Scaletta MPD"
+msgstr "Scaletta Mpd"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:669
 msgid "Random"
@@ -95,12 +93,11 @@ msgstr "Ripeti"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:697
 msgid "Xfce4 Mpc Plugin"
-msgstr "Plugin MPD per Xfce4"
+msgstr "Plugin Mpc per Xfce4"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:698
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr ""
-"Un semplice plugin da pannello per il demone del riproduttore musicale (MPD)"
+msgstr "Un semplice plugin da pannello per il demone del riproduttore musicale (MPD)"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:699
 msgid "Copyright (c) 2006-2008 Landry Breuil\n"
@@ -117,3 +114,4 @@ msgstr "Un client per il demone del riproduttore musicale (MPD)"
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
 msgid "MPD Client Plugin"
 msgstr "MPD Client plugin"
+
