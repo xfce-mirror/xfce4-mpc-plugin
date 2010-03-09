@@ -1,3 +1,4 @@
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-mpc-plugin\n"
@@ -10,8 +11,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Russian\n"
-"X-Poedit-Country: RUSSIAN FEDERATION\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:116
 #: ../panel-plugin/xfce4-mpc-plugin.c:192
@@ -69,12 +70,12 @@ msgstr "Переменные : %vol%, %status%, %newline%, %artist%, %album%, %t
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:313
 msgid "Show _frame"
-msgstr "Показывать рамку"
+msgstr "Показывать _рамку"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:382
 #: ../panel-plugin/xfce4-mpc-plugin.c:612
 msgid ".... not connected ?"
-msgstr ".... нет связи ?"
+msgstr ".... не подключен ?"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:465
 msgid "Mpd playlist"
@@ -86,7 +87,7 @@ msgstr "Случайный режим"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:671
 msgid "Repeat"
-msgstr "Повтор списка"
+msgstr "Повтор"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:697
 msgid "Xfce4 Mpc Plugin"
@@ -111,4 +112,3 @@ msgstr "Клиент для музыкального сервера MPD"
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
 msgid "MPD Client Plugin"
 msgstr "Апплет клиента MPD"
-
