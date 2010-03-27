@@ -25,7 +25,7 @@ msgstr "Starte"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:247
 msgid "Mpd Client Plugin"
-msgstr "Erweiterung für den Mpd-Klienten"
+msgstr "MPD-Klient-Erweiterung"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:253
 msgid "Properties"
@@ -37,11 +37,11 @@ msgstr "Host: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:267
 msgid "Port : "
-msgstr "Port: "
+msgstr "Port:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:268
 msgid "Password : "
-msgstr "Passwort: "
+msgstr "Passwort:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:269
 msgid "MPD Client : "
