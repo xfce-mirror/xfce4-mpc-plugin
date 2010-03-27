@@ -21,7 +21,7 @@ msgstr ""
 #: ../panel-plugin/xfce4-mpc-plugin.c:192
 #: ../panel-plugin/xfce4-mpc-plugin.c:673
 msgid "Launch"
-msgstr "starten"
+msgstr "Starte"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:247
 msgid "Mpd Client Plugin"
@@ -50,7 +50,7 @@ msgstr "Klient: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:270
 msgid "Tooltip Format : "
-msgstr ""
+msgstr "Formatierung der Kurzhilfen:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:271
 msgid "Playlist Format : "
@@ -62,7 +62,7 @@ msgstr "Hostname oder IP-Adresse"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:306
 msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr ""
+msgstr "Grafischer MPD-Klient, der über das Kontextmenü gestartet werden kann"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:307
 msgid "Variables : %artist%, %album%, %track% and %title%"
@@ -95,7 +95,7 @@ msgstr "Wiederholen"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:697
 msgid "Xfce4 Mpc Plugin"
-msgstr "Xfce-Mpc-Erweiterung"
+msgstr "MPD-Klient-Erweiterung"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:698
 msgid "A simple panel-plugin client for Music Player Daemon"
