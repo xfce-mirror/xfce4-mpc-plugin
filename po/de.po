@@ -44,9 +44,8 @@ msgid "Password : "
 msgstr "Passwort: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:269
-#, fuzzy
 msgid "MPD Client : "
-msgstr "Klient: "
+msgstr "MPD-Klient:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:270
 msgid "Tooltip Format : "
