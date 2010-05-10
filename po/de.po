@@ -3,7 +3,7 @@
 # Copyright (C) 2009 THE xfce4-mpc-plugin'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce4-mpc-plugin package.
 # Simon Schneider <simon@schneiderimtal.de>, 2009.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-mpc-plugin 4-mpc-plugin\n"
@@ -21,11 +21,11 @@ msgstr ""
 #: ../panel-plugin/xfce4-mpc-plugin.c:192
 #: ../panel-plugin/xfce4-mpc-plugin.c:673
 msgid "Launch"
-msgstr "starten"
+msgstr "Starte"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:247
 msgid "Mpd Client Plugin"
-msgstr "Erweiterung für den Mpd-Klienten"
+msgstr "MPD-Klient-Erweiterung"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:253
 msgid "Properties"
@@ -37,42 +37,39 @@ msgstr "Host: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:267
 msgid "Port : "
-msgstr "Port: "
+msgstr "Port:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:268
 msgid "Password : "
-msgstr "Passwort: "
+msgstr "Passwort:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:269
-#, fuzzy
 msgid "MPD Client : "
-msgstr "Klient: "
+msgstr "MPD-Klient:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:270
 msgid "Tooltip Format : "
-msgstr ""
+msgstr "Formatierung der Kurzhilfen:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:271
 msgid "Playlist Format : "
-msgstr ""
+msgstr "Wiedergabelisteformat:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:305
 msgid "Hostname or IP address"
-msgstr ""
+msgstr "Hostname oder IP-Adresse"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:306
 msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr ""
+msgstr "Grafischer MPD-Klient, der über das Kontextmenü gestartet werden kann"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:307
 msgid "Variables : %artist%, %album%, %track% and %title%"
-msgstr ""
+msgstr "Variablen: %artist%, %album%, %track% und %titel%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:308
-msgid ""
-"Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title"
-"%"
-msgstr ""
+msgid "Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title%"
+msgstr "Variablen : %vol%, %status%, %newline%, %artist%, %album%, %track% und %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:313
 msgid "Show _frame"
@@ -97,7 +94,7 @@ msgstr "Wiederholen"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:697
 msgid "Xfce4 Mpc Plugin"
-msgstr "Xfce-Mpc-Erweiterung"
+msgstr "MPD-Klient-Erweiterung"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:698
 msgid "A simple panel-plugin client for Music Player Daemon"

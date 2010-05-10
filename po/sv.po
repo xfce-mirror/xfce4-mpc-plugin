@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xfce4-mpc-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-24 18:13+0200\n"
-"PO-Revision-Date: 2008-12-21 19:18+0100\n"
+"PO-Revision-Date: 2009-12-16 17:27+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -42,35 +42,32 @@ msgid "Password : "
 msgstr "Lösenord : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:269
-#, fuzzy
 msgid "MPD Client : "
-msgstr "Klient : "
+msgstr "MPD-klient : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:270
 msgid "Tooltip Format : "
-msgstr ""
+msgstr "Format för verktygstips : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:271
 msgid "Playlist Format : "
-msgstr ""
+msgstr "Format för spellista : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:305
 msgid "Hostname or IP address"
-msgstr ""
+msgstr "Värdnamn eller IP-adress"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:306
 msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr ""
+msgstr "Grafisk MPD-klient att starta i insticksmodulens sammanhangsmeny"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:307
 msgid "Variables : %artist%, %album%, %track% and %title%"
-msgstr ""
+msgstr "Variabler : %artist%, %album%, %track% och %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:308
-msgid ""
-"Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title"
-"%"
-msgstr ""
+msgid "Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title%"
+msgstr "Variabler : %vol%, %status%, %newline%, %artist%, %album%, %track% och %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:313
 msgid "Show _frame"
@@ -116,3 +113,4 @@ msgstr "En klient för MPD, The Music Player Daemon"
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
 msgid "MPD Client Plugin"
 msgstr "Insticksmodulen MPD-klient"
+
