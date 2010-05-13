@@ -347,6 +347,57 @@ mpc_repeat_toggled(GtkWidget *widget, t_mpc* mpc)
    mpd_player_set_repeat(mpc->mo, gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(widget)));
 }
 
+static void
+mpc_output_toggled(GtkWidget *widget, t_mpc* mpc)
+{
+   DBG("!");
+   int i;
+   /* lookup menuitem */
+   for (i = 0; i < mpc->nb_outputs && mpc->mpd_outputs[i]->menuitem != widget; i++);
+   if (i != mpc->nb_outputs) /* oops case ? */
+      /* set corresponding mpd output status */
+      mpd_server_set_output_device(mpc->mo, mpc->mpd_outputs[i]->id, gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(widget)));
+}
+
+/* get output list from mpd, add a checkbox to rightclick menu for each */
+static void
+mpc_update_outputs(t_mpc* mpc)
+{
+   DBG("!");
+   int i,j=0;
+   MpdData * data = mpd_server_get_output_devices(mpc->mo);
+   do {
+      DBG("got output %d with name %s, enabled=%d",data->output_dev->id,data->output_dev->name,data->output_dev->enabled);
+      /* check if this output doesn't already exist */
+      for (i = 0; i < mpc->nb_outputs && mpc->mpd_outputs[i]->id != data->output_dev->id ; i++);
+
+      if (i == mpc->nb_outputs) {
+         DBG("output not found, adding a new checkitem at pos %d",i);
+         GtkWidget* chkitem = gtk_check_menu_item_new_with_label (data->output_dev->name);
+         g_signal_connect (G_OBJECT(chkitem), "toggled", G_CALLBACK (mpc_output_toggled), mpc);
+         xfce_panel_plugin_menu_insert_item(mpc->plugin,GTK_MENU_ITEM(chkitem));
+         gtk_widget_show (chkitem);
+         mpc->mpd_outputs[i] = g_new(t_mpd_output,1);
+         mpc->mpd_outputs[i]->id = data->output_dev->id;
+         mpc->mpd_outputs[i]->menuitem = chkitem;
+         mpc->nb_outputs++;
+      }
+      mpc->mpd_outputs[i]->enabled = data->output_dev->enabled;
+      gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->mpd_outputs[i]->menuitem), mpc->mpd_outputs[i]->enabled);
+      j++;
+   } while (NULL != (data = mpd_data_get_next (data)));
+   /* something changed, better prune the list and recreate it */
+   /* TODO: test this codepath */
+   if (j != mpc->nb_outputs) {
+      DBG("didnt found same amount of outputs (was %d got %d), resetting output list", mpc->nb_outputs, j);
+      for (i = 0; i < mpc->nb_outputs ; i++) {
+         gtk_widget_destroy(mpc->mpd_outputs[i]->menuitem);
+         g_free(mpc->mpd_outputs[i]);
+      }
+      mpc->nb_outputs = 0;
+      mpc_update_outputs(mpc);
+   }
+}
 
 void
 str_replace(GString *str, gchar* pattern, gchar* replacement)
@@ -418,6 +469,7 @@ enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
 
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->random), mpd_player_get_random(mpc->mo));
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->repeat), mpd_player_get_repeat(mpc->mo));
+   mpc_update_outputs(mpc);
 
    gtk_widget_set_tooltip_text (widget, str->str);
    g_string_free(str, TRUE);
@@ -736,6 +788,8 @@ mpc_construct (XfcePanelPlugin * plugin)
    mpc->playlist_format = g_strdup("%artist% - %album% -/- (#%track%) %title%");
    mpc->show_frame = TRUE;
    mpc->playlist = NULL;
+   mpc->mpd_outputs = g_new(t_mpd_output*,1);
+   mpc->nb_outputs = 0;
 
    mpc_read_config (plugin, mpc);
 

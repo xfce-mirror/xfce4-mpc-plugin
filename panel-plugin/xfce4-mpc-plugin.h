@@ -32,6 +32,13 @@
 #endif /* !HAVE_LIBMPD */
 
 typedef struct {
+   GtkWidget* menuitem;
+   gchar* name;
+   gint id;
+   gint enabled;
+} t_mpd_output;
+
+typedef struct {
    XfcePanelPlugin *plugin;
    GtkWidget *frame,*ebox,*box,*prev,*stop,*toggle,*next,*random,*repeat,*appl,*about;
    GtkWidget *playlist;
@@ -46,6 +53,8 @@ typedef struct {
    gchar * playlist_format;
    gboolean mpd_repeat;
    gboolean mpd_random;
+   gint nb_outputs;
+   t_mpd_output ** mpd_outputs;
 } t_mpc;
 
 typedef struct {
