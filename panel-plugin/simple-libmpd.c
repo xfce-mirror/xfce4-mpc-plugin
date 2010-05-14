@@ -565,6 +565,11 @@ MpdData* mpd_server_get_output_devices(MpdObj* mo)
 
 int mpd_server_set_output_device (MpdObj* mo, int id, int state)
 {
+   char outbuf[18];
+   /* write (enable|disable)output 'id' to socket */
+   DBG("!");
+   snprintf(outbuf, sizeof(outbuf), "%soutput %d\n",(state ? "enable" : "disable"), id);
+   return mpd_send_single_cmd(mo,outbuf);
 }
 
 void mpd_status_set_volume(MpdObj* mo, int newvol)
