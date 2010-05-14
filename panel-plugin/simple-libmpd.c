@@ -437,7 +437,29 @@ void parse_playlistinfo_answer(MpdObj *mo, void *param)
 void parse_outputs_answer(MpdObj *mo, void *param)
 {
    MpdData* md = (MpdData*) param;
-   mpd_Song* ms;
+   gchar **lines, **tokens;
+   int i = 0;
+   lines = g_strsplit(mo->buffer, "\n", 0);
+   while(lines[i] && strcmp(lines[i],"OK"))
+   {
+      md->alloutputs[md->nb] = g_new(mpd_Output, 1);
+      md->alloutputs[md->nb]->enabled = -1;
+      DBG("Going to parse output #%d", md->nb);
+      while(lines[i] && md->alloutputs[md->nb]->enabled < 0)
+      {
+         tokens = g_strsplit(lines[i], ":", 2);
+         /* remove leading whitespace */
+         tokens[1] = g_strchug(tokens[1]);
+         DBG("key=\"%s\",value=\"%s\"", tokens[0], tokens[1]);
+         if      (0 == strcmp("outputid",tokens[0])) md->alloutputs[md->nb]->id = atoi(tokens[1]);
+         else if (0 == strcmp("outputname",tokens[0])) md->alloutputs[md->nb]->name = g_strdup(tokens[1]);
+         else if (0 == strcmp("outputenabled",tokens[0])) md->alloutputs[md->nb]->enabled = atoi(tokens[1]);
+         i++;
+         g_strfreev(tokens);
+      }
+      md->nb++;
+   }
+   g_strfreev(lines);
 }
 
 mpd_Song* mpd_playlist_get_current_song(MpdObj* mo)
@@ -495,7 +517,7 @@ MpdData* mpd_data_get_next(MpdData* md)
       {
          switch (md->type) {
             case MPD_DATA_TYPE_OUTPUT_DEV:
-            if (md->alloutputs[md->cur].name) free(md->alloutputs[md->cur].name);
+            if (md->alloutputs[md->cur]->name) free(md->alloutputs[md->cur]->name);
             break;
             case MPD_DATA_TYPE_SONG:
             if (md->allsongs[md->cur].file) free(md->allsongs[md->cur].file);
@@ -520,7 +542,7 @@ MpdData* mpd_data_get_next(MpdData* md)
    }
    switch (md->type) {
       case MPD_DATA_TYPE_OUTPUT_DEV:
-         md->output_dev = (&md->alloutputs[md->cur]);
+         md->output_dev = md->alloutputs[md->cur];
          break;
       case MPD_DATA_TYPE_SONG:
          md->song = (&md->allsongs[md->cur]);
@@ -534,9 +556,10 @@ MpdData* mpd_server_get_output_devices(MpdObj* mo)
    MpdData* md = g_new0(MpdData,1);
    DBG("!");
    md->cur = md->nb = 0;
+   md->alloutputs = g_new(mpd_Output*,1);
    md->type = MPD_DATA_TYPE_OUTPUT_DEV;
    send_complex_cmd(mo, "outputs\n", parse_outputs_answer, (void*) md);
-   md->output_dev = &(md->alloutputs[0]);
+   md->output_dev = md->alloutputs[0];
    return ((!mo->error) ? md : NULL);
 }
 

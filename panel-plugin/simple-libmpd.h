@@ -90,7 +90,7 @@ typedef struct {
    /* ptr to current output */
    mpd_Output* output_dev;
    /* vector of all outputs */
-   mpd_Output* alloutputs;
+   mpd_Output** alloutputs;
    int nb;
    int cur;
 } MpdData;
