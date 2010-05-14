@@ -399,7 +399,7 @@ mpc_update_outputs(t_mpc* mpc)
    }
 }
 
-void
+static void
 str_replace(GString *str, gchar* pattern, gchar* replacement)
 {
    if (!replacement)
@@ -409,7 +409,7 @@ str_replace(GString *str, gchar* pattern, gchar* replacement)
    g_free(nstr);
 }
 
-void
+static void
 format_song_display(mpd_Song* song, GString *str, t_mpc* mpc)
 {
    if (0 == str->len)
