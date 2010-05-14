@@ -501,6 +501,14 @@ MpdData* mpd_data_get_next(MpdData* md)
    return md;
 }
 
+MpdData* mpd_server_get_output_devices(MpdObj* mo)
+{
+}
+
+int mpd_server_set_output_device (MpdObj* mo, int id, int state)
+{
+}
+
 void mpd_status_set_volume(MpdObj* mo, int newvol)
 {
    char outbuf[15];

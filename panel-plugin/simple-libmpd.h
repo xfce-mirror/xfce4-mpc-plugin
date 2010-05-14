@@ -51,6 +51,12 @@ typedef struct {
 } mpd_Song;
 
 typedef struct {
+   int id;
+   char* name;
+   int enabled;
+} mpd_Output;
+
+typedef struct {
    gchar* host;
    int port;
    gchar* pass;
@@ -68,12 +74,23 @@ typedef struct {
    int buflen;
 } MpdObj;
 
+typedef enum {
+   MPD_DATA_TYPE_SONG,
+   MPD_DATA_TYPE_OUTPUT_DEV
+} MpdDataType;
+
 /* here, i must cheat, too hard to follow libmpd's behaviour */
 typedef struct {
+   /* holds type = song or output */
+   MpdDataType type;
    /* ptr to current song */
    mpd_Song* song;
    /* vector of all songs in playlist */
    mpd_Song* allsongs;
+   /* ptr to current output */
+   mpd_Output* output_dev;
+   /* vector of all outputs */
+   mpd_Output* alloutputs;
    int nb;
    int cur;
 } MpdData;
@@ -96,6 +113,8 @@ int mpd_player_get_current_song_pos(MpdObj*);
 MpdData* mpd_playlist_get_changes(MpdObj*, int);
 MpdData* mpd_data_get_next(MpdData*);
 mpd_Song* mpd_playlist_get_current_song(MpdObj*);
+MpdData* mpd_server_get_output_devices(MpdObj*);
+int mpd_server_set_output_device (MpdObj*, int, int);
 int mpd_playlist_get_playlist_length(MpdObj*);
 int mpd_check_error(MpdObj*);
 void mpd_set_hostname(MpdObj*, char*);
