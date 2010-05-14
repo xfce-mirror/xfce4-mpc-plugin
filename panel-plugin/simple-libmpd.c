@@ -434,6 +434,12 @@ void parse_playlistinfo_answer(MpdObj *mo, void *param)
    DBG("Got 'OK', md->nb = %d", md->nb);
 }
 
+void parse_outputs_answer(MpdObj *mo, void *param)
+{
+   MpdData* md = (MpdData*) param;
+   mpd_Song* ms;
+}
+
 mpd_Song* mpd_playlist_get_current_song(MpdObj* mo)
 {
    DBG("!");
@@ -471,6 +477,7 @@ MpdData* mpd_playlist_get_changes(MpdObj* mo, int old_playlist_id)
 {
    MpdData* md = g_new0(MpdData,1);
    md->cur = md->nb = 0;
+   md->type = MPD_DATA_TYPE_SONG;
    md->allsongs = g_new(mpd_Song, mo->playlistlength);
    DBG("!");
    send_complex_cmd(mo, "playlistinfo\n", parse_playlistinfo_answer, (void*) md);
@@ -486,23 +493,51 @@ MpdData* mpd_data_get_next(MpdData* md)
    {
       for (md->cur--; md->cur; md->cur--)
       {
-         if (md->allsongs[md->cur].file) free(md->allsongs[md->cur].file);
-         if (md->allsongs[md->cur].artist) free(md->allsongs[md->cur].artist);
-         if (md->allsongs[md->cur].album) free(md->allsongs[md->cur].album);
-         if (md->allsongs[md->cur].title) free(md->allsongs[md->cur].title);
-         if (md->allsongs[md->cur].track) free(md->allsongs[md->cur].track);
+         switch (md->type) {
+            case MPD_DATA_TYPE_OUTPUT_DEV:
+            if (md->alloutputs[md->cur].name) free(md->alloutputs[md->cur].name);
+            break;
+            case MPD_DATA_TYPE_SONG:
+            if (md->allsongs[md->cur].file) free(md->allsongs[md->cur].file);
+            if (md->allsongs[md->cur].artist) free(md->allsongs[md->cur].artist);
+            if (md->allsongs[md->cur].album) free(md->allsongs[md->cur].album);
+            if (md->allsongs[md->cur].title) free(md->allsongs[md->cur].title);
+            if (md->allsongs[md->cur].track) free(md->allsongs[md->cur].track);
+            break;
+         }
       }
-      g_free(md->allsongs);
+      switch (md->type) {
+         case MPD_DATA_TYPE_OUTPUT_DEV:
+            g_free(md->alloutputs);
+            break;
+         case MPD_DATA_TYPE_SONG:
+            g_free(md->allsongs);
+            break;
+      }
       g_free(md);
       DBG("Free()'d md");
       return NULL;
    }
-   md->song = (&md->allsongs[md->cur]);
+   switch (md->type) {
+      case MPD_DATA_TYPE_OUTPUT_DEV:
+         md->output_dev = (&md->alloutputs[md->cur]);
+         break;
+      case MPD_DATA_TYPE_SONG:
+         md->song = (&md->allsongs[md->cur]);
+         break;
+   }
    return md;
 }
 
 MpdData* mpd_server_get_output_devices(MpdObj* mo)
 {
+   MpdData* md = g_new0(MpdData,1);
+   DBG("!");
+   md->cur = md->nb = 0;
+   md->type = MPD_DATA_TYPE_OUTPUT_DEV;
+   send_complex_cmd(mo, "outputs\n", parse_outputs_answer, (void*) md);
+   md->output_dev = &(md->alloutputs[0]);
+   return ((!mo->error) ? md : NULL);
 }
 
 int mpd_server_set_output_device (MpdObj* mo, int id, int state)
