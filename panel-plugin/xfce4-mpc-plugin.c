@@ -692,7 +692,7 @@ add_separator_and_label_with_markup(XfcePanelPlugin* plugin, gchar* lbl)
 {
    GtkWidget *separator, *menuitem, *label;
    separator = gtk_separator_menu_item_new();
-   menuitem = gtk_menu_item_new_with_label(_(lbl));
+   menuitem = gtk_menu_item_new_with_label(lbl);
    gtk_widget_set_sensitive(menuitem, FALSE);
    label = gtk_bin_get_child(GTK_BIN(menuitem));
    gtk_label_set_use_markup(GTK_LABEL(label), TRUE);
@@ -739,11 +739,11 @@ mpc_create (XfcePanelPlugin * plugin)
    mpc->appl = gtk_menu_item_new_with_label (_("Launch"));
    g_signal_connect (G_OBJECT(mpc->appl), "activate", G_CALLBACK (mpc_launch_client), mpc);
 
-   add_separator_and_label_with_markup(plugin, "<b><i>Commands</i></b>");
+   add_separator_and_label_with_markup(plugin, _("<b><i>Commands</i></b>"));
    xfce_panel_plugin_menu_insert_item(plugin,GTK_MENU_ITEM(mpc->random));
    xfce_panel_plugin_menu_insert_item(plugin,GTK_MENU_ITEM(mpc->repeat));
    xfce_panel_plugin_menu_insert_item(plugin,GTK_MENU_ITEM(mpc->appl));
-   add_separator_and_label_with_markup(plugin, "<b><i>Outputs</i></b>");
+   add_separator_and_label_with_markup(plugin, _("<b><i>Outputs</i></b>"));
    gtk_widget_show (mpc->repeat);
    gtk_widget_show (mpc->random);
    gtk_widget_show (mpc->appl);
