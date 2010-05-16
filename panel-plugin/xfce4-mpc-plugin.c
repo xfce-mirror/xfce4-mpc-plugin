@@ -768,7 +768,7 @@ mpc_show_about(XfcePanelPlugin *plugin, t_mpc* mpc)
    }
    ainfo = xfce_about_info_new(_("Xfce4 Mpc Plugin"), PACKAGE_VERSION,
                                _("A simple panel-plugin client for Music Player Daemon"),
-                               _("Copyright (c) 2006-2008 Landry Breuil\n"),
+                               _("Copyright (c) 2006-2010 Landry Breuil\n"),
                                XFCE_LICENSE_BSD);
    xfce_about_info_add_credit(ainfo, "Landry Breuil", "landry@fr.homeunix.org", _("Maintainer, Original Author"));
    xfce_about_info_set_homepage(ainfo, "http://goodies.xfce.org/projects/panel-plugins/xfce4-mpc-plugin");
