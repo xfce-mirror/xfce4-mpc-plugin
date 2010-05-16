@@ -364,7 +364,8 @@ static void
 mpc_update_outputs(t_mpc* mpc)
 {
    DBG("!");
-   int i,j=0;
+   GtkWidget* menu;
+   int i,j=0, old_nb_outputs = mpc->nb_outputs;
    MpdData * data = mpd_server_get_output_devices(mpc->mo);
    do {
       DBG("got output %d with name %s, enabled=%d",data->output_dev->id,data->output_dev->name,data->output_dev->enabled);
@@ -376,6 +377,9 @@ mpc_update_outputs(t_mpc* mpc)
          GtkWidget* chkitem = gtk_check_menu_item_new_with_label (data->output_dev->name);
          g_signal_connect (G_OBJECT(chkitem), "toggled", G_CALLBACK (mpc_output_toggled), mpc);
          xfce_panel_plugin_menu_insert_item(mpc->plugin,GTK_MENU_ITEM(chkitem));
+         /* XXX HACK */
+         menu = g_object_get_data (G_OBJECT (mpc->plugin), I_("xfce-panel-plugin-menu"));
+         gtk_menu_reorder_child(GTK_MENU(menu),chkitem, 12 + i); /* 12 is after 'Outputs' menuitem */
          gtk_widget_show (chkitem);
          mpc->mpd_outputs[i] = g_new(t_mpd_output,1);
          mpc->mpd_outputs[i]->id = data->output_dev->id;
@@ -387,9 +391,8 @@ mpc_update_outputs(t_mpc* mpc)
       j++;
    } while (NULL != (data = mpd_data_get_next (data)));
    /* something changed, better prune the list and recreate it */
-   /* TODO: test this codepath */
-   if (j != mpc->nb_outputs) {
-      DBG("didnt found same amount of outputs (was %d got %d), resetting output list", mpc->nb_outputs, j);
+   if (j != mpc->nb_outputs || (old_nb_outputs && j != old_nb_outputs)) {
+      DBG("didnt found same amount of outputs (was %d got %d), resetting output list", (old_nb_outputs ? old_nb_outputs : mpc->nb_outputs), j);
       for (i = 0; i < mpc->nb_outputs ; i++) {
          gtk_widget_destroy(mpc->mpd_outputs[i]->menuitem);
          g_free(mpc->mpd_outputs[i]);
