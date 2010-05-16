@@ -7,7 +7,7 @@ Features :
 - current volume/status/playing track when mouse passes over the plugin
 - decrease/increase volume with mousewheel
 - show a simple playlist window upon middle-click, permitting to select a track to play
-- toggle random/repeat in right-click menu
+- toggle random/repeat/outputs in right-click menu
 - launch configurable client (gmpc, xterm -e ncmpc,..) through right-click menu
 - configurable tooltip and playlist formats, using a gmpc-like markup :
   - playlist accepts %artist%, %title%, %album% and %track%
