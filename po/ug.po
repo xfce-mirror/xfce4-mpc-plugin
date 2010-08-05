@@ -35,11 +35,11 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:270
 msgid "Port : "
-msgstr "ئېغىز:"
+msgstr "ئېغىز: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:271
 msgid "Password : "
-msgstr "ئىم:"
+msgstr "ئىم: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:272
 msgid "MPD Client : "
@@ -47,11 +47,11 @@ msgstr "MPD Client : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:273
 msgid "Tooltip Format : "
-msgstr "Tooltip فورماتى:"
+msgstr "Tooltip فورماتى: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:274
 msgid "Playlist Format : "
-msgstr "Playlist فورماتى:"
+msgstr "Playlist فورماتى: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:308
 msgid "Hostname or IP address"
@@ -82,7 +82,7 @@ msgstr ".... باغلانمىدىمۇ؟"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:467
 msgid "Mpd playlist"
-msgstr "Mpd playlist"
+msgstr "Mpd قويۇش تىزىملىكى"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:666
 msgid "Random"
@@ -90,7 +90,7 @@ msgstr "ئىختىيارىي"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:668
 msgid "Repeat"
-msgstr "قايتلا"
+msgstr "قايتىلا"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:694
 msgid "Xfce4 Mpc Plugin"
@@ -98,7 +98,7 @@ msgstr "Xfce4 Mpc قىستۇرمىسى"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:695
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr ""
+msgstr "Music Player Daemon ئۈچۈن ئاددىي panel-قىستۇرما client"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:696
 msgid "Copyright (c) 2006-2008 Landry Breuil\n"
@@ -110,7 +110,7 @@ msgstr "مەسئۇل ، ئەسلى ئاپتور"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:1
 msgid "A client for MPD, The Music Player Daemon"
-msgstr ""
+msgstr "MPD client پروگراممىسى، The Music Player Daemon"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
 msgid "MPD Client Plugin"
