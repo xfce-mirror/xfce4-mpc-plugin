@@ -4,10 +4,12 @@ plugin_PROGRAMS = xfce4-mpc-plugin
 xfce4_mpc_plugin_CFLAGS =						\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"				\
 	@EXO_CFLAGS@							\
+	@LIBXFCEGUI4_CFLAGS@						\
 	@LIBXFCE4PANEL_CFLAGS@
 
 xfce4_mpc_plugin_LDADD =						\
 	@EXO_LIBS@							\
+	@LIBXFCEGUI4_LIBS@						\
 	@LIBXFCE4PANEL_LIBS@
 
 
