@@ -22,7 +22,7 @@ msgstr "Запустить"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:247
 msgid "Mpd Client Plugin"
-msgstr "Апплет клиента MPD"
+msgstr "Модуль клиента MPD"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:253
 msgid "Properties"
@@ -91,11 +91,11 @@ msgstr "Повтор"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:697
 msgid "Xfce4 Mpc Plugin"
-msgstr "Xfce4 Mpc апплет"
+msgstr "Модуль MPC для Xfce4"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:698
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr "Простой апплет клиента MPD для панели Xfce"
+msgstr "Простой модуль клиента MPD для панели Xfce"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:699
 msgid "Copyright (c) 2006-2008 Landry Breuil\n"
@@ -111,4 +111,4 @@ msgstr "Клиент для музыкального сервера MPD"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
 msgid "MPD Client Plugin"
-msgstr "Апплет клиента MPD"
+msgstr "Модуль клиента MPD"
