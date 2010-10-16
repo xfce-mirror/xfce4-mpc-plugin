@@ -414,7 +414,7 @@ void parse_playlistinfo_answer(MpdObj *mo, void *param)
       ms->id = ms->pos = -1;
       DBG("Going to parse song #%d", md->nb);
 
-      while(lines[i] && strcmp(lines[i],"OK") && ms->id < 0)
+      while(lines[i] && ms->id < 0)
       {
          tokens = g_strsplit(lines[i], ":", 2);
          /* remove leading whitespace */
@@ -430,8 +430,7 @@ void parse_playlistinfo_answer(MpdObj *mo, void *param)
          i++;
          g_strfreev(tokens);
       }
-      if (lines[i] && strcmp(lines[i],"OK"))
-         md->nb++;
+      md->nb++;
    }
    g_strfreev(lines);
    DBG("Got 'OK', md->nb = %d", md->nb);
