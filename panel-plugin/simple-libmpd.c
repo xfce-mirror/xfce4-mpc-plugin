@@ -414,7 +414,7 @@ void parse_playlistinfo_answer(MpdObj *mo, void *param)
       ms->id = ms->pos = -1;
       DBG("Going to parse song #%d", md->nb);
 
-      while(lines[i] && ms->id < 0)
+      while(lines[i] && strcmp(lines[i],"OK") && ms->id < 0)
       {
          tokens = g_strsplit(lines[i], ":", 2);
          /* remove leading whitespace */
@@ -447,7 +447,7 @@ void parse_outputs_answer(MpdObj *mo, void *param)
       md->alloutputs[md->nb] = g_new(mpd_Output, 1);
       md->alloutputs[md->nb]->enabled = -1;
       DBG("Going to parse output #%d", md->nb);
-      while(lines[i] && md->alloutputs[md->nb]->enabled < 0)
+      while(lines[i] && strcmp(lines[i],"OK") && md->alloutputs[md->nb]->enabled < 0)
       {
          tokens = g_strsplit(lines[i], ":", 2);
          /* remove leading whitespace */
