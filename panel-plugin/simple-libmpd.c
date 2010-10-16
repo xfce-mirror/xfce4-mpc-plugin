@@ -291,6 +291,8 @@ void send_complex_cmd(MpdObj* mo, char* cmd, void (*parse_answer_fct)(), void *r
          {
             mo->error = MPD_ERROR_CONNCLOSED;
             DBG("ERROR parsing reply");
+            *mo->buffer = '\0';
+            mo->buflen = 0;
             return;
          }
 
