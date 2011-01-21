@@ -1,8 +1,8 @@
 /* xfce4-mpc-plugin.c
  *
- * Copyright (c) 2006-2010 Landry Breuil (landry at fr.homeunix.org / gaston at gcu.info)
- * This code is licenced under a BSD-style licence.
- * (OpenBSD variant modeled after the ISC licence)
+ * Copyright (c) 2006-2011 Landry Breuil <landry at rhaalovely.net>
+ * This code is licensed under a BSD-style license.
+ * (OpenBSD variant modeled after the ISC license)
  * All rights reserved.
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -22,7 +22,7 @@
 #include <config.h>
 #endif
 
-#include <libxfcegui4/libxfcegui4.h>
+#include <libxfce4ui/libxfce4ui.h>
 #include <exo/exo.h>
 #include <string.h>
 #include <stdlib.h>
@@ -47,7 +47,7 @@ static void
 button_set_sized_image(GtkWidget *button, gchar *icon, gint size)
 {
    GtkWidget *image;
-   image = gtk_image_new_from_pixbuf(xfce_themed_icon_load(icon, size));
+   image = gtk_image_new_from_pixbuf(xfce_panel_pixbuf_from_source(icon, NULL, size));
    gtk_button_set_image(GTK_BUTTON(button), image);
 }
 
@@ -330,7 +330,7 @@ static void
 mpc_launch_client(GtkWidget *widget, t_mpc* mpc)
 {
    DBG("Going to xfce_exec(\"%s\")", mpc->client_appl);
-   xfce_exec(mpc->client_appl, FALSE, TRUE, NULL);
+   xfce_spawn_command_line_on_screen(gdk_screen_get_default(), mpc->client_appl, FALSE, TRUE, NULL);
 }
 
 static void
@@ -683,7 +683,7 @@ scroll_cb(GtkWidget *widget, GdkEventScroll* event, t_mpc* mpc)
 static GtkWidget*
 new_button_with_cbk(XfcePanelPlugin * plugin, GtkWidget *parent, gpointer cb, gpointer data)
 {
-   GtkWidget *button = xfce_create_panel_button();
+   GtkWidget *button = xfce_panel_create_button();
    xfce_panel_plugin_add_action_widget (plugin, button);
    g_signal_connect (G_OBJECT(button), "button_press_event", G_CALLBACK(cb), data);
    gtk_box_pack_start (GTK_BOX(parent), button, TRUE, TRUE, 0);
@@ -758,27 +758,21 @@ mpc_create (XfcePanelPlugin * plugin)
 static void
 mpc_show_about(XfcePanelPlugin *plugin, t_mpc* mpc)
 {
-   XfceAboutInfo *ainfo;
    GdkPixbuf *icon;
-
-   if (mpc->about)
-   {
-      gtk_window_present(GTK_WINDOW(mpc->about));
-      return;
-   }
-   ainfo = xfce_about_info_new(_("Xfce4 Mpc Plugin"), PACKAGE_VERSION,
-                               _("A simple panel-plugin client for Music Player Daemon"),
-                               _("Copyright (c) 2006-2010 Landry Breuil\n"),
-                               XFCE_LICENSE_BSD);
-   xfce_about_info_add_credit(ainfo, "Landry Breuil", "landry@fr.homeunix.org", _("Maintainer, Original Author"));
-   xfce_about_info_set_homepage(ainfo, "http://goodies.xfce.org/projects/panel-plugins/xfce4-mpc-plugin");
-
-   icon = xfce_themed_icon_load("xfce-multimedia", 32);
-
-   mpc->about = xfce_about_dialog_new_with_values(NULL, ainfo, icon);
-   gtk_widget_show_all(mpc->about);
-   g_signal_connect(G_OBJECT(mpc->about), "response", G_CALLBACK(gtk_widget_destroy), NULL);
-   g_signal_connect(G_OBJECT(mpc->about), "destroy", G_CALLBACK(gtk_widget_destroyed), &mpc->about);
+   const gchar *auth[] = { "Landry Breuil <landry at rhaalovely.net>", NULL };
+   icon = xfce_panel_pixbuf_from_source("xfce-multimedia", NULL, 32);
+#if !GTK_CHECK_VERSION (2, 18, 0)
+   gtk_about_dialog_set_email_hook (exo_gtk_url_about_dialog_hook, NULL, NULL);
+   gtk_about_dialog_set_url_hook (exo_gtk_url_about_dialog_hook, NULL, NULL);
+#endif
+   gtk_show_about_dialog(NULL,
+      "logo", icon,
+      "license", xfce_get_license_text (XFCE_LICENSE_TEXT_BSD),
+      "version", PACKAGE_VERSION,
+      "comments", _("A simple panel-plugin client for Music Player Daemon"),
+      "website", "http://goodies.xfce.org/projects/panel-plugins/xfce4-mpc-plugin",
+      "copyright", _("Copyright (c) 2006-2011 Landry Breuil\n"),
+      "authors", auth, NULL);
 
    if(icon)
       g_object_unref(G_OBJECT(icon));

@@ -1,6 +1,6 @@
 /* xfce4-mpc-plugin.h
  *
- * Copyright (c) 2006-2010 Landry Breuil (landry at fr.homeunix.org / gaston at gcu.info)
+ * Copyright (c) 2006-2011 Landry Breuil <landry at rhaalovely.net>
  * This code is licenced under a BSD-style licence.
  * (OpenBSD variant modeled after the ISC licence)
  * All rights reserved.
@@ -18,9 +18,7 @@
  */
 
 #include <gtk/gtk.h>
-#include <libxfce4panel/xfce-panel-plugin.h>
-#include <libxfce4panel/xfce-hvbox.h>
-#include <libxfce4panel/xfce-panel-convenience.h>
+#include <libxfce4panel/libxfce4panel.h>
 
 #if HAVE_LIBMPD
 #include <libmpd/libmpd.h>

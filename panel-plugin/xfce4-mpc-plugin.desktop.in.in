@@ -4,5 +4,5 @@ Encoding=UTF-8
 _Name=MPD Client Plugin
 _Comment=A client for MPD, The Music Player Daemon
 Icon=xfce-multimedia
+X-XFCE-Internal=FALSE
 X-XFCE-Exec=@PLUGIN_PATH@/xfce4-mpc-plugin
-

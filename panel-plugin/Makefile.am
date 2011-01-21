@@ -1,15 +1,15 @@
-plugindir = $(libexecdir)/xfce4/panel-plugins
+plugindir = $(libdir)/xfce4/panel/plugins
 plugin_PROGRAMS = xfce4-mpc-plugin
 
 xfce4_mpc_plugin_CFLAGS =						\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"				\
 	@EXO_CFLAGS@							\
-	@LIBXFCEGUI4_CFLAGS@						\
+	@LIBXFCE4UI_CFLAGS@						\
 	@LIBXFCE4PANEL_CFLAGS@
 
 xfce4_mpc_plugin_LDADD =						\
 	@EXO_LIBS@							\
-	@LIBXFCEGUI4_LIBS@						\
+	@LIBXFCE4UI_LIBS@						\
 	@LIBXFCE4PANEL_LIBS@
 
 
@@ -31,13 +31,13 @@ endif
 desktop_in_in_files = xfce4-mpc-plugin.desktop.in.in
 desktop_in_files = $(desktop_in_in_files:.desktop.in.in=.desktop.in)
 	
-desktopdir = $(datadir)/xfce4/panel-plugins
+desktopdir = $(datadir)/xfce4/panel/plugins
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
 # get full path into .desktop file
 %.desktop.in: %.desktop.in.in
-	sed -e "s^@PLUGIN_PATH@^$(libexecdir)/xfce4/panel-plugins^" 	\
+	sed -e "s^@PLUGIN_PATH@^$(libdir)/xfce4/panel/plugins^" 	\
 		$< > $@
 	
 EXTRA_DIST =								\
