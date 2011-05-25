@@ -1,0 +1,123 @@
+# Dutch translation of the xfce4-mpc-plugin package.
+# Copyright (C) The Xfce development team.
+# This file is distributed under the same license as the 
+# xfce4-mpc-plugin package.
+# Pjotr, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Transd\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-25 11:02+0200\n"
+"PO-Revision-Date: 2011-05-25 11:34+0200\n"
+"Last-Translator: Pjotr\n"
+"Language-Team: Dutch (Flemish)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:116
+#: ../panel-plugin/xfce4-mpc-plugin.c:192
+#: ../panel-plugin/xfce4-mpc-plugin.c:673
+msgid "Launch"
+msgstr "Start"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:247
+msgid "Mpd Client Plugin"
+msgstr "Plugin voor MPD-toepassing"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:253
+msgid "Properties"
+msgstr "Eigenschappen"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:266
+msgid "Host : "
+msgstr "Host : "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:267
+msgid "Port : "
+msgstr "Poort : "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:268
+msgid "Password : "
+msgstr "Wachtwoord : "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:269
+msgid "MPD Client : "
+msgstr "MPD-toepassing : "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:270
+msgid "Tooltip Format : "
+msgstr "Opmaak van Gereedschaptip : "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:271
+msgid "Playlist Format : "
+msgstr "Opmaak van Afspeellijst : "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:305
+msgid "Hostname or IP address"
+msgstr "Hostnaam of IP-adres"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:306
+msgid "Graphical MPD Client to launch in plugin context menu"
+msgstr "Grafische MPD-toepassing om te starten in het contekstmenu van de plugin"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:307
+msgid "Variables : %artist%, %album%, %track% and %title%"
+msgstr "Variabelen : %artiest%, %album%, %spoor% and %titel%"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:308
+msgid ""
+"Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title"
+"%"
+msgstr ""
+"Variabelen : %vol%, %status%, %nieuweRegel%, %artiest%, %album%, %track% en %titel"
+"%"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:313
+msgid "Show _frame"
+msgstr "Toon _lijst"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:382
+#: ../panel-plugin/xfce4-mpc-plugin.c:612
+msgid ".... not connected ?"
+msgstr ".... niet verbonden ?"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:465
+msgid "Mpd playlist"
+msgstr "MPD afspeellijst"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:669
+msgid "Random"
+msgstr "Willekeurig"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:671
+msgid "Repeat"
+msgstr "Herhaal"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:697
+msgid "Xfce4 Mpc Plugin"
+msgstr "Xfce4 MPC Plugin"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:698
+msgid "A simple panel-plugin client for Music Player Daemon"
+msgstr "Een eenvoudige werkbalkplugin-toepassing voor "
+"Music Player Daemon"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:699
+msgid "Copyright (c) 2006-2008 Landry Breuil\n"
+msgstr "Auteursrecht (c) 2006-2008 Landry Breuil\n"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:701
+msgid "Maintainer, Original Author"
+msgstr "Onderhouder, Oorspronkelijke Auteur"
+
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:1
+msgid "A client for MPD, The Music Player Daemon"
+msgstr "Een toepassing voor MPD, de Music Player Daemon"
+
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
+msgid "MPD Client Plugin"
+msgstr "Plugin voor MPD-toepassing"
