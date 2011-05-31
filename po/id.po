@@ -95,9 +95,8 @@ msgid "Xfce4 Mpc Plugin"
 msgstr "Plugin Mpc Xfce4"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:698
-#, fuzzy
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr "Klien untuk MPD, Jurik Penggelar Musik"
+msgstr "Sebuah klien plugin panel sederhana untuk Music Player Daemon"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:699
 msgid "Copyright (c) 2006-2008 Landry Breuil\n"
