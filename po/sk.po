@@ -2,17 +2,21 @@
 # Copyright (C) 2008-2009 Leandro Regueiro
 # This file is distributed under the same license as the xfce4-mpc-plugin package.
 # Robert Hartl <hartl.robert@gmail.com>, 2009, 2010.
+# Tomáš Vadina <kyberdev@gmail.com>, 2011.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-mpc-plugin 0.3.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-24 18:13+0200\n"
-"PO-Revision-Date: 2010-03-08 10:44+0100\n"
-"Last-Translator: Robert Hartl <hartl.robert@gmail.com>\n"
+"PO-Revision-Date: 2011-06-01 09:25+0100\n"
+"Last-Translator: Tomáš Vadina <kyberdev@gmail.com>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Slovak\n"
+"X-Poedit-Country: SLOVAKIA\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:116
 #: ../panel-plugin/xfce4-mpc-plugin.c:192
@@ -22,7 +26,7 @@ msgstr "Spustiť"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:247
 msgid "Mpd Client Plugin"
-msgstr "Zásuvny modul klient MPD"
+msgstr "Zásuvný modul klienta MPD"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:253
 msgid "Properties"
@@ -58,7 +62,7 @@ msgstr "Hostiteľ alebo IP adresa"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:306
 msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr ""
+msgstr "Grafický MPD klient pre spustenie v zásuvnom module kontextového menu"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:307
 msgid "Variables : %artist%, %album%, %track% and %title%"
@@ -91,7 +95,7 @@ msgstr "Opakovať"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:697
 msgid "Xfce4 Mpc Plugin"
-msgstr "Zasuvný modul Xfce4 Mpc"
+msgstr "Zásuvný modul Xfce4 Mpc"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:698
 msgid "A simple panel-plugin client for Music Player Daemon"
@@ -111,5 +115,5 @@ msgstr "Klient pre MPD, Music Player Daemon"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
 msgid "MPD Client Plugin"
-msgstr "Zásuvny modul klienta MPD"
+msgstr "Zásuvný modul klienta MPD"
 
