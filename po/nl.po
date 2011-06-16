@@ -9,13 +9,13 @@ msgstr ""
 "Project-Id-Version: xfce4-mpc-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-05-25 11:02+0200\n"
-"PO-Revision-Date: 2011-05-25 11:34+0200\n"
+"PO-Revision-Date: 2011-06-15 11:34+0200\n"
 "Last-Translator: Pjotr\n"
 "Language-Team: Dutch (Flemish)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nl\n"
+"Language: nl (Dutch)\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:116
@@ -54,7 +54,7 @@ msgstr "Opmaak van Gereedschaptip : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:271
 msgid "Playlist Format : "
-msgstr "Opmaak van Afspeellijst : "
+msgstr "Opmaak van Speellijst : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:305
 msgid "Hostname or IP address"
@@ -62,7 +62,7 @@ msgstr "Hostnaam of IP-adres"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:306
 msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr "Grafische MPD-toepassing om te starten in het contekstmenu van de plugin"
+msgstr "Grafische MPD-toepassing om te starten in het contextmenu van de plugin"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:307
 msgid "Variables : %artist%, %album%, %track% and %title%"
@@ -73,7 +73,7 @@ msgid ""
 "Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title"
 "%"
 msgstr ""
-"Variabelen : %vol%, %status%, %nieuweRegel%, %artiest%, %album%, %track% en %titel"
+"Variabelen : %vol%, %status%, %nieuweRegel%, %artiest%, %album%, %spoor% en %titel"
 "%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:313
@@ -87,7 +87,7 @@ msgstr ".... niet verbonden ?"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:465
 msgid "Mpd playlist"
-msgstr "MPD afspeellijst"
+msgstr "MPD-speellijst"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:669
 msgid "Random"
