@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: xfce4-mpc-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-05-25 11:02+0200\n"
-"PO-Revision-Date: 2011-06-15 11:34+0200\n"
+"PO-Revision-Date: 2011-09-09 11:34+0200\n"
 "Last-Translator: Pjotr\n"
 "Language-Team: Dutch (Flemish)\n"
 "MIME-Version: 1.0\n"
@@ -50,11 +50,11 @@ msgstr "MPD-toepassing : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:270
 msgid "Tooltip Format : "
-msgstr "Opmaak van Gereedschaptip : "
+msgstr "Opmaak van gereedschaptip : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:271
 msgid "Playlist Format : "
-msgstr "Opmaak van Speellijst : "
+msgstr "Opmaak van speellijst : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:305
 msgid "Hostname or IP address"
@@ -112,7 +112,7 @@ msgstr "Auteursrecht (c) 2006-2008 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:701
 msgid "Maintainer, Original Author"
-msgstr "Onderhouder, Oorspronkelijke Auteur"
+msgstr "Onderhouder, oorspronkelijke auteur"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:1
 msgid "A client for MPD, The Music Player Daemon"
