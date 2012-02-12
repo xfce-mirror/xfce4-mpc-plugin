@@ -675,6 +675,8 @@ new_button_with_cbk(XfcePanelPlugin * plugin, GtkWidget *parent, gchar* icon, gp
    gtk_container_add(GTK_CONTAINER(button), image);
    xfce_panel_plugin_add_action_widget (plugin, button);
    g_signal_connect (G_OBJECT(button), "button_press_event", G_CALLBACK(cb), data);
+   g_signal_connect (G_OBJECT(button), "enter_notify_event", G_CALLBACK(enter_cb), data);
+   g_signal_connect (G_OBJECT(button), "scroll_event", G_CALLBACK(scroll_cb), data);
    gtk_box_pack_start (GTK_BOX(parent), button, TRUE, TRUE, 0);
    return button;
 }
@@ -709,16 +711,9 @@ mpc_create (XfcePanelPlugin * plugin)
    gtk_frame_set_shadow_type (GTK_FRAME (mpc->frame), GTK_SHADOW_IN);
    gtk_widget_show (mpc->frame);
 
-   mpc->ebox = gtk_event_box_new();
-   gtk_event_box_set_visible_window(GTK_EVENT_BOX(mpc->ebox), FALSE);
-   g_signal_connect (G_OBJECT(mpc->ebox), "enter_notify_event", G_CALLBACK(enter_cb), mpc);
-   g_signal_connect (G_OBJECT(mpc->ebox), "scroll_event", G_CALLBACK(scroll_cb), mpc);
-   gtk_widget_show (mpc->ebox);
-
    mpc->box = xfce_hvbox_new(xfce_panel_plugin_get_orientation(plugin), FALSE, 0);
 
-   gtk_container_add (GTK_CONTAINER(mpc->ebox), mpc->box);
-   gtk_container_add (GTK_CONTAINER(mpc->frame), mpc->ebox);
+   gtk_container_add (GTK_CONTAINER(mpc->frame), mpc->box);
 
    mpc->prev = new_button_with_cbk(plugin, mpc->box, "media-skip-backward", G_CALLBACK(prev), mpc);
    mpc->stop = new_button_with_cbk(plugin, mpc->box, "media-playback-stop", G_CALLBACK(stop), mpc);
