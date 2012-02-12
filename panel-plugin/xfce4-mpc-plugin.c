@@ -424,7 +424,7 @@ enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
    {
       if (!mpc_plugin_reconnect (mpc) || mpd_status_update (mpc->mo) != MPD_OK)
       {
-         gtk_widget_set_tooltip_text (widget, _(".... not connected ?"));
+         gtk_widget_set_tooltip_text (mpc->box, _(".... not connected ?"));
          return;
       }
    }
@@ -461,7 +461,7 @@ enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->repeat), mpd_player_get_repeat(mpc->mo));
    mpc_update_outputs(mpc);
 
-   gtk_widget_set_tooltip_text (widget, str->str);
+   gtk_widget_set_tooltip_text (mpc->box, str->str);
    g_string_free(str, TRUE);
 }
 
