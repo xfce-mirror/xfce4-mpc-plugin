@@ -258,7 +258,7 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
    xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (dlg), _("Properties"));
 
    gtk_window_set_position   (GTK_WINDOW (dlg), GTK_WIN_POS_CENTER);
-   gtk_window_set_icon_name  (GTK_WINDOW (dlg), "xfce-multimedia");
+   gtk_window_set_icon_name  (GTK_WINDOW (dlg), "applications-multimedia");
 
    g_signal_connect (dlg, "response", G_CALLBACK (mpc_dialog_response), dialog);
 
@@ -520,7 +520,7 @@ show_playlist (t_mpc* mpc)
       DBG ("Creating playlist window");
       mpc->playlist = gtk_window_new(GTK_WINDOW_TOPLEVEL);
       gtk_window_set_default_size(GTK_WINDOW(mpc->playlist), 400, 600);
-      gtk_window_set_icon_name(GTK_WINDOW(mpc->playlist),"xfce-multimedia");
+      gtk_window_set_icon_name(GTK_WINDOW(mpc->playlist),"applications-multimedia");
       gtk_window_set_title(GTK_WINDOW(mpc->playlist),_("Mpd playlist"));
       g_signal_connect(mpc->playlist, "destroy", G_CALLBACK(gtk_widget_destroyed), &mpc->playlist);
       scrolledwin = gtk_scrolled_window_new(NULL, NULL);
@@ -760,7 +760,7 @@ mpc_show_about(XfcePanelPlugin *plugin, t_mpc* mpc)
 {
    GdkPixbuf *icon;
    const gchar *auth[] = { "Landry Breuil <landry at rhaalovely.net>", NULL };
-   icon = xfce_panel_pixbuf_from_source("xfce-multimedia", NULL, 32);
+   icon = xfce_panel_pixbuf_from_source("applications-multimedia", NULL, 32);
 #if !GTK_CHECK_VERSION (2, 18, 0)
    gtk_about_dialog_set_email_hook (exo_gtk_url_about_dialog_hook, NULL, NULL);
    gtk_about_dialog_set_url_hook (exo_gtk_url_about_dialog_hook, NULL, NULL);
