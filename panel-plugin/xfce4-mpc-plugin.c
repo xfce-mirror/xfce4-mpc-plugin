@@ -44,14 +44,6 @@ mpc_free (XfcePanelPlugin * plugin, t_mpc * mpc)
 }
 
 static void
-button_set_sized_image(GtkWidget *button, gchar *icon, gint size)
-{
-   GtkWidget *image;
-   image = gtk_image_new_from_pixbuf(xfce_panel_pixbuf_from_source(icon, NULL, size));
-   gtk_button_set_image(GTK_BUTTON(button), image);
-}
-
-static void
 mpc_set_orientation (XfcePanelPlugin * plugin, GtkOrientation orientation, t_mpc * mpc)
 {
    DBG ("!");
@@ -65,15 +57,10 @@ mpc_set_size (XfcePanelPlugin * plugin, int size, t_mpc * mpc)
    DBG ("size=%d",size);
    gtk_container_set_border_width (GTK_CONTAINER (mpc->frame), (size > 26 ? 2 : 0));
 
-   if (xfce_panel_plugin_get_orientation (plugin) == GTK_ORIENTATION_HORIZONTAL)
-     gtk_widget_set_size_request (GTK_WIDGET (mpc->frame), -1, size);
-   else
-     gtk_widget_set_size_request (GTK_WIDGET (mpc->frame), size, -1);
-
-   button_set_sized_image(mpc->prev, "gtk-media-previous-ltr", size - 3);
-   button_set_sized_image(mpc->next, "gtk-media-next-ltr", size - 3);
-   button_set_sized_image(mpc->toggle, "gtk-media-pause", size - 3);
-   button_set_sized_image(mpc->stop, "gtk-media-stop", size - 3);
+   gtk_widget_set_size_request (GTK_WIDGET (mpc->next), size, size);
+   gtk_widget_set_size_request (GTK_WIDGET (mpc->prev), size, size);
+   gtk_widget_set_size_request (GTK_WIDGET (mpc->stop), size, size);
+   gtk_widget_set_size_request (GTK_WIDGET (mpc->toggle), size, size);
    return TRUE;
 }
 
