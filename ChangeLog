@@ -1,3 +1,11 @@
+12-02-2012 Landry Breuil <landry at rhaalovely.net>
+   * release 0.4.0
+   * port from libxfcegui4 to libxfce4ui
+   * much better handling of panel size/orientation
+   * use icon names from the icon-naming-specs
+   * looks much better and obey panel/icon themes
+   * make plugin background transparent
+
 07-01-2011 Landry Breuil <landry at rhaalovely.net>
    * release 0.3.6
    * recognize exo-1 for upcoming Xfce 4.8

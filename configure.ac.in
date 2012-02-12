@@ -4,14 +4,14 @@ dnl xfce4-mpc-plugin - mpd client plugin for the XFce4 panel
 dnl
 
 m4_define([mpc_version_major], [0])
-m4_define([mpc_version_minor], [3])
-m4_define([mpc_version_micro], [6])
+m4_define([mpc_version_minor], [4])
+m4_define([mpc_version_micro], [0])
 m4_define([mpc_version_tag], []) # Leave empty for releases
 m4_define([mpc_version_build], [@REVISION@])
 m4_define([mpc_version], [mpc_version_major().mpc_version_minor().mpc_version_micro()ifelse(mpc_version_tag(), [], [], [mpc_version_tag()-mpc_version_build()])])
 
 AC_INIT([xfce4-mpc-plugin], [mpc_version],
-	[landry@fr.homeunix.org])
+	[landry@rhaalovely.net])
 
 MPC_VERSION=mpc_version()
 AM_INIT_AUTOMAKE([xfce4-mpc-plugin], [$MPC_VERSION], [-Wall -Werror foreign])
