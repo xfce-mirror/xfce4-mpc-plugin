@@ -558,14 +558,14 @@ show_playlist (t_mpc* mpc)
          gtk_list_store_append (liststore, &iter);
          if (current == mpd_data->song->pos)
          {
-            gtk_list_store_set (liststore, &iter, 0, "gtk-media-play", 1, str->str, 2, mpd_data->song->pos, 3, mpd_data->song->id, -1);
+            gtk_list_store_set (liststore, &iter, 0, GTK_STOCK_MEDIA_PLAY, 1, str->str, 2, mpd_data->song->pos, 3, mpd_data->song->id, -1);
             path_to_cur = gtk_tree_model_get_path(GTK_TREE_MODEL(liststore), &iter);
             gtk_tree_view_scroll_to_cell(GTK_TREE_VIEW(treeview), path_to_cur, NULL, TRUE, 0.5, 0);
             gtk_tree_view_set_cursor(GTK_TREE_VIEW(treeview), path_to_cur, NULL, FALSE);
             gtk_tree_path_free(path_to_cur);
          }
          else
-            gtk_list_store_set (liststore, &iter, 0, "gtk-cdrom", 1, str->str, 2, mpd_data->song->pos, 3, mpd_data->song->id, -1);
+            gtk_list_store_set (liststore, &iter, 0, GTK_STOCK_CDROM, 1, str->str, 2, mpd_data->song->pos, 3, mpd_data->song->id, -1);
       } while (NULL != (mpd_data = mpd_data_get_next (mpd_data)));
       gtk_widget_show_all(mpc->playlist);
    }
