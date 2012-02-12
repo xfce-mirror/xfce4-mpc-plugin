@@ -55,7 +55,7 @@ static gboolean
 mpc_set_size (XfcePanelPlugin * plugin, int size, t_mpc * mpc)
 {
    DBG ("size=%d",size);
-   gtk_container_set_border_width (GTK_CONTAINER (mpc->frame), (size > 26 ? 2 : 0));
+   gtk_container_set_border_width (GTK_CONTAINER (mpc->frame), (size > 26 && mpc->show_frame ? 2 : 0));
 
    gtk_widget_set_size_request (GTK_WIDGET (mpc->next), size, size);
    gtk_widget_set_size_request (GTK_WIDGET (mpc->prev), size, size);
@@ -213,12 +213,14 @@ mpc_dialog_response (GtkWidget * dlg, int response, t_mpc_dialog * dialog)
 static void
 mpc_dialog_show_frame_toggled (GtkWidget *w, t_mpc_dialog *dialog)
 {
+   int size;
    t_mpc* mpc = dialog->mpc;
 
    DBG ("!");
-
+   size = xfce_panel_plugin_get_size(mpc->plugin);
    mpc->show_frame = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (dialog->checkbox_frame));
    gtk_frame_set_shadow_type (GTK_FRAME (mpc->frame), (mpc->show_frame) ? GTK_SHADOW_IN : GTK_SHADOW_NONE);
+   gtk_container_set_border_width (GTK_CONTAINER (mpc->frame), (size > 26 && mpc->show_frame ? 2 : 0));
 }
 
 static void
