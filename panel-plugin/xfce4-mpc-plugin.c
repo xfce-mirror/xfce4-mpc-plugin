@@ -710,6 +710,7 @@ mpc_create (XfcePanelPlugin * plugin)
    gtk_widget_show (mpc->frame);
 
    mpc->ebox = gtk_event_box_new();
+   gtk_event_box_set_visible_window(GTK_EVENT_BOX(mpc->ebox), FALSE);
    g_signal_connect (G_OBJECT(mpc->ebox), "enter_notify_event", G_CALLBACK(enter_cb), mpc);
    g_signal_connect (G_OBJECT(mpc->ebox), "scroll_event", G_CALLBACK(scroll_cb), mpc);
    gtk_widget_show (mpc->ebox);
