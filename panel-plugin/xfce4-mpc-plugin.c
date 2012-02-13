@@ -43,6 +43,21 @@ mpc_free (XfcePanelPlugin * plugin, t_mpc * mpc)
    g_free (mpc);
 }
 
+#if defined (LIBXFCE4PANEL_CHECK_VERSION) && LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+static void
+mpc_set_mode (XfcePanelPlugin * plugin, XfcePanelPluginMode mode, t_mpc * mpc)
+{
+   GtkOrientation orientation;
+   DBG ("!");
+
+   orientation =
+      (mode != XFCE_PANEL_PLUGIN_MODE_VERTICAL) ?
+      GTK_ORIENTATION_HORIZONTAL : GTK_ORIENTATION_VERTICAL;
+
+   xfce_hvbox_set_orientation(XFCE_HVBOX(mpc->box), orientation);
+}
+
+#else
 static void
 mpc_set_orientation (XfcePanelPlugin * plugin, GtkOrientation orientation, t_mpc * mpc)
 {
@@ -50,10 +65,15 @@ mpc_set_orientation (XfcePanelPlugin * plugin, GtkOrientation orientation, t_mpc
 
    xfce_hvbox_set_orientation(XFCE_HVBOX(mpc->box), orientation);
 }
+#endif
 
 static gboolean
 mpc_set_size (XfcePanelPlugin * plugin, int size, t_mpc * mpc)
 {
+#if defined (LIBXFCE4PANEL_CHECK_VERSION) && LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+    size /= xfce_panel_plugin_get_nrows (plugin);
+#endif
+
    DBG ("size=%d",size);
    gtk_container_set_border_width (GTK_CONTAINER (mpc->frame), (size > 26 && mpc->show_frame ? 2 : 0));
 
@@ -805,7 +825,11 @@ mpc_construct (XfcePanelPlugin * plugin)
    g_signal_connect (plugin, "free-data", G_CALLBACK (mpc_free), mpc);
    g_signal_connect (plugin, "save", G_CALLBACK (mpc_write_config), mpc);
    g_signal_connect (plugin, "size-changed", G_CALLBACK (mpc_set_size), mpc);
+#if defined (LIBXFCE4PANEL_CHECK_VERSION) && LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
+   g_signal_connect (plugin, "mode-changed", G_CALLBACK (mpc_set_mode), mpc);
+#else
    g_signal_connect (plugin, "orientation-changed", G_CALLBACK (mpc_set_orientation), mpc);
+#endif
    /* the configure and about menu items are hidden by default */
    xfce_panel_plugin_menu_show_configure (plugin);
 
