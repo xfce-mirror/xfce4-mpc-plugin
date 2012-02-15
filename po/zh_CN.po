@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-mpc-plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-24 18:13+0200\n"
+"POT-Creation-Date: 2012-02-15 10:14+0100\n"
 "PO-Revision-Date: 2009-11-09 20:02+0800\n"
 "Last-Translator: Chipong Luo <chipong.luo@yahoo.com>\n"
 "Language-Team: Chinese (Simplified) <xfce-i18n@xfce.org>\n"
@@ -18,106 +18,111 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:116
-#: ../panel-plugin/xfce4-mpc-plugin.c:192
-#: ../panel-plugin/xfce4-mpc-plugin.c:673
+#: ../panel-plugin/xfce4-mpc-plugin.c:128
+#: ../panel-plugin/xfce4-mpc-plugin.c:204
+#: ../panel-plugin/xfce4-mpc-plugin.c:749
 msgid "Launch"
 msgstr "启动"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:247
+#: ../panel-plugin/xfce4-mpc-plugin.c:261
 msgid "Mpd Client Plugin"
 msgstr "Mpd 客户端插件"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:253
+#: ../panel-plugin/xfce4-mpc-plugin.c:267
 msgid "Properties"
 msgstr "属性"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:266
+#: ../panel-plugin/xfce4-mpc-plugin.c:280
 msgid "Host : "
 msgstr "主机："
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:267
+#: ../panel-plugin/xfce4-mpc-plugin.c:281
 msgid "Port : "
 msgstr "端口："
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:268
+#: ../panel-plugin/xfce4-mpc-plugin.c:282
 msgid "Password : "
 msgstr "密码："
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:269
+#: ../panel-plugin/xfce4-mpc-plugin.c:283
 msgid "MPD Client : "
 msgstr "MPD 客户端："
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:270
+#: ../panel-plugin/xfce4-mpc-plugin.c:284
 msgid "Tooltip Format : "
 msgstr "工具提示格式："
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:271
+#: ../panel-plugin/xfce4-mpc-plugin.c:285
 msgid "Playlist Format : "
 msgstr "播放列表格式："
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:305
+#: ../panel-plugin/xfce4-mpc-plugin.c:319
 msgid "Hostname or IP address"
 msgstr "主机名或 IP 地址"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:306
+#: ../panel-plugin/xfce4-mpc-plugin.c:320
 msgid "Graphical MPD Client to launch in plugin context menu"
 msgstr "在插件交互菜单中启动的图形化 MPD 客户端"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:307
+#: ../panel-plugin/xfce4-mpc-plugin.c:321
 msgid "Variables : %artist%, %album%, %track% and %title%"
-msgstr ""
-"变量：%artist%、%album%、%track% 和 %title%"
+msgstr "变量：%artist%、%album%、%track% 和 %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:308
+#: ../panel-plugin/xfce4-mpc-plugin.c:322
 msgid ""
 "Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title"
 "%"
 msgstr ""
-"变量：%vol%，%status%、%newline%、%artist%、"
-"%album%、%track% 和 %title%"
+"变量：%vol%，%status%、%newline%、%artist%、%album%、%track% 和 %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:313
+#: ../panel-plugin/xfce4-mpc-plugin.c:327
 msgid "Show _frame"
 msgstr "显示边框(_F)"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:382
-#: ../panel-plugin/xfce4-mpc-plugin.c:612
+#: ../panel-plugin/xfce4-mpc-plugin.c:449
+#: ../panel-plugin/xfce4-mpc-plugin.c:680
 msgid ".... not connected ?"
 msgstr "....未连接？"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:465
+#: ../panel-plugin/xfce4-mpc-plugin.c:533
 msgid "Mpd playlist"
 msgstr "Mpd 播放列表"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:669
+#: ../panel-plugin/xfce4-mpc-plugin.c:745
 msgid "Random"
 msgstr "随机"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:671
+#: ../panel-plugin/xfce4-mpc-plugin.c:747
 msgid "Repeat"
 msgstr "重复"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:697
-msgid "Xfce4 Mpc Plugin"
-msgstr "Xfce4 Mpc 插件"
+#: ../panel-plugin/xfce4-mpc-plugin.c:752
+msgid "<b><i>Commands</i></b>"
+msgstr ""
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:698
+#: ../panel-plugin/xfce4-mpc-plugin.c:756
+msgid "<b><i>Outputs</i></b>"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:779
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "简单的音乐播放器守护进程面板插件客户端"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:699
-msgid "Copyright (c) 2006-2008 Landry Breuil\n"
+#: ../panel-plugin/xfce4-mpc-plugin.c:781
+#, fuzzy
+msgid "Copyright (c) 2006-2011 Landry Breuil\n"
 msgstr "版权 2006-2008 Landry Breuil\n"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:701
-msgid "Maintainer, Original Author"
-msgstr "维护者，原作者"
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
+msgid "MPD Client Plugin"
+msgstr "MPD 客户端插件"
 
-#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:1
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
 msgid "A client for MPD, The Music Player Daemon"
 msgstr "MPD 客户端，音乐播放器守护进程"
 
-#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.in.h:2
-msgid "MPD Client Plugin"
-msgstr "MPD 客户端插件"
+#~ msgid "Xfce4 Mpc Plugin"
+#~ msgstr "Xfce4 Mpc 插件"
+
+#~ msgid "Maintainer, Original Author"
+#~ msgstr "维护者，原作者"
