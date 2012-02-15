@@ -1,3 +1,8 @@
+15-02-2012 Landry Breuil <landry at rhaalovely.net>
+   * release 0.4.1
+   * build plugin as a module
+   * add nrows handling/mode-changed callback for panel > 4.9
+
 12-02-2012 Landry Breuil <landry at rhaalovely.net>
    * release 0.4.0
    * port from libxfcegui4 to libxfce4ui

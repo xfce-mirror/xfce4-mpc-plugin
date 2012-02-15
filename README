@@ -15,7 +15,7 @@ Features :
 
 To build it, you have two options :
 - against libmpd libraries :
-Get'em from your OS' repository/ports, or from source here : http://cms.qballcow.nl
+Get'em from your OS' repository/ports, or from source
 It will be autodetected by pkg-config.
 If libmpd is not installed in a standard directory, use --with-libmpd=path_to_libmpd.
 - without libmpd, using simple-libmpd :
@@ -25,7 +25,7 @@ If libmpd is not found, it will be used as a fallback (or if you specify --witho
 ./configure && make && su -c make install should suffice in most cases.
 
 If it crashes, recompile it with --enable-debug=full, add it to the panel, attach gdb to it
-(gdb -p `pidof xfce4-mpc-plugin` , continue) and report a bug with a complete backtrace.
+(gdb -p `pgrep -f libmpc` , continue) and report a bug with a complete backtrace.
 
 This little piece of code is licensed under a BSD-style licence.
 (OpenBSD variant modeled after the ISC licence)
