@@ -776,6 +776,7 @@ mpc_show_about(XfcePanelPlugin *plugin, t_mpc* mpc)
       "logo", icon,
       "license", xfce_get_license_text (XFCE_LICENSE_TEXT_BSD),
       "version", PACKAGE_VERSION,
+      "program-name", PACKAGE_NAME,
       "comments", _("A simple panel-plugin client for Music Player Daemon"),
       "website", "http://goodies.xfce.org/projects/panel-plugins/xfce4-mpc-plugin",
       "copyright", _("Copyright (c) 2006-2011 Landry Breuil\n"),
