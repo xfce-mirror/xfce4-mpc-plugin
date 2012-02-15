@@ -3,6 +3,6 @@ Type=X-XFCE-PanelPlugin
 Encoding=UTF-8
 _Name=MPD Client Plugin
 _Comment=A client for MPD, The Music Player Daemon
-Icon=application-multimedia
+Icon=applications-multimedia
 X-XFCE-Internal=FALSE
 X-XFCE-Module=mpc
