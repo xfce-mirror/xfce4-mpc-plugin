@@ -1,6 +1,6 @@
 /* xfce4-mpc-plugin.c
  *
- * Copyright (c) 2006-2011 Landry Breuil <landry at rhaalovely.net>
+ * Copyright (c) 2006-2012 Landry Breuil <landry at xfce.org>
  * This code is licensed under a BSD-style license.
  * (OpenBSD variant modeled after the ISC license)
  * All rights reserved.
@@ -766,7 +766,7 @@ static void
 mpc_show_about(XfcePanelPlugin *plugin, t_mpc* mpc)
 {
    GdkPixbuf *icon;
-   const gchar *auth[] = { "Landry Breuil <landry at rhaalovely.net>", NULL };
+   const gchar *auth[] = { "Landry Breuil <landry at xfce.org>", NULL };
    icon = xfce_panel_pixbuf_from_source("applications-multimedia", NULL, 32);
 #if !GTK_CHECK_VERSION (2, 18, 0)
    gtk_about_dialog_set_email_hook (exo_gtk_url_about_dialog_hook, NULL, NULL);
@@ -779,7 +779,7 @@ mpc_show_about(XfcePanelPlugin *plugin, t_mpc* mpc)
       "program-name", PACKAGE_NAME,
       "comments", _("A simple panel-plugin client for Music Player Daemon"),
       "website", "http://goodies.xfce.org/projects/panel-plugins/xfce4-mpc-plugin",
-      "copyright", _("Copyright (c) 2006-2011 Landry Breuil\n"),
+      "copyright", _("Copyright (c) 2006-2012 Landry Breuil\n"),
       "authors", auth, NULL);
 
    if(icon)

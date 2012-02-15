@@ -1,6 +1,6 @@
 /* xfce4-mpc-plugin.h
  *
- * Copyright (c) 2006-2011 Landry Breuil <landry at rhaalovely.net>
+ * Copyright (c) 2006-2012 Landry Breuil <landry at xfce.org>
  * This code is licenced under a BSD-style licence.
  * (OpenBSD variant modeled after the ISC licence)
  * All rights reserved.
