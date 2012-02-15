@@ -840,5 +840,5 @@ mpc_construct (XfcePanelPlugin * plugin)
 
 
 /* register the plugin */
-XFCE_PANEL_PLUGIN_REGISTER_EXTERNAL (mpc_construct);
+XFCE_PANEL_PLUGIN_REGISTER (mpc_construct);
 

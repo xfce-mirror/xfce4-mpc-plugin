@@ -1,24 +1,30 @@
 plugindir = $(libdir)/xfce4/panel/plugins
-plugin_PROGRAMS = xfce4-mpc-plugin
+plugin_LTLIBRARIES = libmpc.la
 
-xfce4_mpc_plugin_CFLAGS =						\
+libmpc_la_CFLAGS =							\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"				\
 	@EXO_CFLAGS@							\
 	@LIBXFCE4UI_CFLAGS@						\
 	@LIBXFCE4PANEL_CFLAGS@
 
-xfce4_mpc_plugin_LDADD =						\
+libmpc_la_LIBADD =							\
 	@EXO_LIBS@							\
 	@LIBXFCE4UI_LIBS@						\
 	@LIBXFCE4PANEL_LIBS@
 
+libmpc_la_LDFLAGS = \
+	-avoid-version \
+	-module \
+	-no-undefined \
+	-export-symbols-regex '^xfce_panel_module_(preinit|init|construct)' \
+	$(PLATFORM_LDFLAGS)
 
-xfce4_mpc_plugin_SOURCES = xfce4-mpc-plugin.c xfce4-mpc-plugin.h
+libmpc_la_SOURCES = xfce4-mpc-plugin.c xfce4-mpc-plugin.h
 if USE_LIBMPD
-xfce4_mpc_plugin_CFLAGS += @LIBMPD_CFLAGS@
-xfce4_mpc_plugin_LDADD += @LIBMPD_LIBS@
+libmpc_la_CFLAGS += @LIBMPD_CFLAGS@
+libmpc_la_LIBADD += @LIBMPD_LIBS@
 else
-xfce4_mpc_plugin_SOURCES += simple-libmpd.c simple-libmpd.h
+libmpc_la_SOURCES += simple-libmpd.c simple-libmpd.h
 endif
 
 # .desktop file
@@ -28,21 +34,12 @@ endif
 # We also need to let intltool merge the translated fields, so we add an
 # additional level of indirection: a <name>.desktop.in.in file.
 # 
-desktop_in_in_files = xfce4-mpc-plugin.desktop.in.in
-desktop_in_files = $(desktop_in_in_files:.desktop.in.in=.desktop.in)
+desktop_in_files = xfce4-mpc-plugin.desktop.in
 	
 desktopdir = $(datadir)/xfce4/panel/plugins
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
-# get full path into .desktop file
-%.desktop.in: %.desktop.in.in
-	sed -e "s^@PLUGIN_PATH@^$(libdir)/xfce4/panel/plugins^" 	\
-		$< > $@
-	
-EXTRA_DIST =								\
-	$(desktop_in_in_files)
+EXTRA_DIST = $(desktop_in_files)
 
-DISTCLEANFILES =							\
-	$(desktop_DATA) $(desktop_in_files)
-
+DISTCLEANFILES = $(desktop_DATA)
