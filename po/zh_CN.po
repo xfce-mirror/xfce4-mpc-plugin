@@ -98,20 +98,19 @@ msgstr "重复"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:752
 msgid "<b><i>Commands</i></b>"
-msgstr ""
+msgstr "<b><i>命令</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:756
 msgid "<b><i>Outputs</i></b>"
-msgstr ""
+msgstr "<b><i>输出</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:779
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "简单的音乐播放器守护进程面板插件客户端"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:781
-#, fuzzy
 msgid "Copyright (c) 2006-2011 Landry Breuil\n"
-msgstr "版权 2006-2008 Landry Breuil\n"
+msgstr "版权 2006-2011 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
@@ -120,9 +119,3 @@ msgstr "MPD 客户端插件"
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
 msgid "A client for MPD, The Music Player Daemon"
 msgstr "MPD 客户端，音乐播放器守护进程"
-
-#~ msgid "Xfce4 Mpc Plugin"
-#~ msgstr "Xfce4 Mpc 插件"
-
-#~ msgid "Maintainer, Original Author"
-#~ msgstr "维护者，原作者"
