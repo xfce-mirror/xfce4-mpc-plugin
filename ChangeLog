@@ -1,3 +1,8 @@
+20-02-2012 Landry Breuil <landry at rhaalovely.net>
+   * release 0.4.2
+   * 0.4.1 was generated with a buggy intltool 0.50.0, regen with 0.50.1
+   * https://bugs.launchpad.net/intltool/+bug/900738
+
 15-02-2012 Landry Breuil <landry at rhaalovely.net>
    * release 0.4.1
    * build plugin as a module
