@@ -1,7 +1,7 @@
 # Ukrainian translation of xfce4-mpc-plugin.
 # Copyright (C) 2008 Dmitry Nikitin
 # This file is distributed under the same license as the xfce4-mpc-plugin package.
-#
+# 
 # Dmitry Nikitin <luckas_fb@mail.ru>, 2008.
 msgid ""
 msgstr ""
@@ -11,10 +11,10 @@ msgstr ""
 "PO-Revision-Date: 2008-07-09 10:35+0300\n"
 "Last-Translator: Dmitry Nikitin <luckas_fb@mail.ru>\n"
 "Language-Team: Ukrainian <xfce4-dev@xfce.org>\n"
-"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: uk\n"
 "X-Generator: KBabel 1.11.4\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:128
@@ -97,20 +97,19 @@ msgstr "Повторити"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:752
 msgid "<b><i>Commands</i></b>"
-msgstr ""
+msgstr "<b><i>Команди</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:756
 msgid "<b><i>Outputs</i></b>"
-msgstr ""
+msgstr "<b><i>Вивід</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:779
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "Простий клієнт для MPD, The Music Player Daemon"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:781
-#, fuzzy
 msgid "Copyright (c) 2006-2011 Landry Breuil\n"
-msgstr "Copyright (c) 2006-2008 Landry Breuil\n"
+msgstr "Всі права застережено 2006-20011 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
