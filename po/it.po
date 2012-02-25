@@ -2,7 +2,7 @@
 # Copyright (C) 2007 THE xfce4-mpc-plugin'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce4-mpc-plugin package.
 # Cristian Marchi <cri.penta@gmail.com>, 2009.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-mpc-plugin\n"
@@ -11,10 +11,10 @@ msgstr ""
 "PO-Revision-Date: 2009-12-30 21:04+0100\n"
 "Last-Translator: Cristian Marchi <cri.penta@gmail.com>\n"
 "Language-Team: Italian <xfce-it-translators@googlegroups.com>\n"
-"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:128
 #: ../panel-plugin/xfce4-mpc-plugin.c:204
@@ -46,7 +46,8 @@ msgstr "Password: "
 msgid "MPD Client : "
 msgstr "Client MPD: "
 
-# Descrive le informazioni (titolo, anno,  artista ecc...) da visualizzare come tooltip.
+# Descrive le informazioni (titolo, anno,  artista ecc...) da visualizzare
+# come tooltip.
 #: ../panel-plugin/xfce4-mpc-plugin.c:284
 msgid "Tooltip Format : "
 msgstr "Formato delle info:"
@@ -97,11 +98,11 @@ msgstr "Ripeti"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:752
 msgid "<b><i>Commands</i></b>"
-msgstr ""
+msgstr "<b><i>Comandi</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:756
 msgid "<b><i>Outputs</i></b>"
-msgstr ""
+msgstr "<b><i>Output</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:779
 msgid "A simple panel-plugin client for Music Player Daemon"
@@ -109,9 +110,8 @@ msgstr ""
 "Un semplice plugin da pannello per il demone del riproduttore musicale (MPD)"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:781
-#, fuzzy
 msgid "Copyright (c) 2006-2011 Landry Breuil\n"
-msgstr "Copyright (c) 2006-2008 Landry Breuil\n"
+msgstr "Copyright (c) 2006-2011 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
