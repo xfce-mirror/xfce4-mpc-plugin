@@ -1,0 +1,123 @@
+# Hebrew translation of the xfce4-mpc-plugin.
+# Copyright (C) Landry Breuil <landry@fr.homeunix.org>
+# This file is distributed under the same license as the xfce4-mpc-plugin package.
+# Isratine Citizen <genghiskhan@gmx.ca>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xfce4-mpc-plugin 0.3.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-02-15 10:14+0100\n"
+"PO-Revision-Date: 2012-03-11 14:18+0200\n"
+"Last-Translator: my name <email@address.org>\n"
+"Language-Team: Hebrew <xfce-i18n@xfce.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:128
+#: ../panel-plugin/xfce4-mpc-plugin.c:204
+#: ../panel-plugin/xfce4-mpc-plugin.c:749
+msgid "Launch"
+msgstr "הפעלה"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:261
+msgid "Mpd Client Plugin"
+msgstr "תוסף לקוח Mpd"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:267
+msgid "Properties"
+msgstr "מאפיינים"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:280
+msgid "Host : "
+msgstr "מארח : "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:281
+msgid "Port : "
+msgstr "פתחה : "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:282
+msgid "Password : "
+msgstr "ססמה : "
+
+# הרכיב הינו שלט עבור נגן שמע שרץ ברקע
+# הרם ברשותך מרגום מוצלח יותר עבור Client?
+#: ../panel-plugin/xfce4-mpc-plugin.c:283
+msgid "MPD Client : "
+msgstr "לקוח MPD:"
+
+# תסדיר
+#: ../panel-plugin/xfce4-mpc-plugin.c:284
+msgid "Tooltip Format : "
+msgstr "מבנה החלון הקופץ : "
+
+# תסדיר
+#: ../panel-plugin/xfce4-mpc-plugin.c:285
+msgid "Playlist Format : "
+msgstr "מבנה רשימת השמעה : "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:319
+msgid "Hostname or IP address"
+msgstr "שם מארח או כתובת IP"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:320
+msgid "Graphical MPD Client to launch in plugin context menu"
+msgstr "לקוח גראפי להפעלת "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:321
+msgid "Variables : %artist%, %album%, %track% and %title%"
+msgstr "משתנים : %artist%, %album%, %track% and %title%"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:322
+msgid "Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title%"
+msgstr "משתנים : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title%"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:327
+msgid "Show _frame"
+msgstr "הצגת _מסגרת"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:449
+#: ../panel-plugin/xfce4-mpc-plugin.c:680
+msgid ".... not connected ?"
+msgstr ".... לא מחובר ?"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:533
+msgid "Mpd playlist"
+msgstr "רשימת השמעה Mpd"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:745
+msgid "Random"
+msgstr "אקראי"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:747
+msgid "Repeat"
+msgstr "חזרה"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:752
+msgid "<b><i>Commands</i></b>"
+msgstr "<b><i>פקודות</i></b>"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:756
+msgid "<b><i>Outputs</i></b>"
+msgstr "<b><i>פלט</i></b>"
+
+# האם שדון נכון עבור Daemon?
+#: ../panel-plugin/xfce4-mpc-plugin.c:779
+msgid "A simple panel-plugin client for Music Player Daemon"
+msgstr "תוסף פאנל פשוט עבור דימון נגן מוזיקה (MPD)"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:781
+msgid "Copyright (c) 2006-2011 Landry Breuil\n"
+msgstr "Copyright (c) 2006-2011 Landry Breuil\n"
+
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
+msgid "MPD Client Plugin"
+msgstr "תוסף לקוח MPD"
+
+# האם שדון נכון עבור Daemon?
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
+msgid "A client for MPD, The Music Player Daemon"
+msgstr "לקוח עבור MPD, דימון נגן מוזיקה"
+
