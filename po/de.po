@@ -105,7 +105,7 @@ msgstr "<b><i>Befehle</i></b>"
 #: ../panel-plugin/xfce4-mpc-plugin.c:756
 #, fuzzy
 msgid "<b><i>Outputs</i></b>"
-msgstr "<b><i>Outputs</i></b>"
+msgstr "<b><i>Ausgaben</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:779
 msgid "A simple panel-plugin client for Music Player Daemon"
