@@ -76,7 +76,7 @@ msgstr "변수들 : %vol%, %status%, %newline%, %artist%, %album%, %track% 그�
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:327
 msgid "Show _frame"
-msgstr "틀 보이기(_F)"
+msgstr "틀 보기(_F)"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:449
 #: ../panel-plugin/xfce4-mpc-plugin.c:680
