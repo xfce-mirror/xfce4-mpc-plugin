@@ -4,7 +4,7 @@
 # Andrius da Costa Ribas <andriusmao@gmail.com>, 2007.
 # Fábio Nogueira <deb-user-ba@ubuntu.com>, 2007-2008.
 # Og Maciel <ogmaciel@gnome.org>, 2008.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-mpc-plugin\n"
@@ -13,10 +13,10 @@ msgstr ""
 "PO-Revision-Date: 2011-05-26 10:02-0300\n"
 "Last-Translator: Sérgio Cipolla <secipolla@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
-"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:128
@@ -100,20 +100,19 @@ msgstr "Repetir"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:752
 msgid "<b><i>Commands</i></b>"
-msgstr ""
+msgstr "<b><i>Comandos</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:756
 msgid "<b><i>Outputs</i></b>"
-msgstr ""
+msgstr "<b><i>Saídas</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:779
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "Um cliente plugin de painel simples para o Music Player Daemon"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:781
-#, fuzzy
 msgid "Copyright (c) 2006-2011 Landry Breuil\n"
-msgstr "Copyright (c) 2006-2008 Landry Breuil\n"
+msgstr "Copyright (c) 2006-2011 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
