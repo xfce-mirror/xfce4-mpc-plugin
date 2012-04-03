@@ -114,7 +114,7 @@ msgstr "Eine einfache Erweiterung für die Leiste für den Music Player Daemon"
 #: ../panel-plugin/xfce4-mpc-plugin.c:781
 #, fuzzy
 msgid "Copyright (c) 2006-2011 Landry Breuil\n"
-msgstr "Copyright (c) 2006-2011 Landry Breuil\n"
+msgstr "Copyright © 2006-2011 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
