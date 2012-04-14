@@ -98,12 +98,10 @@ msgid "Repeat"
 msgstr "Wiederholen"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:752
-#, fuzzy
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>Befehle</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:756
-#, fuzzy
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>Ausgaben</i></b>"
 
@@ -112,7 +110,6 @@ msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "Eine einfache Erweiterung für die Leiste für den Music Player Daemon"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:781
-#, fuzzy
 msgid "Copyright (c) 2006-2011 Landry Breuil\n"
 msgstr "Copyright © 2006-2011 Landry Breuil\n"
 
