@@ -1,3 +1,4 @@
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfmpc plugin\n"
@@ -6,10 +7,10 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: Samed Beyribey <ras0ir@eventualis.org>\n"
 "Language-Team: Xfce-TR <xfce-tr@googlegroups.com>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "X-Poedit-Country: TURKEY\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:128
@@ -44,12 +45,14 @@ msgid "MPD Client : "
 msgstr "İstemci :"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:284
+#, fuzzy
 msgid "Tooltip Format : "
-msgstr ""
+msgstr "İpucu Biçimi :"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:285
+#, fuzzy
 msgid "Playlist Format : "
-msgstr ""
+msgstr "Çalma Listesi Biçimi : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:319
 msgid "Hostname or IP address"
@@ -60,14 +63,16 @@ msgid "Graphical MPD Client to launch in plugin context menu"
 msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:321
+#, fuzzy
 msgid "Variables : %artist%, %album%, %track% and %title%"
-msgstr ""
+msgstr "Değişkenler : %sanatçı%, %albüm%, %sıra% ve %isim%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:322
+#, fuzzy
 msgid ""
 "Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title"
 "%"
-msgstr ""
+msgstr "Değişkenler : %ses%, %dırıö%, %yenisatır%, %sanatçı%, %albüm%, %sıra% and %isim%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:327
 msgid "Show _frame"
@@ -91,12 +96,14 @@ msgid "Repeat"
 msgstr "Tekrarla"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:752
+#, fuzzy
 msgid "<b><i>Commands</i></b>"
-msgstr ""
+msgstr "<b><i>Komutlar</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:756
+#, fuzzy
 msgid "<b><i>Outputs</i></b>"
-msgstr ""
+msgstr "<b><i>Çıktılar</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:779
 msgid "A simple panel-plugin client for Music Player Daemon"
