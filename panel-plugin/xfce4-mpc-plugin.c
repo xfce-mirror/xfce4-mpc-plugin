@@ -28,6 +28,8 @@
 #include <stdlib.h>
 #include <glib/gprintf.h>
 
+#include "xfce4-mpc-plugin.h"
+
 #define DEFAULT_MPD_HOST "localhost"
 #define DEFAULT_MPD_PORT 6600
 #define DIALOG_ENTRY_WIDTH 20
@@ -38,7 +40,6 @@
 #endif
 #endif
 
-#include "xfce4-mpc-plugin.h"
 
 static void
 mpc_free (XfcePanelPlugin * plugin, t_mpc * mpc)
