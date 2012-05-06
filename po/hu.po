@@ -1,7 +1,7 @@
 # Hungarian translation of xfce4-mpc-plugin
 # Copyright 2009. Free Software Foundation, Inc.
 # This file is distributed under the same license as the  xfce4-mpc-plugin package.
-#
+# 
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2009.
 msgid ""
 msgstr ""
@@ -11,12 +11,12 @@ msgstr ""
 "PO-Revision-Date: 2009-07-25 01:07+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
 "Language-Team: Hungarian <gnome at gnome dot hu>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:128
 #: ../panel-plugin/xfce4-mpc-plugin.c:204
@@ -98,20 +98,19 @@ msgstr "Ismétlés"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:752
 msgid "<b><i>Commands</i></b>"
-msgstr ""
+msgstr "<b><i>Parancsok</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:756
 msgid "<b><i>Outputs</i></b>"
-msgstr ""
+msgstr "<b><i>Kimenetek</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:779
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "Egyszerű panelbővítmény-kliens a Music Player Daemonhoz"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:781
-#, fuzzy
 msgid "Copyright (c) 2006-2011 Landry Breuil\n"
-msgstr "Copyright (c) 2006-2008 Landry Breuil\n"
+msgstr "Copyright (c) 2006-2011 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"

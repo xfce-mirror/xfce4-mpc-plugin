@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: xfce4-mpc-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-02-15 10:14+0100\n"
-"PO-Revision-Date: 2009-08-21 01:55-0300\n"
-"Last-Translator: elega <elega@elega.com.ar>\n"
+"PO-Revision-Date: 2012-04-18 22:46-0600\n"
+"Last-Translator: Sergio <oigres200@gmail.com>\n"
 "Language-Team: Spanish\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -61,20 +61,15 @@ msgstr "Nombre del equipo o dirección ip"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:320
 msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr ""
-"Cliente gráfico MPD para ejecutar en el complemento del menú contextual"
+msgstr "Cliente gráfico MPD para ejecutar en el complemento del menú contextual"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:321
 msgid "Variables : %artist%, %album%, %track% and %title%"
 msgstr "Variables : %artist%, %album%, %track% and %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:322
-msgid ""
-"Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title"
-"%"
-msgstr ""
-"Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title"
-"%"
+msgid "Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title%"
+msgstr "Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:327
 msgid "Show _frame"
@@ -99,22 +94,19 @@ msgstr "Repetir"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:752
 msgid "<b><i>Commands</i></b>"
-msgstr ""
+msgstr "<b><i>Comandos</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:756
 msgid "<b><i>Outputs</i></b>"
-msgstr ""
+msgstr "<b><i>Salidas</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:779
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr ""
-"Un complemento de panel simple para el cliente del demonio de reproducción "
-"de música"
+msgstr "Un complemento de panel simple para el cliente del demonio de reproducción de música"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:781
-#, fuzzy
 msgid "Copyright (c) 2006-2011 Landry Breuil\n"
-msgstr "Copyright (c) 2006-2008 Landry Breuil\n"
+msgstr "Copyright (c) 2006-2011 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"

@@ -1,128 +1,121 @@
-# German translations for xfce4-mpc-plugin package
-# German messages for xfce4-mpc-plugin.
-# Copyright (C) 2009 THE xfce4-mpc-plugin'S COPYRIGHT HOLDER
+# Croatian translation for xfce4-mpc-plugin package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce4-mpc-plugin package.
-# Simon Schneider <simon@schneiderimtal.de>, 2009.
-# 
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-mpc-plugin 4-mpc-plugin\n"
+"Project-Id-Version: xfce4-mpc-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-02-15 10:14+0100\n"
-"PO-Revision-Date: 2009-03-13 00:14+0000\n"
-"Last-Translator: Simon Schneider <simon@schneiderimtal.de>\n"
-"Language-Team: German <xfce-i18n-de@xfce.org>\n"
+"PO-Revision-Date: 2012-05-05 10:34+0100\n"
+"Last-Translator: Ivica Kolić <ikoli@yahoo.com>\n"
+"Language-Team: Croatian <ikoli@yahoo.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-Language: Croatian\n"
+"X-Poedit-Country: CROATIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:128
 #: ../panel-plugin/xfce4-mpc-plugin.c:204
 #: ../panel-plugin/xfce4-mpc-plugin.c:749
 msgid "Launch"
-msgstr "Starte"
+msgstr "Pokreni"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:261
 msgid "Mpd Client Plugin"
-msgstr "MPD-Klient-Erweiterung"
+msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:267
 msgid "Properties"
-msgstr "Eigenschaften"
+msgstr "Svojstva"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:280
 msgid "Host : "
-msgstr "Host: "
+msgstr "Ime računala :"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:281
 msgid "Port : "
-msgstr "Port:"
+msgstr "Port : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:282
 msgid "Password : "
-msgstr "Passwort:"
+msgstr "Lozinka :"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:283
 msgid "MPD Client : "
-msgstr "MPD-Klient:"
+msgstr "MPD klijent : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:284
 msgid "Tooltip Format : "
-msgstr "Formatierung der Kurzhilfen:"
+msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:285
 msgid "Playlist Format : "
-msgstr "Wiedergabelisteformat:"
+msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:319
 msgid "Hostname or IP address"
-msgstr "Hostname oder IP-Adresse"
+msgstr "Ime računala ili IP adresa"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:320
 msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr "Grafischer MPD-Klient, der über das Kontextmenü gestartet werden kann"
+msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:321
 msgid "Variables : %artist%, %album%, %track% and %title%"
-msgstr "Variablen: %artist%, %album%, %track% und %titel%"
+msgstr "Varijable : %umjetnik%, %album%, %zapis% i %naslov%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:322
-msgid ""
-"Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title"
-"%"
+msgid "Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title%"
 msgstr ""
-"Variablen : %vol%, %status%, %newline%, %artist%, %album%, %track% und %title"
-"%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:327
 msgid "Show _frame"
-msgstr "_Rahmen anzeigen"
+msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:449
 #: ../panel-plugin/xfce4-mpc-plugin.c:680
 msgid ".... not connected ?"
-msgstr "... nicht verbunden?"
+msgstr "... nije spojen?"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:533
 msgid "Mpd playlist"
-msgstr "Mpd-Playliste"
+msgstr "Mpd lista izvođenja"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:745
 msgid "Random"
-msgstr "Zufall"
+msgstr "Nasumično"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:747
 msgid "Repeat"
-msgstr "Wiederholen"
+msgstr "Ponovi"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:752
 msgid "<b><i>Commands</i></b>"
-msgstr "<b><i>Befehle</i></b>"
+msgstr "<b><i>Naredbe</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:756
 msgid "<b><i>Outputs</i></b>"
-msgstr "<b><i>Ausgaben</i></b>"
+msgstr "<b><i>Izlazi</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:779
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr "Eine einfache Erweiterung für die Leiste für den Music Player Daemon"
+msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:781
 msgid "Copyright (c) 2006-2011 Landry Breuil\n"
-msgstr "Copyright © 2006-2011 Landry Breuil\n"
+msgstr "Autorska prava (c) 2006-2011 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
-msgstr "MPD-Klient-Erweiterung"
+msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
 msgid "A client for MPD, The Music Player Daemon"
-msgstr "Ein Klient für MPD, den Music Player Daemon"
+msgstr ""
 
-#~ msgid "Xfce4 Mpc Plugin"
-#~ msgstr "MPD-Klient-Erweiterung"
-
-#~ msgid "Maintainer, Original Author"
-#~ msgstr "Entwickler, Originalautor"
