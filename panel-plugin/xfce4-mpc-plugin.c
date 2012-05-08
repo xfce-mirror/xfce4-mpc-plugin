@@ -62,6 +62,7 @@ mpc_set_mode (XfcePanelPlugin * plugin, XfcePanelPluginMode mode, t_mpc * mpc)
       GTK_ORIENTATION_HORIZONTAL : GTK_ORIENTATION_VERTICAL;
 
    xfce_hvbox_set_orientation(XFCE_HVBOX(mpc->box), orientation);
+   xfce_panel_plugin_set_small (plugin, (mode != XFCE_PANEL_PLUGIN_MODE_DESKBAR));
 }
 
 #else
