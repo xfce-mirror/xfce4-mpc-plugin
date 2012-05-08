@@ -835,6 +835,7 @@ mpc_construct (XfcePanelPlugin * plugin)
    g_signal_connect (plugin, "size-changed", G_CALLBACK (mpc_set_size), mpc);
 #ifdef HAS_PANEL_49
    g_signal_connect (plugin, "mode-changed", G_CALLBACK (mpc_set_mode), mpc);
+   xfce_panel_plugin_set_small (plugin, TRUE);
 #else
    g_signal_connect (plugin, "orientation-changed", G_CALLBACK (mpc_set_orientation), mpc);
 #endif
