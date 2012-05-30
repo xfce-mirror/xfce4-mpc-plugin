@@ -103,7 +103,7 @@ msgstr "<b><i>Commandes</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:756
 msgid "<b><i>Outputs</i></b>"
-msgstr "<b><i>Résultats</i></b>"
+msgstr "<b><i>Sorties</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:779
 msgid "A simple panel-plugin client for Music Player Daemon"
