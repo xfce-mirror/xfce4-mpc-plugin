@@ -1,3 +1,8 @@
+30-06-2012 Landry Breuil <landry at xfce.org>
+   * release 0.4.4
+   * Better compliance with the panel plugin HIG
+   * Fix wrong fr translation
+
 13-05-2012 Landry Breuil <landry at xfce.org>
    * release 0.4.3
    * set small property (unless in deskbar mode)
