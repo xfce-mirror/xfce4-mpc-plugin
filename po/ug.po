@@ -1,15 +1,15 @@
-# Uyghur translations of xfce4-mpc-plugin.
-# Copyright (C) 2008 THE xfce4-mpc-plugin'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the xfce4-mpc-plugin package.
-# Gheyret T.Kenji <gheyret@gmail.com>, 2010.
+# Uyghur translation for xfce4-mpc-plugin.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Gheyret Kenji <gheyret@gmail.com>, YEAR.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-mpc-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-02-15 10:14+0100\n"
-"PO-Revision-Date: 2009-07-26 16:34+0900\n"
-"Last-Translator: Gheyret T.Kenji <gheyret@gmail.com>\n"
+"PO-Revision-Date: 2011-11-09 16:10+0900\n"
+"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgstr "خاسلىق"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:280
 msgid "Host : "
-msgstr "كومپيۇتېر :"
+msgstr "كومپيۇتېر : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:281
 msgid "Port : "
@@ -103,7 +103,7 @@ msgstr "<b><i>چىقىرىشلار</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:779
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr "مۇزىكا قويغۇ Daemon ئۈچۈن ئاددىي تاختا-قىستۇرما خېرىدارى"
+msgstr "مۇزىكا قويغۇ مۇئەككىلى ئۈچۈن ئاددىي تاختا-قىستۇرما خېرىدارى"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:781
 msgid "Copyright (c) 2006-2011 Landry Breuil\n"
@@ -115,10 +115,4 @@ msgstr "MPD خېرىدار قىستۇرمىسى"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
 msgid "A client for MPD, The Music Player Daemon"
-msgstr "MPD خېرىدار پروگراممىسى، مۇزىكا قويغۇ Daemon"
-
-#~ msgid "Xfce4 Mpc Plugin"
-#~ msgstr "Xfce4 Mpc قىستۇرمىسى"
-
-#~ msgid "Maintainer, Original Author"
-#~ msgstr "مەسئۇل ، ئەسلى ئاپتور"
+msgstr "MPD خېرىدار پروگراممىسى، مۇزىكا قويغۇ مۇئەككىلى"
