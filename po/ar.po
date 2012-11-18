@@ -1,16 +1,19 @@
-#
+# محمد الحرقان <malham1@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-02-15 10:14+0100\n"
-"PO-Revision-Date: 2008-07-15 19:00+0200\n"
-"Last-Translator: Mohamed Magdy <mohamedmk@gmail.com>\n"
-"Language-Team: Arabeyes <doc@arabeyes.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2012-11-18 22:56+0300\n"
+"Last-Translator: محمد الحرقان <malham1@gmail.com>\n"
+"Language-Team: http://www.vertaal.com.ar/files/factory/ar/list/\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Virtaal 0.7.1\n"
 "X-Poedit-Language: Arabeyes\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:128
@@ -29,27 +32,27 @@ msgstr "خصائص"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:280
 msgid "Host : "
-msgstr "مضيف:"
+msgstr "مضيف : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:281
 msgid "Port : "
-msgstr "منفد:"
+msgstr "منفد : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:282
 msgid "Password : "
-msgstr "كلمة السر:"
+msgstr "كلمة المرور : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:283
 msgid "MPD Client : "
-msgstr "عميل MPD :"
+msgstr "عميل MPD : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:284
 msgid "Tooltip Format : "
-msgstr "شكل أداة التلميح :"
+msgstr "شكل أداة التلميح : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:285
 msgid "Playlist Format : "
-msgstr "شكل قائمة التشغيل :"
+msgstr "شكل قائمة التشغيل : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:319
 msgid "Hostname or IP address"
@@ -57,7 +60,7 @@ msgstr "إسم المستضبف او عنوان IP"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:320
 msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr "عميل رسومي لـMPD  لإطلاق في سياق قائمة"
+msgstr "عميل رسومي لـMPD للإطلاق القائمة"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:321
 msgid "Variables : %artist%, %album%, %track% and %title%"
@@ -72,12 +75,12 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:327
 msgid "Show _frame"
-msgstr "_إطار العرض"
+msgstr "إطار العرض"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:449
 #: ../panel-plugin/xfce4-mpc-plugin.c:680
 msgid ".... not connected ?"
-msgstr ".... غير متصل؟"
+msgstr ".... غير متصل ؟"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:533
 msgid "Mpd playlist"
@@ -93,28 +96,27 @@ msgstr "إعادة"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:752
 msgid "<b><i>Commands</i></b>"
-msgstr ""
+msgstr "<b><i>أوامر</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:756
 msgid "<b><i>Outputs</i></b>"
-msgstr ""
+msgstr "<b><i>النواتج</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:779
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr "ملحق بسيط لعميل المشغل المسيقى في الشريط"
+msgstr "ملحق بسيط لعميل المشغل الموسيقى في الشريط"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:781
-#, fuzzy
 msgid "Copyright (c) 2006-2011 Landry Breuil\n"
-msgstr "حقوق النشر (c) 2006-2008 Landry Breuil\n"
+msgstr "حقوق الطبع والنشر (ج) 2006-2011 لاندري يرى\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
-msgstr "ملحق عميل MPD "
+msgstr "ملحق عميل MPD"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
 msgid "A client for MPD, The Music Player Daemon"
-msgstr "عميل لـMPD , مشغل الموسيقى"
+msgstr "عميل MPD , مشغل الموسيقى"
 
 #~ msgid "Xfce4 Mpc Plugin"
 #~ msgstr "ملحق Mpd لـ إكسفسي4"
