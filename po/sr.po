@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # Саша Петровић <salepetronije@gmail.com>, 2012.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: master\n"
@@ -12,12 +12,12 @@ msgstr ""
 "PO-Revision-Date: 2012-11-15 22:49+0100\n"
 "Last-Translator: salepetronije <salepetronije@gmail.com>\n"
 "Language-Team: српски <xfce-i18n@xfce.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: \n"
 "X-Generator: Gtranslator 2.91.5\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:128
 #: ../panel-plugin/xfce4-mpc-plugin.c:204
@@ -104,7 +104,7 @@ msgstr "<b><i>Излаз</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:779
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr "Једноставан прикључак панела за Домара пуштања музике"
+msgstr "Једноставан прикључак полице за Домара пуштања музике"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:781
 msgid "Copyright (c) 2006-2011 Landry Breuil\n"
@@ -117,4 +117,3 @@ msgstr "Прикључак МПД клијента"
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
 msgid "A client for MPD, The Music Player Daemon"
 msgstr "Клијент за МПД, Домара пуштања музике"
-
