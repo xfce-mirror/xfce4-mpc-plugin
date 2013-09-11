@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 21:07+0200\n"
-"PO-Revision-Date: 2013-09-06 11:12+0000\n"
+"PO-Revision-Date: 2013-09-11 11:08+0000\n"
 "Last-Translator: Necdet Yücel <necdetyucel@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/xfce/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -50,7 +50,7 @@ msgstr "MPD İstemcisi :"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:293
 msgid "Tooltip Format : "
-msgstr ""
+msgstr "Tooltip Bişimi :"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:294
 msgid "Playlist Format : "
@@ -62,7 +62,7 @@ msgstr "Makine adı veya IP adresi"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:329
 msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr ""
+msgstr "Eklenti içerik menüsüne ulaşmak için Grafik MPD İstemcisi"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:330
 msgid "Variables : %artist%, %album%, %track% and %title%"
