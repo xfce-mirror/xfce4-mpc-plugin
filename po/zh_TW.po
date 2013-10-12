@@ -1,112 +1,115 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
+# Translators:
+# Walter Cheuk <wwycheuk@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-mpc-plugin master\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-15 10:14+0100\n"
-"PO-Revision-Date: 2012-07-19 22:07+0800\n"
-"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
-"Language-Team: chinese-l10n <chinese-l10n@googlegroups.com>\n"
-"Language: \n"
+"POT-Creation-Date: 2013-07-03 21:07+0200\n"
+"PO-Revision-Date: 2013-10-12 13:12+0000\n"
+"Last-Translator: Walter Cheuk <wwycheuk@gmail.com>\n"
+"Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/xfce/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:128
-#: ../panel-plugin/xfce4-mpc-plugin.c:204
-#: ../panel-plugin/xfce4-mpc-plugin.c:749
+#: ../panel-plugin/xfce4-mpc-plugin.c:137
+#: ../panel-plugin/xfce4-mpc-plugin.c:213
+#: ../panel-plugin/xfce4-mpc-plugin.c:758
 msgid "Launch"
 msgstr "啟動"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:261
+#: ../panel-plugin/xfce4-mpc-plugin.c:270
 msgid "Mpd Client Plugin"
 msgstr "Mpd 客戶端插件"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:267
+#: ../panel-plugin/xfce4-mpc-plugin.c:276
 msgid "Properties"
 msgstr "屬性"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:280
+#: ../panel-plugin/xfce4-mpc-plugin.c:289
 msgid "Host : "
 msgstr "主機："
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:281
+#: ../panel-plugin/xfce4-mpc-plugin.c:290
 msgid "Port : "
 msgstr "連接埠："
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:282
+#: ../panel-plugin/xfce4-mpc-plugin.c:291
 msgid "Password : "
 msgstr "密碼："
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:283
+#: ../panel-plugin/xfce4-mpc-plugin.c:292
 msgid "MPD Client : "
 msgstr "MPD 客戶端："
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:284
+#: ../panel-plugin/xfce4-mpc-plugin.c:293
 msgid "Tooltip Format : "
 msgstr "提示框格式："
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:285
+#: ../panel-plugin/xfce4-mpc-plugin.c:294
 msgid "Playlist Format : "
 msgstr "播放清單格式："
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:319
+#: ../panel-plugin/xfce4-mpc-plugin.c:328
 msgid "Hostname or IP address"
 msgstr "主機名稱或 IP 位址"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:320
+#: ../panel-plugin/xfce4-mpc-plugin.c:329
 msgid "Graphical MPD Client to launch in plugin context menu"
 msgstr "於插件情境選單內啟動圖形化 MPD 客戶端"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:321
+#: ../panel-plugin/xfce4-mpc-plugin.c:330
 msgid "Variables : %artist%, %album%, %track% and %title%"
 msgstr "變數：%artist%、%album%、%track%、%title% 等"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:322
-msgid "Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title%"
+#: ../panel-plugin/xfce4-mpc-plugin.c:331
+msgid ""
+"Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and "
+"%title%"
 msgstr "變數：%vol%、%status%、%newline%、%artist%、%album%、%track%、%title% 等"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:327
+#: ../panel-plugin/xfce4-mpc-plugin.c:336
 msgid "Show _frame"
 msgstr "顯示框(_F)"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:449
-#: ../panel-plugin/xfce4-mpc-plugin.c:680
+#: ../panel-plugin/xfce4-mpc-plugin.c:458
+#: ../panel-plugin/xfce4-mpc-plugin.c:689
 msgid ".... not connected ?"
 msgstr ".... 尚未連接？"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:533
+#: ../panel-plugin/xfce4-mpc-plugin.c:542
 msgid "Mpd playlist"
 msgstr "Mpd 播放清單"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:745
+#: ../panel-plugin/xfce4-mpc-plugin.c:754
 msgid "Random"
 msgstr "隨機"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:747
+#: ../panel-plugin/xfce4-mpc-plugin.c:756
 msgid "Repeat"
 msgstr "返復"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:752
+#: ../panel-plugin/xfce4-mpc-plugin.c:761
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>指令</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:756
+#: ../panel-plugin/xfce4-mpc-plugin.c:765
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>輸出</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:779
+#: ../panel-plugin/xfce4-mpc-plugin.c:789
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "Music Player Daemon 客戶端的簡易面板插件"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:781
-msgid "Copyright (c) 2006-2011 Landry Breuil\n"
-msgstr "著作權 (c) 2006-20011 Landry Breuil\n"
+#: ../panel-plugin/xfce4-mpc-plugin.c:791
+msgid "Copyright (c) 2006-2012 Landry Breuil\n"
+msgstr "Copyright (c) 2006-2012 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
@@ -115,9 +118,3 @@ msgstr "MPD 客戶端插件"
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
 msgid "A client for MPD, The Music Player Daemon"
 msgstr "MPD，音樂播放器幕後程式的客戶端"
-
-#~ msgid "Xfce4 Mpc Plugin"
-#~ msgstr "Xfce4 Mpc 插件"
-
-#~ msgid "Maintainer, Original Author"
-#~ msgstr "維護者、原始作者"
