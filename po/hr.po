@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# schizo <eveskovic@gmail.com>, 2014
 # Ivica  Kolić <ikoli@yahoo.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 21:07+0200\n"
-"PO-Revision-Date: 2013-09-23 11:02+0000\n"
-"Last-Translator: Ivica  Kolić <ikoli@yahoo.com>\n"
+"PO-Revision-Date: 2014-02-23 17:58+0000\n"
+"Last-Translator: schizo <eveskovic@gmail.com>\n"
 "Language-Team: Croatian (http://www.transifex.com/projects/p/xfce/language/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,7 +27,7 @@ msgstr "Pokreni"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:270
 msgid "Mpd Client Plugin"
-msgstr ""
+msgstr "Dodatak MPD klijenta"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:276
 msgid "Properties"
@@ -50,7 +51,7 @@ msgstr "MPD klijent : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:293
 msgid "Tooltip Format : "
-msgstr ""
+msgstr "Format oblačića:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:294
 msgid "Playlist Format : "
@@ -62,7 +63,7 @@ msgstr "Ime računala ili IP adresa"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:329
 msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr ""
+msgstr "Grafički MPD klijent za pokretanje u izborniku dodatka"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:330
 msgid "Variables : %artist%, %album%, %track% and %title%"
@@ -72,11 +73,11 @@ msgstr "Varijable : %umjetnik%, %album%, %zapis% i %naslov%"
 msgid ""
 "Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and "
 "%title%"
-msgstr ""
+msgstr "Varijable: %vol%, %status%, %newline%, %artist%, %album%, %track% i %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:336
 msgid "Show _frame"
-msgstr ""
+msgstr "Pokaži _okvir"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:458
 #: ../panel-plugin/xfce4-mpc-plugin.c:689
@@ -105,7 +106,7 @@ msgstr "<b><i>Izlazi</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:789
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr ""
+msgstr "Jednostavan dodatak na ploči za Music Player Daemon"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:791
 msgid "Copyright (c) 2006-2012 Landry Breuil\n"
@@ -117,4 +118,4 @@ msgstr "Priključak MPD klijenta"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
 msgid "A client for MPD, The Music Player Daemon"
-msgstr ""
+msgstr "Klijent za MPD, nadglednika svirača glazbe"
