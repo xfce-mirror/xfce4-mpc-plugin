@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 21:07+0200\n"
-"PO-Revision-Date: 2014-01-02 23:22+0000\n"
+"PO-Revision-Date: 2014-03-28 14:26+0000\n"
 "Last-Translator: to_ba\n"
 "Language-Team: German (http://www.transifex.com/projects/p/xfce/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr ""
 #: ../panel-plugin/xfce4-mpc-plugin.c:213
 #: ../panel-plugin/xfce4-mpc-plugin.c:758
 msgid "Launch"
-msgstr "Starte"
+msgstr "Starten"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:270
 msgid "Mpd Client Plugin"
