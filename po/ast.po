@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 21:07+0200\n"
-"PO-Revision-Date: 2014-04-17 16:31+0000\n"
+"PO-Revision-Date: 2014-04-17 16:32+0000\n"
 "Last-Translator: Tornes Llume <l.lumex03.tornes@gmail.com>\n"
 "Language-Team: Asturian (http://www.transifex.com/projects/p/xfce/language/ast/)\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,7 @@ msgstr "Llanzar"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:270
 msgid "Mpd Client Plugin"
-msgstr "Complementu de veceru MPD"
+msgstr "Complementu del veceru MPD"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:276
 msgid "Properties"
@@ -67,13 +67,13 @@ msgstr "Veceru MPD gráficu pa llanzar un complementu nel menú contestual"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:330
 msgid "Variables : %artist%, %album%, %track% and %title%"
-msgstr ""
+msgstr "Variables : %artist%, %album%, %track% y %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:331
 msgid ""
 "Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and "
 "%title%"
-msgstr ""
+msgstr "Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% y %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:336
 msgid "Show _frame"
