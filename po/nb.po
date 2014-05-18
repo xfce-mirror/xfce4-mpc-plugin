@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-03 21:07+0200\n"
-"PO-Revision-Date: 2014-04-27 16:30+0000\n"
+"PO-Revision-Date: 2014-05-18 09:12+0000\n"
 "Last-Translator: haarek <haarektrans@gmail.com>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/projects/p/xfce-panel-plugins/language/nb/)\n"
 "MIME-Version: 1.0\n"
@@ -76,7 +76,7 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:336
 msgid "Show _frame"
-msgstr ""
+msgstr "Vis ramme"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:458
 #: ../panel-plugin/xfce4-mpc-plugin.c:689
