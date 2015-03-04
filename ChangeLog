@@ -1,3 +1,10 @@
+04-03-2015 Landry Breuil <landry at xfce.org>
+   * release 0.4.5
+   * autotools update
+   * new translations: bg, en_AU, ms, nb, oc, th, sr
+   * updated translations: ar, ast, cs, da, de, en_AU, es, fr, he
+     hr, hu, id, ko, nl, pl, sk, sv, tr, ru, ug, uk, zh_CN, zh_TW
+
 30-06-2012 Landry Breuil <landry at xfce.org>
    * release 0.4.4
    * Better compliance with the panel plugin HIG
