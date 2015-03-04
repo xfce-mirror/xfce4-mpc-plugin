@@ -14,21 +14,16 @@ AC_INIT([xfce4-mpc-plugin], [mpc_version],
 	[landry@xfce.org])
 
 MPC_VERSION=mpc_version()
-AM_INIT_AUTOMAKE([xfce4-mpc-plugin], [$MPC_VERSION], [-Wall -Werror foreign])
+AM_INIT_AUTOMAKE([1.8 dist-bzip2])
 AM_CONFIG_HEADER([config.h])
 dnl AC_CONFIG_HEADERS([config.h])
 
 AM_MAINTAINER_MODE
 
-dnl Check for UNIX variants
-AC_AIX
-AC_ISC_POSIX
-AC_MINIX
-
 dnl Check for basic programs
 AC_PROG_CC
 AC_PROG_INSTALL
-AC_PROG_INTLTOOL
+IT_PROG_INTLTOOL([0.35.0])
 
 dnl Initialize libtool
 LT_PREREQ([2.2.6])
