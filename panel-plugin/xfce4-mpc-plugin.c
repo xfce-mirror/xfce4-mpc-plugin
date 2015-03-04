@@ -190,11 +190,11 @@ mpc_plugin_reconnect (t_mpc *mpc)
 static void
 mpc_dialog_apply_options (t_mpc_dialog *dialog)
 {
-   DBG ("!");
    GtkWidget *label;
    char str[128];
 
    t_mpc *mpc = dialog->mpc;
+   DBG ("!");
    mpc->mpd_host = g_strdup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_host)));
    mpc->mpd_port = atoi(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_port)));
    mpc->mpd_password = g_strdup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_password)));
@@ -368,8 +368,8 @@ mpc_repeat_toggled(GtkWidget *widget, t_mpc* mpc)
 static void
 mpc_output_toggled(GtkWidget *widget, t_mpc* mpc)
 {
-   DBG("!");
    int i;
+   DBG("!");
    /* lookup menuitem */
    for (i = 0; i < mpc->nb_outputs && mpc->mpd_outputs[i]->menuitem != widget; i++);
    if (i != mpc->nb_outputs) /* oops case ? */
@@ -381,10 +381,10 @@ mpc_output_toggled(GtkWidget *widget, t_mpc* mpc)
 static void
 mpc_update_outputs(t_mpc* mpc)
 {
-   DBG("!");
-   GtkWidget* menu;
+   GtkWidget* menu, *chkitem;
    int i,j=0, old_nb_outputs = mpc->nb_outputs;
    MpdData * data = mpd_server_get_output_devices(mpc->mo);
+   DBG("!");
    do {
       DBG("got output %d with name %s, enabled=%d",data->output_dev->id,data->output_dev->name,data->output_dev->enabled);
       /* check if this output doesn't already exist */
@@ -392,7 +392,7 @@ mpc_update_outputs(t_mpc* mpc)
 
       if (i == mpc->nb_outputs) {
          DBG("output not found, adding a new checkitem at pos %d",i);
-         GtkWidget* chkitem = gtk_check_menu_item_new_with_label (data->output_dev->name);
+         chkitem = gtk_check_menu_item_new_with_label (data->output_dev->name);
          g_signal_connect (G_OBJECT(chkitem), "toggled", G_CALLBACK (mpc_output_toggled), mpc);
          xfce_panel_plugin_menu_insert_item(mpc->plugin,GTK_MENU_ITEM(chkitem));
          /* XXX HACK */
@@ -423,9 +423,10 @@ mpc_update_outputs(t_mpc* mpc)
 static void
 str_replace(GString *str, gchar* pattern, gchar* replacement)
 {
+   gchar *nstr;
    if (!replacement)
       return;
-   gchar *nstr = exo_str_replace(str->str, pattern, replacement);
+   nstr = exo_str_replace(str->str, pattern, replacement);
    g_string_assign(str, nstr);
    g_free(nstr);
 }
@@ -516,7 +517,6 @@ playlist_title_dblclicked (GtkTreeView *treeview, GtkTreePath *path, GtkTreeView
 static void
 show_playlist (t_mpc* mpc)
 {
-   DBG("!");
    GtkWidget *scrolledwin, *treeview;
    GtkListStore *liststore;
    GtkTreeIter iter;
@@ -525,6 +525,7 @@ show_playlist (t_mpc* mpc)
    GString *str;
    int current;
    MpdData *mpd_data;
+   DBG("!");
 
    str = g_string_new('\0');
    if (mpc->playlist)
