@@ -1,6 +1,6 @@
 /* xfce4-mpc-plugin.c
  *
- * Copyright (c) 2006-2012 Landry Breuil <landry at xfce.org>
+ * Copyright (c) 2006-2015 Landry Breuil <landry at xfce.org>
  * This code is licensed under a BSD-style license.
  * (OpenBSD variant modeled after the ISC license)
  * All rights reserved.
@@ -789,7 +789,7 @@ mpc_show_about(XfcePanelPlugin *plugin, t_mpc* mpc)
       "program-name", PACKAGE_NAME,
       "comments", _("A simple panel-plugin client for Music Player Daemon"),
       "website", "http://goodies.xfce.org/projects/panel-plugins/xfce4-mpc-plugin",
-      "copyright", _("Copyright (c) 2006-2012 Landry Breuil\n"),
+      "copyright", _("Copyright (c) 2006-2015 Landry Breuil\n"),
       "authors", auth, NULL);
 
    if(icon)
