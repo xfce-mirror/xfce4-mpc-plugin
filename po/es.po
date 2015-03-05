@@ -4,14 +4,14 @@
 # 
 # Translators:
 #  <abel.martin.ruiz@gmail.com>, 2009
-# Adolfo Jayme Barrientos <fito@libreoffice.org>, 2014
-# Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>, 2013-2014
+# Adolfo Jayme Barrientos, 2014
+# Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>, 2013-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-03 21:07+0200\n"
-"PO-Revision-Date: 2014-12-26 00:08+0000\n"
+"POT-Creation-Date: 2015-03-05 00:31+0100\n"
+"PO-Revision-Date: 2015-03-05 06:25+0000\n"
 "Last-Translator: Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/xfce-panel-plugins/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:137
 #: ../panel-plugin/xfce4-mpc-plugin.c:213
-#: ../panel-plugin/xfce4-mpc-plugin.c:758
+#: ../panel-plugin/xfce4-mpc-plugin.c:759
 msgid "Launch"
 msgstr "Lanzar"
 
@@ -80,38 +80,38 @@ msgstr "Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %
 msgid "Show _frame"
 msgstr "Mostrar _marco"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:458
-#: ../panel-plugin/xfce4-mpc-plugin.c:689
+#: ../panel-plugin/xfce4-mpc-plugin.c:459
+#: ../panel-plugin/xfce4-mpc-plugin.c:690
 msgid ".... not connected ?"
 msgstr ".... ¿no conectado?"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:542
+#: ../panel-plugin/xfce4-mpc-plugin.c:543
 msgid "Mpd playlist"
 msgstr "Lista de reproducción MPD"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:754
+#: ../panel-plugin/xfce4-mpc-plugin.c:755
 msgid "Random"
 msgstr "Aleatorio"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:756
+#: ../panel-plugin/xfce4-mpc-plugin.c:757
 msgid "Repeat"
 msgstr "Repetir"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:761
+#: ../panel-plugin/xfce4-mpc-plugin.c:762
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>Órdenes</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:765
+#: ../panel-plugin/xfce4-mpc-plugin.c:766
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>Salidas</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:789
+#: ../panel-plugin/xfce4-mpc-plugin.c:790
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "Un simple complemento de panel para el cliente del demonio de reproducción de música MPD"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:791
-msgid "Copyright (c) 2006-2012 Landry Breuil\n"
-msgstr "Derechos de autor (c) 2006-2012 Landry Breuil\n\n"
+#: ../panel-plugin/xfce4-mpc-plugin.c:792
+msgid "Copyright (c) 2006-2015 Landry Breuil\n"
+msgstr "Derechos de autor (c) 2006-2015 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
