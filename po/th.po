@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-03 21:07+0200\n"
-"PO-Revision-Date: 2015-02-15 10:25+0000\n"
+"POT-Creation-Date: 2015-03-05 00:31+0100\n"
+"PO-Revision-Date: 2015-03-05 09:23+0000\n"
 "Last-Translator: Theppitak Karoonboonyanan <theppitak@gmail.com>\n"
 "Language-Team: Thai (http://www.transifex.com/projects/p/xfce-panel-plugins/language/th/)\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:137
 #: ../panel-plugin/xfce4-mpc-plugin.c:213
-#: ../panel-plugin/xfce4-mpc-plugin.c:758
+#: ../panel-plugin/xfce4-mpc-plugin.c:759
 msgid "Launch"
 msgstr "เรียกทำงาน"
 
@@ -78,38 +78,38 @@ msgstr "ตัวแปร : %vol%, %status%, %newline%, %artist%, %album%, %tra
 msgid "Show _frame"
 msgstr "แสดงเส้น_กรอบ"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:458
-#: ../panel-plugin/xfce4-mpc-plugin.c:689
+#: ../panel-plugin/xfce4-mpc-plugin.c:459
+#: ../panel-plugin/xfce4-mpc-plugin.c:690
 msgid ".... not connected ?"
 msgstr ".... ไม่ได้เชื่อมต่อหรือเปล่า ?"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:542
+#: ../panel-plugin/xfce4-mpc-plugin.c:543
 msgid "Mpd playlist"
 msgstr "ผังเล่นของ MPD"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:754
+#: ../panel-plugin/xfce4-mpc-plugin.c:755
 msgid "Random"
 msgstr "สุ่ม"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:756
+#: ../panel-plugin/xfce4-mpc-plugin.c:757
 msgid "Repeat"
 msgstr "เล่นซ้ำ"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:761
+#: ../panel-plugin/xfce4-mpc-plugin.c:762
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>คำสั่ง</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:765
+#: ../panel-plugin/xfce4-mpc-plugin.c:766
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>อุปกรณ์เล่นเสียง</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:789
+#: ../panel-plugin/xfce4-mpc-plugin.c:790
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "ลูกข่ายสำหรับ Music Player Daemon ในรูปปลั๊กอินพาเนลอย่างง่าย"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:791
-msgid "Copyright (c) 2006-2012 Landry Breuil\n"
-msgstr "Copyright (c) 2006-2012 Landry Breuil\n"
+#: ../panel-plugin/xfce4-mpc-plugin.c:792
+msgid "Copyright (c) 2006-2015 Landry Breuil\n"
+msgstr "Copyright (c) 2006-2015 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
