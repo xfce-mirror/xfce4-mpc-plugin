@@ -1,118 +1,117 @@
-# Brazilian Portuguese translation of the xfce4-mpc-plugin package.
-# Copyright (C) 2007 Landry Breuil <landry@fr.homeunix.org>
-# This file is distributed under the same license as the xfce4-mpc-plugin package.
-# Andrius da Costa Ribas <andriusmao@gmail.com>, 2007.
-# Fábio Nogueira <deb-user-ba@ubuntu.com>, 2007-2008.
-# Og Maciel <ogmaciel@gnome.org>, 2008.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # 
+# Translators:
+# André Miranda <andreldm1989@gmail.com>, 2015
+# Andrius da Costa Ribas <andriusmao@gmail.com>, 2007
+# Og Maciel <ogmaciel@gnome.org>, 2008
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-mpc-plugin\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-15 10:14+0100\n"
-"PO-Revision-Date: 2011-05-26 10:02-0300\n"
-"Last-Translator: Sérgio Cipolla <secipolla@gmail.com>\n"
-"Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
+"POT-Creation-Date: 2015-03-05 00:31+0100\n"
+"PO-Revision-Date: 2015-03-07 00:53+0000\n"
+"Last-Translator: André Miranda <andreldm1989@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/xfce-panel-plugins/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:128
-#: ../panel-plugin/xfce4-mpc-plugin.c:204
-#: ../panel-plugin/xfce4-mpc-plugin.c:749
+#: ../panel-plugin/xfce4-mpc-plugin.c:137
+#: ../panel-plugin/xfce4-mpc-plugin.c:213
+#: ../panel-plugin/xfce4-mpc-plugin.c:759
 msgid "Launch"
 msgstr "Lançar"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:261
+#: ../panel-plugin/xfce4-mpc-plugin.c:270
 msgid "Mpd Client Plugin"
 msgstr "Plugin cliente do MPD"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:267
+#: ../panel-plugin/xfce4-mpc-plugin.c:276
 msgid "Properties"
 msgstr "Propriedades"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:280
+#: ../panel-plugin/xfce4-mpc-plugin.c:289
 msgid "Host : "
 msgstr "Servidor: "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:281
+#: ../panel-plugin/xfce4-mpc-plugin.c:290
 msgid "Port : "
 msgstr "Porta: "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:282
+#: ../panel-plugin/xfce4-mpc-plugin.c:291
 msgid "Password : "
 msgstr "Senha: "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:283
+#: ../panel-plugin/xfce4-mpc-plugin.c:292
 msgid "MPD Client : "
 msgstr "Cliente MPD: "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:284
+#: ../panel-plugin/xfce4-mpc-plugin.c:293
 msgid "Tooltip Format : "
 msgstr "Formato da dica:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:285
+#: ../panel-plugin/xfce4-mpc-plugin.c:294
 msgid "Playlist Format : "
 msgstr "Formato da lista de reprodução:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:319
+#: ../panel-plugin/xfce4-mpc-plugin.c:328
 msgid "Hostname or IP address"
 msgstr "Nome de host ou endereço IP"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:320
+#: ../panel-plugin/xfce4-mpc-plugin.c:329
 msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr ""
-"Cliente gráfico do MPD para ser lançado pelo menu de contexto de plugins"
+msgstr "Cliente gráfico do MPD para ser lançado pelo menu de contexto de plugins"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:321
+#: ../panel-plugin/xfce4-mpc-plugin.c:330
 msgid "Variables : %artist%, %album%, %track% and %title%"
 msgstr "Variáveis: %artist%, %album%, %track% e %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:322
+#: ../panel-plugin/xfce4-mpc-plugin.c:331
 msgid ""
-"Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title"
-"%"
-msgstr ""
-"Variáveis: %vol%, %status%, %newline%, %artist%, %album%, %track% e %title%"
+"Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and "
+"%title%"
+msgstr "Variáveis: %vol%, %status%, %newline%, %artist%, %album%, %track% e %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:327
+#: ../panel-plugin/xfce4-mpc-plugin.c:336
 msgid "Show _frame"
 msgstr "Mostrar _quadro"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:449
-#: ../panel-plugin/xfce4-mpc-plugin.c:680
+#: ../panel-plugin/xfce4-mpc-plugin.c:459
+#: ../panel-plugin/xfce4-mpc-plugin.c:690
 msgid ".... not connected ?"
 msgstr ".... não conectado?"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:533
+#: ../panel-plugin/xfce4-mpc-plugin.c:543
 msgid "Mpd playlist"
 msgstr "Lista de reprodução do serviço reprodutor de músicas (mpd)"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:745
+#: ../panel-plugin/xfce4-mpc-plugin.c:755
 msgid "Random"
 msgstr "Aleatório"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:747
+#: ../panel-plugin/xfce4-mpc-plugin.c:757
 msgid "Repeat"
 msgstr "Repetir"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:752
+#: ../panel-plugin/xfce4-mpc-plugin.c:762
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>Comandos</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:756
+#: ../panel-plugin/xfce4-mpc-plugin.c:766
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>Saídas</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:779
+#: ../panel-plugin/xfce4-mpc-plugin.c:790
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "Um cliente plugin de painel simples para o Music Player Daemon"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:781
-msgid "Copyright (c) 2006-2011 Landry Breuil\n"
-msgstr "Copyright (c) 2006-2011 Landry Breuil\n"
+#: ../panel-plugin/xfce4-mpc-plugin.c:792
+msgid "Copyright (c) 2006-2015 Landry Breuil\n"
+msgstr "Copyright (c) 2006-2015 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
@@ -120,11 +119,4 @@ msgstr "Plugin para o cliente MPD"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
 msgid "A client for MPD, The Music Player Daemon"
-msgstr ""
-"Um cliente para o MPD, Music Player Daemon (serviço reprodutor de músicas)"
-
-#~ msgid "Xfce4 Mpc Plugin"
-#~ msgstr "Plugin serviço reprodutor de músicas (mpd/mpc) do Xfce4"
-
-#~ msgid "Maintainer, Original Author"
-#~ msgstr "Mantenedor, autor original"
+msgstr "Um cliente para o MPD, Music Player Daemon (serviço reprodutor de músicas)"
