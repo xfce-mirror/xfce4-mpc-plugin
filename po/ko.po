@@ -3,16 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Darkcircle <darkcircle.0426@gmail.com>, 2013
-# Darkcircle <darkcircle.0426@gmail.com>, 2012
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2013
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2012-2013,2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-03 21:07+0200\n"
-"PO-Revision-Date: 2013-07-07 10:34+0000\n"
-"Last-Translator: Darkcircle <darkcircle.0426@gmail.com>\n"
-"Language-Team: Korean (http://www.transifex.com/projects/p/xfce/language/ko/)\n"
+"POT-Creation-Date: 2015-03-05 00:31+0100\n"
+"PO-Revision-Date: 2015-03-17 04:48+0000\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
+"Language-Team: Korean (http://www.transifex.com/projects/p/xfce-panel-plugins/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:137
 #: ../panel-plugin/xfce4-mpc-plugin.c:213
-#: ../panel-plugin/xfce4-mpc-plugin.c:758
+#: ../panel-plugin/xfce4-mpc-plugin.c:759
 msgid "Launch"
 msgstr "실행"
 
@@ -63,7 +63,7 @@ msgstr "호스트이름 또는 IP 주소"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:329
 msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr "플러그인 컨텍스트 메뉴에서 실행하기 위한 그래픽 MPD 클리아언트"
+msgstr "플러그인 단축 메뉴에서 실행하는 그래픽 MPD 클라이언트"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:330
 msgid "Variables : %artist%, %album%, %track% and %title%"
@@ -79,38 +79,38 @@ msgstr "변수 : %vol%, %status%, %newline%, %artist%, %album%, %track% 그리�
 msgid "Show _frame"
 msgstr "틀 표시(_F)"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:458
-#: ../panel-plugin/xfce4-mpc-plugin.c:689
+#: ../panel-plugin/xfce4-mpc-plugin.c:459
+#: ../panel-plugin/xfce4-mpc-plugin.c:690
 msgid ".... not connected ?"
 msgstr ".... 연결하지 않았습니까 ?"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:542
+#: ../panel-plugin/xfce4-mpc-plugin.c:543
 msgid "Mpd playlist"
 msgstr "Mpd 재생 목록"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:754
+#: ../panel-plugin/xfce4-mpc-plugin.c:755
 msgid "Random"
 msgstr "임의"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:756
+#: ../panel-plugin/xfce4-mpc-plugin.c:757
 msgid "Repeat"
 msgstr "반복"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:761
+#: ../panel-plugin/xfce4-mpc-plugin.c:762
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>명령</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:765
+#: ../panel-plugin/xfce4-mpc-plugin.c:766
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>출력</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:789
+#: ../panel-plugin/xfce4-mpc-plugin.c:790
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "음악 재생기 데몬을 위한 간단한 패널 플러그인 클라이언트입니다"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:791
-msgid "Copyright (c) 2006-2012 Landry Breuil\n"
-msgstr "Copyright (c) 2006-2012 Landry Breuil\n"
+#: ../panel-plugin/xfce4-mpc-plugin.c:792
+msgid "Copyright (c) 2006-2015 Landry Breuil\n"
+msgstr "Copyright (c) 2006-2015 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
