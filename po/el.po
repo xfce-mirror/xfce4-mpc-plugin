@@ -1,116 +1,116 @@
-#
-# Efstathios Iosifidis <iosifidis@opensuse.org>, 2012.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Efstathios Iosifidis <iefstathios@gmail.com>, 2015
+# Efstathios Iosifidis <iosifidis@opensuse.org>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: xfce4-mpc-plugin\n"
+"Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-15 10:14+0100\n"
-"PO-Revision-Date: 2012-05-20 11:28+0300\n"
-"Last-Translator: Efstathios Iosifidis <iosifidis@opensuse.org>\n"
-"Language-Team: Ελληνικά, Σύγχρονα <opensuse-translation-el@opensuse.org>\n"
-"Language: el\n"
+"POT-Creation-Date: 2015-03-05 00:31+0100\n"
+"PO-Revision-Date: 2015-03-19 00:17+0000\n"
+"Last-Translator: Efstathios Iosifidis <iefstathios@gmail.com>\n"
+"Language-Team: Greek (http://www.transifex.com/projects/p/xfce-panel-plugins/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bits\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Poedit-Language: Greek\n"
-"X-Poedit-Country: GREECE\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: el\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:128
-#: ../panel-plugin/xfce4-mpc-plugin.c:204
-#: ../panel-plugin/xfce4-mpc-plugin.c:749
+#: ../panel-plugin/xfce4-mpc-plugin.c:137
+#: ../panel-plugin/xfce4-mpc-plugin.c:213
+#: ../panel-plugin/xfce4-mpc-plugin.c:759
 msgid "Launch"
 msgstr "Εκτέλεση"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:261
+#: ../panel-plugin/xfce4-mpc-plugin.c:270
 msgid "Mpd Client Plugin"
 msgstr "Πρόσθετο πελάτη Mpd"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:267
+#: ../panel-plugin/xfce4-mpc-plugin.c:276
 msgid "Properties"
 msgstr "Ιδιότητες"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:280
+#: ../panel-plugin/xfce4-mpc-plugin.c:289
 msgid "Host : "
 msgstr "Εξυπηρετητής:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:281
+#: ../panel-plugin/xfce4-mpc-plugin.c:290
 msgid "Port : "
 msgstr "Θύρα :"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:282
+#: ../panel-plugin/xfce4-mpc-plugin.c:291
 msgid "Password : "
 msgstr "Κωδικός :"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:283
+#: ../panel-plugin/xfce4-mpc-plugin.c:292
 msgid "MPD Client : "
 msgstr "Πελάτης MPD :"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:284
+#: ../panel-plugin/xfce4-mpc-plugin.c:293
 msgid "Tooltip Format : "
 msgstr "Μορφή υποδείξεων :"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:285
+#: ../panel-plugin/xfce4-mpc-plugin.c:294
 msgid "Playlist Format : "
 msgstr "Μορφή λίστας αναπαραγωγής :"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:319
+#: ../panel-plugin/xfce4-mpc-plugin.c:328
 msgid "Hostname or IP address"
 msgstr "Όνομα εξυπηρετητή ή διεύθυνση IP"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:320
+#: ../panel-plugin/xfce4-mpc-plugin.c:329
 msgid "Graphical MPD Client to launch in plugin context menu"
 msgstr "Γραφικός πελάτης του MPD για να ξεκινήσει από το μενού του πρόσθετου"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:321
+#: ../panel-plugin/xfce4-mpc-plugin.c:330
 msgid "Variables : %artist%, %album%, %track% and %title%"
 msgstr "Μεταβλητες : %artist%, %album%, %track% και %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:322
+#: ../panel-plugin/xfce4-mpc-plugin.c:331
 msgid ""
-"Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and %title"
-"%"
-msgstr ""
-"Μεταβλητες : %vol%, %status%, %newline%, %artist%, %album%, %track% και "
+"Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and "
 "%title%"
+msgstr "Μεταβλητες : %vol%, %status%, %newline%, %artist%, %album%, %track% και %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:327
+#: ../panel-plugin/xfce4-mpc-plugin.c:336
 msgid "Show _frame"
 msgstr "Εμφάνιση _πλαισίου"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:449
-#: ../panel-plugin/xfce4-mpc-plugin.c:680
+#: ../panel-plugin/xfce4-mpc-plugin.c:459
+#: ../panel-plugin/xfce4-mpc-plugin.c:690
 msgid ".... not connected ?"
 msgstr ".... μη συνδεμένο;"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:533
+#: ../panel-plugin/xfce4-mpc-plugin.c:543
 msgid "Mpd playlist"
 msgstr "Λίστα αναπαραγωγής Mpd"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:745
+#: ../panel-plugin/xfce4-mpc-plugin.c:755
 msgid "Random"
 msgstr "Τυχαία"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:747
+#: ../panel-plugin/xfce4-mpc-plugin.c:757
 msgid "Repeat"
 msgstr "Επανάληψη"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:752
+#: ../panel-plugin/xfce4-mpc-plugin.c:762
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>Εντολές</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:756
+#: ../panel-plugin/xfce4-mpc-plugin.c:766
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>Αποτελέσματα</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:779
+#: ../panel-plugin/xfce4-mpc-plugin.c:790
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "Ένα απλό πρόσθετο του ταμπλό, πελάτης για το Music Player Daemon"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:781
-msgid "Copyright (c) 2006-2011 Landry Breuil\n"
-msgstr "Πνευματικά Δικαιώματα (c) 2006-2011 Landry Breuil\n"
+#: ../panel-plugin/xfce4-mpc-plugin.c:792
+msgid "Copyright (c) 2006-2015 Landry Breuil\n"
+msgstr "Πνευματικά δικαιώματα (c) 2006-2015 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
@@ -119,9 +119,3 @@ msgstr "Πρόσθετο πελάτη Mpd"
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
 msgid "A client for MPD, The Music Player Daemon"
 msgstr "Ένας πελάτης για το MPD, τον Music Player Daemon"
-
-#~ msgid "Xfce4 Mpc Plugin"
-#~ msgstr "Πρόσθετο Xfce4 Mpc"
-
-#~ msgid "Maintainer, Original Author"
-#~ msgstr "Συντηρητής, Πρώτος Δημιουργός"
