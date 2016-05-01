@@ -362,7 +362,7 @@ mpc_output_toggled(GtkWidget *widget, t_mpc* mpc)
 static void
 mpc_update_outputs(t_mpc* mpc)
 {
-   GtkWidget* menu, *chkitem;
+   GtkWidget *chkitem;
    int i,j=0, old_nb_outputs = mpc->nb_outputs;
    MpdData * data = mpd_server_get_output_devices(mpc->mo);
    DBG("!");
@@ -376,9 +376,6 @@ mpc_update_outputs(t_mpc* mpc)
          chkitem = gtk_check_menu_item_new_with_label (data->output_dev->name);
          g_signal_connect (G_OBJECT(chkitem), "toggled", G_CALLBACK (mpc_output_toggled), mpc);
          xfce_panel_plugin_menu_insert_item(mpc->plugin,GTK_MENU_ITEM(chkitem));
-         /* XXX HACK */
-         menu = g_object_get_data (G_OBJECT (mpc->plugin), I_("xfce-panel-plugin-menu"));
-         gtk_menu_reorder_child(GTK_MENU(menu),chkitem, 12 + i); /* 12 is after 'Outputs' menuitem */
          gtk_widget_show (chkitem);
          mpc->mpd_outputs[i] = g_new(t_mpd_output,1);
          mpc->mpd_outputs[i]->id = data->output_dev->id;
