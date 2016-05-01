@@ -34,13 +34,6 @@
 #define DEFAULT_MPD_PORT 6600
 #define DIALOG_ENTRY_WIDTH 20
 
-#ifdef LIBXFCE4PANEL_CHECK_VERSION
-#if LIBXFCE4PANEL_CHECK_VERSION (4,9,0)
-#define HAS_PANEL_49
-#endif
-#endif
-
-
 static void
 mpc_free (XfcePanelPlugin * plugin, t_mpc * mpc)
 {
@@ -50,7 +43,6 @@ mpc_free (XfcePanelPlugin * plugin, t_mpc * mpc)
    g_free (mpc);
 }
 
-#ifdef HAS_PANEL_49
 static void
 mpc_set_mode (XfcePanelPlugin * plugin, XfcePanelPluginMode mode, t_mpc * mpc)
 {
@@ -65,23 +57,11 @@ mpc_set_mode (XfcePanelPlugin * plugin, XfcePanelPluginMode mode, t_mpc * mpc)
    xfce_panel_plugin_set_small (plugin, (mode != XFCE_PANEL_PLUGIN_MODE_DESKBAR));
 }
 
-#else
-static void
-mpc_set_orientation (XfcePanelPlugin * plugin, GtkOrientation orientation, t_mpc * mpc)
-{
-   DBG ("!");
-
-   xfce_hvbox_set_orientation(XFCE_HVBOX(mpc->box), orientation);
-}
-#endif
-
 static gboolean
 mpc_set_size (XfcePanelPlugin * plugin, int size, t_mpc * mpc)
 {
    int border_width = (size > 26 && mpc->show_frame ? 1 : 0);
-#ifdef HAS_PANEL_49
     size /= xfce_panel_plugin_get_nrows (plugin);
-#endif
 
    DBG ("size=%d",size);
    gtk_container_set_border_width (GTK_CONTAINER (mpc->frame), border_width);
@@ -836,12 +816,8 @@ mpc_construct (XfcePanelPlugin * plugin)
    g_signal_connect (plugin, "free-data", G_CALLBACK (mpc_free), mpc);
    g_signal_connect (plugin, "save", G_CALLBACK (mpc_write_config), mpc);
    g_signal_connect (plugin, "size-changed", G_CALLBACK (mpc_set_size), mpc);
-#ifdef HAS_PANEL_49
    g_signal_connect (plugin, "mode-changed", G_CALLBACK (mpc_set_mode), mpc);
    xfce_panel_plugin_set_small (plugin, TRUE);
-#else
-   g_signal_connect (plugin, "orientation-changed", G_CALLBACK (mpc_set_orientation), mpc);
-#endif
    /* the configure and about menu items are hidden by default */
    xfce_panel_plugin_menu_show_configure (plugin);
 
