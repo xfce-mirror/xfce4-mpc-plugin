@@ -247,9 +247,9 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
    xfce_panel_plugin_block_menu (plugin);
 
    dlg = xfce_titled_dialog_new_with_buttons (_("Mpd Client Plugin"),
-                                              NULL,
-                                              GTK_DIALOG_NO_SEPARATOR,
-                                              GTK_STOCK_CLOSE,
+                                              GTK_WINDOW(gtk_widget_get_toplevel(GTK_WIDGET(plugin))),
+                                              GTK_DIALOG_DESTROY_WITH_PARENT,
+                                              "gtk-close",
                                               GTK_RESPONSE_OK,
                                               NULL);
    xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (dlg), _("Properties"));
@@ -561,14 +561,14 @@ show_playlist (t_mpc* mpc)
          gtk_list_store_append (liststore, &iter);
          if (current == mpd_data->song->pos)
          {
-            gtk_list_store_set (liststore, &iter, 0, GTK_STOCK_MEDIA_PLAY, 1, str->str, 2, mpd_data->song->pos, 3, mpd_data->song->id, -1);
+            gtk_list_store_set (liststore, &iter, 0, "gtk-media-play", 1, str->str, 2, mpd_data->song->pos, 3, mpd_data->song->id, -1);
             path_to_cur = gtk_tree_model_get_path(GTK_TREE_MODEL(liststore), &iter);
             gtk_tree_view_scroll_to_cell(GTK_TREE_VIEW(treeview), path_to_cur, NULL, TRUE, 0.5, 0);
             gtk_tree_view_set_cursor(GTK_TREE_VIEW(treeview), path_to_cur, NULL, FALSE);
             gtk_tree_path_free(path_to_cur);
          }
          else
-            gtk_list_store_set (liststore, &iter, 0, GTK_STOCK_CDROM, 1, str->str, 2, mpd_data->song->pos, 3, mpd_data->song->id, -1);
+            gtk_list_store_set (liststore, &iter, 0, "gtk-cdrom", 1, str->str, 2, mpd_data->song->pos, 3, mpd_data->song->id, -1);
       } while (NULL != (mpd_data = mpd_data_get_next (mpd_data)));
       gtk_widget_show_all(mpc->playlist);
    }
