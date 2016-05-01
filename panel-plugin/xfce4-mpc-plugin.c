@@ -23,7 +23,6 @@
 #endif
 
 #include <libxfce4ui/libxfce4ui.h>
-#include <exo/exo.h>
 #include <string.h>
 #include <stdlib.h>
 #include <glib/gprintf.h>
@@ -404,9 +403,12 @@ static void
 str_replace(GString *str, gchar* pattern, gchar* replacement)
 {
    gchar *nstr;
+   GRegex *regex;
    if (!replacement)
       return;
-   nstr = exo_str_replace(str->str, pattern, replacement);
+   regex = g_regex_new(pattern, 0, 0, NULL);
+   nstr = g_regex_replace_literal( regex, str->str, -1, 0, replacement, 0, NULL);
+   g_regex_unref (regex);
    g_string_assign(str, nstr);
    g_free(nstr);
 }
@@ -758,10 +760,6 @@ mpc_show_about(XfcePanelPlugin *plugin, t_mpc* mpc)
    GdkPixbuf *icon;
    const gchar *auth[] = { "Landry Breuil <landry at xfce.org>", NULL };
    icon = xfce_panel_pixbuf_from_source("applications-multimedia", NULL, 32);
-#if !GTK_CHECK_VERSION (2, 18, 0)
-   gtk_about_dialog_set_email_hook (exo_gtk_url_about_dialog_hook, NULL, NULL);
-   gtk_about_dialog_set_url_hook (exo_gtk_url_about_dialog_hook, NULL, NULL);
-#endif
    gtk_show_about_dialog(NULL,
       "logo", icon,
       "license", xfce_get_license_text (XFCE_LICENSE_TEXT_BSD),
