@@ -52,7 +52,7 @@ mpc_set_mode (XfcePanelPlugin * plugin, XfcePanelPluginMode mode, t_mpc * mpc)
       (mode != XFCE_PANEL_PLUGIN_MODE_VERTICAL) ?
       GTK_ORIENTATION_HORIZONTAL : GTK_ORIENTATION_VERTICAL;
 
-   xfce_hvbox_set_orientation(XFCE_HVBOX(mpc->box), orientation);
+   gtk_orientable_set_orientation(GTK_ORIENTABLE(mpc->box), orientation);
    xfce_panel_plugin_set_small (plugin, (mode != XFCE_PANEL_PLUGIN_MODE_DESKBAR));
 }
 
@@ -259,7 +259,7 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
 
    g_signal_connect (dlg, "response", G_CALLBACK (mpc_dialog_response), dialog);
 
-   vbox = gtk_vbox_new (FALSE, 8);
+   vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 8);
    gtk_container_set_border_width (GTK_CONTAINER (vbox), 5);
    gtk_widget_show (vbox);
    gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->vbox), vbox, TRUE, TRUE, 0);
@@ -725,7 +725,7 @@ mpc_create (XfcePanelPlugin * plugin)
    gtk_frame_set_shadow_type (GTK_FRAME (mpc->frame), GTK_SHADOW_IN);
    gtk_widget_show (mpc->frame);
 
-   mpc->box = xfce_hvbox_new(xfce_panel_plugin_get_orientation(plugin), FALSE, 0);
+   mpc->box = gtk_box_new(xfce_panel_plugin_get_orientation(plugin), 0);
 
    gtk_container_add (GTK_CONTAINER(mpc->frame), mpc->box);
 
