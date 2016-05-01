@@ -531,7 +531,6 @@ show_playlist (t_mpc* mpc)
 
       treeview = gtk_tree_view_new ();
       gtk_tree_view_set_headers_visible(GTK_TREE_VIEW(treeview), FALSE);
-      gtk_tree_view_set_rules_hint(GTK_TREE_VIEW(treeview), TRUE);
       g_signal_connect(treeview, "row-activated", G_CALLBACK(playlist_title_dblclicked), mpc);
       gtk_container_add(GTK_CONTAINER(scrolledwin),treeview);
 
