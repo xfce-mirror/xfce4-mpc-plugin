@@ -6,3 +6,4 @@ _Comment=A client for MPD, The Music Player Daemon
 Icon=applications-multimedia
 X-XFCE-Internal=FALSE
 X-XFCE-Module=mpc
+X-XFCE-API=2.0
