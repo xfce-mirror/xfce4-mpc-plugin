@@ -1,3 +1,7 @@
+05-06-2016 Landry Breuil <landry at xfce.org>
+   * release 0.4.99
+   * port to gtk+3/libxfce4ui-2/libxfce4panel-2.0
+
 04-03-2015 Landry Breuil <landry at xfce.org>
    * release 0.4.5
    * autotools update
