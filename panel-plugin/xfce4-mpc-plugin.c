@@ -228,6 +228,7 @@ mpc_dialog_show_frame_toggled (GtkWidget *w, gboolean state, t_mpc_dialog *dialo
    size = xfce_panel_plugin_get_size(mpc->plugin);
    mpc->show_frame = state;
    gtk_frame_set_shadow_type (GTK_FRAME (mpc->frame), (mpc->show_frame) ? GTK_SHADOW_IN : GTK_SHADOW_NONE);
+   gtk_switch_set_state(GTK_SWITCH(w), state);
    mpc_set_size(mpc->plugin, size, mpc);
 }
 
