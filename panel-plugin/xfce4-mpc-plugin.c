@@ -690,6 +690,7 @@ new_button_with_cbk(XfcePanelPlugin * plugin, GtkWidget *parent, gchar* icon, gp
    g_signal_connect (G_OBJECT(button), "button_press_event", G_CALLBACK(cb), data);
    g_signal_connect (G_OBJECT(button), "enter_notify_event", G_CALLBACK(enter_cb), data);
    g_signal_connect (G_OBJECT(button), "scroll_event", G_CALLBACK(scroll_cb), data);
+   gtk_widget_add_events(GTK_WIDGET(button), GDK_SCROLL_MASK);
    gtk_box_pack_start (GTK_BOX(parent), button, TRUE, TRUE, 0);
    return button;
 }
