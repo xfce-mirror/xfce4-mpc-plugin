@@ -67,10 +67,10 @@ mpc_set_size (XfcePanelPlugin * plugin, int size, t_mpc * mpc)
    DBG ("size=%d",size);
    gtk_container_set_border_width (GTK_CONTAINER (mpc->frame), border_width);
    size -= 2 * border_width;
-   gtk_widget_set_size_request (GTK_WIDGET (mpc->next), size, size);
-   gtk_widget_set_size_request (GTK_WIDGET (mpc->prev), size, size);
-   gtk_widget_set_size_request (GTK_WIDGET (mpc->stop), size, size);
-   gtk_widget_set_size_request (GTK_WIDGET (mpc->toggle), size, size);
+   resize_button (GTK_WIDGET (mpc->next), size);
+   resize_button (GTK_WIDGET (mpc->prev), size);
+   resize_button (GTK_WIDGET (mpc->stop), size);
+   resize_button (GTK_WIDGET (mpc->toggle), size);
    return TRUE;
 }
 
