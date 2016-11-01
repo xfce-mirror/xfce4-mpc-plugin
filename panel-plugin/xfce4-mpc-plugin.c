@@ -33,6 +33,8 @@
 #define DEFAULT_MPD_PORT 6600
 #define DIALOG_ENTRY_WIDTH 20
 
+static void resize_button(GtkWidget *, gint);
+
 static void
 mpc_free (XfcePanelPlugin * plugin, t_mpc * mpc)
 {
@@ -679,6 +681,21 @@ scroll_cb(GtkWidget *widget, GdkEventScroll* event, t_mpc* mpc)
    curvol = ((event->direction == GDK_SCROLL_DOWN) ? curvol-5 : curvol+5);
    DBG("setting new volume=%d", curvol);
    mpd_status_set_volume(mpc->mo,curvol);
+}
+
+static void
+resize_button(GtkWidget *btn, gint size)
+{
+   GtkIconTheme *icon_theme;
+   GdkPixbuf *pixbuf, *scaled;
+   GtkWidget *image = g_object_get_data(G_OBJECT(btn), "image");
+   gchar *icon = g_object_get_data(G_OBJECT(image), "icon-name");
+   icon_theme = gtk_icon_theme_get_default();
+   DBG("Resizing button, loading icon %s and rescaling it to size %d", icon, size / 2 - 2);
+   pixbuf = gtk_icon_theme_load_icon (icon_theme, icon, size / 2 - 2, 0, NULL);
+   gtk_image_set_from_pixbuf (GTK_IMAGE (image), pixbuf);
+   g_object_unref (G_OBJECT (pixbuf));
+   gtk_widget_set_size_request (btn, size, size);
 }
 
 static GtkWidget*
