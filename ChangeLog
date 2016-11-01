@@ -1,3 +1,9 @@
+01-11-2016 Landry Breuil <landry at xfce.org>
+   * release 0.5.0
+   * fix changing volume via mousewheel
+   * fix icon flickering on mousehover
+   * properly resize button/image on set_size event
+
 05-06-2016 Landry Breuil <landry at xfce.org>
    * release 0.4.99
    * port to gtk+3/libxfce4ui-2/libxfce4panel-2.0
