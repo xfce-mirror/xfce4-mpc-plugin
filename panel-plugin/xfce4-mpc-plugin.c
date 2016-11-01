@@ -426,7 +426,7 @@ format_song_display(mpd_Song* song, GString *str, t_mpc* mpc)
    str_replace(str, "%track%", song->track);
 }
 
-static void
+static gboolean
 enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
 {
    mpd_Song *song;
@@ -439,7 +439,7 @@ enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
       if (!mpc_plugin_reconnect (mpc) || mpd_status_update (mpc->mo) != MPD_OK)
       {
          gtk_widget_set_tooltip_text (mpc->box, _(".... not connected ?"));
-         return;
+         return FALSE;
       }
    }
    str = g_string_new(mpc->tooltip_format);
@@ -477,6 +477,7 @@ enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
 
    gtk_widget_set_tooltip_text (mpc->box, str->str);
    g_string_free(str, TRUE);
+   return FALSE;
 }
 
 static void
