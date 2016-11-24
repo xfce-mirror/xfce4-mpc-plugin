@@ -426,6 +426,7 @@ format_song_display(mpd_Song* song, GString *str, t_mpc* mpc)
    str_replace(str, "%album%", song->album);
    str_replace(str, "%title%", song->title);
    str_replace(str, "%track%", song->track);
+   str_replace(str, "%file%", song->file);
 }
 
 static gboolean
