@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-01 18:33+0200\n"
-"PO-Revision-Date: 2016-06-04 15:48+0000\n"
+"POT-Creation-Date: 2016-11-24 12:31+0100\n"
+"PO-Revision-Date: 2016-12-05 02:04+0000\n"
 "Last-Translator: abuyop <abuyop@gmail.com>\n"
 "Language-Team: Malay (http://www.transifex.com/xfce/xfce-panel-plugins/language/ms/)\n"
 "MIME-Version: 1.0\n"
@@ -18,96 +18,96 @@ msgstr ""
 "Language: ms\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:116
-#: ../panel-plugin/xfce4-mpc-plugin.c:192
-#: ../panel-plugin/xfce4-mpc-plugin.c:739
+#: ../panel-plugin/xfce4-mpc-plugin.c:118
+#: ../panel-plugin/xfce4-mpc-plugin.c:194
+#: ../panel-plugin/xfce4-mpc-plugin.c:762
 msgid "Launch"
 msgstr "Lancar"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:249
+#: ../panel-plugin/xfce4-mpc-plugin.c:252
 msgid "Mpd Client Plugin"
 msgstr "Pemalan Klien Mpd"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:255
+#: ../panel-plugin/xfce4-mpc-plugin.c:258
 msgid "Properties"
 msgstr "Sifat"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:270
+#: ../panel-plugin/xfce4-mpc-plugin.c:273
 msgid "Host : "
 msgstr "Hos:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:271
+#: ../panel-plugin/xfce4-mpc-plugin.c:274
 msgid "Port : "
 msgstr "Port:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:272
+#: ../panel-plugin/xfce4-mpc-plugin.c:275
 msgid "Password : "
 msgstr "Kata Laluan:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:273
+#: ../panel-plugin/xfce4-mpc-plugin.c:276
 msgid "MPD Client : "
 msgstr "Klien MPD:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:274
+#: ../panel-plugin/xfce4-mpc-plugin.c:277
 msgid "Tooltip Format : "
 msgstr "Format Tip Alat:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:275
+#: ../panel-plugin/xfce4-mpc-plugin.c:278
 msgid "Playlist Format : "
 msgstr "Format Senarai Main:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:276
+#: ../panel-plugin/xfce4-mpc-plugin.c:279
 msgid "Show _frame"
 msgstr "Tunjuk _bingkai"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:316
+#: ../panel-plugin/xfce4-mpc-plugin.c:319
 msgid "Hostname or IP address"
 msgstr "Nama hos atau alamat IP"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:317
+#: ../panel-plugin/xfce4-mpc-plugin.c:320
 msgid "Graphical MPD Client to launch in plugin context menu"
 msgstr "Klien MPD bergrafik untuk dilancar dalam menu konteks pemalam ini"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:318
-msgid "Variables : %artist%, %album%, %track% and %title%"
-msgstr "Pembolehubah: %artist%, %album%, %track% dan %title%"
+#: ../panel-plugin/xfce4-mpc-plugin.c:321
+msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
+msgstr "Pembolehubah : %artist%, %album%, %file%, %track% dan %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:319
+#: ../panel-plugin/xfce4-mpc-plugin.c:322
 msgid ""
-"Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and "
-"%title%"
-msgstr "Pembolehubah: %vol%, %status%, %newline%, %artist%, %album%, %track% dan %title%"
+"Variables : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
+"and %title%"
+msgstr "Pembolehubah : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% dan %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:440
-#: ../panel-plugin/xfce4-mpc-plugin.c:670
+#: ../panel-plugin/xfce4-mpc-plugin.c:444
+#: ../panel-plugin/xfce4-mpc-plugin.c:675
 msgid ".... not connected ?"
 msgstr "... tidak bersambung ?"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:524
+#: ../panel-plugin/xfce4-mpc-plugin.c:529
 msgid "Mpd playlist"
 msgstr "Senarai main Mpd"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:735
+#: ../panel-plugin/xfce4-mpc-plugin.c:758
 msgid "Random"
 msgstr "Rawak"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:737
+#: ../panel-plugin/xfce4-mpc-plugin.c:760
 msgid "Repeat"
 msgstr "Ulang"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:742
+#: ../panel-plugin/xfce4-mpc-plugin.c:765
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>Perintah</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:746
+#: ../panel-plugin/xfce4-mpc-plugin.c:769
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>Output</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:766
+#: ../panel-plugin/xfce4-mpc-plugin.c:789
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "Merupakan klien pemalam-panel ringkas untuk Daemon Pemain Muzik"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:768
+#: ../panel-plugin/xfce4-mpc-plugin.c:791
 msgid "Copyright (c) 2006-2016 Landry Breuil\n"
 msgstr "Hakcipta (c) 2006-2016 Landry Breuil\n"
 
