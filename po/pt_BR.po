@@ -3,115 +3,116 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# André Miranda <andreldm1989@gmail.com>, 2015
+# André Miranda <andre42m@gmail.com>, 2017
+# André Miranda <andre42m@gmail.com>, 2015-2016
 # Andrius da Costa Ribas <andriusmao@gmail.com>, 2007
 # Og Maciel <ogmaciel@gnome.org>, 2008
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-05 00:31+0100\n"
-"PO-Revision-Date: 2015-03-07 00:53+0000\n"
-"Last-Translator: André Miranda <andreldm1989@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/xfce-panel-plugins/language/pt_BR/)\n"
+"POT-Creation-Date: 2016-11-24 12:31+0100\n"
+"PO-Revision-Date: 2017-02-08 03:35+0000\n"
+"Last-Translator: André Miranda <andre42m@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/xfce/xfce-panel-plugins/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:137
-#: ../panel-plugin/xfce4-mpc-plugin.c:213
-#: ../panel-plugin/xfce4-mpc-plugin.c:759
+#: ../panel-plugin/xfce4-mpc-plugin.c:118
+#: ../panel-plugin/xfce4-mpc-plugin.c:194
+#: ../panel-plugin/xfce4-mpc-plugin.c:762
 msgid "Launch"
 msgstr "Lançar"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:270
+#: ../panel-plugin/xfce4-mpc-plugin.c:252
 msgid "Mpd Client Plugin"
 msgstr "Plugin cliente do MPD"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:276
+#: ../panel-plugin/xfce4-mpc-plugin.c:258
 msgid "Properties"
 msgstr "Propriedades"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:289
+#: ../panel-plugin/xfce4-mpc-plugin.c:273
 msgid "Host : "
 msgstr "Servidor: "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:290
+#: ../panel-plugin/xfce4-mpc-plugin.c:274
 msgid "Port : "
 msgstr "Porta: "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:291
+#: ../panel-plugin/xfce4-mpc-plugin.c:275
 msgid "Password : "
 msgstr "Senha: "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:292
+#: ../panel-plugin/xfce4-mpc-plugin.c:276
 msgid "MPD Client : "
 msgstr "Cliente MPD: "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:293
+#: ../panel-plugin/xfce4-mpc-plugin.c:277
 msgid "Tooltip Format : "
 msgstr "Formato da dica:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:294
+#: ../panel-plugin/xfce4-mpc-plugin.c:278
 msgid "Playlist Format : "
 msgstr "Formato da lista de reprodução:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:328
-msgid "Hostname or IP address"
-msgstr "Nome de host ou endereço IP"
-
-#: ../panel-plugin/xfce4-mpc-plugin.c:329
-msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr "Cliente gráfico do MPD para ser lançado pelo menu de contexto de plugins"
-
-#: ../panel-plugin/xfce4-mpc-plugin.c:330
-msgid "Variables : %artist%, %album%, %track% and %title%"
-msgstr "Variáveis: %artist%, %album%, %track% e %title%"
-
-#: ../panel-plugin/xfce4-mpc-plugin.c:331
-msgid ""
-"Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and "
-"%title%"
-msgstr "Variáveis: %vol%, %status%, %newline%, %artist%, %album%, %track% e %title%"
-
-#: ../panel-plugin/xfce4-mpc-plugin.c:336
+#: ../panel-plugin/xfce4-mpc-plugin.c:279
 msgid "Show _frame"
 msgstr "Mostrar _quadro"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:459
-#: ../panel-plugin/xfce4-mpc-plugin.c:690
+#: ../panel-plugin/xfce4-mpc-plugin.c:319
+msgid "Hostname or IP address"
+msgstr "Nome de host ou endereço IP"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:320
+msgid "Graphical MPD Client to launch in plugin context menu"
+msgstr "Cliente gráfico do MPD para ser lançado pelo menu de contexto de plugins"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:321
+msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
+msgstr "Variáveis: %artist%, %album%, %file%, %track% e %title%"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:322
+msgid ""
+"Variables : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
+"and %title%"
+msgstr "Variáveis: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% e %title%"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:444
+#: ../panel-plugin/xfce4-mpc-plugin.c:675
 msgid ".... not connected ?"
 msgstr ".... não conectado?"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:543
+#: ../panel-plugin/xfce4-mpc-plugin.c:529
 msgid "Mpd playlist"
 msgstr "Lista de reprodução do serviço reprodutor de músicas (mpd)"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:755
+#: ../panel-plugin/xfce4-mpc-plugin.c:758
 msgid "Random"
 msgstr "Aleatório"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:757
+#: ../panel-plugin/xfce4-mpc-plugin.c:760
 msgid "Repeat"
 msgstr "Repetir"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:762
+#: ../panel-plugin/xfce4-mpc-plugin.c:765
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>Comandos</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:766
+#: ../panel-plugin/xfce4-mpc-plugin.c:769
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>Saídas</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:790
+#: ../panel-plugin/xfce4-mpc-plugin.c:789
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "Um cliente plugin de painel simples para o Music Player Daemon"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:792
-msgid "Copyright (c) 2006-2015 Landry Breuil\n"
-msgstr "Copyright (c) 2006-2015 Landry Breuil\n"
+#: ../panel-plugin/xfce4-mpc-plugin.c:791
+msgid "Copyright (c) 2006-2016 Landry Breuil\n"
+msgstr "Copyright (c) 2006-2016 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
