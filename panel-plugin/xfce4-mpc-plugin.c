@@ -279,6 +279,7 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
    gtk_grid_attach(GTK_GRID(table),gtk_label_new_with_mnemonic(_("Show _frame")),0,6,1,1);
 
    dialog->textbox_host = gtk_entry_new();
+   gtk_widget_set_hexpand (dialog->textbox_host, TRUE);
    gtk_entry_set_width_chars(GTK_ENTRY(dialog->textbox_host),DIALOG_ENTRY_WIDTH);
    gtk_entry_set_text(GTK_ENTRY(dialog->textbox_host),mpc->mpd_host);
    gtk_grid_attach(GTK_GRID(table),dialog->textbox_host,1,0,1,1);
