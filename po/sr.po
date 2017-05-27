@@ -5,12 +5,13 @@
 # Translators:
 # Саша Петровић <salepetronije@gmail.com>, 2012-2013,2017
 # Саша Петровић <salepetronije@gmail.com>, 2015
+# Саша Петровић <salepetronije@gmail.com>, 2015,2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-24 12:31+0100\n"
-"PO-Revision-Date: 2017-05-13 11:29+0000\n"
+"PO-Revision-Date: 2017-05-27 17:01+0000\n"
 "Last-Translator: Саша Петровић <salepetronije@gmail.com>\n"
 "Language-Team: Serbian (http://www.transifex.com/xfce/xfce-panel-plugins/language/sr/)\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +28,7 @@ msgstr "Покрени"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:252
 msgid "Mpd Client Plugin"
-msgstr "Прикључак клијента МПД-а"
+msgstr "Прикључак корисника МПД-а"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:258
 msgid "Properties"
@@ -47,7 +48,7 @@ msgstr "Лозинка : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:276
 msgid "MPD Client : "
-msgstr "Клијент МПД-а : "
+msgstr "Корисник МПД-а : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:277
 msgid "Tooltip Format : "
@@ -67,17 +68,17 @@ msgstr "Домаћин или адреса ИП-а"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:320
 msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr "Графички клијент МПД-а за покретање у приручном изборнику прикључка"
+msgstr "Сликовни корисник МПД-а за покретање у приручном изборнику прикључка"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:321
 msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
-msgstr ""
+msgstr "Променљиве : %artist%, %album%, %file%, %track% and %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:322
 msgid ""
 "Variables : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
-msgstr ""
+msgstr "Променљиве : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% and %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:444
 #: ../panel-plugin/xfce4-mpc-plugin.c:675
@@ -110,12 +111,12 @@ msgstr "Једноставан прикључак полице за домара
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:791
 msgid "Copyright (c) 2006-2016 Landry Breuil\n"
-msgstr ""
+msgstr "Права умножавања (c) 2006-2016 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
-msgstr "Прикључак клијента МПД-а"
+msgstr "Прикључак корисника МПД-а"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
 msgid "A client for MPD, The Music Player Daemon"
-msgstr "Клијент за МПД, Домара пуштања музике"
+msgstr "Корисник МПД-а, домара извођења музике"
