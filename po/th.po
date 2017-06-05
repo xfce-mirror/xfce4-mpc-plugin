@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Theppitak Karoonboonyanan <theppitak@gmail.com>, 2015
+# Theppitak Karoonboonyanan <theppitak@gmail.com>, 2015,2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-01 18:33+0200\n"
-"PO-Revision-Date: 2016-09-13 04:15+0000\n"
+"POT-Creation-Date: 2016-11-24 12:31+0100\n"
+"PO-Revision-Date: 2017-06-05 15:01+0000\n"
 "Last-Translator: Theppitak Karoonboonyanan <theppitak@gmail.com>\n"
 "Language-Team: Thai (http://www.transifex.com/xfce/xfce-panel-plugins/language/th/)\n"
 "MIME-Version: 1.0\n"
@@ -18,96 +18,96 @@ msgstr ""
 "Language: th\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:116
-#: ../panel-plugin/xfce4-mpc-plugin.c:192
-#: ../panel-plugin/xfce4-mpc-plugin.c:739
+#: ../panel-plugin/xfce4-mpc-plugin.c:118
+#: ../panel-plugin/xfce4-mpc-plugin.c:194
+#: ../panel-plugin/xfce4-mpc-plugin.c:762
 msgid "Launch"
 msgstr "เรียกทำงาน"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:249
+#: ../panel-plugin/xfce4-mpc-plugin.c:252
 msgid "Mpd Client Plugin"
 msgstr "ปลั๊กอินลูกข่าย MPD"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:255
+#: ../panel-plugin/xfce4-mpc-plugin.c:258
 msgid "Properties"
 msgstr "ตั้งค่า"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:270
+#: ../panel-plugin/xfce4-mpc-plugin.c:273
 msgid "Host : "
 msgstr "โฮสต์ : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:271
+#: ../panel-plugin/xfce4-mpc-plugin.c:274
 msgid "Port : "
 msgstr "พอร์ต : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:272
+#: ../panel-plugin/xfce4-mpc-plugin.c:275
 msgid "Password : "
 msgstr "รหัสผ่าน : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:273
+#: ../panel-plugin/xfce4-mpc-plugin.c:276
 msgid "MPD Client : "
 msgstr "ลูกข่าย MPD : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:274
+#: ../panel-plugin/xfce4-mpc-plugin.c:277
 msgid "Tooltip Format : "
 msgstr "รูปแบบคำแนะนำเครื่องมือ : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:275
+#: ../panel-plugin/xfce4-mpc-plugin.c:278
 msgid "Playlist Format : "
 msgstr "รูปแบบผังเล่น : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:276
+#: ../panel-plugin/xfce4-mpc-plugin.c:279
 msgid "Show _frame"
 msgstr "แสดงเส้น_กรอบ"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:316
+#: ../panel-plugin/xfce4-mpc-plugin.c:319
 msgid "Hostname or IP address"
 msgstr "ชื่อโฮสต์หรือหมายเลขไอพี"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:317
+#: ../panel-plugin/xfce4-mpc-plugin.c:320
 msgid "Graphical MPD Client to launch in plugin context menu"
 msgstr "ชื่อลูกข่าย MPD แบบกราฟิกที่จะเรียกทำงานจากเมนูคลิกขวาของปลั๊กอิน"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:318
-msgid "Variables : %artist%, %album%, %track% and %title%"
-msgstr "ตัวแปร : %artist%, %album%, %track% และ %title%"
+#: ../panel-plugin/xfce4-mpc-plugin.c:321
+msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
+msgstr "ตัวแปร : %artist%, %album%, %file%, %track% และ %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:319
+#: ../panel-plugin/xfce4-mpc-plugin.c:322
 msgid ""
-"Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and "
-"%title%"
-msgstr "ตัวแปร : %vol%, %status%, %newline%, %artist%, %album%, %track% และ %title%"
+"Variables : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
+"and %title%"
+msgstr "ตัวแปร : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% และ %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:440
-#: ../panel-plugin/xfce4-mpc-plugin.c:670
+#: ../panel-plugin/xfce4-mpc-plugin.c:444
+#: ../panel-plugin/xfce4-mpc-plugin.c:675
 msgid ".... not connected ?"
 msgstr ".... ไม่ได้เชื่อมต่อหรือเปล่า ?"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:524
+#: ../panel-plugin/xfce4-mpc-plugin.c:529
 msgid "Mpd playlist"
 msgstr "ผังเล่นของ MPD"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:735
+#: ../panel-plugin/xfce4-mpc-plugin.c:758
 msgid "Random"
 msgstr "สุ่ม"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:737
+#: ../panel-plugin/xfce4-mpc-plugin.c:760
 msgid "Repeat"
 msgstr "เล่นซ้ำ"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:742
+#: ../panel-plugin/xfce4-mpc-plugin.c:765
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>คำสั่ง</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:746
+#: ../panel-plugin/xfce4-mpc-plugin.c:769
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>อุปกรณ์เล่นเสียง</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:766
+#: ../panel-plugin/xfce4-mpc-plugin.c:789
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "ลูกข่ายสำหรับ Music Player Daemon ในรูปปลั๊กอินพาเนลอย่างง่าย"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:768
+#: ../panel-plugin/xfce4-mpc-plugin.c:791
 msgid "Copyright (c) 2006-2016 Landry Breuil\n"
 msgstr "Copyright (c) 2006-2016 Landry Breuil\n"
 
