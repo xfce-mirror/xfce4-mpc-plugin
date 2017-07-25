@@ -3,103 +3,103 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# kawichi, 2013
+# Gheyret Kenji, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-03 21:07+0200\n"
-"PO-Revision-Date: 2013-07-17 06:57+0000\n"
-"Last-Translator: kawichi\n"
-"Language-Team: Uighur (http://www.transifex.com/projects/p/xfce/language/ug/)\n"
+"POT-Creation-Date: 2016-11-24 12:31+0100\n"
+"PO-Revision-Date: 2017-07-25 11:28+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"Language-Team: Uighur (http://www.transifex.com/xfce/xfce-panel-plugins/language/ug/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ug\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:137
-#: ../panel-plugin/xfce4-mpc-plugin.c:213
-#: ../panel-plugin/xfce4-mpc-plugin.c:758
+#: ../panel-plugin/xfce4-mpc-plugin.c:118
+#: ../panel-plugin/xfce4-mpc-plugin.c:194
+#: ../panel-plugin/xfce4-mpc-plugin.c:762
 msgid "Launch"
 msgstr "ئىجرا قىلىش"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:270
+#: ../panel-plugin/xfce4-mpc-plugin.c:252
 msgid "Mpd Client Plugin"
 msgstr "Mpd خېرىدار قىستۇرمىسى"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:276
+#: ../panel-plugin/xfce4-mpc-plugin.c:258
 msgid "Properties"
 msgstr "خاسلىق"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:289
+#: ../panel-plugin/xfce4-mpc-plugin.c:273
 msgid "Host : "
 msgstr "كومپيۇتېر : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:290
+#: ../panel-plugin/xfce4-mpc-plugin.c:274
 msgid "Port : "
 msgstr "ئېغىز: "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:291
+#: ../panel-plugin/xfce4-mpc-plugin.c:275
 msgid "Password : "
 msgstr "ئىم: "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:292
+#: ../panel-plugin/xfce4-mpc-plugin.c:276
 msgid "MPD Client : "
 msgstr "MPD خېرىدارى : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:293
+#: ../panel-plugin/xfce4-mpc-plugin.c:277
 msgid "Tooltip Format : "
 msgstr "كۆرسەتمە پىچىمى: "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:294
+#: ../panel-plugin/xfce4-mpc-plugin.c:278
 msgid "Playlist Format : "
 msgstr "قويۇش تىزىمىنىڭ پىچىمى: "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:328
-msgid "Hostname or IP address"
-msgstr "كومپيۇتېر ئاتى ياكى IP ئادرېسى"
-
-#: ../panel-plugin/xfce4-mpc-plugin.c:329
-msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr "قىستۇرما مەزمۇن تىزىملىكىدە ئىجرا بولىدىغان گرافىكىلىق MPD خېرىدارى"
-
-#: ../panel-plugin/xfce4-mpc-plugin.c:330
-msgid "Variables : %artist%, %album%, %track% and %title%"
-msgstr "ئۆزگەرگۈچىلەر: %artist%, %album%, %track% and %title%"
-
-#: ../panel-plugin/xfce4-mpc-plugin.c:331
-msgid ""
-"Variables : %vol%, %status%, %newline%, %artist%, %album%, %track% and "
-"%title%"
-msgstr "ئۆزگەرگۈچىلەر: %vol%, %status%, %newline%, %artist%, %album%, %track% and %title%"
-
-#: ../panel-plugin/xfce4-mpc-plugin.c:336
+#: ../panel-plugin/xfce4-mpc-plugin.c:279
 msgid "Show _frame"
 msgstr "كاندۇكنى كۆرسەت(_F)"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:458
-#: ../panel-plugin/xfce4-mpc-plugin.c:689
+#: ../panel-plugin/xfce4-mpc-plugin.c:319
+msgid "Hostname or IP address"
+msgstr "كومپيۇتېر ئاتى ياكى IP ئادرېسى"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:320
+msgid "Graphical MPD Client to launch in plugin context menu"
+msgstr "قىستۇرما مەزمۇن تىزىملىكىدە ئىجرا بولىدىغان گرافىكىلىق MPD خېرىدارى"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:321
+msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:322
+msgid ""
+"Variables : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
+"and %title%"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:444
+#: ../panel-plugin/xfce4-mpc-plugin.c:675
 msgid ".... not connected ?"
 msgstr ".... باغلانمىدىمۇ؟"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:542
+#: ../panel-plugin/xfce4-mpc-plugin.c:529
 msgid "Mpd playlist"
 msgstr "Mpd قويۇش تىزىملىكى"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:754
+#: ../panel-plugin/xfce4-mpc-plugin.c:758
 msgid "Random"
 msgstr "تەرتىپسىز"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:756
+#: ../panel-plugin/xfce4-mpc-plugin.c:760
 msgid "Repeat"
 msgstr "قايتىلا"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:761
+#: ../panel-plugin/xfce4-mpc-plugin.c:765
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>بۇيرۇقلار</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:765
+#: ../panel-plugin/xfce4-mpc-plugin.c:769
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>چىقىرىشلار</i></b>"
 
@@ -108,8 +108,8 @@ msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "مۇزىكا قويغۇ مۇئەككىلى ئۈچۈن ئاددىي تاختا-قىستۇرما خېرىدارى"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:791
-msgid "Copyright (c) 2006-2012 Landry Breuil\n"
-msgstr "نەشر ھوقۇقى  (c) 2006-2012 Landry Breuil غا تەۋە\n"
+msgid "Copyright (c) 2006-2016 Landry Breuil\n"
+msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
