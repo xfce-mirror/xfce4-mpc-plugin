@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-24 12:31+0100\n"
-"PO-Revision-Date: 2017-07-25 11:28+0000\n"
+"PO-Revision-Date: 2017-09-13 16:35+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-panel-plugins/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,7 @@ msgstr "Værktøjstipformat : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:278
 msgid "Playlist Format : "
-msgstr "Spillelisteformat : "
+msgstr "Afspilningslisteformat : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:279
 msgid "Show _frame"
