@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-24 12:31+0100\n"
-"PO-Revision-Date: 2017-09-30 14:20+0000\n"
+"PO-Revision-Date: 2017-11-01 16:44+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-panel-plugins/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -29,7 +29,7 @@ msgstr "Start"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:252
 msgid "Mpd Client Plugin"
-msgstr "Klientplugin til MPD"
+msgstr "MPD-klient-plugin"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:258
 msgid "Properties"
@@ -108,7 +108,7 @@ msgstr "<b><i>Tilbagemeldinger</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:789
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr "Et simpelt klient-panelplugin til musikafspiller-dæmonen"
+msgstr "Et simpelt panelplugin-klient til musikafspiller-dæmon"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:791
 msgid "Copyright (c) 2006-2016 Landry Breuil\n"
@@ -116,7 +116,7 @@ msgstr "Ophavsret (c) 2006-2016 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
-msgstr "Klientplugin til MPD"
+msgstr "MPD-klient-plugin"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
 msgid "A client for MPD, The Music Player Daemon"
