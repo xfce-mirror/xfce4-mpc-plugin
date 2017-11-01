@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-24 12:31+0100\n"
-"PO-Revision-Date: 2017-11-01 16:44+0000\n"
+"PO-Revision-Date: 2017-11-01 18:15+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-panel-plugins/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -69,7 +69,7 @@ msgstr "Værtsnavn eller IP-adresse"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:320
 msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr "Grafisk MPD-klient til at starte plugin fra kontekstmenu"
+msgstr "Grafisk MPD-klient til at starte i plugins genvejsmenu"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:321
 msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
@@ -104,11 +104,11 @@ msgstr "<b><i>Kommandoer</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:769
 msgid "<b><i>Outputs</i></b>"
-msgstr "<b><i>Tilbagemeldinger</i></b>"
+msgstr "<b><i>Outputs</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:789
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr "Et simpelt panelplugin-klient til musikafspiller-dæmon"
+msgstr "En simpel panelplugin-klient til musikafspiller-dæmon"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:791
 msgid "Copyright (c) 2006-2016 Landry Breuil\n"
@@ -120,4 +120,4 @@ msgstr "MPD-klient-plugin"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
 msgid "A client for MPD, The Music Player Daemon"
-msgstr "En klient til MPD, musikafspilnings-dæmonen"
+msgstr "En klient til MPD, musikafspiller-dæmonen"
