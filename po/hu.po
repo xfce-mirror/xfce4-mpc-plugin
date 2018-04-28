@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Balázs Meskó <meskobalazs@gmail.com>, 2018
 # Benedek Imre <nucleo@indamail.hu>, 2013
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2009
 # gyeben <gyonkibendeguz@gmail.com>, 2016
@@ -11,8 +12,8 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-24 12:31+0100\n"
-"PO-Revision-Date: 2017-09-19 18:06+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"PO-Revision-Date: 2018-04-28 21:10+0000\n"
+"Last-Translator: Balázs Meskó <meskobalazs@gmail.com>\n"
 "Language-Team: Hungarian (http://www.transifex.com/xfce/xfce-panel-plugins/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -72,13 +73,13 @@ msgstr "Grafikus MPD kliens a bővítmény helyi menüjéből való indításhoz
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:321
 msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
-msgstr ""
+msgstr "Változók : %artist%, %album%, %file%, %track% és %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:322
 msgid ""
 "Variables : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
-msgstr ""
+msgstr "Változók : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% és %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:444
 #: ../panel-plugin/xfce4-mpc-plugin.c:675
