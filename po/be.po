@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Aleksandr P <davian818@gmail.com>, 2012
+# Andres <kovtunos@yandex.ru>, 2010
+# Igor <f2404@yandex.ru>, 2016
+# Zmicer Turok <zmicerturok@gmail.com >, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-24 12:31+0100\n"
+"PO-Revision-Date: 2018-06-23 18:28+0000\n"
+"Last-Translator: Zmicer Turok <zmicerturok@gmail.com>\n"
+"Language-Team: Belarusian (http://www.transifex.com/xfce/xfce-panel-plugins/language/be/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: be\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:118
+#: ../panel-plugin/xfce4-mpc-plugin.c:194
+#: ../panel-plugin/xfce4-mpc-plugin.c:762
+msgid "Launch"
+msgstr "Запусціць"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:252
+msgid "Mpd Client Plugin"
+msgstr "Убудова кліента MPD"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:258
+msgid "Properties"
+msgstr "Уласцівасці"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:273
+msgid "Host : "
+msgstr "Хост: "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:274
+msgid "Port : "
+msgstr "Порт: "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:275
+msgid "Password : "
+msgstr "Пароль: "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:276
+msgid "MPD Client : "
+msgstr "Кліент MPD: "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:277
+msgid "Tooltip Format : "
+msgstr "Фармат падказак: "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:278
+msgid "Playlist Format : "
+msgstr "Фармат плэйліста: "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:279
+msgid "Show _frame"
+msgstr "Паказваць _рамку"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:319
+msgid "Hostname or IP address"
+msgstr "Хост альбо IP-адрас"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:320
+msgid "Graphical MPD Client to launch in plugin context menu"
+msgstr "Графічны кліент MPD для запуску з кантэкстнага меню"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:321
+msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
+msgstr "Зменныя : %artist%, %album%, %file%, %track% и %title%"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:322
+msgid ""
+"Variables : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
+"and %title%"
+msgstr "Зменныя : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% и %title%"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:444
+#: ../panel-plugin/xfce4-mpc-plugin.c:675
+msgid ".... not connected ?"
+msgstr "... не падлучаны?"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:529
+msgid "Mpd playlist"
+msgstr "Плэйліст MPD"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:758
+msgid "Random"
+msgstr "Выпадкова"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:760
+msgid "Repeat"
+msgstr "Паўтор"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:765
+msgid "<b><i>Commands</i></b>"
+msgstr "<b><i>Загады</i></b>"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:769
+msgid "<b><i>Outputs</i></b>"
+msgstr "<b><i>Вывад</i></b>"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:789
+msgid "A simple panel-plugin client for Music Player Daemon"
+msgstr "Зручная ўбудова кліента MPD для панэлі Xfce"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:791
+msgid "Copyright (c) 2006-2016 Landry Breuil\n"
+msgstr "Copyright © 2006—2016 Landry Breuil\n"
+
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
+msgid "MPD Client Plugin"
+msgstr "Убудова кліента MPD"
+
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
+msgid "A client for MPD, The Music Player Daemon"
+msgstr "Кліент для музыкальнага сервера MPD"
