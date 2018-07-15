@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Cristian Marchi <cri.penta@gmail.com>, 2009,2013,2015
+# Emanuele Petriglia <inbox@emanuelepetriglia.me>, 2018
 # Enrico B. <enricobe@hotmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-24 12:31+0100\n"
-"PO-Revision-Date: 2018-07-11 15:12+0000\n"
+"PO-Revision-Date: 2018-07-15 10:25+0000\n"
 "Last-Translator: Emanuele Petriglia <inbox@emanuelepetriglia.me>\n"
 "Language-Team: Italian (http://www.transifex.com/xfce/xfce-panel-plugins/language/it/)\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +28,7 @@ msgstr "Avvia"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:252
 msgid "Mpd Client Plugin"
-msgstr "Plugin per il client Mpd"
+msgstr "Componente aggiuntivo per il client MPD"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:258
 msgid "Properties"
@@ -67,7 +68,7 @@ msgstr "Nome host o indirizzo IP"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:320
 msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr "Client MPD grafico da avviare nel menu contestuale del plugin"
+msgstr "Client MPD grafico da avviare nel menu contestuale del componente aggiuntivo"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:321
 msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
@@ -82,11 +83,11 @@ msgstr "Variabili : %vol%, %status%, %newline%, %artist%, %album%, %file%, %trac
 #: ../panel-plugin/xfce4-mpc-plugin.c:444
 #: ../panel-plugin/xfce4-mpc-plugin.c:675
 msgid ".... not connected ?"
-msgstr "...non connesso?"
+msgstr "…non connesso?"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:529
 msgid "Mpd playlist"
-msgstr "Scaletta Mpd"
+msgstr "Scaletta MPD"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:758
 msgid "Random"
@@ -106,15 +107,15 @@ msgstr "<b><i>Output</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:789
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr "Un semplice plugin del pannello per il demone del riproduttore musicale (MPD)"
+msgstr "Un semplice componente aggiuntivo del pannello per il demone del riproduttore musicale (MPD)"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:791
 msgid "Copyright (c) 2006-2016 Landry Breuil\n"
-msgstr "Copyright (c) 2006-2016 Landry Breuil\n\n"
+msgstr "Copyright (c) 2006-2016 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
-msgstr "MPD Client plugin"
+msgstr "Componente aggiuntivo per il client MPD\n        "
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
 msgid "A client for MPD, The Music Player Daemon"
