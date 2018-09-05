@@ -237,7 +237,7 @@ mpc_dialog_show_frame_toggled (GtkWidget *w, gboolean state, t_mpc_dialog *dialo
 static void
 mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
 {
-   GtkWidget *dlg, *vbox, *table;
+   GtkWidget *dlg, *vbox, *table, *label;
    gchar str_port[20];
    t_mpc_dialog *dialog;
 
@@ -262,21 +262,18 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
 
    g_signal_connect (dlg, "response", G_CALLBACK (mpc_dialog_response), dialog);
 
-   vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 8);
-   gtk_container_set_border_width (GTK_CONTAINER (vbox), 5);
+   vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+   gtk_container_set_border_width (GTK_CONTAINER (vbox), 12);
    gtk_widget_show (vbox);
    gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area(GTK_DIALOG (dlg))), vbox, TRUE, TRUE, 0);
 
    table = gtk_grid_new();
-   gtk_grid_set_column_spacing (GTK_GRID(table), 2);
-   gtk_grid_set_row_spacing (GTK_GRID(table), 2);
-   gtk_grid_attach(GTK_GRID(table),gtk_label_new(_("Host : ")),0,0,1,1);
-   gtk_grid_attach(GTK_GRID(table),gtk_label_new(_("Port : ")),0,1,1,1);
-   gtk_grid_attach(GTK_GRID(table),gtk_label_new(_("Password : ")),0,2,1,1);
-   gtk_grid_attach(GTK_GRID(table),gtk_label_new(_("MPD Client : ")),0,3,1,1);
-   gtk_grid_attach(GTK_GRID(table),gtk_label_new(_("Tooltip Format : ")),0,4,1,1);
-   gtk_grid_attach(GTK_GRID(table),gtk_label_new(_("Playlist Format : ")),0,5,1,1);
-   gtk_grid_attach(GTK_GRID(table),gtk_label_new_with_mnemonic(_("Show _frame")),0,6,1,1);
+   gtk_grid_set_column_spacing (GTK_GRID(table), 12);
+   gtk_grid_set_row_spacing (GTK_GRID(table), 6);
+
+   label = gtk_label_new(_("Host : "));
+   gtk_label_set_xalign (GTK_LABEL (label), 0.0f);
+   gtk_grid_attach(GTK_GRID(table), label, 0, 0, 1, 1);
 
    dialog->textbox_host = gtk_entry_new();
    gtk_widget_set_hexpand (dialog->textbox_host, TRUE);
@@ -284,11 +281,19 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
    gtk_entry_set_text(GTK_ENTRY(dialog->textbox_host),mpc->mpd_host);
    gtk_grid_attach(GTK_GRID(table),dialog->textbox_host,1,0,1,1);
 
+   label = gtk_label_new(_("Port : "));
+   gtk_label_set_xalign (GTK_LABEL (label), 0.0f);
+   gtk_grid_attach(GTK_GRID(table), label, 0, 1, 1, 1);
+
    dialog->textbox_port = gtk_entry_new();
    gtk_entry_set_width_chars(GTK_ENTRY(dialog->textbox_port),DIALOG_ENTRY_WIDTH);
    g_snprintf(str_port,sizeof(str_port),"%d",mpc->mpd_port);
    gtk_entry_set_text(GTK_ENTRY(dialog->textbox_port),str_port);
    gtk_grid_attach(GTK_GRID(table),dialog->textbox_port,1,1,1,1);
+
+   label = gtk_label_new(_("Password : "));
+   gtk_label_set_xalign (GTK_LABEL (label), 0.0f);
+   gtk_grid_attach(GTK_GRID(table), label, 0, 2, 1, 1);
 
    dialog->textbox_password = gtk_entry_new();
    gtk_entry_set_visibility(GTK_ENTRY(dialog->textbox_password),FALSE);
@@ -296,23 +301,41 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
    gtk_entry_set_text(GTK_ENTRY(dialog->textbox_password),mpc->mpd_password);
    gtk_grid_attach(GTK_GRID(table),dialog->textbox_password,1,2,1,1);
 
+   label = gtk_label_new(_("MPD Client : "));
+   gtk_label_set_xalign (GTK_LABEL (label), 0.0f);
+   gtk_grid_attach(GTK_GRID(table), label, 0, 3, 1, 1);
+
    dialog->textbox_client_appl = gtk_entry_new();
    gtk_entry_set_width_chars(GTK_ENTRY(dialog->textbox_client_appl),DIALOG_ENTRY_WIDTH);
    gtk_entry_set_text(GTK_ENTRY(dialog->textbox_client_appl),mpc->client_appl);
    gtk_grid_attach(GTK_GRID(table),dialog->textbox_client_appl,1,3,1,1);
+
+   label = gtk_label_new(_("Tooltip Format : "));
+   gtk_label_set_xalign (GTK_LABEL (label), 0.0f);
+   gtk_grid_attach(GTK_GRID(table), label, 0, 4, 1, 1);
 
    dialog->textbox_tooltip_format = gtk_entry_new();
    gtk_entry_set_width_chars(GTK_ENTRY(dialog->textbox_tooltip_format),DIALOG_ENTRY_WIDTH);
    gtk_entry_set_text(GTK_ENTRY(dialog->textbox_tooltip_format),mpc->tooltip_format);
    gtk_grid_attach(GTK_GRID(table),dialog->textbox_tooltip_format,1,4,1,1);
 
+   label = gtk_label_new(_("Playlist Format : "));
+   gtk_label_set_xalign (GTK_LABEL (label), 0.0f);
+   gtk_grid_attach(GTK_GRID(table), label, 0, 5, 1, 1);
+
    dialog->textbox_playlist_format = gtk_entry_new();
    gtk_entry_set_width_chars(GTK_ENTRY(dialog->textbox_playlist_format),DIALOG_ENTRY_WIDTH);
    gtk_entry_set_text(GTK_ENTRY(dialog->textbox_playlist_format),mpc->playlist_format);
    gtk_grid_attach(GTK_GRID(table),dialog->textbox_playlist_format,1,5,1,1);
 
+   label = gtk_label_new_with_mnemonic(_("Show _frame"));
+   gtk_label_set_xalign (GTK_LABEL (label), 0.0f);
+   gtk_grid_attach(GTK_GRID(table), label, 0, 6, 1, 1);
+
    dialog->checkbox_frame = gtk_switch_new();
    gtk_switch_set_active(GTK_SWITCH(dialog->checkbox_frame),mpc->show_frame);
+   gtk_widget_set_halign (GTK_WIDGET (dialog->checkbox_frame), GTK_ALIGN_START);
+   gtk_widget_set_valign (GTK_WIDGET (dialog->checkbox_frame), GTK_ALIGN_CENTER);
 
    g_signal_connect (dialog->checkbox_frame, "state-set", G_CALLBACK (mpc_dialog_show_frame_toggled), dialog);
    gtk_grid_attach(GTK_GRID(table),dialog->checkbox_frame,1,6,1,1);
