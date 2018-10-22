@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-24 12:31+0100\n"
-"PO-Revision-Date: 2018-10-22 10:28+0000\n"
+"PO-Revision-Date: 2018-10-22 10:39+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/xfce/xfce-panel-plugins/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -54,7 +54,7 @@ msgstr "Client MPD:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:277
 msgid "Tooltip Format : "
-msgstr "Format de l'indicador de funció:"
+msgstr "Format d'indicador de funció:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:278
 msgid "Playlist Format : "
