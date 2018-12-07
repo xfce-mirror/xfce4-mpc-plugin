@@ -468,6 +468,10 @@ void parse_outputs_answer(MpdObj *mo, void *param)
          g_strfreev(tokens);
       }
       md->nb++;
+      if (strcmp(lines[i],"OK")) {
+         /* make room for the next output ptr */
+         md->alloutputs = g_renew(mpd_Output*, md->alloutputs, md->nb + 1);
+      }
    }
    g_strfreev(lines);
 }

@@ -408,6 +408,8 @@ mpc_update_outputs(t_mpc* mpc)
          mpc->mpd_outputs[i]->id = data->output_dev->id;
          mpc->mpd_outputs[i]->menuitem = chkitem;
          mpc->nb_outputs++;
+         /* make room for the next output ptr */
+         mpc->mpd_outputs = g_renew(t_mpd_output*, mpc->mpd_outputs, mpc->nb_outputs + 1);
       }
       mpc->mpd_outputs[i]->enabled = data->output_dev->enabled;
       gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->mpd_outputs[i]->menuitem), mpc->mpd_outputs[i]->enabled);
