@@ -182,8 +182,8 @@ int mpd_wait_for_answer(MpdObj *mo)
 {
    struct timeval tv;
    int err,nbread;
-   err = nbread = 0;
    fd_set fds;
+   err = nbread = 0;
 
    DBG("!");
 
@@ -667,10 +667,11 @@ int mpd_check_error(MpdObj* mo)
 
 void mpd_send_password(MpdObj* mo)
 {
-   DBG("!");
    char outbuf[256];
+   int wrote;
+   DBG("!");
    /* write password 'password' to socket */
-   int wrote = snprintf(outbuf, sizeof(outbuf), "password %s\n",mo->pass);
+   wrote = snprintf(outbuf, sizeof(outbuf), "password %s\n",mo->pass);
    if (wrote > 255) {
 	/* the password is too long to fit though there doesn't seem to be a
 	 * nice way to report this error :-/ */
