@@ -731,7 +731,8 @@ static GtkWidget*
 new_button_with_cbk(XfcePanelPlugin * plugin, GtkWidget *parent, gchar* icon, gpointer cb, gpointer data)
 {
    GtkWidget *button = xfce_panel_create_button();
-   GtkWidget *image = gtk_image_new_from_icon_name(icon, GTK_ICON_SIZE_BUTTON);
+   GIcon *gicon = g_themed_icon_new_with_default_fallbacks (icon);
+   GtkWidget *image = gtk_image_new_from_gicon (gicon, GTK_ICON_SIZE_BUTTON);
    g_object_set_data(G_OBJECT(image), "icon-name", icon);
    g_object_set_data(G_OBJECT(button), "image", image);
    gtk_button_set_image(GTK_BUTTON(button), image);
@@ -778,10 +779,10 @@ mpc_create (XfcePanelPlugin * plugin)
 
    gtk_container_add (GTK_CONTAINER(mpc->frame), mpc->box);
 
-   mpc->prev = new_button_with_cbk(plugin, mpc->box, "media-skip-backward", G_CALLBACK(prev), mpc);
-   mpc->stop = new_button_with_cbk(plugin, mpc->box, "media-playback-stop", G_CALLBACK(stop), mpc);
-   mpc->toggle = new_button_with_cbk(plugin, mpc->box, "media-playback-pause", G_CALLBACK(toggle), mpc);
-   mpc->next = new_button_with_cbk(plugin, mpc->box, "media-skip-forward", G_CALLBACK(next), mpc);
+   mpc->prev = new_button_with_cbk(plugin, mpc->box, "media-skip-backward-symbolic", G_CALLBACK(prev), mpc);
+   mpc->stop = new_button_with_cbk(plugin, mpc->box, "media-playback-stop-symbolic", G_CALLBACK(stop), mpc);
+   mpc->toggle = new_button_with_cbk(plugin, mpc->box, "media-playback-pause-symbolic", G_CALLBACK(toggle), mpc);
+   mpc->next = new_button_with_cbk(plugin, mpc->box, "media-skip-forward-symbolic", G_CALLBACK(next), mpc);
 
    mpc->random = gtk_check_menu_item_new_with_label (_("Random"));
    g_signal_connect (G_OBJECT(mpc->random), "toggled", G_CALLBACK (mpc_random_toggled), mpc);
