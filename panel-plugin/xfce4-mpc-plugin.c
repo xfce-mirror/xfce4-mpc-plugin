@@ -712,7 +712,7 @@ static void
 resize_button(GtkWidget *btn, gint size)
 {
    GtkIconTheme *icon_theme;
-   GdkPixbuf *pixbuf, *scaled;
+   GdkPixbuf *pixbuf;
    GtkWidget *image = g_object_get_data(G_OBJECT(btn), "image");
    gchar *icon = g_object_get_data(G_OBJECT(image), "icon-name");
    icon_theme = gtk_icon_theme_get_default();
