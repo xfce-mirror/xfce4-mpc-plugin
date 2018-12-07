@@ -33,7 +33,7 @@
 #define DEFAULT_MPD_PORT 6600
 #define DIALOG_ENTRY_WIDTH 20
 
-static void resize_button(GtkWidget *, gint);
+static void resize_button(GtkWidget *, gint, gint);
 
 static void
 mpc_free (XfcePanelPlugin * plugin, t_mpc * mpc)
@@ -61,16 +61,23 @@ mpc_set_mode (XfcePanelPlugin * plugin, XfcePanelPluginMode mode, t_mpc * mpc)
 static gboolean
 mpc_set_size (XfcePanelPlugin * plugin, int size, t_mpc * mpc)
 {
+   int icon_size;
    int border_width = (size > 26 && mpc->show_frame ? 1 : 0);
-    size /= xfce_panel_plugin_get_nrows (plugin);
-
-   DBG ("size=%d",size);
+   DBG ("passed size=%d",size);
+   size /= xfce_panel_plugin_get_nrows (plugin);
    gtk_container_set_border_width (GTK_CONTAINER (mpc->frame), border_width);
    size -= 2 * border_width;
-   resize_button (GTK_WIDGET (mpc->next), size);
-   resize_button (GTK_WIDGET (mpc->prev), size);
-   resize_button (GTK_WIDGET (mpc->stop), size);
-   resize_button (GTK_WIDGET (mpc->toggle), size);
+#if LIBXFCE4PANEL_CHECK_VERSION (4,15,0)
+   icon_size = xfce_panel_plugin_get_icon_size(plugin);
+#else
+   icon_size = size / 2;
+#endif
+   icon_size -= 2 * border_width;
+
+   resize_button (GTK_WIDGET (mpc->next), size, icon_size);
+   resize_button (GTK_WIDGET (mpc->prev), size, icon_size);
+   resize_button (GTK_WIDGET (mpc->stop), size, icon_size);
+   resize_button (GTK_WIDGET (mpc->toggle), size, icon_size);
    return TRUE;
 }
 
@@ -711,17 +718,12 @@ scroll_cb(GtkWidget *widget, GdkEventScroll* event, t_mpc* mpc)
 }
 
 static void
-resize_button(GtkWidget *btn, gint size)
+resize_button(GtkWidget *btn, gint size, gint icon_size)
 {
-   GtkIconTheme *icon_theme;
-   GdkPixbuf *pixbuf;
    GtkWidget *image = g_object_get_data(G_OBJECT(btn), "image");
    gchar *icon = g_object_get_data(G_OBJECT(image), "icon-name");
-   icon_theme = gtk_icon_theme_get_default();
-   DBG("Resizing button, loading icon %s and rescaling it to size %d", icon, size / 2 - 2);
-   pixbuf = gtk_icon_theme_load_icon (icon_theme, icon, size / 2 - 2, 0, NULL);
-   gtk_image_set_from_pixbuf (GTK_IMAGE (image), pixbuf);
-   g_object_unref (G_OBJECT (pixbuf));
+   DBG("Resizing button to size %d and icon %s to size %d", size, icon, icon_size);
+   gtk_image_set_pixel_size(GTK_IMAGE(image), icon_size);
    gtk_widget_set_size_request (btn, size, size);
 }
 
