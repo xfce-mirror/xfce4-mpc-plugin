@@ -37,6 +37,14 @@
 #include <errno.h>
 #include <fcntl.h>
 
+int mpd_wait_for_answer(MpdObj *);
+int mpd_send_single_cmd(MpdObj*, char*);
+void send_complex_cmd(MpdObj*, char*, void (*)(), void *);
+void parse_status_answer(MpdObj*, void*);
+void parse_one_song(MpdObj*, void*);
+void parse_playlistinfo_answer(MpdObj*, void*);
+void parse_outputs_answer(MpdObj*, void*);
+
 MpdObj* mpd_new(char* host, int port, char* pass)
 {
    MpdObj* mo = g_new0(MpdObj,1);
