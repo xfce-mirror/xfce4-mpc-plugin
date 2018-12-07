@@ -735,7 +735,8 @@ new_button_with_cbk(XfcePanelPlugin * plugin, GtkWidget *parent, gchar* icon, gp
    GtkWidget *image = gtk_image_new_from_gicon (gicon, GTK_ICON_SIZE_BUTTON);
    g_object_set_data(G_OBJECT(image), "icon-name", icon);
    g_object_set_data(G_OBJECT(button), "image", image);
-   gtk_button_set_image(GTK_BUTTON(button), image);
+   gtk_container_add (GTK_CONTAINER (button), image);
+   gtk_widget_show (image);
    xfce_panel_plugin_add_action_widget (plugin, button);
    g_signal_connect (G_OBJECT(button), "button_press_event", G_CALLBACK(cb), data);
    g_signal_connect (G_OBJECT(button), "enter_notify_event", G_CALLBACK(enter_cb), data);
@@ -877,4 +878,3 @@ mpc_construct (XfcePanelPlugin * plugin)
 
 /* register the plugin */
 XFCE_PANEL_PLUGIN_REGISTER (mpc_construct);
-
