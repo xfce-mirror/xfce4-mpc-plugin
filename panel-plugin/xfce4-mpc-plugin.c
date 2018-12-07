@@ -67,7 +67,7 @@ mpc_set_size (XfcePanelPlugin * plugin, int size, t_mpc * mpc)
    size /= xfce_panel_plugin_get_nrows (plugin);
    gtk_container_set_border_width (GTK_CONTAINER (mpc->frame), border_width);
    size -= 2 * border_width;
-#if LIBXFCE4PANEL_CHECK_VERSION (4,15,0)
+#if LIBXFCE4PANEL_CHECK_VERSION (4,13,0)
    icon_size = xfce_panel_plugin_get_icon_size(plugin);
 #else
    icon_size = size / 2;
