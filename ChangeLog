@@ -1,3 +1,10 @@
+08-12-2018 Landry Breuil <landry at xfce.org>
+   * release 0.5.1
+   * fix a long-standing crasher when using multiple outputs
+   * improve icon sizing on 4.13 panel (thx to Simon Steinbeiss)
+   * improve spacing in settings dialog (#14671, thx to Sean Davis)
+   * allow %file% in format_song_display (#12973, thx to Armando Ortega)
+
 01-11-2016 Landry Breuil <landry at xfce.org>
    * release 0.5.0
    * fix changing volume via mousewheel
