@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-24 12:31+0100\n"
-"PO-Revision-Date: 2018-04-29 09:54+0000\n"
+"POT-Creation-Date: 2018-12-09 00:31+0100\n"
+"PO-Revision-Date: 2018-12-20 21:29+0000\n"
 "Last-Translator: Balázs Meskó <meskobalazs@gmail.com>\n"
 "Language-Team: Hungarian (http://www.transifex.com/xfce/xfce-panel-plugins/language/hu/)\n"
 "MIME-Version: 1.0\n"
@@ -21,98 +21,98 @@ msgstr ""
 "Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:118
-#: ../panel-plugin/xfce4-mpc-plugin.c:194
-#: ../panel-plugin/xfce4-mpc-plugin.c:762
+#: ../panel-plugin/xfce4-mpc-plugin.c:125
+#: ../panel-plugin/xfce4-mpc-plugin.c:201
+#: ../panel-plugin/xfce4-mpc-plugin.c:792
 msgid "Launch"
 msgstr "Indítás"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:252
+#: ../panel-plugin/xfce4-mpc-plugin.c:259
 msgid "Mpd Client Plugin"
 msgstr "MPD-kliens program"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:258
+#: ../panel-plugin/xfce4-mpc-plugin.c:265
 msgid "Properties"
 msgstr "Tulajdonságok"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:273
+#: ../panel-plugin/xfce4-mpc-plugin.c:281
 msgid "Host : "
 msgstr "Gép:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:274
+#: ../panel-plugin/xfce4-mpc-plugin.c:291
 msgid "Port : "
-msgstr "Post:"
+msgstr "Port:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:275
+#: ../panel-plugin/xfce4-mpc-plugin.c:301
 msgid "Password : "
 msgstr "Jelszó:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:276
+#: ../panel-plugin/xfce4-mpc-plugin.c:311
 msgid "MPD Client : "
 msgstr "MPD kliens:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:277
+#: ../panel-plugin/xfce4-mpc-plugin.c:320
 msgid "Tooltip Format : "
 msgstr "Buboréksúgó formátuma:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:278
+#: ../panel-plugin/xfce4-mpc-plugin.c:329
 msgid "Playlist Format : "
 msgstr "Lejátszólista formátuma:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:279
+#: ../panel-plugin/xfce4-mpc-plugin.c:338
 msgid "Show _frame"
 msgstr "Ke_ret megjelenítése"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:319
+#: ../panel-plugin/xfce4-mpc-plugin.c:350
 msgid "Hostname or IP address"
 msgstr "Gépnév vagy IP-cím"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:320
+#: ../panel-plugin/xfce4-mpc-plugin.c:351
 msgid "Graphical MPD Client to launch in plugin context menu"
 msgstr "Grafikus MPD kliens a bővítmény helyi menüjéből való indításhoz"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:321
+#: ../panel-plugin/xfce4-mpc-plugin.c:352
 msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
 msgstr "Változók : %artist%, %album%, %file%, %track% és %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:322
+#: ../panel-plugin/xfce4-mpc-plugin.c:353
 msgid ""
 "Variables : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
 msgstr "Változók : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% és %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:444
-#: ../panel-plugin/xfce4-mpc-plugin.c:675
+#: ../panel-plugin/xfce4-mpc-plugin.c:477
+#: ../panel-plugin/xfce4-mpc-plugin.c:708
 msgid ".... not connected ?"
 msgstr "… nincs kapcsolódva?"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:529
+#: ../panel-plugin/xfce4-mpc-plugin.c:562
 msgid "Mpd playlist"
 msgstr "Mpd lejátszólista"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:758
+#: ../panel-plugin/xfce4-mpc-plugin.c:788
 msgid "Random"
 msgstr "Véletlen"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:760
+#: ../panel-plugin/xfce4-mpc-plugin.c:790
 msgid "Repeat"
 msgstr "Ismétlés"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:765
+#: ../panel-plugin/xfce4-mpc-plugin.c:795
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>Parancsok</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:769
+#: ../panel-plugin/xfce4-mpc-plugin.c:799
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>Kimenetek</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:789
+#: ../panel-plugin/xfce4-mpc-plugin.c:819
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "Egyszerű panelbővítmény-kliens a Music Player Daemonhoz"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:791
-msgid "Copyright (c) 2006-2016 Landry Breuil\n"
-msgstr "Copyright (c) 2006-2016 Landry Breuil\n"
+#: ../panel-plugin/xfce4-mpc-plugin.c:821
+msgid "Copyright (c) 2006-2018 Landry Breuil\n"
+msgstr "Copyright (c) 2006-2018 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
