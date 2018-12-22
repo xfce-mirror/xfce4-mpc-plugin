@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Elishai Eliyahu <e1907@mm.st>, 2016
+# Elishai Eliyahu <e1907@mm.st>, 2016,2018
 # GenghisKhan <genghiskhan@gmx.ca>, 2015-2016
 # GenghisKhan <genghiskhan@gmx.ca>, 2012
 # Yaron Shahrabani <sh.yaron@gmail.com>, 2014
@@ -11,108 +11,108 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-24 12:31+0100\n"
-"PO-Revision-Date: 2017-09-19 18:06+0000\n"
+"POT-Creation-Date: 2018-12-09 00:31+0100\n"
+"PO-Revision-Date: 2018-12-22 14:59+0000\n"
 "Last-Translator: Elishai Eliyahu <e1907@mm.st>\n"
 "Language-Team: Hebrew (http://www.transifex.com/xfce/xfce-panel-plugins/language/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:118
-#: ../panel-plugin/xfce4-mpc-plugin.c:194
-#: ../panel-plugin/xfce4-mpc-plugin.c:762
+#: ../panel-plugin/xfce4-mpc-plugin.c:125
+#: ../panel-plugin/xfce4-mpc-plugin.c:201
+#: ../panel-plugin/xfce4-mpc-plugin.c:792
 msgid "Launch"
 msgstr "שגר"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:252
+#: ../panel-plugin/xfce4-mpc-plugin.c:259
 msgid "Mpd Client Plugin"
 msgstr "תוסף לקוח Mpd"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:258
+#: ../panel-plugin/xfce4-mpc-plugin.c:265
 msgid "Properties"
 msgstr "מאפיינים"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:273
+#: ../panel-plugin/xfce4-mpc-plugin.c:281
 msgid "Host : "
 msgstr "מארח : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:274
+#: ../panel-plugin/xfce4-mpc-plugin.c:291
 msgid "Port : "
 msgstr "פורט : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:275
+#: ../panel-plugin/xfce4-mpc-plugin.c:301
 msgid "Password : "
 msgstr "סיסמה : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:276
+#: ../panel-plugin/xfce4-mpc-plugin.c:311
 msgid "MPD Client : "
 msgstr "לקוח MPD:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:277
+#: ../panel-plugin/xfce4-mpc-plugin.c:320
 msgid "Tooltip Format : "
 msgstr "פורמט חלונית צצה : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:278
+#: ../panel-plugin/xfce4-mpc-plugin.c:329
 msgid "Playlist Format : "
 msgstr "פורמט רשימת נגינה : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:279
+#: ../panel-plugin/xfce4-mpc-plugin.c:338
 msgid "Show _frame"
 msgstr "הצג _מסגרת"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:319
+#: ../panel-plugin/xfce4-mpc-plugin.c:350
 msgid "Hostname or IP address"
 msgstr "שם מארח או כתובת IP"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:320
+#: ../panel-plugin/xfce4-mpc-plugin.c:351
 msgid "Graphical MPD Client to launch in plugin context menu"
 msgstr "לקוח MPD גרפי להפעלה בתפריט הקשר של תוסף"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:321
+#: ../panel-plugin/xfce4-mpc-plugin.c:352
 msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
 msgstr "Variables : %artist%, %album%, %file%, %track% and %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:322
+#: ../panel-plugin/xfce4-mpc-plugin.c:353
 msgid ""
 "Variables : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
 msgstr "Variables : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% and %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:444
-#: ../panel-plugin/xfce4-mpc-plugin.c:675
+#: ../panel-plugin/xfce4-mpc-plugin.c:477
+#: ../panel-plugin/xfce4-mpc-plugin.c:708
 msgid ".... not connected ?"
 msgstr ".... לא מחובר ?"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:529
+#: ../panel-plugin/xfce4-mpc-plugin.c:562
 msgid "Mpd playlist"
 msgstr "רשימת נגינה Mpd"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:758
+#: ../panel-plugin/xfce4-mpc-plugin.c:788
 msgid "Random"
 msgstr "אקראי"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:760
+#: ../panel-plugin/xfce4-mpc-plugin.c:790
 msgid "Repeat"
 msgstr "חזרה"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:765
+#: ../panel-plugin/xfce4-mpc-plugin.c:795
 msgid "<b><i>Commands</i></b>"
 msgstr "<b>פקודות</b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:769
+#: ../panel-plugin/xfce4-mpc-plugin.c:799
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b>פלט</b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:789
+#: ../panel-plugin/xfce4-mpc-plugin.c:819
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "תוסף לוח פשוט עבור Music Player Daemon"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:791
-msgid "Copyright (c) 2006-2016 Landry Breuil\n"
-msgstr "זכויות יוצרים (c)‏ 2006-2016 Landry Breuil\n"
+#: ../panel-plugin/xfce4-mpc-plugin.c:821
+msgid "Copyright (c) 2006-2018 Landry Breuil\n"
+msgstr "זכויות יוצרים (c) 2006-2018 לנדרי ברויל\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
