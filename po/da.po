@@ -6,13 +6,13 @@
 # Aputsiak Niels Janussen (Skjalden) <aj@isit.gl>, 2013
 # Jens Hyllegaard <jens.hyllegaard@gmail.com>, 2007
 # Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread.net>, 2016
-# scootergrisen, 2016-2018
+# scootergrisen, 2016-2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-09 00:31+0100\n"
-"PO-Revision-Date: 2018-12-11 06:53+0000\n"
+"PO-Revision-Date: 2019-03-07 14:32+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-panel-plugins/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -84,7 +84,7 @@ msgstr "Variabler : %vol%, %status%, %newline%, %artist%, %album%, %file%, %trac
 #: ../panel-plugin/xfce4-mpc-plugin.c:477
 #: ../panel-plugin/xfce4-mpc-plugin.c:708
 msgid ".... not connected ?"
-msgstr ".... ikke tilsluttet ?"
+msgstr ".... ikke tilsluttet?"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:562
 msgid "Mpd playlist"
