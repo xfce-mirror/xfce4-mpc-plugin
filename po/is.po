@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-09 00:31+0100\n"
-"PO-Revision-Date: 2019-01-14 15:43+0000\n"
+"PO-Revision-Date: 2019-05-10 11:27+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic (http://www.transifex.com/xfce/xfce-panel-plugins/language/is/)\n"
 "MIME-Version: 1.0\n"
@@ -35,7 +35,7 @@ msgstr "Eiginleikar"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:281
 msgid "Host : "
-msgstr "Vél:"
+msgstr "Hýsilvél: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:291
 msgid "Port : "
