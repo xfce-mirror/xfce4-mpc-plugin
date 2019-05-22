@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-09 00:31+0100\n"
-"PO-Revision-Date: 2019-04-19 19:52+0000\n"
+"PO-Revision-Date: 2019-05-21 22:32+0000\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish (http://www.transifex.com/xfce/xfce-panel-plugins/language/da/)\n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,7 @@ msgstr "Format for værktøjstip : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:329
 msgid "Playlist Format : "
-msgstr "Afspilningslisteformat : "
+msgstr "Format for afspilningsliste : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:338
 msgid "Show _frame"
@@ -88,7 +88,7 @@ msgstr ".... ikke tilsluttet?"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:562
 msgid "Mpd playlist"
-msgstr "MPD-spilleliste"
+msgstr "MPD-afspilningsliste"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:788
 msgid "Random"
