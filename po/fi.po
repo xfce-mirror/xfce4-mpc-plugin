@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Ammuu5, 2018
+# Jiri Grönroos <jiri.gronroos@iki.fi>, 2019
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-09 00:31+0100\n"
+"PO-Revision-Date: 2019-07-17 08:49+0000\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
+"Language-Team: Finnish (http://www.transifex.com/xfce/xfce-panel-plugins/language/fi/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:125
+#: ../panel-plugin/xfce4-mpc-plugin.c:201
+#: ../panel-plugin/xfce4-mpc-plugin.c:792
+msgid "Launch"
+msgstr "Käynnistä"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:259
+msgid "Mpd Client Plugin"
+msgstr "Mpd-asiakasliitännäinen"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:265
+msgid "Properties"
+msgstr "Ominaisuudet"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:281
+msgid "Host : "
+msgstr "Palvelin:"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:291
+msgid "Port : "
+msgstr "Portti:"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:301
+msgid "Password : "
+msgstr "Salasana:"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:311
+msgid "MPD Client : "
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:320
+msgid "Tooltip Format : "
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:329
+msgid "Playlist Format : "
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:338
+msgid "Show _frame"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:350
+msgid "Hostname or IP address"
+msgstr "Konenimi tai IP-osoite"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:351
+msgid "Graphical MPD Client to launch in plugin context menu"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:352
+msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:353
+msgid ""
+"Variables : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
+"and %title%"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:477
+#: ../panel-plugin/xfce4-mpc-plugin.c:708
+msgid ".... not connected ?"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:562
+msgid "Mpd playlist"
+msgstr "Mpd-soittolista"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:788
+msgid "Random"
+msgstr "Satunnainen"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:790
+msgid "Repeat"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:795
+msgid "<b><i>Commands</i></b>"
+msgstr "<b><i>Komennot</i></b>"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:799
+msgid "<b><i>Outputs</i></b>"
+msgstr "<b><i>Ulostulot</i></b>"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:819
+msgid "A simple panel-plugin client for Music Player Daemon"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:821
+msgid "Copyright (c) 2006-2018 Landry Breuil\n"
+msgstr "Tekijänoikeus (c) 2006-2018 Landry Breuil\n"
+
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
+msgid "MPD Client Plugin"
+msgstr "MPD-asiakasliitännäinen"
+
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
+msgid "A client for MPD, The Music Player Daemon"
+msgstr ""
