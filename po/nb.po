@@ -6,13 +6,14 @@
 # Allan Nordhøy <epost@anotheragency.no>, 2014
 # Allan Nordhøy <epost@anotheragency.no>, 2015-2016
 # Harald H. <haarektrans@gmail.com>, 2014-2015
+# Kjell Cato Heskjestad <cato@heskjestad.xyz>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-09 00:31+0100\n"
-"PO-Revision-Date: 2018-12-08 23:31+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"PO-Revision-Date: 2019-07-24 10:41+0000\n"
+"Last-Translator: Kjell Cato Heskjestad <cato@heskjestad.xyz>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/xfce/xfce-panel-plugins/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,19 +37,19 @@ msgstr "Egenskaper"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:281
 msgid "Host : "
-msgstr "Vert : "
+msgstr "Vert: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:291
 msgid "Port : "
-msgstr "Port :"
+msgstr "Port:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:301
 msgid "Password : "
-msgstr "Passord :"
+msgstr "Passord:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:311
 msgid "MPD Client : "
-msgstr "MPD-klient :"
+msgstr "MPD-klient:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:320
 msgid "Tooltip Format : "
@@ -111,7 +112,7 @@ msgstr "Enkelt panel-tillegg -klient for Music Player Deamon"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:821
 msgid "Copyright (c) 2006-2018 Landry Breuil\n"
-msgstr ""
+msgstr "Opphavsrett (c) 2006-2018 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
