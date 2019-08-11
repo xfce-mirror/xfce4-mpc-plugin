@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-09 00:31+0100\n"
-"PO-Revision-Date: 2019-07-24 10:41+0000\n"
+"PO-Revision-Date: 2019-08-11 05:57+0000\n"
 "Last-Translator: Kjell Cato Heskjestad <cato@heskjestad.xyz>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/xfce/xfce-panel-plugins/language/nb/)\n"
 "MIME-Version: 1.0\n"
@@ -29,7 +29,7 @@ msgstr "Kjør"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:259
 msgid "Mpd Client Plugin"
-msgstr "MPD-klient -tillegg"
+msgstr "MPD-klienttillegg"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:265
 msgid "Properties"
@@ -84,7 +84,7 @@ msgstr "Variabler: %vol %status %nylinje %artist%, %album%, %fil%, %spor% og %ti
 #: ../panel-plugin/xfce4-mpc-plugin.c:477
 #: ../panel-plugin/xfce4-mpc-plugin.c:708
 msgid ".... not connected ?"
-msgstr ".... ikke tilkoblet ?"
+msgstr "… ikke tilkoblet?"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:562
 msgid "Mpd playlist"
@@ -108,7 +108,7 @@ msgstr "<b><i>Utganger</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:819
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr "Enkelt panel-tillegg -klient for Music Player Deamon"
+msgstr "En enkelt paneltilleggsklient for Music Player Deamon"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:821
 msgid "Copyright (c) 2006-2018 Landry Breuil\n"
@@ -116,7 +116,7 @@ msgstr "Opphavsrett (c) 2006-2018 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
-msgstr "Mpd-klient -tillegg"
+msgstr "MPD-klienttillegg"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
 msgid "A client for MPD, The Music Player Daemon"
