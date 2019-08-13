@@ -468,6 +468,9 @@ void parse_outputs_answer(MpdObj *mo, void *param)
          g_strfreev(tokens);
       }
       md->nb++;
+      /* ignore extra lines with 'attribute:' */
+      while (lines[i] != NULL && strcmp(lines[i],"OK") && 0 == strncmp(lines[i], "attribute:", 10))
+         i++;
       if (strcmp(lines[i],"OK")) {
          /* make room for the next output ptr */
          md->alloutputs = g_renew(mpd_Output*, md->alloutputs, md->nb + 1);
