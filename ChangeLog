@@ -1,3 +1,9 @@
+13-09-2019 Landry Breuil <landry at xfce.org>
+   * release 0.5.2
+   * fix crash when parsing MPD 0.21 outputs response (bug #15415)
+   * new translations: hy_AM, ie, fi
+   * many updated translations
+
 08-12-2018 Landry Breuil <landry at xfce.org>
    * release 0.5.1
    * fix a long-standing crasher when using multiple outputs
