@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-09 00:31+0100\n"
-"PO-Revision-Date: 2019-01-31 16:32+0000\n"
+"PO-Revision-Date: 2019-08-15 09:50+0000\n"
 "Last-Translator: Daniel Muñiz Fontoira <dani@damufo.com>\n"
 "Language-Team: Galician (http://www.transifex.com/xfce/xfce-panel-plugins/language/gl/)\n"
 "MIME-Version: 1.0\n"
@@ -71,13 +71,13 @@ msgstr "Cliente gráfico de MPD para iniciar no menú contextual de engadidos"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:352
 msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
-msgstr "Variables : %artist%, %album%, %file%, %track% e %title%"
+msgstr "Variábeis : %artist%, %album%, %file%, %track% e %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:353
 msgid ""
 "Variables : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
-msgstr "Variables : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% e %title%"
+msgstr "Variábeis : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% e %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:477
 #: ../panel-plugin/xfce4-mpc-plugin.c:708
