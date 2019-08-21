@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-09 00:31+0100\n"
-"PO-Revision-Date: 2019-08-15 09:50+0000\n"
+"PO-Revision-Date: 2019-08-21 14:45+0000\n"
 "Last-Translator: Daniel Muñiz Fontoira <dani@damufo.com>\n"
 "Language-Team: Galician (http://www.transifex.com/xfce/xfce-panel-plugins/language/gl/)\n"
 "MIME-Version: 1.0\n"
@@ -59,7 +59,7 @@ msgstr "Formato da lista de reprodución: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:338
 msgid "Show _frame"
-msgstr "Mostrar o _marco"
+msgstr "Amosar o _marco"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:350
 msgid "Hostname or IP address"
