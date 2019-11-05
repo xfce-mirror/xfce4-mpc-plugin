@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Arnold Marko <arnold.marko@gmail.com>, 2019
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-09 00:31+0100\n"
+"PO-Revision-Date: 2019-11-05 20:55+0000\n"
+"Last-Translator: Arnold Marko <arnold.marko@gmail.com>\n"
+"Language-Team: Slovenian (http://www.transifex.com/xfce/xfce-panel-plugins/language/sl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sl\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:125
+#: ../panel-plugin/xfce4-mpc-plugin.c:201
+#: ../panel-plugin/xfce4-mpc-plugin.c:792
+msgid "Launch"
+msgstr "Zaženi"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:259
+msgid "Mpd Client Plugin"
+msgstr "MPD vtičnik odjemalca"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:265
+msgid "Properties"
+msgstr "Lastnosti"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:281
+msgid "Host : "
+msgstr "Gostitelj :"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:291
+msgid "Port : "
+msgstr "Vrata :"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:301
+msgid "Password : "
+msgstr "Geslo:"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:311
+msgid "MPD Client : "
+msgstr "MPD odjemalec :"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:320
+msgid "Tooltip Format : "
+msgstr "Format orodnega namiga"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:329
+msgid "Playlist Format : "
+msgstr "Format za seznam predvajanja :"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:338
+msgid "Show _frame"
+msgstr "Prikaži _sličico"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:350
+msgid "Hostname or IP address"
+msgstr "Gostitelj ali IP naslov"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:351
+msgid "Graphical MPD Client to launch in plugin context menu"
+msgstr "Grafični MPD odjemalec, ki vtičnik zažene v kontekstualnem meniju"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:352
+msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
+msgstr "Spremenljivke : %artist%, %album%, %file%, %track% and %title%"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:353
+msgid ""
+"Variables : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
+"and %title%"
+msgstr "Spremenljivke : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% and %title%"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:477
+#: ../panel-plugin/xfce4-mpc-plugin.c:708
+msgid ".... not connected ?"
+msgstr "... ni povezave ?"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:562
+msgid "Mpd playlist"
+msgstr "Mpd seznam predvajanja"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:788
+msgid "Random"
+msgstr "Naključno"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:790
+msgid "Repeat"
+msgstr "Ponavljaj"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:795
+msgid "<b><i>Commands</i></b>"
+msgstr "<b><i>Ukazi</i></b>"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:799
+msgid "<b><i>Outputs</i></b>"
+msgstr "<b><i>Izhodi</i></b>"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:819
+msgid "A simple panel-plugin client for Music Player Daemon"
+msgstr "Preprost vtičnik za pult za Music Player Daemon"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:821
+msgid "Copyright (c) 2006-2018 Landry Breuil\n"
+msgstr "Copyright (c) 2006-2018 Landry Breuil\n"
+
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
+msgid "MPD Client Plugin"
+msgstr "MPD vtičnik odjemalca"
+
+#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
+msgid "A client for MPD, The Music Player Daemon"
+msgstr "Odjemalec za MPD, The Music Player Daemon"
