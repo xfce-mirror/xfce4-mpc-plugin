@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Marcin Mikołajczak <me@m4sk.in>, 2016
+# Marcin Mikołajczak <me@mkljczk.pl>, 2016
 # No Ne, 2018
 # Piotr Maliński <admin@rk.edu.pl>, 2006
 # Piotr Strębski <strebski@gmail.com>, 2014-2016
