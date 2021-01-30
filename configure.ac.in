@@ -15,7 +15,7 @@ AC_INIT([xfce4-mpc-plugin], [mpc_version],
 
 MPC_VERSION=mpc_version()
 AM_INIT_AUTOMAKE([1.8 dist-bzip2 tar-ustar no-dist-gzip])
-AM_CONFIG_HEADER([config.h])
+AC_CONFIG_HEADERS([config.h])
 dnl AC_CONFIG_HEADERS([config.h])
 
 AM_MAINTAINER_MODE
