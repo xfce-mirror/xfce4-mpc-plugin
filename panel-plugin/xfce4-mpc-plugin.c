@@ -546,7 +546,7 @@ show_playlist (t_mpc* mpc)
    MpdData *mpd_data;
    DBG("!");
 
-   str = g_string_new('\0');
+   str = g_string_new(NULL);
    if (mpc->playlist)
    {
       gtk_window_present(GTK_WINDOW(mpc->playlist));
@@ -721,7 +721,7 @@ static void
 resize_button(GtkWidget *btn, gint size, gint icon_size)
 {
    GtkWidget *image = g_object_get_data(G_OBJECT(btn), "image");
-   gchar *icon = g_object_get_data(G_OBJECT(image), "icon-name");
+   G_GNUC_UNUSED gchar *icon = g_object_get_data(G_OBJECT(image), "icon-name");
    DBG("Resizing button to size %d and icon %s to size %d", size, icon, icon_size);
    gtk_image_set_pixel_size(GTK_IMAGE(image), icon_size);
    gtk_widget_set_size_request (btn, size, size);
@@ -831,7 +831,7 @@ mpc_construct (XfcePanelPlugin * plugin)
    t_mpc *mpc;
 
    DBG("!");
-#if DEBUG
+#ifdef DEBUG
 #if HAVE_LIBMPD
    debug_set_level(10);
 #endif
