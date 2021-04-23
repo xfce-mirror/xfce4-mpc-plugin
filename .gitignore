@@ -1,4 +1,4 @@
-po/.intltool-merge-cache
+po/.intltool-merge-cache*
 po/POTFILES
 po/*.gmo
 *Makefile
