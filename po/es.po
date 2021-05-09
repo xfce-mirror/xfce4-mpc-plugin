@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-09 00:31+0100\n"
-"PO-Revision-Date: 2021-04-24 08:06+0000\n"
+"PO-Revision-Date: 2021-05-09 17:59+0000\n"
 "Last-Translator: Toni Estévez <toni.estevez@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/xfce/xfce-panel-plugins/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -30,11 +30,11 @@ msgstr ""
 #: ../panel-plugin/xfce4-mpc-plugin.c:201
 #: ../panel-plugin/xfce4-mpc-plugin.c:792
 msgid "Launch"
-msgstr "Lanzar"
+msgstr "Inciar"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:259
 msgid "Mpd Client Plugin"
-msgstr "Complemento de cliente MPD"
+msgstr "Complemento para el cliente de MPD"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:265
 msgid "Properties"
@@ -58,23 +58,23 @@ msgstr "Cliente MPD: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:320
 msgid "Tooltip Format : "
-msgstr "Formato de descripción :"
+msgstr "Formato de la información emergente:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:329
 msgid "Playlist Format : "
-msgstr "Formato de lista de reproducción :"
+msgstr "Formato de la lista de reproducción: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:338
 msgid "Show _frame"
-msgstr "Mostrar _marco"
+msgstr "_Mostrar el marco"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:350
 msgid "Hostname or IP address"
-msgstr "Nombre del equipo anfitrión o dirección ip"
+msgstr "Nombre del equipo anfitrión o dirección IP"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:351
 msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr "Cliente gráfico MPD que se ejecutar en el complemento del menú contextual"
+msgstr "Cliente gráfico de MPD que se inicia en el menú contextual del complemento"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:352
 msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
@@ -93,11 +93,11 @@ msgstr ".... ¿no conectado?"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:562
 msgid "Mpd playlist"
-msgstr "Lista de reproducción MPD"
+msgstr "Lista de reprodución de MPD"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:788
 msgid "Random"
-msgstr "Aleatorio"
+msgstr "Orden aleatorio"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:790
 msgid "Repeat"
@@ -113,7 +113,7 @@ msgstr "<b><i>Salidas</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:819
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr "Un simple complemento de panel para el cliente del demonio de reproducción de música MPD"
+msgstr "Un sencillo complemento del panel para el cliente del servicio de reproducción de música"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:821
 msgid "Copyright (c) 2006-2018 Landry Breuil\n"
@@ -121,8 +121,8 @@ msgstr "Copyright (c) 2006-2018 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
-msgstr "Complemento del cliente MPD"
+msgstr "Complemento para el cliente de MPD"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
 msgid "A client for MPD, The Music Player Daemon"
-msgstr "Un cliente para MPD, el demonio de reproducción de música"
+msgstr "Un cliente de MPD, el servicio de reproducción de música"
