@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-09 00:31+0100\n"
-"PO-Revision-Date: 2021-05-15 10:01+0000\n"
+"PO-Revision-Date: 2021-05-22 18:55+0000\n"
 "Last-Translator: Toni Estévez <toni.estevez@gmail.com>\n"
 "Language-Team: Spanish (http://www.transifex.com/xfce/xfce-panel-plugins/language/es/)\n"
 "MIME-Version: 1.0\n"
@@ -117,7 +117,7 @@ msgstr "Un sencillo complemento del panel para el servicio de reproducción de m
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:821
 msgid "Copyright (c) 2006-2018 Landry Breuil\n"
-msgstr "Copyright (c) Landry Breuil, 2006-2018\n"
+msgstr "Copyright © 2006-2018 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
