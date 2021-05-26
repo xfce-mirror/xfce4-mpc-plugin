@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Arnold Marko <arnold.marko@gmail.com>, 2019
+# Arnold Marko <arnold.marko@gmail.com>, 2019,2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-09 00:31+0100\n"
-"PO-Revision-Date: 2019-11-05 20:55+0000\n"
+"PO-Revision-Date: 2021-05-26 07:45+0000\n"
 "Last-Translator: Arnold Marko <arnold.marko@gmail.com>\n"
 "Language-Team: Slovenian (http://www.transifex.com/xfce/xfce-panel-plugins/language/sl/)\n"
 "MIME-Version: 1.0\n"
@@ -105,7 +105,7 @@ msgstr "<b><i>Izhodi</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:819
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr "Preprost vtičnik za pult za Music Player Daemon"
+msgstr "Preprost vtičnik za pano za Music Player Daemon"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:821
 msgid "Copyright (c) 2006-2018 Landry Breuil\n"
