@@ -45,6 +45,7 @@ typedef struct {
    MpdObj *mo;
    gchar* client_appl;
    gchar* streaming_appl;
+   gboolean is_streaming;
    gchar* mpd_host;
    gint mpd_port;
    gchar * mpd_password;

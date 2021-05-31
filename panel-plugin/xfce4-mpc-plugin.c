@@ -375,6 +375,38 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
 }
 
 static void
+child_watch_callback (GObject *object, gint status)
+{
+   DBG("streaming client died with %d", status);
+   ((t_mpc*) object)->is_streaming = FALSE;
+}
+
+static void
+mpc_launch_streaming(t_mpc* mpc)
+{
+   gchar **argv;
+   GError *error = NULL;
+   GClosure *child_watch;
+   DBG("is streaming: %d (client \"%s\")", mpc->is_streaming, mpc->streaming_appl);
+   if (mpc->is_streaming || !strlen(mpc->streaming_appl))
+     return;
+   child_watch = g_cclosure_new_swap (G_CALLBACK (child_watch_callback), mpc, NULL);
+   g_shell_parse_argv (mpc->streaming_appl, NULL, &argv, NULL);
+
+   DBG("Going to xfce_spawn_on_screen_with_child_watch(\"%s\")", mpc->streaming_appl);
+   mpc->is_streaming = xfce_spawn_on_screen_with_child_watch(NULL, NULL, argv, NULL, G_SPAWN_SEARCH_PATH_FROM_ENVP, FALSE, 0, NULL, child_watch, &error);
+   if (!mpc->is_streaming)
+   {
+     DBG("failed spawning: %s", error->message);
+     GtkWidget *dialog = gtk_message_dialog_new (NULL, 0, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,_("Execution error"));
+     gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog), "%s", error->message);
+     gtk_dialog_run (GTK_DIALOG (dialog));
+     gtk_widget_destroy (dialog);
+     g_error_free (error);
+   }
+}
+
+static void
 mpc_launch_client(GtkWidget *widget, t_mpc* mpc)
 {
    DBG("Going to xfce_exec(\"%s\")", mpc->client_appl);
