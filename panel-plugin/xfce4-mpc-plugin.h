@@ -44,6 +44,7 @@ typedef struct {
    /* mpd handle */
    MpdObj *mo;
    gchar* client_appl;
+   gchar* streaming_appl;
    gchar* mpd_host;
    gint mpd_port;
    gchar * mpd_password;
@@ -61,6 +62,7 @@ typedef struct {
    GtkWidget *textbox_port;
    GtkWidget *textbox_password;
    GtkWidget *textbox_client_appl;
+   GtkWidget *textbox_streaming_appl;
    GtkWidget *textbox_tooltip_format;
    GtkWidget *textbox_playlist_format;
    GtkWidget *checkbox_frame;

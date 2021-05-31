@@ -112,12 +112,15 @@ mpc_read_config (XfcePanelPlugin * plugin, t_mpc * mpc)
       g_free (mpc->playlist_format);
    if (mpc->client_appl != NULL)
       g_free (mpc->client_appl);
+   if (mpc->streaming_appl != NULL)
+      g_free (mpc->streaming_appl);
 
    mpc->mpd_host = g_strdup(xfce_rc_read_entry (rc, "mpd_host",  DEFAULT_MPD_HOST));
    mpc->mpd_port = xfce_rc_read_int_entry (rc, "mpd_port", DEFAULT_MPD_PORT);
    mpc->mpd_password = g_strdup(xfce_rc_read_entry (rc, "mpd_password", ""));
    mpc->show_frame = xfce_rc_read_bool_entry (rc, "show_frame", TRUE);
    mpc->client_appl = g_strdup(xfce_rc_read_entry (rc, "client_appl", "SETME"));
+   mpc->streaming_appl = g_strdup(xfce_rc_read_entry (rc, "streaming_appl", ""));
    mpc->tooltip_format = g_strdup(xfce_rc_read_entry (rc, "tooltip_format", "Volume : %vol%% - Mpd %status%%newline%%%artist% - %album% -/- (#%track%) %title%"));
    mpc->playlist_format = g_strdup(xfce_rc_read_entry (rc, "playlist_format", "%artist% - %album% -/- (#%track%) %title%"));
 
@@ -125,7 +128,7 @@ mpc_read_config (XfcePanelPlugin * plugin, t_mpc * mpc)
    g_snprintf(str, sizeof(str), "%s %s", _("Launch"), mpc->client_appl);
    gtk_label_set_text(GTK_LABEL(label),str);
 
-   DBG ("Settings read : %s@%s:%d\nframe:%d\nappl:%s\ntooltip:%s\nplaylist:%s", mpc->mpd_password, mpc->mpd_host, mpc->mpd_port, mpc->show_frame, mpc->client_appl, mpc->tooltip_format, mpc->playlist_format);
+   DBG ("Settings read : %s@%s:%d\nframe:%d\nappl:%s\nstreaming:%s\ntooltip:%s\nplaylist:%s", mpc->mpd_password, mpc->mpd_host, mpc->mpd_port, mpc->show_frame, mpc->client_appl, mpc->streaming_appl, mpc->tooltip_format, mpc->playlist_format);
    xfce_rc_close (rc);
 }
 
@@ -157,6 +160,7 @@ static void mpc_write_config (XfcePanelPlugin * plugin, t_mpc * mpc)
    xfce_rc_write_entry (rc, "mpd_password", mpc->mpd_password);
    xfce_rc_write_bool_entry (rc, "show_frame", mpc->show_frame);
    xfce_rc_write_entry (rc, "client_appl", mpc->client_appl);
+   xfce_rc_write_entry (rc, "streaming_appl", mpc->streaming_appl);
    xfce_rc_write_entry (rc, "tooltip_format", mpc->tooltip_format);
    xfce_rc_write_entry (rc, "playlist_format", mpc->playlist_format);
 
@@ -187,6 +191,7 @@ mpc_dialog_apply_options (t_mpc_dialog *dialog)
    mpc->mpd_port = atoi(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_port)));
    mpc->mpd_password = g_strdup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_password)));
    mpc->client_appl = g_strdup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_client_appl)));
+   mpc->streaming_appl = g_strdup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_streaming_appl)));
    mpc->tooltip_format = g_strdup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_tooltip_format)));
    mpc->playlist_format = g_strdup(gtk_entry_get_text(GTK_ENTRY(dialog->textbox_playlist_format)));
 
@@ -201,7 +206,7 @@ mpc_dialog_apply_options (t_mpc_dialog *dialog)
    g_snprintf(str, sizeof(str), "%s %s", _("Launch"), mpc->client_appl);
    gtk_label_set_text(GTK_LABEL(label),str);
 
-   DBG ("Apply: host=%s, port=%d, passwd=%s, appl=%s\ntooltip=%s\nplaylist=%s", mpc->mpd_host, mpc->mpd_port, mpc->mpd_password, mpc->client_appl, mpc->tooltip_format, mpc->playlist_format);
+   DBG ("Apply: host=%s, port=%d, passwd=%s, appl=%s, streaming=%s\ntooltip=%s\nplaylist=%s", mpc->mpd_host, mpc->mpd_port, mpc->mpd_password, mpc->client_appl, mpc->streaming_appl, mpc->tooltip_format, mpc->playlist_format);
 
    mpd_disconnect(mpc->mo);
    mpd_set_hostname(mpc->mo,mpc->mpd_host);
@@ -317,27 +322,36 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
    gtk_entry_set_text(GTK_ENTRY(dialog->textbox_client_appl),mpc->client_appl);
    gtk_grid_attach(GTK_GRID(table),dialog->textbox_client_appl,1,3,1,1);
 
-   label = gtk_label_new(_("Tooltip Format : "));
+   label = gtk_label_new(_("Streaming Client : "));
    gtk_label_set_xalign (GTK_LABEL (label), 0.0f);
    gtk_grid_attach(GTK_GRID(table), label, 0, 4, 1, 1);
+
+   dialog->textbox_streaming_appl = gtk_entry_new();
+   gtk_entry_set_width_chars(GTK_ENTRY(dialog->textbox_streaming_appl),DIALOG_ENTRY_WIDTH);
+   gtk_entry_set_text(GTK_ENTRY(dialog->textbox_streaming_appl),mpc->streaming_appl);
+   gtk_grid_attach(GTK_GRID(table),dialog->textbox_streaming_appl,1,4,1,1);
+
+   label = gtk_label_new(_("Tooltip Format : "));
+   gtk_label_set_xalign (GTK_LABEL (label), 0.0f);
+   gtk_grid_attach(GTK_GRID(table), label, 0, 5, 1, 1);
 
    dialog->textbox_tooltip_format = gtk_entry_new();
    gtk_entry_set_width_chars(GTK_ENTRY(dialog->textbox_tooltip_format),DIALOG_ENTRY_WIDTH);
    gtk_entry_set_text(GTK_ENTRY(dialog->textbox_tooltip_format),mpc->tooltip_format);
-   gtk_grid_attach(GTK_GRID(table),dialog->textbox_tooltip_format,1,4,1,1);
+   gtk_grid_attach(GTK_GRID(table),dialog->textbox_tooltip_format,1,5,1,1);
 
    label = gtk_label_new(_("Playlist Format : "));
    gtk_label_set_xalign (GTK_LABEL (label), 0.0f);
-   gtk_grid_attach(GTK_GRID(table), label, 0, 5, 1, 1);
+   gtk_grid_attach(GTK_GRID(table), label, 0, 6, 1, 1);
 
    dialog->textbox_playlist_format = gtk_entry_new();
    gtk_entry_set_width_chars(GTK_ENTRY(dialog->textbox_playlist_format),DIALOG_ENTRY_WIDTH);
    gtk_entry_set_text(GTK_ENTRY(dialog->textbox_playlist_format),mpc->playlist_format);
-   gtk_grid_attach(GTK_GRID(table),dialog->textbox_playlist_format,1,5,1,1);
+   gtk_grid_attach(GTK_GRID(table),dialog->textbox_playlist_format,1,6,1,1);
 
    label = gtk_label_new_with_mnemonic(_("Show _frame"));
    gtk_label_set_xalign (GTK_LABEL (label), 0.0f);
-   gtk_grid_attach(GTK_GRID(table), label, 0, 6, 1, 1);
+   gtk_grid_attach(GTK_GRID(table), label, 0, 7, 1, 1);
 
    dialog->checkbox_frame = gtk_switch_new();
    gtk_switch_set_active(GTK_SWITCH(dialog->checkbox_frame),mpc->show_frame);
@@ -345,10 +359,11 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
    gtk_widget_set_valign (GTK_WIDGET (dialog->checkbox_frame), GTK_ALIGN_CENTER);
 
    g_signal_connect (dialog->checkbox_frame, "state-set", G_CALLBACK (mpc_dialog_show_frame_toggled), dialog);
-   gtk_grid_attach(GTK_GRID(table),dialog->checkbox_frame,1,6,1,1);
+   gtk_grid_attach(GTK_GRID(table),dialog->checkbox_frame,1,7,1,1);
 
    gtk_widget_set_tooltip_text (dialog->textbox_host, _("Hostname or IP address"));
    gtk_widget_set_tooltip_text (dialog->textbox_client_appl, _("Graphical MPD Client to launch in plugin context menu"));
+   gtk_widget_set_tooltip_text (dialog->textbox_streaming_appl, _("Command with url to stream MPD HTTP output"));
    gtk_widget_set_tooltip_text (dialog->textbox_playlist_format, _("Variables : %artist%, %album%, %file%, %track% and %title%"));
    gtk_widget_set_tooltip_text (dialog->textbox_tooltip_format, _("Variables : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% and %title%"));
 
@@ -846,6 +861,7 @@ mpc_construct (XfcePanelPlugin * plugin)
    mpc->mpd_port = DEFAULT_MPD_PORT;
    mpc->mpd_password = g_strdup("");
    mpc->client_appl = g_strdup("SETME");
+   mpc->streaming_appl = g_strdup("");
    mpc->tooltip_format = g_strdup("Volume : %vol%% - Mpd %status%%newline%%artist% - %album% -/- (#%track%) %title%");
    mpc->playlist_format = g_strdup("%artist% - %album% -/- (#%track%) %title%");
    mpc->show_frame = TRUE;
