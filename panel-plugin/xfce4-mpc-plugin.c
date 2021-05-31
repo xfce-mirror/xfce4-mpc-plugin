@@ -363,7 +363,7 @@ static void
 mpc_launch_client(GtkWidget *widget, t_mpc* mpc)
 {
    DBG("Going to xfce_exec(\"%s\")", mpc->client_appl);
-   xfce_spawn_command_line_on_screen(gdk_screen_get_default(), mpc->client_appl, FALSE, TRUE, NULL);
+   xfce_spawn_command_line(gdk_screen_get_default(), mpc->client_appl, FALSE, TRUE, FALSE, NULL);
 }
 
 static void
