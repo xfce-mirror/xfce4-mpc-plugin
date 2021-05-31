@@ -668,12 +668,14 @@ toggle(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc)
       switch (mpd_player_get_state(mpc->mo))
       {
          case MPD_PLAYER_PAUSE:
+            mpc_launch_streaming(mpc);
          case MPD_PLAYER_PLAY:
             mpd_player_pause(mpc->mo); /* toggles play/pause */
             break;
          case MPD_PLAYER_STOP:
          default:
             mpd_player_play(mpc->mo); /* if stopped, mpd_player_pause() doesn't restart playing */
+            mpc_launch_streaming(mpc);
             break;
       }
    }
@@ -905,6 +907,11 @@ mpc_construct (XfcePanelPlugin * plugin)
 
    /* create a connection*/
    mpc->mo = mpd_new(mpc->mpd_host,mpc->mpd_port,mpc->mpd_password);
+   if (mpc_plugin_reconnect (mpc)) {
+      if (mpd_status_update (mpc->mo) == MPD_OK &&
+          mpd_player_get_state(mpc->mo) == MPD_PLAYER_PLAY)
+          mpc_launch_streaming(mpc);
+   }
 
    gtk_container_add (GTK_CONTAINER (plugin), mpc->frame);
    gtk_frame_set_shadow_type (GTK_FRAME (mpc->frame), ((mpc->show_frame) ? GTK_SHADOW_IN : GTK_SHADOW_NONE));
