@@ -4,14 +4,14 @@
 # 
 # Translators:
 # Besnik Bleta <besnik@programeshqip.org>, 2007,2018,2020
-# Besnik Bleta <besnik@programeshqip.org>, 2007
+# Besnik Bleta <besnik@programeshqip.org>, 2007,2021
 # Besnik Bleta <besnik@programeshqip.org>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-09 00:31+0100\n"
-"PO-Revision-Date: 2020-01-29 14:16+0000\n"
+"POT-Creation-Date: 2021-05-31 12:49+0200\n"
+"PO-Revision-Date: 2021-06-01 08:39+0000\n"
 "Last-Translator: Besnik Bleta <besnik@programeshqip.org>\n"
 "Language-Team: Albanian (http://www.transifex.com/xfce/xfce-panel-plugins/language/sq/)\n"
 "MIME-Version: 1.0\n"
@@ -20,98 +20,110 @@ msgstr ""
 "Language: sq\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:125
-#: ../panel-plugin/xfce4-mpc-plugin.c:201
-#: ../panel-plugin/xfce4-mpc-plugin.c:792
+#: ../panel-plugin/xfce4-mpc-plugin.c:128
+#: ../panel-plugin/xfce4-mpc-plugin.c:206
+#: ../panel-plugin/xfce4-mpc-plugin.c:841
 msgid "Launch"
 msgstr "Nise"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:259
+#: ../panel-plugin/xfce4-mpc-plugin.c:264
 msgid "Mpd Client Plugin"
 msgstr "Shtojcë Klienti Mpd"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:265
+#: ../panel-plugin/xfce4-mpc-plugin.c:270
 msgid "Properties"
 msgstr "Veti"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:281
+#: ../panel-plugin/xfce4-mpc-plugin.c:286
 msgid "Host : "
 msgstr "Strehë : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:291
+#: ../panel-plugin/xfce4-mpc-plugin.c:296
 msgid "Port : "
 msgstr "Portë : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:301
+#: ../panel-plugin/xfce4-mpc-plugin.c:306
 msgid "Password : "
 msgstr "Fjalëkalim : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:311
+#: ../panel-plugin/xfce4-mpc-plugin.c:316
 msgid "MPD Client : "
 msgstr "Klient MPD: "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:320
+#: ../panel-plugin/xfce4-mpc-plugin.c:325
+msgid "Streaming Client : "
+msgstr "Klient Transmetimi:"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:334
 msgid "Tooltip Format : "
 msgstr "Format Ndihmëzash:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:329
+#: ../panel-plugin/xfce4-mpc-plugin.c:343
 msgid "Playlist Format : "
 msgstr "Format Luajlistash: "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:338
+#: ../panel-plugin/xfce4-mpc-plugin.c:352
 msgid "Show _frame"
 msgstr "Shfaq _kornizë"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:350
+#: ../panel-plugin/xfce4-mpc-plugin.c:364
 msgid "Hostname or IP address"
 msgstr "Strehëemër ose adresë IP"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:351
+#: ../panel-plugin/xfce4-mpc-plugin.c:365
 msgid "Graphical MPD Client to launch in plugin context menu"
 msgstr "Klient MPD Grafik për të hapur menu konteksti shtojce"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:352
+#: ../panel-plugin/xfce4-mpc-plugin.c:366
+msgid "Command with url to stream MPD HTTP output"
+msgstr "Urdhër me URL ku të transmetohet output-i MPD HTTP"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:367
 msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
 msgstr "Ndryshore: %artist%, %album%, %file%, %track% dhe %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:353
+#: ../panel-plugin/xfce4-mpc-plugin.c:368
 msgid ""
 "Variables : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
 msgstr "Ndryshore: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% dhe %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:477
-#: ../panel-plugin/xfce4-mpc-plugin.c:708
+#: ../panel-plugin/xfce4-mpc-plugin.c:401
+msgid "Execution error"
+msgstr "Gabim në ekzekutim"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:524
+#: ../panel-plugin/xfce4-mpc-plugin.c:757
 msgid ".... not connected ?"
 msgstr "... jo i lidhur ?"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:562
+#: ../panel-plugin/xfce4-mpc-plugin.c:609
 msgid "Mpd playlist"
 msgstr "Luajlistë Mpd"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:788
+#: ../panel-plugin/xfce4-mpc-plugin.c:837
 msgid "Random"
 msgstr "Kuturu"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:790
+#: ../panel-plugin/xfce4-mpc-plugin.c:839
 msgid "Repeat"
 msgstr "Përsërite"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:795
+#: ../panel-plugin/xfce4-mpc-plugin.c:844
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>Urdhra</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:799
+#: ../panel-plugin/xfce4-mpc-plugin.c:848
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>Output-e</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:819
+#: ../panel-plugin/xfce4-mpc-plugin.c:868
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "Shtojcë klient paneli e thjeshtë për \"The Music Player Daemon\""
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:821
-msgid "Copyright (c) 2006-2018 Landry Breuil\n"
-msgstr "Të drejta kopjimi (c) 2006-2018 Landry Breuil\n"
+#: ../panel-plugin/xfce4-mpc-plugin.c:870
+msgid "Copyright (c) 2006-2021 Landry Breuil\n"
+msgstr "Të drejt akopjimi (c) 2006-2021 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
