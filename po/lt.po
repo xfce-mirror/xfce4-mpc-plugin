@@ -4,13 +4,13 @@
 # 
 # Translators:
 # Algimantas Margevičius <margevicius.algimantas@gmail.com>, 2012
-# Moo, 2015-2018
+# Moo, 2015-2018,2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-09 00:31+0100\n"
-"PO-Revision-Date: 2018-12-09 20:00+0000\n"
+"POT-Creation-Date: 2021-05-31 12:49+0200\n"
+"PO-Revision-Date: 2021-06-01 20:46+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/xfce/xfce-panel-plugins/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -19,98 +19,110 @@ msgstr ""
 "Language: lt\n"
 "Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);\n"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:125
-#: ../panel-plugin/xfce4-mpc-plugin.c:201
-#: ../panel-plugin/xfce4-mpc-plugin.c:792
+#: ../panel-plugin/xfce4-mpc-plugin.c:128
+#: ../panel-plugin/xfce4-mpc-plugin.c:206
+#: ../panel-plugin/xfce4-mpc-plugin.c:841
 msgid "Launch"
 msgstr "Paleisti"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:259
+#: ../panel-plugin/xfce4-mpc-plugin.c:264
 msgid "Mpd Client Plugin"
 msgstr "Mpd kliento įskiepis"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:265
+#: ../panel-plugin/xfce4-mpc-plugin.c:270
 msgid "Properties"
 msgstr "Savybės"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:281
+#: ../panel-plugin/xfce4-mpc-plugin.c:286
 msgid "Host : "
 msgstr "Kompiuteris:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:291
+#: ../panel-plugin/xfce4-mpc-plugin.c:296
 msgid "Port : "
 msgstr "Prievadas:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:301
+#: ../panel-plugin/xfce4-mpc-plugin.c:306
 msgid "Password : "
 msgstr "Slaptažodis:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:311
+#: ../panel-plugin/xfce4-mpc-plugin.c:316
 msgid "MPD Client : "
 msgstr "MPD klientas:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:320
+#: ../panel-plugin/xfce4-mpc-plugin.c:325
+msgid "Streaming Client : "
+msgstr "Transliavimo klientas : "
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:334
 msgid "Tooltip Format : "
 msgstr "Paaiškinimo formatas:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:329
+#: ../panel-plugin/xfce4-mpc-plugin.c:343
 msgid "Playlist Format : "
 msgstr "Grojaraščio formatas:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:338
+#: ../panel-plugin/xfce4-mpc-plugin.c:352
 msgid "Show _frame"
 msgstr "Rodyti rėmelį"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:350
+#: ../panel-plugin/xfce4-mpc-plugin.c:364
 msgid "Hostname or IP address"
 msgstr "Kompiuteris ar IP adresas"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:351
+#: ../panel-plugin/xfce4-mpc-plugin.c:365
 msgid "Graphical MPD Client to launch in plugin context menu"
 msgstr "Grafinis MPD klientas kuris bus paleistas įskiepio kontekstiniame meniu"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:352
+#: ../panel-plugin/xfce4-mpc-plugin.c:366
+msgid "Command with url to stream MPD HTTP output"
+msgstr "Komanda su url, skirta transliuoti MPD HTTP išvestį"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:367
 msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
 msgstr "Kintamieji : %artist%, %album%, %file%, %track% ir %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:353
+#: ../panel-plugin/xfce4-mpc-plugin.c:368
 msgid ""
 "Variables : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
 msgstr "Kintamieji : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% ir %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:477
-#: ../panel-plugin/xfce4-mpc-plugin.c:708
+#: ../panel-plugin/xfce4-mpc-plugin.c:401
+msgid "Execution error"
+msgstr "Vykdymo klaida"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:524
+#: ../panel-plugin/xfce4-mpc-plugin.c:757
 msgid ".... not connected ?"
 msgstr ".... neprisijungta?"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:562
+#: ../panel-plugin/xfce4-mpc-plugin.c:609
 msgid "Mpd playlist"
 msgstr "Mpd grojaraštis"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:788
+#: ../panel-plugin/xfce4-mpc-plugin.c:837
 msgid "Random"
 msgstr "Atsitiktinis"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:790
+#: ../panel-plugin/xfce4-mpc-plugin.c:839
 msgid "Repeat"
 msgstr "Kartoti"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:795
+#: ../panel-plugin/xfce4-mpc-plugin.c:844
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>Komandos</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:799
+#: ../panel-plugin/xfce4-mpc-plugin.c:848
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>Išvestys</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:819
+#: ../panel-plugin/xfce4-mpc-plugin.c:868
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "Paprastas skydelio įskiepio klientas skirtas muzikos grotuvo tarnybai (MPD)"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:821
-msgid "Copyright (c) 2006-2018 Landry Breuil\n"
-msgstr "Autorių teisės (c) 2006-2018 Landry Breuil\n"
+#: ../panel-plugin/xfce4-mpc-plugin.c:870
+msgid "Copyright (c) 2006-2021 Landry Breuil\n"
+msgstr "Autorių teisės (c) 2006-2021 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
