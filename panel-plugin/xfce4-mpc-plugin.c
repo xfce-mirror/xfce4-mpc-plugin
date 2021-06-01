@@ -395,7 +395,7 @@ mpc_launch_streaming(t_mpc* mpc)
 
    DBG("Going to xfce_spawn_on_screen_with_child_watch(\"%s\")", mpc->streaming_appl);
    mpc->is_streaming = xfce_spawn_on_screen_with_child_watch(NULL, NULL, argv, NULL, G_SPAWN_SEARCH_PATH_FROM_ENVP, FALSE, 0, NULL, child_watch, &error);
-   if (!mpc->is_streaming)
+   if (error && !mpc->is_streaming)
    {
      DBG("failed spawning: %s", error->message);
      GtkWidget *dialog = gtk_message_dialog_new (NULL, 0, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE,_("Execution error"));
