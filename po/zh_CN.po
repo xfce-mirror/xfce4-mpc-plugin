@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-31 12:49+0200\n"
-"PO-Revision-Date: 2021-06-01 11:12+0000\n"
+"PO-Revision-Date: 2021-06-03 00:20+0000\n"
 "Last-Translator: 玉堂白鹤 <yjwork@qq.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/xfce/xfce-panel-plugins/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -78,7 +78,7 @@ msgstr "在插件交互菜单中启动的图形化 MPD 客户端"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:366
 msgid "Command with url to stream MPD HTTP output"
-msgstr ""
+msgstr "带有 url 地址的命令，用于 MPD HTTP 流媒体输出"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:367
 msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
