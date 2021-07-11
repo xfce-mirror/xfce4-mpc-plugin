@@ -129,6 +129,11 @@ mpc_read_config (XfcePanelPlugin * plugin, t_mpc * mpc)
    g_snprintf(str, sizeof(str), "%s %s", _("Launch"), mpc->client_appl);
    gtk_label_set_text(GTK_LABEL(label),str);
 
+   if (strlen(mpc->streaming_appl))
+      gtk_widget_show(GTK_WIDGET(mpc->stream));
+   else
+      gtk_widget_hide(GTK_WIDGET(mpc->stream));
+
    DBG ("Settings read : %s@%s:%d\nframe:%d\nappl:%s\nstreaming:%s\ntooltip:%s\nplaylist:%s", mpc->mpd_password, mpc->mpd_host, mpc->mpd_port, mpc->show_frame, mpc->client_appl, mpc->streaming_appl, mpc->tooltip_format, mpc->playlist_format);
    xfce_rc_close (rc);
 }
@@ -202,6 +207,10 @@ mpc_dialog_apply_options (t_mpc_dialog *dialog)
       mpc->tooltip_format = g_strdup("Volume : %vol%% - Mpd %status%%newline%%artist% - %album% -/- (#%track%) %title%");
    if (0 == strlen(mpc->playlist_format))
       mpc->playlist_format = g_strdup("%artist% - %album% -/- (#%track%) %title%");
+   if (strlen(mpc->streaming_appl))
+      gtk_widget_show(GTK_WIDGET(mpc->stream));
+   else
+      gtk_widget_hide(GTK_WIDGET(mpc->stream));
 
    label = gtk_bin_get_child(GTK_BIN(mpc->appl));
    g_snprintf(str, sizeof(str), "%s %s", _("Launch"), mpc->client_appl);
