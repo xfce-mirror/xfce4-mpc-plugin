@@ -25,6 +25,7 @@
 #include <libxfce4ui/libxfce4ui.h>
 #include <string.h>
 #include <stdlib.h>
+#include <signal.h>
 #include <glib/gprintf.h>
 
 #include "xfce4-mpc-plugin.h"
@@ -406,6 +407,16 @@ mpc_launch_streaming(t_mpc* mpc)
    } else {
      DBG("Spawned %d", mpc->streaming_child_pid);
      g_child_watch_add(mpc->streaming_child_pid, child_watch_callback, mpc);
+   }
+}
+
+static void
+mpc_stop_streaming(t_mpc* mpc)
+{
+   gint res;
+   DBG("stopping streaming client (pid %d)", mpc->streaming_child_pid);
+   if (mpc->streaming_child_pid) {
+      res = kill (mpc->streaming_child_pid, SIGTERM);
    }
 }
 
