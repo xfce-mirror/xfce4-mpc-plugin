@@ -442,6 +442,15 @@ mpc_repeat_toggled(GtkWidget *widget, t_mpc* mpc)
 }
 
 static void
+mpc_stream_toggled(GtkWidget *widget, t_mpc* mpc)
+{
+   DBG("!");
+   if (gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(widget)))
+      mpc_launch_streaming(mpc);
+   else
+      mpc_stop_streaming(mpc);
+}
+static void
 mpc_output_toggled(GtkWidget *widget, t_mpc* mpc)
 {
    int i;
