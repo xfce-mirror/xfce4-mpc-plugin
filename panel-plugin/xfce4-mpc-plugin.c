@@ -579,6 +579,7 @@ enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
 
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->random), mpd_player_get_random(mpc->mo));
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->repeat), mpd_player_get_repeat(mpc->mo));
+   gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->stream), mpc->is_streaming && mpc->streaming_child_pid);
    mpc_update_outputs(mpc);
 
    gtk_widget_set_tooltip_text (mpc->box, str->str);
@@ -861,16 +862,20 @@ mpc_create (XfcePanelPlugin * plugin)
    g_signal_connect (G_OBJECT(mpc->random), "toggled", G_CALLBACK (mpc_random_toggled), mpc);
    mpc->repeat = gtk_check_menu_item_new_with_label (_("Repeat"));
    g_signal_connect (G_OBJECT(mpc->repeat), "toggled", G_CALLBACK (mpc_repeat_toggled), mpc);
+   mpc->stream = gtk_check_menu_item_new_with_label (_("Stream"));
+   g_signal_connect (G_OBJECT(mpc->stream), "toggled", G_CALLBACK (mpc_stream_toggled), mpc);
    mpc->appl = gtk_menu_item_new_with_label (_("Launch"));
    g_signal_connect (G_OBJECT(mpc->appl), "activate", G_CALLBACK (mpc_launch_client), mpc);
 
    add_separator_and_label_with_markup(plugin, _("<b><i>Commands</i></b>"));
    xfce_panel_plugin_menu_insert_item(plugin,GTK_MENU_ITEM(mpc->random));
    xfce_panel_plugin_menu_insert_item(plugin,GTK_MENU_ITEM(mpc->repeat));
+   xfce_panel_plugin_menu_insert_item(plugin,GTK_MENU_ITEM(mpc->stream));
    xfce_panel_plugin_menu_insert_item(plugin,GTK_MENU_ITEM(mpc->appl));
    add_separator_and_label_with_markup(plugin, _("<b><i>Outputs</i></b>"));
    gtk_widget_show (mpc->repeat);
    gtk_widget_show (mpc->random);
+   gtk_widget_show (mpc->stream);
    gtk_widget_show (mpc->appl);
    gtk_widget_show_all (mpc->box);
 
