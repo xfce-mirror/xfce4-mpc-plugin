@@ -46,6 +46,7 @@ typedef struct {
    gchar* client_appl;
    gchar* streaming_appl;
    gboolean is_streaming;
+   GPid streaming_child_pid;
    gchar* mpd_host;
    gint mpd_port;
    gchar * mpd_password;

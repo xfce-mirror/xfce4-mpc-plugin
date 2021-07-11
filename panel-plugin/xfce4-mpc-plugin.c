@@ -375,10 +375,12 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
 }
 
 static void
-child_watch_callback (GObject *object, gint status)
+child_watch_callback (GPid pid, gint status, gpointer user_data)
 {
-   DBG("streaming client died with %d", status);
-   ((t_mpc*) object)->is_streaming = FALSE;
+   DBG("streaming client with pid %d died with %d", pid, status);
+   ((t_mpc*) user_data)->is_streaming = FALSE;
+   ((t_mpc*) user_data)->streaming_child_pid = 0;
+   g_spawn_close_pid(pid);
 }
 
 static void
@@ -386,15 +388,13 @@ mpc_launch_streaming(t_mpc* mpc)
 {
    gchar **argv;
    GError *error = NULL;
-   GClosure *child_watch;
    DBG("is streaming: %d (client \"%s\")", mpc->is_streaming, mpc->streaming_appl);
    if (mpc->is_streaming || !strlen(mpc->streaming_appl))
      return;
-   child_watch = g_cclosure_new_swap (G_CALLBACK (child_watch_callback), mpc, NULL);
    g_shell_parse_argv (mpc->streaming_appl, NULL, &argv, NULL);
 
-   DBG("Going to xfce_spawn_on_screen_with_child_watch(\"%s\")", mpc->streaming_appl);
-   mpc->is_streaming = xfce_spawn_on_screen_with_child_watch(NULL, NULL, argv, NULL, G_SPAWN_SEARCH_PATH_FROM_ENVP, FALSE, 0, NULL, child_watch, &error);
+   DBG("Going to g_spawn_async(\"%s\")", mpc->streaming_appl);
+   mpc->is_streaming = g_spawn_async(NULL, argv, NULL, G_SPAWN_DO_NOT_REAP_CHILD|G_SPAWN_SEARCH_PATH, NULL, NULL, &(mpc->streaming_child_pid), &error);
    if (error && !mpc->is_streaming)
    {
      DBG("failed spawning: %s", error->message);
@@ -403,6 +403,9 @@ mpc_launch_streaming(t_mpc* mpc)
      gtk_dialog_run (GTK_DIALOG (dialog));
      gtk_widget_destroy (dialog);
      g_error_free (error);
+   } else {
+     DBG("Spawned %d", mpc->streaming_child_pid);
+     g_child_watch_add(mpc->streaming_child_pid, child_watch_callback, mpc);
    }
 }
 
@@ -896,6 +899,7 @@ mpc_construct (XfcePanelPlugin * plugin)
    mpc->mpd_password = g_strdup("");
    mpc->client_appl = g_strdup("SETME");
    mpc->streaming_appl = g_strdup("");
+   mpc->streaming_child_pid = 0;
    mpc->tooltip_format = g_strdup("Volume : %vol%% - Mpd %status%%newline%%artist% - %album% -/- (#%track%) %title%");
    mpc->playlist_format = g_strdup("%artist% - %album% -/- (#%track%) %title%");
    mpc->show_frame = TRUE;
