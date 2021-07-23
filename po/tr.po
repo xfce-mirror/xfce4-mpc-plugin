@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-31 12:49+0200\n"
-"PO-Revision-Date: 2021-06-07 23:52+0000\n"
-"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
+"POT-Creation-Date: 2021-07-11 12:49+0200\n"
+"PO-Revision-Date: 2021-07-11 10:49+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Turkish (http://www.transifex.com/xfce/xfce-panel-plugins/language/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,108 +22,112 @@ msgstr ""
 "Language: tr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:128
-#: ../panel-plugin/xfce4-mpc-plugin.c:206
-#: ../panel-plugin/xfce4-mpc-plugin.c:841
+#: ../panel-plugin/xfce4-mpc-plugin.c:129
+#: ../panel-plugin/xfce4-mpc-plugin.c:216
+#: ../panel-plugin/xfce4-mpc-plugin.c:876
 msgid "Launch"
 msgstr "Çalıştır"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:264
+#: ../panel-plugin/xfce4-mpc-plugin.c:274
 msgid "Mpd Client Plugin"
 msgstr "Mpd İstemcisi Eklentisi"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:270
+#: ../panel-plugin/xfce4-mpc-plugin.c:280
 msgid "Properties"
 msgstr "Ayarlar"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:286
+#: ../panel-plugin/xfce4-mpc-plugin.c:296
 msgid "Host : "
 msgstr "Sunucu :"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:296
+#: ../panel-plugin/xfce4-mpc-plugin.c:306
 msgid "Port : "
 msgstr "Bağlantı Noktası :"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:306
+#: ../panel-plugin/xfce4-mpc-plugin.c:316
 msgid "Password : "
 msgstr "Parola :"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:316
+#: ../panel-plugin/xfce4-mpc-plugin.c:326
 msgid "MPD Client : "
 msgstr "MPD İstemcisi :"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:325
+#: ../panel-plugin/xfce4-mpc-plugin.c:335
 msgid "Streaming Client : "
 msgstr "Akış İstemcisi : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:334
+#: ../panel-plugin/xfce4-mpc-plugin.c:344
 msgid "Tooltip Format : "
 msgstr "İpucu Biçimi :"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:343
+#: ../panel-plugin/xfce4-mpc-plugin.c:353
 msgid "Playlist Format : "
 msgstr "Çalma Listesi Biçimi :"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:352
+#: ../panel-plugin/xfce4-mpc-plugin.c:362
 msgid "Show _frame"
 msgstr "Çerçeve _göster"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:364
+#: ../panel-plugin/xfce4-mpc-plugin.c:374
 msgid "Hostname or IP address"
 msgstr "Makine adı veya IP adresi"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:365
+#: ../panel-plugin/xfce4-mpc-plugin.c:375
 msgid "Graphical MPD Client to launch in plugin context menu"
 msgstr "Eklenti içerik menüsüne ulaşmak için Grafik MPD İstemcisi"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:366
+#: ../panel-plugin/xfce4-mpc-plugin.c:376
 msgid "Command with url to stream MPD HTTP output"
 msgstr "MPD HTTP çıktı akışı için URL ile birlikte komut"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:367
+#: ../panel-plugin/xfce4-mpc-plugin.c:377
 msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
 msgstr "Değişkenler : %artist%, %album%, %file%, %track% ve %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:368
+#: ../panel-plugin/xfce4-mpc-plugin.c:378
 msgid ""
 "Variables : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
 msgstr "Değişkenler : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% ve %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:401
+#: ../panel-plugin/xfce4-mpc-plugin.c:411
 msgid "Execution error"
 msgstr "Çalıştırma hatası"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:524
-#: ../panel-plugin/xfce4-mpc-plugin.c:757
+#: ../panel-plugin/xfce4-mpc-plugin.c:556
+#: ../panel-plugin/xfce4-mpc-plugin.c:790
 msgid ".... not connected ?"
 msgstr "... bağlı değil ?"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:609
+#: ../panel-plugin/xfce4-mpc-plugin.c:642
 msgid "Mpd playlist"
 msgstr "Mpd çalma listesi"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:837
+#: ../panel-plugin/xfce4-mpc-plugin.c:870
 msgid "Random"
 msgstr "Rastgele"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:839
+#: ../panel-plugin/xfce4-mpc-plugin.c:872
 msgid "Repeat"
 msgstr "Yinele"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:844
+#: ../panel-plugin/xfce4-mpc-plugin.c:874
+msgid "Stream"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:879
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>Komutlar</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:848
+#: ../panel-plugin/xfce4-mpc-plugin.c:884
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>Çıktılar</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:868
+#: ../panel-plugin/xfce4-mpc-plugin.c:905
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "Music Player Daemon için basit bir panel eklentisi"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:870
+#: ../panel-plugin/xfce4-mpc-plugin.c:907
 msgid "Copyright (c) 2006-2021 Landry Breuil\n"
 msgstr "Telif Hakkı (c) 2006-2021 Landry Breuil\n"
 
