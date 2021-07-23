@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-31 12:49+0200\n"
-"PO-Revision-Date: 2021-06-13 09:40+0000\n"
-"Last-Translator: Саша Петровић <salepetronije@gmail.com>\n"
+"POT-Creation-Date: 2021-07-11 12:49+0200\n"
+"PO-Revision-Date: 2021-07-11 10:49+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Serbian (http://www.transifex.com/xfce/xfce-panel-plugins/language/sr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,108 +20,112 @@ msgstr ""
 "Language: sr\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:128
-#: ../panel-plugin/xfce4-mpc-plugin.c:206
-#: ../panel-plugin/xfce4-mpc-plugin.c:841
+#: ../panel-plugin/xfce4-mpc-plugin.c:129
+#: ../panel-plugin/xfce4-mpc-plugin.c:216
+#: ../panel-plugin/xfce4-mpc-plugin.c:876
 msgid "Launch"
 msgstr "Покрени"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:264
+#: ../panel-plugin/xfce4-mpc-plugin.c:274
 msgid "Mpd Client Plugin"
 msgstr "Прикључак корисника МПД-а"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:270
+#: ../panel-plugin/xfce4-mpc-plugin.c:280
 msgid "Properties"
 msgstr "Својства"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:286
+#: ../panel-plugin/xfce4-mpc-plugin.c:296
 msgid "Host : "
 msgstr "Домаћин : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:296
+#: ../panel-plugin/xfce4-mpc-plugin.c:306
 msgid "Port : "
 msgstr "Прикључник : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:306
+#: ../panel-plugin/xfce4-mpc-plugin.c:316
 msgid "Password : "
 msgstr "Лозинка : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:316
+#: ../panel-plugin/xfce4-mpc-plugin.c:326
 msgid "MPD Client : "
 msgstr "Корисник МПД-а : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:325
+#: ../panel-plugin/xfce4-mpc-plugin.c:335
 msgid "Streaming Client : "
 msgstr "Корисник тока : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:334
+#: ../panel-plugin/xfce4-mpc-plugin.c:344
 msgid "Tooltip Format : "
 msgstr "Облик _напомена : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:343
+#: ../panel-plugin/xfce4-mpc-plugin.c:353
 msgid "Playlist Format : "
 msgstr "Облик списка за извођење : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:352
+#: ../panel-plugin/xfce4-mpc-plugin.c:362
 msgid "Show _frame"
 msgstr "Прикажи _оквир"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:364
+#: ../panel-plugin/xfce4-mpc-plugin.c:374
 msgid "Hostname or IP address"
 msgstr "Домаћин или адреса ИП-а"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:365
+#: ../panel-plugin/xfce4-mpc-plugin.c:375
 msgid "Graphical MPD Client to launch in plugin context menu"
 msgstr "Сликовни корисник МПД-а за покретање у приручном изборнику прикључка"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:366
+#: ../panel-plugin/xfce4-mpc-plugin.c:376
 msgid "Command with url to stream MPD HTTP output"
 msgstr "Наредба са адресом за пријем излаза тока МПД ХТТП"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:367
+#: ../panel-plugin/xfce4-mpc-plugin.c:377
 msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
 msgstr "Променљиве : %artist%, %album%, %file%, %track% and %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:368
+#: ../panel-plugin/xfce4-mpc-plugin.c:378
 msgid ""
 "Variables : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
 msgstr "Променљиве : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% and %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:401
+#: ../panel-plugin/xfce4-mpc-plugin.c:411
 msgid "Execution error"
 msgstr "Грешка при извршавању"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:524
-#: ../panel-plugin/xfce4-mpc-plugin.c:757
+#: ../panel-plugin/xfce4-mpc-plugin.c:556
+#: ../panel-plugin/xfce4-mpc-plugin.c:790
 msgid ".... not connected ?"
 msgstr ".... није повезан ?"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:609
+#: ../panel-plugin/xfce4-mpc-plugin.c:642
 msgid "Mpd playlist"
 msgstr "Списак за извођење МПД-а"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:837
+#: ../panel-plugin/xfce4-mpc-plugin.c:870
 msgid "Random"
 msgstr "Насумично"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:839
+#: ../panel-plugin/xfce4-mpc-plugin.c:872
 msgid "Repeat"
 msgstr "Понови"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:844
+#: ../panel-plugin/xfce4-mpc-plugin.c:874
+msgid "Stream"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:879
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>Наредбе</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:848
+#: ../panel-plugin/xfce4-mpc-plugin.c:884
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>Излази</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:868
+#: ../panel-plugin/xfce4-mpc-plugin.c:905
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "Једноставан прикључак полице за домара пуштања музике"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:870
+#: ../panel-plugin/xfce4-mpc-plugin.c:907
 msgid "Copyright (c) 2006-2021 Landry Breuil\n"
 msgstr "Права умножавања (c) 2006-2021 Ландри Бреј (Landry Breuil)\n"
 
