@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-09 00:31+0100\n"
-"PO-Revision-Date: 2019-02-07 18:47+0000\n"
-"Last-Translator: zubr139\n"
+"POT-Creation-Date: 2021-07-11 12:49+0200\n"
+"PO-Revision-Date: 2021-07-11 10:49+0000\n"
+"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/xfce/xfce-panel-plugins/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,98 +20,114 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:125
-#: ../panel-plugin/xfce4-mpc-plugin.c:201
-#: ../panel-plugin/xfce4-mpc-plugin.c:792
+#: ../panel-plugin/xfce4-mpc-plugin.c:129
+#: ../panel-plugin/xfce4-mpc-plugin.c:216
+#: ../panel-plugin/xfce4-mpc-plugin.c:876
 msgid "Launch"
 msgstr "Запустити"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:259
+#: ../panel-plugin/xfce4-mpc-plugin.c:274
 msgid "Mpd Client Plugin"
 msgstr "Модуль для клієнта Mpd"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:265
+#: ../panel-plugin/xfce4-mpc-plugin.c:280
 msgid "Properties"
 msgstr "Властивості"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:281
+#: ../panel-plugin/xfce4-mpc-plugin.c:296
 msgid "Host : "
 msgstr "Сервер : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:291
+#: ../panel-plugin/xfce4-mpc-plugin.c:306
 msgid "Port : "
 msgstr "Порт : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:301
+#: ../panel-plugin/xfce4-mpc-plugin.c:316
 msgid "Password : "
 msgstr "Пароль : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:311
+#: ../panel-plugin/xfce4-mpc-plugin.c:326
 msgid "MPD Client : "
 msgstr "MPD Клієнт : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:320
+#: ../panel-plugin/xfce4-mpc-plugin.c:335
+msgid "Streaming Client : "
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:344
 msgid "Tooltip Format : "
 msgstr "Формат спливаючих : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:329
+#: ../panel-plugin/xfce4-mpc-plugin.c:353
 msgid "Playlist Format : "
 msgstr "Формат списку програвання : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:338
+#: ../panel-plugin/xfce4-mpc-plugin.c:362
 msgid "Show _frame"
 msgstr "Відображати _фрейм"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:350
+#: ../panel-plugin/xfce4-mpc-plugin.c:374
 msgid "Hostname or IP address"
 msgstr "Назва хоста чи IP адреса"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:351
+#: ../panel-plugin/xfce4-mpc-plugin.c:375
 msgid "Graphical MPD Client to launch in plugin context menu"
 msgstr "Запуск графічного клієнта MPD в контекстному меню плагіна"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:352
+#: ../panel-plugin/xfce4-mpc-plugin.c:376
+msgid "Command with url to stream MPD HTTP output"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:377
 msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
 msgstr "Змінні : %artist%, %album%, %file%, %track% і %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:353
+#: ../panel-plugin/xfce4-mpc-plugin.c:378
 msgid ""
 "Variables : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
 msgstr "Змінні : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% і %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:477
-#: ../panel-plugin/xfce4-mpc-plugin.c:708
+#: ../panel-plugin/xfce4-mpc-plugin.c:411
+msgid "Execution error"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:556
+#: ../panel-plugin/xfce4-mpc-plugin.c:790
 msgid ".... not connected ?"
 msgstr ".... не під'єднано ?"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:562
+#: ../panel-plugin/xfce4-mpc-plugin.c:642
 msgid "Mpd playlist"
 msgstr "Список програвання Mpd"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:788
+#: ../panel-plugin/xfce4-mpc-plugin.c:870
 msgid "Random"
 msgstr "Випадково"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:790
+#: ../panel-plugin/xfce4-mpc-plugin.c:872
 msgid "Repeat"
 msgstr "Повторити"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:795
+#: ../panel-plugin/xfce4-mpc-plugin.c:874
+msgid "Stream"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:879
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>Команди</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:799
+#: ../panel-plugin/xfce4-mpc-plugin.c:884
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>Вивід</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:819
+#: ../panel-plugin/xfce4-mpc-plugin.c:905
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "Простий клієнт для MPD, The Music Player Daemon"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:821
-msgid "Copyright (c) 2006-2018 Landry Breuil\n"
-msgstr "Авторське право (c)  2006-2018 Ландрі Брейль\n"
+#: ../panel-plugin/xfce4-mpc-plugin.c:907
+msgid "Copyright (c) 2006-2021 Landry Breuil\n"
+msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
