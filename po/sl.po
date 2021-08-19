@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-11 12:49+0200\n"
-"PO-Revision-Date: 2021-07-11 10:49+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"PO-Revision-Date: 2021-08-19 08:04+0000\n"
+"Last-Translator: Arnold Marko <arnold.marko@gmail.com>\n"
 "Language-Team: Slovenian (http://www.transifex.com/xfce/xfce-panel-plugins/language/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -50,7 +50,7 @@ msgstr "MPD odjemalec :"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:335
 msgid "Streaming Client : "
-msgstr ""
+msgstr "Odjemalec pretoka :"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:344
 msgid "Tooltip Format : "
@@ -74,7 +74,7 @@ msgstr "Grafični MPD odjemalec, ki vtičnik zažene v kontekstualnem meniju"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:376
 msgid "Command with url to stream MPD HTTP output"
-msgstr ""
+msgstr "Ukaz z URL za pretakanje izhoda MPD HTTP"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:377
 msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
@@ -88,7 +88,7 @@ msgstr "Spremenljivke : %vol%, %status%, %newline%, %artist%, %album%, %file%, %
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:411
 msgid "Execution error"
-msgstr ""
+msgstr "Napaka pri izvedbi"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:556
 #: ../panel-plugin/xfce4-mpc-plugin.c:790
@@ -109,7 +109,7 @@ msgstr "Ponavljaj"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:874
 msgid "Stream"
-msgstr ""
+msgstr "Pretok"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:879
 msgid "<b><i>Commands</i></b>"
@@ -125,7 +125,7 @@ msgstr "Preprost vtičnik za pano za Music Player Daemon"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:907
 msgid "Copyright (c) 2006-2021 Landry Breuil\n"
-msgstr ""
+msgstr "Avtorstvo (c) 2006-2021 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
