@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Priit Jõerüüt <transifex@joeruut.com>, 2020
+# Priit Jõerüüt <transifex@joeruut.com>, 2020-2021
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-11 12:49+0200\n"
-"PO-Revision-Date: 2021-07-11 10:49+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"PO-Revision-Date: 2021-09-14 20:15+0000\n"
+"Last-Translator: Priit Jõerüüt <transifex@joeruut.com>\n"
 "Language-Team: Estonian (http://www.transifex.com/xfce/xfce-panel-plugins/language/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,15 +34,15 @@ msgstr "Omadused"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:296
 msgid "Host : "
-msgstr "Host : "
+msgstr "Host:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:306
 msgid "Port : "
-msgstr "Port : "
+msgstr "Port:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:316
 msgid "Password : "
-msgstr "Salasõna : "
+msgstr "Salasõna:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:326
 msgid "MPD Client : "
@@ -50,15 +50,15 @@ msgstr "MPD klient: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:335
 msgid "Streaming Client : "
-msgstr ""
+msgstr "Voogedastuse klient:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:344
 msgid "Tooltip Format : "
-msgstr "Teabemulli vorming : "
+msgstr "Teabemulli vorming:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:353
 msgid "Playlist Format : "
-msgstr "Esitusloendi vorming : "
+msgstr "Esitusloendi vorming:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:362
 msgid "Show _frame"
@@ -74,7 +74,7 @@ msgstr "Graafilise liidesega MPD klient, mida saad käivitada kontekstimenüüst
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:376
 msgid "Command with url to stream MPD HTTP output"
-msgstr ""
+msgstr "Käsk koos url-iga MPD HTTP-väljundi voogedastuseks"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:377
 msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
@@ -88,7 +88,7 @@ msgstr "Muutujad: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track%
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:411
 msgid "Execution error"
-msgstr ""
+msgstr "Viga käivitusel"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:556
 #: ../panel-plugin/xfce4-mpc-plugin.c:790
@@ -109,7 +109,7 @@ msgstr "Korda pala"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:874
 msgid "Stream"
-msgstr ""
+msgstr "Voogedasta"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:879
 msgid "<b><i>Commands</i></b>"
@@ -125,7 +125,7 @@ msgstr "Lihtne Music Player Daemon'i klient Xfce ribal"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:907
 msgid "Copyright (c) 2006-2021 Landry Breuil\n"
-msgstr ""
+msgstr "Copyright (c) 2006-2021 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
