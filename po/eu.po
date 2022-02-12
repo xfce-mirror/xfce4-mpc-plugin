@@ -4,7 +4,7 @@
 # 
 # Translators:
 # beriain, 2019
-# beriain, 2021
+# beriain, 2021-2022
 # Piarres Beobide <pi@beobide.net>, 2009
 # Piarres Beobide <pi@beobide.net>, 2006
 msgid ""
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-11 12:49+0200\n"
-"PO-Revision-Date: 2021-08-08 08:37+0000\n"
+"PO-Revision-Date: 2022-02-12 14:59+0000\n"
 "Last-Translator: beriain\n"
 "Language-Team: Basque (http://www.transifex.com/xfce/xfce-panel-plugins/language/eu/)\n"
 "MIME-Version: 1.0\n"
@@ -53,7 +53,7 @@ msgstr "MPD bezeroa : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:335
 msgid "Streaming Client : "
-msgstr ""
+msgstr "Streaming bezeroa:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:344
 msgid "Tooltip Format : "
@@ -77,7 +77,7 @@ msgstr "MPD bezero grafikoa plugin kontestu menutik abiarazteko"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:376
 msgid "Command with url to stream MPD HTTP output"
-msgstr ""
+msgstr "Komandoa URLarekin MPD HTTP irteera igortzeko"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:377
 msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
@@ -91,7 +91,7 @@ msgstr "Aldagaiak: %bol%, %egoera%, %newline%, %artista%, %albuma%, %fitxategia%
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:411
 msgid "Execution error"
-msgstr ""
+msgstr "Exekuzio errorea"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:556
 #: ../panel-plugin/xfce4-mpc-plugin.c:790
@@ -112,7 +112,7 @@ msgstr "Errepikatu"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:874
 msgid "Stream"
-msgstr ""
+msgstr "Igorri"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:879
 msgid "<b><i>Commands</i></b>"
