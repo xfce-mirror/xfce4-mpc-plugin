@@ -80,17 +80,17 @@ msgstr "Графический клиент MPD, для запуска из ко
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:376
 msgid "Command with url to stream MPD HTTP output"
-msgstr ""
+msgstr "Команда с URL-адресом для вывода потоковой передачи MPD по HTTP"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:377
 msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
-msgstr "Переменные : %artist%, %album%, %file%, %track% и %title%"
+msgstr "Переменные: %artist%, %album%, %file%, %track% и %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:378
 msgid ""
 "Variables : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
-msgstr "Переменные : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% и %title%"
+msgstr "Переменные: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% и %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:411
 msgid "Execution error"
