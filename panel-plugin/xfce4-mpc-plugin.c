@@ -533,11 +533,25 @@ format_song_display(mpd_Song* song, GString *str, t_mpc* mpc)
    if (0 == str->len)
       g_string_assign(str, mpc->playlist_format);
 
-   /* replace %artist% by song->artist, etc */
+   /* replace format strings with song data or placeholders */
+   if (strlen(song->artist) == 0)
+      song->artist = g_strdup(_("Unknown Artist"));
    str_replace(str, "%artist%", song->artist);
+
+   if (strlen(song->album) == 0)
+      song->album = g_strdup(_("Unknown Album"));
    str_replace(str, "%album%", song->album);
+
+   if (strlen(song->title) == 0)
+      song->title = g_strdup(_("Unknown Title"));
    str_replace(str, "%title%", song->title);
+
+   if (strlen(song->track) == 0)
+      song->track = g_strdup(_("Unknown Track"));
    str_replace(str, "%track%", song->track);
+
+   if (strlen(song->file) == 0)
+      song->file = g_strdup(_("Unknown File"));
    str_replace(str, "%file%", song->file);
 }
 
