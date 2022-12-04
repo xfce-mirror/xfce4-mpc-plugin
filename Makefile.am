@@ -1,18 +1,9 @@
 @SET_MAKE@
 
-SUBDIRS = panel-plugin po
+DISTCLEANFILES := intltool-extract intltool-merge intltool-update \
+                  po/.intltool-merge-cache.lock
+SUBDIRS        := panel-plugin po
+dist_doc_DATA  := README
 
 distclean-local:
 	rm -rf *.cache *~
-
-EXTRA_DIST = 								\
-	README								\
-	intltool-extract.in						\
-	intltool-merge.in						\
-	intltool-update.in
-
-DISTCLEANFILES =							\
-	intltool-extract						\
-	intltool-merge							\
-	intltool-update
-
