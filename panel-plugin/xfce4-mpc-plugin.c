@@ -894,11 +894,9 @@ mpc_create (XfcePanelPlugin * plugin)
 static void
 mpc_show_about(XfcePanelPlugin *plugin, t_mpc* mpc)
 {
-   GdkPixbuf *icon;
    const gchar *auth[] = { "Landry Breuil <landry at xfce.org>", NULL };
-   icon = xfce_panel_pixbuf_from_source("applications-multimedia", NULL, 32);
    gtk_show_about_dialog(NULL,
-      "logo", icon,
+      "logo-icon-name", "applications-multimedia",
       "license", xfce_get_license_text (XFCE_LICENSE_TEXT_BSD),
       "version", PACKAGE_VERSION,
       "program-name", PACKAGE_NAME,
@@ -906,9 +904,6 @@ mpc_show_about(XfcePanelPlugin *plugin, t_mpc* mpc)
       "website", "https://docs.xfce.org/panel-plugins/xfce4-mpc-plugin",
       "copyright", _("Copyright (c) 2006-2021 Landry Breuil\n"),
       "authors", auth, NULL);
-
-   if(icon)
-      g_object_unref(G_OBJECT(icon));
 }
 
 static void
