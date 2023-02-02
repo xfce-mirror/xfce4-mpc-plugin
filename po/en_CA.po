@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Steve Harris <steve@jbs.ca>, 2020
+# Steve Harris <steve@jbs.ca>, 2023
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-11 12:49+0200\n"
-"PO-Revision-Date: 2021-07-11 10:49+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
+"POT-Creation-Date: 2022-11-28 15:07+0100\n"
+"PO-Revision-Date: 2013-07-03 19:07+0000\n"
+"Last-Translator: Steve Harris <steve@jbs.ca>, 2023\n"
 "Language-Team: English (Canada) (http://www.transifex.com/xfce/xfce-panel-plugins/language/en_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -50,7 +51,7 @@ msgstr "MPD Client : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:335
 msgid "Streaming Client : "
-msgstr ""
+msgstr "Streaming Client : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:344
 msgid "Tooltip Format : "
@@ -74,7 +75,7 @@ msgstr "Graphical MPD Client to launch in plugin context menu"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:376
 msgid "Command with url to stream MPD HTTP output"
-msgstr ""
+msgstr "Command with url to stream MPD HTTP output"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:377
 msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
@@ -88,7 +89,7 @@ msgstr "Variables : %vol%, %status%, %newline%, %artist%, %album%, %file%, %trac
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:411
 msgid "Execution error"
-msgstr ""
+msgstr "Execution error"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:556
 #: ../panel-plugin/xfce4-mpc-plugin.c:790
@@ -109,7 +110,7 @@ msgstr "Repeat"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:874
 msgid "Stream"
-msgstr ""
+msgstr "Stream"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:879
 msgid "<b><i>Commands</i></b>"
@@ -125,7 +126,7 @@ msgstr "A simple panel-plugin client for Music Player Daemon"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:907
 msgid "Copyright (c) 2006-2021 Landry Breuil\n"
-msgstr ""
+msgstr "Copyright (c) 2006-2021 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
