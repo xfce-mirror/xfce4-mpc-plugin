@@ -16,9 +16,8 @@ AC_INIT([xfce4-mpc-plugin], [mpc_version],
 MPC_VERSION=mpc_version()
 AM_INIT_AUTOMAKE([1.8 dist-bzip2 tar-ustar no-dist-gzip])
 AC_CONFIG_HEADERS([config.h])
-dnl AC_CONFIG_HEADERS([config.h])
-
 AM_MAINTAINER_MODE
+AC_CONFIG_MACRO_DIRS([m4])
 
 dnl Check for basic programs
 AC_PROG_CC
@@ -35,7 +34,7 @@ XDT_CHECK_PACKAGE([LIBXFCE4UI], [libxfce4ui-2], [4.12.0])
 
 dnl check for libmpd presence
 AC_ARG_WITH(libmpd,
-    AC_HELP_STRING([--with-libmpd=path], [path to libmpd base directory]),
+    AS_HELP_STRING([--with-libmpd=path], [path to libmpd base directory]),
         LIBMPD_PATH="$withval", LIBMPD_PATH="")
 
 use_libmpd=false
