@@ -4,15 +4,15 @@
 # 
 # Translators:
 # Daniel Nylander <po@danielnylander.se>, 2008
-# Luna Jernberg <bittin@cafe8bitar.se>, 2020-2021
+# Luna Jernberg <bittin@cafe8bitar.se>, 2020-2021,2023
 # Påvel Nicklasson <pavel@frimix.se>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-11 12:49+0200\n"
-"PO-Revision-Date: 2021-07-12 08:39+0000\n"
-"Last-Translator: Luna Jernberg <bittin@cafe8bitar.se>\n"
+"POT-Creation-Date: 2023-02-12 00:49+0100\n"
+"PO-Revision-Date: 2013-07-03 19:07+0000\n"
+"Last-Translator: Luna Jernberg <bittin@cafe8bitar.se>, 2020-2021,2023\n"
 "Language-Team: Swedish (http://www.transifex.com/xfce/xfce-panel-plugins/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:129
 #: ../panel-plugin/xfce4-mpc-plugin.c:216
-#: ../panel-plugin/xfce4-mpc-plugin.c:876
+#: ../panel-plugin/xfce4-mpc-plugin.c:890
 msgid "Launch"
 msgstr "Kör"
 
@@ -92,40 +92,60 @@ msgstr "Variabler: %vol%, %status%, %nyrad%, %artist%, %album%, %fil%, %spår% o
 msgid "Execution error"
 msgstr "Körningsfel"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:556
-#: ../panel-plugin/xfce4-mpc-plugin.c:790
+#: ../panel-plugin/xfce4-mpc-plugin.c:538
+msgid "Unknown Artist"
+msgstr "Okänd artist"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:542
+msgid "Unknown Album"
+msgstr "Okänt album"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:546
+msgid "Unknown Title"
+msgstr "Okänd titel"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:550
+msgid "Unknown Track"
+msgstr "Okänt spår"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:554
+msgid "Unknown File"
+msgstr "Okänd fil"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:570
+#: ../panel-plugin/xfce4-mpc-plugin.c:804
 msgid ".... not connected ?"
 msgstr ".... inte ansluten?"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:642
+#: ../panel-plugin/xfce4-mpc-plugin.c:656
 msgid "Mpd playlist"
 msgstr "Mpd-spellista"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:870
+#: ../panel-plugin/xfce4-mpc-plugin.c:884
 msgid "Random"
 msgstr "Slumpmässigt"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:872
+#: ../panel-plugin/xfce4-mpc-plugin.c:886
 msgid "Repeat"
 msgstr "Upprepa"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:874
+#: ../panel-plugin/xfce4-mpc-plugin.c:888
 msgid "Stream"
 msgstr "Ström"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:879
+#: ../panel-plugin/xfce4-mpc-plugin.c:893
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>Kommandon</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:884
+#: ../panel-plugin/xfce4-mpc-plugin.c:898
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>Utmatningar</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:905
+#: ../panel-plugin/xfce4-mpc-plugin.c:917
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "En enkel Music Player Daemon-klient som panelinsticksmodul"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:907
+#: ../panel-plugin/xfce4-mpc-plugin.c:919
 msgid "Copyright (c) 2006-2021 Landry Breuil\n"
 msgstr "Copyright (c) 2006-2021 Landry Breuil\n"
 
