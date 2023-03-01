@@ -10,23 +10,24 @@
 # Lucas Wilm <lucaswilm@gmail.com>, 2021
 # Michael Martins <michaelfm21@gmail.com>, 2021
 # Og Maciel <ogmaciel@gnome.org>, 2008
+# The Cat, 2023
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-11 12:49+0200\n"
-"PO-Revision-Date: 2021-07-18 22:22+0000\n"
-"Last-Translator: Michael Martins <michaelfm21@gmail.com>\n"
+"POT-Creation-Date: 2023-02-12 00:49+0100\n"
+"PO-Revision-Date: 2013-07-03 19:07+0000\n"
+"Last-Translator: The Cat, 2023\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/xfce/xfce-panel-plugins/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pt_BR\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:129
 #: ../panel-plugin/xfce4-mpc-plugin.c:216
-#: ../panel-plugin/xfce4-mpc-plugin.c:876
+#: ../panel-plugin/xfce4-mpc-plugin.c:890
 msgid "Launch"
 msgstr "Lançar"
 
@@ -96,40 +97,60 @@ msgstr "Variáveis: %vol%, %status%, %newline%, %artist%, %album%, %file%, %trac
 msgid "Execution error"
 msgstr "Erro de execução"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:556
-#: ../panel-plugin/xfce4-mpc-plugin.c:790
+#: ../panel-plugin/xfce4-mpc-plugin.c:538
+msgid "Unknown Artist"
+msgstr "Artista desconhecido"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:542
+msgid "Unknown Album"
+msgstr "Álbum desconhecido"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:546
+msgid "Unknown Title"
+msgstr "Título desconhecido"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:550
+msgid "Unknown Track"
+msgstr "Faixa desconhecida"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:554
+msgid "Unknown File"
+msgstr "Arquivo desconhecido"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:570
+#: ../panel-plugin/xfce4-mpc-plugin.c:804
 msgid ".... not connected ?"
 msgstr ".... não conectado?"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:642
+#: ../panel-plugin/xfce4-mpc-plugin.c:656
 msgid "Mpd playlist"
 msgstr "Lista de reprodução do serviço reprodutor de músicas (mpd)"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:870
+#: ../panel-plugin/xfce4-mpc-plugin.c:884
 msgid "Random"
 msgstr "Aleatório"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:872
+#: ../panel-plugin/xfce4-mpc-plugin.c:886
 msgid "Repeat"
 msgstr "Repetir"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:874
+#: ../panel-plugin/xfce4-mpc-plugin.c:888
 msgid "Stream"
 msgstr "Stream"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:879
+#: ../panel-plugin/xfce4-mpc-plugin.c:893
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>Comandos</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:884
+#: ../panel-plugin/xfce4-mpc-plugin.c:898
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>Saídas</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:905
+#: ../panel-plugin/xfce4-mpc-plugin.c:917
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "Um cliente plugin de painel simples para o Music Player Daemon"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:907
+#: ../panel-plugin/xfce4-mpc-plugin.c:919
 msgid "Copyright (c) 2006-2021 Landry Breuil\n"
 msgstr "Copyright (c) 2006-2021 Landry Breuil\n"
 
