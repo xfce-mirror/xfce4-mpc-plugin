@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Cristian Marchi <cri.penta@gmail.com>, 2009,2013,2015
-# Dmytro Tokayev, 2021
+# Dmytro Tokayev, 2021,2023
 # Emanuele Petriglia <transifex@emanuelepetriglia.com>, 2018
 # Emanuele Petriglia <transifex@emanuelepetriglia.com>, 2021
 # Enrico B. <enricobe@hotmail.com>, 2016
@@ -12,19 +12,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-11 12:49+0200\n"
-"PO-Revision-Date: 2021-07-20 05:33+0000\n"
-"Last-Translator: Emanuele Petriglia <transifex@emanuelepetriglia.com>\n"
+"POT-Creation-Date: 2023-02-12 00:49+0100\n"
+"PO-Revision-Date: 2013-07-03 19:07+0000\n"
+"Last-Translator: Dmytro Tokayev, 2021,2023\n"
 "Language-Team: Italian (http://www.transifex.com/xfce/xfce-panel-plugins/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: it\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:129
 #: ../panel-plugin/xfce4-mpc-plugin.c:216
-#: ../panel-plugin/xfce4-mpc-plugin.c:876
+#: ../panel-plugin/xfce4-mpc-plugin.c:890
 msgid "Launch"
 msgstr "Avvia"
 
@@ -94,40 +94,60 @@ msgstr "Variabili : %vol%, %status%, %newline%, %artist%, %album%, %file%, %trac
 msgid "Execution error"
 msgstr "Errore di esecuzione"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:556
-#: ../panel-plugin/xfce4-mpc-plugin.c:790
+#: ../panel-plugin/xfce4-mpc-plugin.c:538
+msgid "Unknown Artist"
+msgstr "Artista sconosciuto"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:542
+msgid "Unknown Album"
+msgstr "Album sconosciuto"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:546
+msgid "Unknown Title"
+msgstr "Titolo sconosciuto"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:550
+msgid "Unknown Track"
+msgstr "Traccia sconosciuta"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:554
+msgid "Unknown File"
+msgstr "File sconosciuto"
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:570
+#: ../panel-plugin/xfce4-mpc-plugin.c:804
 msgid ".... not connected ?"
 msgstr "…non connesso?"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:642
+#: ../panel-plugin/xfce4-mpc-plugin.c:656
 msgid "Mpd playlist"
 msgstr "Scaletta MPD"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:870
+#: ../panel-plugin/xfce4-mpc-plugin.c:884
 msgid "Random"
 msgstr "Casuale"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:872
+#: ../panel-plugin/xfce4-mpc-plugin.c:886
 msgid "Repeat"
 msgstr "Ripeti"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:874
+#: ../panel-plugin/xfce4-mpc-plugin.c:888
 msgid "Stream"
 msgstr "Trasmetti"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:879
+#: ../panel-plugin/xfce4-mpc-plugin.c:893
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>Comandi</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:884
+#: ../panel-plugin/xfce4-mpc-plugin.c:898
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>Output</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:905
+#: ../panel-plugin/xfce4-mpc-plugin.c:917
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "Un semplice componente aggiuntivo del pannello per il demone del riproduttore musicale (MPD)"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:907
+#: ../panel-plugin/xfce4-mpc-plugin.c:919
 msgid "Copyright (c) 2006-2021 Landry Breuil\n"
 msgstr "Copyright © 2006-2021 Landry Breuil\n"
 
