@@ -10,8 +10,8 @@ m4_define([mpc_version_tag], []) # Leave empty for releases
 m4_define([mpc_version_build], [@REVISION@])
 m4_define([mpc_version], [mpc_version_major().mpc_version_minor().mpc_version_micro()ifelse(mpc_version_tag(), [], [], [mpc_version_tag()-mpc_version_build()])])
 
-AC_INIT([xfce4-mpc-plugin], [mpc_version],
-	[landry@xfce.org])
+AC_COPYRIGHT([Copyright (c) 2006-2023 The Xfce development team. All rights reserved.])
+AC_INIT([xfce4-mpc-plugin], [mpc_version], [https://gitlab.xfce.org/panel-plugins/xfce4-mpc-plugin])
 
 MPC_VERSION=mpc_version()
 AM_INIT_AUTOMAKE([1.8 dist-bzip2 tar-ustar no-dist-gzip])

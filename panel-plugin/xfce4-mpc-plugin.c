@@ -916,7 +916,7 @@ mpc_show_about(XfcePanelPlugin *plugin, t_mpc* mpc)
       "program-name", PACKAGE_NAME,
       "comments", _("A simple panel-plugin client for Music Player Daemon"),
       "website", "https://docs.xfce.org/panel-plugins/xfce4-mpc-plugin",
-      "copyright", _("Copyright (c) 2006-2021 Landry Breuil\n"),
+      "copyright", "Copyright \302\251 2006-2023 The Xfce development team",
       "authors", auth, NULL);
 }
 
