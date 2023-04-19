@@ -9,10 +9,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-28 15:07+0100\n"
+"POT-Creation-Date: 2023-04-19 01:17+0200\n"
 "PO-Revision-Date: 2013-07-03 19:07+0000\n"
 "Last-Translator: Steve Harris <steve@jbs.ca>, 2023\n"
-"Language-Team: English (Canada) (http://www.transifex.com/xfce/xfce-panel-plugins/language/en_CA/)\n"
+"Language-Team: English (Canada) (http://app.transifex.com/xfce/xfce-panel-plugins/language/en_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:129
 #: ../panel-plugin/xfce4-mpc-plugin.c:216
-#: ../panel-plugin/xfce4-mpc-plugin.c:876
+#: ../panel-plugin/xfce4-mpc-plugin.c:890
 msgid "Launch"
 msgstr "Launch"
 
@@ -91,42 +91,58 @@ msgstr "Variables : %vol%, %status%, %newline%, %artist%, %album%, %file%, %trac
 msgid "Execution error"
 msgstr "Execution error"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:556
-#: ../panel-plugin/xfce4-mpc-plugin.c:790
+#: ../panel-plugin/xfce4-mpc-plugin.c:538
+msgid "Unknown Artist"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:542
+msgid "Unknown Album"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:546
+msgid "Unknown Title"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:550
+msgid "Unknown Track"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:554
+msgid "Unknown File"
+msgstr ""
+
+#: ../panel-plugin/xfce4-mpc-plugin.c:570
+#: ../panel-plugin/xfce4-mpc-plugin.c:804
 msgid ".... not connected ?"
 msgstr ".... not connected ?"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:642
+#: ../panel-plugin/xfce4-mpc-plugin.c:656
 msgid "Mpd playlist"
 msgstr "Mpd playlist"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:870
+#: ../panel-plugin/xfce4-mpc-plugin.c:884
 msgid "Random"
 msgstr "Random"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:872
+#: ../panel-plugin/xfce4-mpc-plugin.c:886
 msgid "Repeat"
 msgstr "Repeat"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:874
+#: ../panel-plugin/xfce4-mpc-plugin.c:888
 msgid "Stream"
 msgstr "Stream"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:879
+#: ../panel-plugin/xfce4-mpc-plugin.c:893
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>Commands</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:884
+#: ../panel-plugin/xfce4-mpc-plugin.c:898
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>Outputs</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:905
+#: ../panel-plugin/xfce4-mpc-plugin.c:917
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "A simple panel-plugin client for Music Player Daemon"
-
-#: ../panel-plugin/xfce4-mpc-plugin.c:907
-msgid "Copyright (c) 2006-2021 Landry Breuil\n"
-msgstr "Copyright (c) 2006-2021 Landry Breuil\n"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
