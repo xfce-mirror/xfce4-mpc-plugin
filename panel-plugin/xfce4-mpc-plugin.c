@@ -33,6 +33,7 @@
 #define DEFAULT_MPD_HOST "localhost"
 #define DEFAULT_MPD_PORT 6600
 #define DIALOG_ENTRY_WIDTH 20
+#define TOOLTIP_TEXT _("... not connected?")
 
 static void resize_button(GtkWidget *, gint, gint);
 
@@ -567,7 +568,7 @@ enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
    {
       if (!mpc_plugin_reconnect (mpc) || mpd_status_update (mpc->mo) != MPD_OK)
       {
-         gtk_widget_set_tooltip_text (mpc->box, _(".... not connected ?"));
+         gtk_widget_set_tooltip_text (mpc->box, TOOLTIP_TEXT);
          return FALSE;
       }
    }
@@ -801,7 +802,7 @@ scroll_cb(GtkWidget *widget, GdkEventScroll* event, t_mpc* mpc)
    {
       if (!mpc_plugin_reconnect (mpc) || mpd_status_update (mpc->mo) != MPD_OK)
       {
-         gtk_widget_set_tooltip_text(widget, _(".... not connected ?"));
+         gtk_widget_set_tooltip_text(widget, TOOLTIP_TEXT);
          return;
       }
    }
