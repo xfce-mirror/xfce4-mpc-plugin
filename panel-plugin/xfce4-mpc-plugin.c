@@ -423,10 +423,9 @@ mpc_launch_streaming(t_mpc* mpc)
 static void
 mpc_stop_streaming(t_mpc* mpc)
 {
-   gint res;
    DBG("stopping streaming client (pid %d)", mpc->streaming_child_pid);
    if (mpc->streaming_child_pid) {
-      res = kill (mpc->streaming_child_pid, SIGTERM);
+      kill (mpc->streaming_child_pid, SIGTERM);
    }
 }
 
@@ -717,6 +716,7 @@ toggle(GtkWidget *widget, GdkEventButton* event, t_mpc* mpc)
       {
          case MPD_PLAYER_PAUSE:
             mpc_launch_streaming(mpc);
+            G_GNUC_FALLTHROUGH;
          case MPD_PLAYER_PLAY:
             mpd_player_pause(mpc->mo); /* toggles play/pause */
             break;
