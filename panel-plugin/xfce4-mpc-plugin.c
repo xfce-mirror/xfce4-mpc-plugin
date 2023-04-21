@@ -584,13 +584,13 @@ enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
    switch (mpd_player_get_state(mpc->mo))
    {
       case MPD_PLAYER_PLAY:
-         str_replace(str, "%status%", "Playing");
+         str_replace(str, "%status%", _("Playing"));
          break;
       case MPD_PLAYER_PAUSE:
-         str_replace(str, "%status%", "Paused");
+         str_replace(str, "%status%", _("Paused"));
          break;
       case MPD_PLAYER_STOP:
-         str_replace(str, "%status%", "Stopped");
+         str_replace(str, "%status%", _("Stopped"));
          break;
       default:
          str_replace(str, "%status%", "state ?");
