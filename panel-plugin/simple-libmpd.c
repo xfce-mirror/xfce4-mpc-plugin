@@ -166,7 +166,7 @@ void mpd_connect(MpdObj* mo)
       return;
    }
 
-   DBG("Received %d bytes = welcome message :\"%s\"", mo->buflen, mo->buffer);
+   DBG("Received %d bytes = welcome message:\"%s\"", mo->buflen, mo->buffer);
 
    *mo->buffer = '\0';
    mo->buflen = 0;
@@ -258,7 +258,7 @@ int mpd_send_single_cmd(MpdObj*mo, char* cmd)
          if (strcmp(mo->buffer,"OK\n") != 0)
          {
             mo->error = MPD_FAILED;
-            DBG("ERROR : did not received OK");
+            DBG("ERROR: did not received OK");
          }
       }
       *mo->buffer = '\0';
@@ -267,7 +267,7 @@ int mpd_send_single_cmd(MpdObj*mo, char* cmd)
    else
    {
       mo->error = MPD_ERROR_NOSOCK;
-      DBG("ERROR : socket == NULL ?");
+      DBG("ERROR: socket == NULL ?");
    }
    return ((!mo->error) ? MPD_OK : MPD_FAILED);
 }
@@ -336,7 +336,7 @@ void send_complex_cmd(MpdObj* mo, char* cmd, void (*parse_answer_fct)(), void *r
    else
    {
       mo->error = MPD_ERROR_NOSOCK;
-      DBG("ERROR : socket == NULL ?");
+      DBG("ERROR: socket == NULL ?");
    }
 }
 
