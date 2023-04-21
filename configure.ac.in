@@ -14,7 +14,7 @@ AC_COPYRIGHT([Copyright (c) 2006-2023 The Xfce development team. All rights rese
 AC_INIT([xfce4-mpc-plugin], [mpc_version], [https://gitlab.xfce.org/panel-plugins/xfce4-mpc-plugin])
 
 MPC_VERSION=mpc_version()
-AM_INIT_AUTOMAKE([1.8 dist-bzip2 tar-ustar no-dist-gzip])
+AM_INIT_AUTOMAKE([1.8 dist-bzip2 tar-ustar no-dist-gzip foreign])
 AC_CONFIG_HEADERS([config.h])
 AM_MAINTAINER_MODE
 AC_CONFIG_MACRO_DIRS([m4])
