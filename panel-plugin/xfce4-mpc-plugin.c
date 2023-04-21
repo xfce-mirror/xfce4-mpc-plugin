@@ -593,14 +593,14 @@ enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
          str_replace(str, "%status%", _("Stopped"));
          break;
       default:
-         str_replace(str, "%status%", "state ?");
+         str_replace(str, "%status%", "state?");
          break;
    }
    song = mpd_playlist_get_current_song(mpc->mo);
    if (song && song->id != -1)
       format_song_display(song, str, mpc);
    else
-      g_string_assign(str, "Failed to get song info ?");
+      g_string_assign(str, "Failed to get song info?");
 
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->random), mpd_player_get_random(mpc->mo));
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->repeat), mpd_player_get_repeat(mpc->mo));

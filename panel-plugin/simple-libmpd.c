@@ -267,7 +267,7 @@ int mpd_send_single_cmd(MpdObj*mo, char* cmd)
    else
    {
       mo->error = MPD_ERROR_NOSOCK;
-      DBG("ERROR: socket == NULL ?");
+      DBG("ERROR: socket == NULL?");
    }
    return ((!mo->error) ? MPD_OK : MPD_FAILED);
 }
@@ -336,7 +336,7 @@ void send_complex_cmd(MpdObj* mo, char* cmd, void (*parse_answer_fct)(), void *r
    else
    {
       mo->error = MPD_ERROR_NOSOCK;
-      DBG("ERROR: socket == NULL ?");
+      DBG("ERROR: socket == NULL?");
    }
 }
 
