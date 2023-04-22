@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:36
 msgid "... not connected?"
-msgstr ""
+msgstr "… jo i lidhur?"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:132
 #: ../panel-plugin/xfce4-mpc-plugin.c:219
@@ -40,31 +40,31 @@ msgstr "Veti"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:299
 msgid "Host: "
-msgstr ""
+msgstr "Strehë:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:309
 msgid "Port: "
-msgstr ""
+msgstr "Portë:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:319
 msgid "Password: "
-msgstr ""
+msgstr "Fjalëkalim:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:329
 msgid "MPD Client: "
-msgstr ""
+msgstr "Klient MPD: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:338
 msgid "Streaming Client: "
-msgstr ""
+msgstr "Klient Transmetimi:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:347
 msgid "Tooltip Format: "
-msgstr ""
+msgstr "Format Ndihmëzash:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:356
 msgid "Playlist Format: "
-msgstr ""
+msgstr "Format Luajlistash:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:365
 msgid "Show _frame"
@@ -84,13 +84,13 @@ msgstr "Urdhër me URL ku të transmetohet output-i MPD HTTP"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:380
 msgid "Variables: %artist%, %album%, %file%, %track% and %title%"
-msgstr ""
+msgstr "Ndryshore: %artist%, %album%, %kartelë%, %pjesë% and %titull%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:381
 msgid ""
 "Variables: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
-msgstr ""
+msgstr "Ndryshore: %vol%, %gjendje%, %rreshtiri%, %artist%, %album%, %kartelë%, %pjesë% dhe %titull%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:414
 msgid "Execution error"
@@ -118,7 +118,7 @@ msgstr "Kartelë e Panjohur"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:587
 msgid "Playing"
-msgstr ""
+msgstr "Po luhet"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:590
 msgid "Paused"
@@ -126,7 +126,7 @@ msgstr "I ndalur"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:593
 msgid "Stopped"
-msgstr ""
+msgstr "Ndalur"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:658
 msgid "Mpd playlist"
