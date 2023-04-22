@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Aleksandr P, 2012
-# Andrei Stepanov, 2022
+# Andrei Stepanov, 2022-2023
 # Andres <kovtunos@yandex.ru>, 2010
 # Igor <f2404@yandex.ru>, 2016,2018
 # Igor Vornovskii, 2023
@@ -17,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-21 12:51+0200\n"
 "PO-Revision-Date: 2013-07-03 19:07+0000\n"
-"Last-Translator: Igor Vornovskii, 2023\n"
+"Last-Translator: Andrei Stepanov, 2022-2023\n"
 "Language-Team: Russian (http://app.transifex.com/xfce/xfce-panel-plugins/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,7 +27,7 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:36
 msgid "... not connected?"
-msgstr ""
+msgstr "...не подключён?"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:132
 #: ../panel-plugin/xfce4-mpc-plugin.c:219
@@ -45,31 +45,31 @@ msgstr "Настройки"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:299
 msgid "Host: "
-msgstr ""
+msgstr "Сервер: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:309
 msgid "Port: "
-msgstr ""
+msgstr "Порт: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:319
 msgid "Password: "
-msgstr ""
+msgstr "Пароль: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:329
 msgid "MPD Client: "
-msgstr ""
+msgstr "Клиент MPD: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:338
 msgid "Streaming Client: "
-msgstr ""
+msgstr "Клиент трансляции: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:347
 msgid "Tooltip Format: "
-msgstr ""
+msgstr "Формат подсказок: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:356
 msgid "Playlist Format: "
-msgstr ""
+msgstr "Формат списка: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:365
 msgid "Show _frame"
@@ -89,13 +89,13 @@ msgstr "Команда с URL-адресом для вывода потоков�
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:380
 msgid "Variables: %artist%, %album%, %file%, %track% and %title%"
-msgstr ""
+msgstr "Переменные: %artist%, %album%, %file%, %track% и %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:381
 msgid ""
 "Variables: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
-msgstr ""
+msgstr "Переменные: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% и %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:414
 msgid "Execution error"
@@ -123,7 +123,7 @@ msgstr "Неизвестный Файл"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:587
 msgid "Playing"
-msgstr ""
+msgstr "Играет"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:590
 msgid "Paused"
