@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:36
 msgid "... not connected?"
-msgstr ""
+msgstr "……尚未連線？"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:132
 #: ../panel-plugin/xfce4-mpc-plugin.c:219
@@ -32,7 +32,7 @@ msgstr "啟動"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:277
 msgid "Mpd Client Plugin"
-msgstr "Mpd 客戶端插件"
+msgstr "Mpd 客戶端外掛程式"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:283
 msgid "Properties"
@@ -40,35 +40,35 @@ msgstr "屬性"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:299
 msgid "Host: "
-msgstr ""
+msgstr "主機："
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:309
 msgid "Port: "
-msgstr ""
+msgstr "連接埠："
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:319
 msgid "Password: "
-msgstr ""
+msgstr "密碼："
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:329
 msgid "MPD Client: "
-msgstr ""
+msgstr "MPD 客戶端："
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:338
 msgid "Streaming Client: "
-msgstr ""
+msgstr "串流客戶端："
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:347
 msgid "Tooltip Format: "
-msgstr ""
+msgstr "工具提示格式："
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:356
 msgid "Playlist Format: "
-msgstr ""
+msgstr "播放清單格式："
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:365
 msgid "Show _frame"
-msgstr "顯示框(_F)"
+msgstr "顯示畫面(_F)"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:377
 msgid "Hostname or IP address"
@@ -76,7 +76,7 @@ msgstr "主機名稱或 IP 位址"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:378
 msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr "於插件情境選單內啟動圖形化 MPD 客戶端"
+msgstr "於外掛程式情境選單內啟動圖形化 MPD 客戶端"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:379
 msgid "Command with url to stream MPD HTTP output"
@@ -84,13 +84,13 @@ msgstr "帶有 url 的指令，用來串流 MPD HTTP 輸出"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:380
 msgid "Variables: %artist%, %album%, %file%, %track% and %title%"
-msgstr ""
+msgstr "變數：%artist%、%album%、%file%、%track% 與 %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:381
 msgid ""
 "Variables: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
-msgstr ""
+msgstr "變數：%vol%、%status%、%newline%、%artist%、%album%、%file%、%track% 與 %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:414
 msgid "Execution error"
@@ -118,7 +118,7 @@ msgstr "未知檔案"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:587
 msgid "Playing"
-msgstr ""
+msgstr "正在播放"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:590
 msgid "Paused"
@@ -138,7 +138,7 @@ msgstr "隨機"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:889
 msgid "Repeat"
-msgstr "返復"
+msgstr "循環"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:891
 msgid "Stream"
@@ -154,11 +154,11 @@ msgstr "<b><i>輸出</i></b>"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:920
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr "Music Player Daemon 客戶端的簡易面板插件"
+msgstr "Music Player Daemon 客戶端的簡易面板外掛程式"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
 msgid "MPD Client Plugin"
-msgstr "MPD 客戶端插件"
+msgstr "MPD 客戶端外掛程式"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
 msgid "A client for MPD, The Music Player Daemon"
