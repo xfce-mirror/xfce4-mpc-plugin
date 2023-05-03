@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:36
 msgid "... not connected?"
-msgstr ""
+msgstr "... 엥, 연결이 안됐나요?"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:132
 #: ../panel-plugin/xfce4-mpc-plugin.c:219
@@ -40,31 +40,31 @@ msgstr "속성"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:299
 msgid "Host: "
-msgstr ""
+msgstr "호스트:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:309
 msgid "Port: "
-msgstr ""
+msgstr "포트:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:319
 msgid "Password: "
-msgstr ""
+msgstr "암호:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:329
 msgid "MPD Client: "
-msgstr ""
+msgstr "MPD 클라이언트:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:338
 msgid "Streaming Client: "
-msgstr ""
+msgstr "스트리밍 클라이언트:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:347
 msgid "Tooltip Format: "
-msgstr ""
+msgstr "풍선도움말 형식:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:356
 msgid "Playlist Format: "
-msgstr ""
+msgstr "재생목록 형식:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:365
 msgid "Show _frame"
@@ -84,13 +84,13 @@ msgstr "명령과 MPD HTTP 출력을 스트림할 URL"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:380
 msgid "Variables: %artist%, %album%, %file%, %track% and %title%"
-msgstr ""
+msgstr "변수: %artist%, %album%, %file%, %track%, %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:381
 msgid ""
 "Variables: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
-msgstr ""
+msgstr "변수: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track%, %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:414
 msgid "Execution error"
@@ -118,7 +118,7 @@ msgstr "알 수 없는 파일"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:587
 msgid "Playing"
-msgstr ""
+msgstr "재생중"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:590
 msgid "Paused"
