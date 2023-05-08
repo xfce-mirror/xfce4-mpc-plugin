@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-21 12:51+0200\n"
+"POT-Creation-Date: 2023-05-05 10:55+0200\n"
 "PO-Revision-Date: 2013-07-03 19:07+0000\n"
 "Last-Translator: Gordon Freeman, 2023\n"
 "Language-Team: Ukrainian (http://app.transifex.com/xfce/xfce-panel-plugins/language/uk/)\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:36
 msgid "... not connected?"
-msgstr ""
+msgstr "...не підключено?"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:132
 #: ../panel-plugin/xfce4-mpc-plugin.c:219
@@ -41,31 +41,31 @@ msgstr "Властивості"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:299
 msgid "Host: "
-msgstr ""
+msgstr "Сервер:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:309
 msgid "Port: "
-msgstr ""
+msgstr "Порт:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:319
 msgid "Password: "
-msgstr ""
+msgstr "Пароль:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:329
 msgid "MPD Client: "
-msgstr ""
+msgstr "Клієнт MPD: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:338
 msgid "Streaming Client: "
-msgstr ""
+msgstr "Потоковий клієнт:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:347
 msgid "Tooltip Format: "
-msgstr ""
+msgstr "Формат підказки:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:356
 msgid "Playlist Format: "
-msgstr ""
+msgstr "Формат плейлиста:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:365
 msgid "Show _frame"
@@ -85,13 +85,13 @@ msgstr "Команда з URL-адресою для потокового вив�
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:380
 msgid "Variables: %artist%, %album%, %file%, %track% and %title%"
-msgstr ""
+msgstr "Змінні: %artist%, %album%, %file%, %track% та %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:381
 msgid ""
 "Variables: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
-msgstr ""
+msgstr "Змінні: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% та %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:414
 msgid "Execution error"
@@ -119,7 +119,7 @@ msgstr "Невідомий файл"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:587
 msgid "Playing"
-msgstr ""
+msgstr "Грає"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:590
 msgid "Paused"
