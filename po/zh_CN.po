@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Cally Mal <zhouxiaobo.500@gmail.com>, 2023
 # Chipong Luo <chipong.luo@yahoo.com>, 2011-2012
 # Hunt Xu <huntxu@live.cn>, 2008-2009
 # Mingcong Bai <jeffbai@aosc.xyz>, 2016-2017
@@ -13,9 +14,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-21 12:51+0200\n"
+"POT-Creation-Date: 2023-05-05 10:55+0200\n"
 "PO-Revision-Date: 2013-07-03 19:07+0000\n"
-"Last-Translator: 玉堂白鹤 <yjwork@qq.com>, 2015,2018,2021,2023\n"
+"Last-Translator: Cally Mal <zhouxiaobo.500@gmail.com>, 2023\n"
 "Language-Team: Chinese (China) (http://app.transifex.com/xfce/xfce-panel-plugins/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +26,7 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:36
 msgid "... not connected?"
-msgstr ""
+msgstr "....尚未连接？"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:132
 #: ../panel-plugin/xfce4-mpc-plugin.c:219
@@ -43,31 +44,31 @@ msgstr "属性"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:299
 msgid "Host: "
-msgstr ""
+msgstr "主机："
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:309
 msgid "Port: "
-msgstr ""
+msgstr "端口："
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:319
 msgid "Password: "
-msgstr ""
+msgstr "密码："
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:329
 msgid "MPD Client: "
-msgstr ""
+msgstr "MPD 客户端："
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:338
 msgid "Streaming Client: "
-msgstr ""
+msgstr "流媒体客户端 : "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:347
 msgid "Tooltip Format: "
-msgstr ""
+msgstr "工具提示格式："
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:356
 msgid "Playlist Format: "
-msgstr ""
+msgstr "播放列表格式："
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:365
 msgid "Show _frame"
@@ -87,13 +88,13 @@ msgstr "带有 url 地址的命令，用于 MPD HTTP 流媒体输出"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:380
 msgid "Variables: %artist%, %album%, %file%, %track% and %title%"
-msgstr ""
+msgstr "变量：%artist%，%album%，%file%，%track% 和 %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:381
 msgid ""
 "Variables: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
-msgstr ""
+msgstr "变量：%vol%，%status%，%newline%，%artist%，%album%，%file%，%track% 和 %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:414
 msgid "Execution error"
@@ -121,7 +122,7 @@ msgstr "未知文件"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:587
 msgid "Playing"
-msgstr ""
+msgstr "正在播放"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:590
 msgid "Paused"
@@ -165,4 +166,4 @@ msgstr "MPD 客户端插件"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
 msgid "A client for MPD, The Music Player Daemon"
-msgstr "MPD 客户端，音乐播放器守护进程"
+msgstr "MPD 客户端，一个音乐播放器守护进程"
