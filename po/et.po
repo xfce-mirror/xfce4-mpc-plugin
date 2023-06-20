@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Priit Jõerüüt <transifex@joeruut.com>, 2020-2021
+# Priit Jõerüüt <transifex@joeruut.com>, 2020-2021,2023
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-21 12:51+0200\n"
+"POT-Creation-Date: 2023-05-30 00:53+0200\n"
 "PO-Revision-Date: 2013-07-03 19:07+0000\n"
-"Last-Translator: Priit Jõerüüt <transifex@joeruut.com>, 2020-2021\n"
+"Last-Translator: Priit Jõerüüt <transifex@joeruut.com>, 2020-2021,2023\n"
 "Language-Team: Estonian (http://app.transifex.com/xfce/xfce-panel-plugins/language/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:36
 msgid "... not connected?"
-msgstr ""
+msgstr "... kas meil puudub ühendus serveriga?"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:132
 #: ../panel-plugin/xfce4-mpc-plugin.c:219
@@ -38,31 +38,31 @@ msgstr "Omadused"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:299
 msgid "Host: "
-msgstr ""
+msgstr "Host:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:309
 msgid "Port: "
-msgstr ""
+msgstr "Port:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:319
 msgid "Password: "
-msgstr ""
+msgstr "Salasõna:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:329
 msgid "MPD Client: "
-msgstr ""
+msgstr "MPD klient: "
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:338
 msgid "Streaming Client: "
-msgstr ""
+msgstr "Voogedastuse klient:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:347
 msgid "Tooltip Format: "
-msgstr ""
+msgstr "Teabemulli vorming:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:356
 msgid "Playlist Format: "
-msgstr ""
+msgstr "Esitusloendi vorming:"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:365
 msgid "Show _frame"
@@ -82,13 +82,13 @@ msgstr "Käsk koos url-iga MPD HTTP-väljundi voogedastuseks"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:380
 msgid "Variables: %artist%, %album%, %file%, %track% and %title%"
-msgstr ""
+msgstr "Muutujad: %artist%, %album%, %file%, %track% ja %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:381
 msgid ""
 "Variables: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
-msgstr ""
+msgstr "Muutujad: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% ja %title%"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:414
 msgid "Execution error"
@@ -96,27 +96,27 @@ msgstr "Viga käivitusel"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:540
 msgid "Unknown Artist"
-msgstr ""
+msgstr "Teadmata esitaja"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:544
 msgid "Unknown Album"
-msgstr ""
+msgstr "Teadmata album"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:548
 msgid "Unknown Title"
-msgstr ""
+msgstr "Teadmata pealkiri"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:552
 msgid "Unknown Track"
-msgstr ""
+msgstr "Teadmata pala"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:556
 msgid "Unknown File"
-msgstr ""
+msgstr "Teadmata fail"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:587
 msgid "Playing"
-msgstr ""
+msgstr "Esitamisel"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:590
 msgid "Paused"
@@ -124,7 +124,7 @@ msgstr "Peatatud"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:593
 msgid "Stopped"
-msgstr ""
+msgstr "Lõpetatud"
 
 #: ../panel-plugin/xfce4-mpc-plugin.c:658
 msgid "Mpd playlist"
@@ -160,4 +160,4 @@ msgstr "MPD pistikprogramm"
 
 #: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
 msgid "A client for MPD, The Music Player Daemon"
-msgstr "Klientrakendus MPD (The Music Player Daemon) jaoks"
+msgstr "Klientrakendus MPD ehk The Music Player Daemon'i jaoks"
