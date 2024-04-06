@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-mpc-plugin package.
 # 
 # Translators:
 # Seong-ho Cho <darkcircle.0426@gmail.com>, 2013
@@ -9,8 +9,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-06 00:52+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2024-04-06 12:54+0200\n"
 "PO-Revision-Date: 2013-07-03 19:07+0000\n"
 "Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>, 2012-2013,2015-2016,2021,2023\n"
 "Language-Team: Korean (http://app.transifex.com/xfce/xfce-panel-plugins/language/ko/)\n"
@@ -20,138 +20,145 @@ msgstr ""
 "Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:36
+#: panel-plugin/xfce4-mpc-plugin.c:36
 msgid "... not connected?"
 msgstr "... 엥, 연결이 안됐나요?"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:132
-#: ../panel-plugin/xfce4-mpc-plugin.c:219
-#: ../panel-plugin/xfce4-mpc-plugin.c:893
+#: panel-plugin/xfce4-mpc-plugin.c:132 panel-plugin/xfce4-mpc-plugin.c:219
+#: panel-plugin/xfce4-mpc-plugin.c:893
 msgid "Launch"
 msgstr "실행"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:277
+#: panel-plugin/xfce4-mpc-plugin.c:277
 msgid "Mpd Client Plugin"
 msgstr "MPD 클라이언트 플러그인"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:283
+#: panel-plugin/xfce4-mpc-plugin.c:283
 msgid "Properties"
 msgstr "속성"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:299
+#: panel-plugin/xfce4-mpc-plugin.c:299
 msgid "Host: "
 msgstr "호스트:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:309
+#: panel-plugin/xfce4-mpc-plugin.c:309
 msgid "Port: "
 msgstr "포트:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:319
+#: panel-plugin/xfce4-mpc-plugin.c:319
 msgid "Password: "
 msgstr "암호:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:329
+#: panel-plugin/xfce4-mpc-plugin.c:329
 msgid "MPD Client: "
 msgstr "MPD 클라이언트:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:338
+#: panel-plugin/xfce4-mpc-plugin.c:338
 msgid "Streaming Client: "
 msgstr "스트리밍 클라이언트:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:347
+#: panel-plugin/xfce4-mpc-plugin.c:347
 msgid "Tooltip Format: "
 msgstr "풍선도움말 형식:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:356
+#: panel-plugin/xfce4-mpc-plugin.c:356
 msgid "Playlist Format: "
 msgstr "재생목록 형식:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:365
+#: panel-plugin/xfce4-mpc-plugin.c:365
 msgid "Show _frame"
 msgstr "틀 표시(_F)"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:377
+#: panel-plugin/xfce4-mpc-plugin.c:377
 msgid "Hostname or IP address"
 msgstr "호스트이름 또는 IP 주소"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:378
+#: panel-plugin/xfce4-mpc-plugin.c:378
 msgid "Graphical MPD Client to launch in plugin context menu"
 msgstr "플러그인 단축 메뉴에서 실행하는 그래픽 MPD 클라이언트"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:379
+#: panel-plugin/xfce4-mpc-plugin.c:379
 msgid "Command with url to stream MPD HTTP output"
 msgstr "명령과 MPD HTTP 출력을 스트림할 URL"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:380
+#: panel-plugin/xfce4-mpc-plugin.c:380
 msgid "Variables: %artist%, %album%, %file%, %track% and %title%"
 msgstr "변수: %artist%, %album%, %file%, %track%, %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:381
+#: panel-plugin/xfce4-mpc-plugin.c:381
 msgid ""
 "Variables: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
 msgstr "변수: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track%, %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:414
+#: panel-plugin/xfce4-mpc-plugin.c:414
 msgid "Execution error"
 msgstr "실행 오류"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:540
+#: panel-plugin/xfce4-mpc-plugin.c:540
 msgid "Unknown Artist"
 msgstr "알 수 없는 작곡가"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:544
+#: panel-plugin/xfce4-mpc-plugin.c:544
 msgid "Unknown Album"
 msgstr "알 수 없는 앨범"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:548
+#: panel-plugin/xfce4-mpc-plugin.c:548
 msgid "Unknown Title"
 msgstr "알 수 없는 제목"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:552
+#: panel-plugin/xfce4-mpc-plugin.c:552
 msgid "Unknown Track"
 msgstr "알 수 없는 트랙"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:556
+#: panel-plugin/xfce4-mpc-plugin.c:556
 msgid "Unknown File"
 msgstr "알 수 없는 파일"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:587
+#: panel-plugin/xfce4-mpc-plugin.c:587
 msgid "Playing"
 msgstr "재생중"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:590
+#: panel-plugin/xfce4-mpc-plugin.c:590
 msgid "Paused"
 msgstr "일시정지됨"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:593
+#: panel-plugin/xfce4-mpc-plugin.c:593
 msgid "Stopped"
 msgstr "정지함"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:658
+#: panel-plugin/xfce4-mpc-plugin.c:658
 msgid "Mpd playlist"
 msgstr "Mpd 재생 목록"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:887
+#: panel-plugin/xfce4-mpc-plugin.c:887
 msgid "Random"
 msgstr "임의"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:889
+#: panel-plugin/xfce4-mpc-plugin.c:889
 msgid "Repeat"
 msgstr "반복"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:891
+#: panel-plugin/xfce4-mpc-plugin.c:891
 msgid "Stream"
 msgstr "스트림"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:896
+#: panel-plugin/xfce4-mpc-plugin.c:896
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>명령</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:901
+#: panel-plugin/xfce4-mpc-plugin.c:901
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>출력</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:920
+#: panel-plugin/xfce4-mpc-plugin.c:920
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "음악 재생기 데몬을 위한 간단한 패널 플러그인 클라이언트입니다"
+
+#: panel-plugin/xfce4-mpc-plugin.desktop.in:5
+msgid "MPD Client Plugin"
+msgstr "MPD 클라이언트 플러그인"
+
+#: panel-plugin/xfce4-mpc-plugin.desktop.in:6
+msgid "A client for MPD, The Music Player Daemon"
+msgstr "음악 재생기 데몬 MPD를 위한 클라이언트"
