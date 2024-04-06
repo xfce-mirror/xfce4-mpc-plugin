@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-mpc-plugin package.
 # 
 # Translators:
 # Cally Mal <zhouxiaobo.500@gmail.com>, 2023
@@ -13,8 +13,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-06 00:52+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2024-04-06 12:54+0200\n"
 "PO-Revision-Date: 2013-07-03 19:07+0000\n"
 "Last-Translator: Cally Mal <zhouxiaobo.500@gmail.com>, 2023\n"
 "Language-Team: Chinese (China) (http://app.transifex.com/xfce/xfce-panel-plugins/language/zh_CN/)\n"
@@ -24,138 +24,145 @@ msgstr ""
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:36
+#: panel-plugin/xfce4-mpc-plugin.c:36
 msgid "... not connected?"
 msgstr "....尚未连接？"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:132
-#: ../panel-plugin/xfce4-mpc-plugin.c:219
-#: ../panel-plugin/xfce4-mpc-plugin.c:893
+#: panel-plugin/xfce4-mpc-plugin.c:132 panel-plugin/xfce4-mpc-plugin.c:219
+#: panel-plugin/xfce4-mpc-plugin.c:893
 msgid "Launch"
 msgstr "启动"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:277
+#: panel-plugin/xfce4-mpc-plugin.c:277
 msgid "Mpd Client Plugin"
 msgstr "Mpd 客户端插件"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:283
+#: panel-plugin/xfce4-mpc-plugin.c:283
 msgid "Properties"
 msgstr "属性"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:299
+#: panel-plugin/xfce4-mpc-plugin.c:299
 msgid "Host: "
 msgstr "主机："
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:309
+#: panel-plugin/xfce4-mpc-plugin.c:309
 msgid "Port: "
 msgstr "端口："
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:319
+#: panel-plugin/xfce4-mpc-plugin.c:319
 msgid "Password: "
 msgstr "密码："
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:329
+#: panel-plugin/xfce4-mpc-plugin.c:329
 msgid "MPD Client: "
 msgstr "MPD 客户端："
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:338
+#: panel-plugin/xfce4-mpc-plugin.c:338
 msgid "Streaming Client: "
 msgstr "流媒体客户端 : "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:347
+#: panel-plugin/xfce4-mpc-plugin.c:347
 msgid "Tooltip Format: "
 msgstr "工具提示格式："
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:356
+#: panel-plugin/xfce4-mpc-plugin.c:356
 msgid "Playlist Format: "
 msgstr "播放列表格式："
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:365
+#: panel-plugin/xfce4-mpc-plugin.c:365
 msgid "Show _frame"
 msgstr "显示边框(_F)"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:377
+#: panel-plugin/xfce4-mpc-plugin.c:377
 msgid "Hostname or IP address"
 msgstr "主机名或 IP 地址"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:378
+#: panel-plugin/xfce4-mpc-plugin.c:378
 msgid "Graphical MPD Client to launch in plugin context menu"
 msgstr "在插件交互菜单中启动的图形化 MPD 客户端"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:379
+#: panel-plugin/xfce4-mpc-plugin.c:379
 msgid "Command with url to stream MPD HTTP output"
 msgstr "带有 url 地址的命令，用于 MPD HTTP 流媒体输出"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:380
+#: panel-plugin/xfce4-mpc-plugin.c:380
 msgid "Variables: %artist%, %album%, %file%, %track% and %title%"
 msgstr "变量：%artist%，%album%，%file%，%track% 和 %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:381
+#: panel-plugin/xfce4-mpc-plugin.c:381
 msgid ""
 "Variables: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
 msgstr "变量：%vol%，%status%，%newline%，%artist%，%album%，%file%，%track% 和 %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:414
+#: panel-plugin/xfce4-mpc-plugin.c:414
 msgid "Execution error"
 msgstr "执行错误"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:540
+#: panel-plugin/xfce4-mpc-plugin.c:540
 msgid "Unknown Artist"
 msgstr "未知艺术家"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:544
+#: panel-plugin/xfce4-mpc-plugin.c:544
 msgid "Unknown Album"
 msgstr "未知专辑"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:548
+#: panel-plugin/xfce4-mpc-plugin.c:548
 msgid "Unknown Title"
 msgstr "未知标题"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:552
+#: panel-plugin/xfce4-mpc-plugin.c:552
 msgid "Unknown Track"
 msgstr "未知轨道"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:556
+#: panel-plugin/xfce4-mpc-plugin.c:556
 msgid "Unknown File"
 msgstr "未知文件"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:587
+#: panel-plugin/xfce4-mpc-plugin.c:587
 msgid "Playing"
 msgstr "正在播放"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:590
+#: panel-plugin/xfce4-mpc-plugin.c:590
 msgid "Paused"
 msgstr "已暂停"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:593
+#: panel-plugin/xfce4-mpc-plugin.c:593
 msgid "Stopped"
 msgstr "已停止"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:658
+#: panel-plugin/xfce4-mpc-plugin.c:658
 msgid "Mpd playlist"
 msgstr "Mpd 播放列表"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:887
+#: panel-plugin/xfce4-mpc-plugin.c:887
 msgid "Random"
 msgstr "随机"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:889
+#: panel-plugin/xfce4-mpc-plugin.c:889
 msgid "Repeat"
 msgstr "重复"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:891
+#: panel-plugin/xfce4-mpc-plugin.c:891
 msgid "Stream"
 msgstr "推流"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:896
+#: panel-plugin/xfce4-mpc-plugin.c:896
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>命令</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:901
+#: panel-plugin/xfce4-mpc-plugin.c:901
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>输出</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:920
+#: panel-plugin/xfce4-mpc-plugin.c:920
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "简单的音乐播放器守护进程面板插件客户端"
+
+#: panel-plugin/xfce4-mpc-plugin.desktop.in:5
+msgid "MPD Client Plugin"
+msgstr "MPD 客户端插件"
+
+#: panel-plugin/xfce4-mpc-plugin.desktop.in:6
+msgid "A client for MPD, The Music Player Daemon"
+msgstr "MPD 客户端，一个音乐播放器守护进程"
