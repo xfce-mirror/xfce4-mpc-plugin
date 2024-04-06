@@ -5,16 +5,16 @@
 # Translators:
 # Allan Nordhøy <epost@anotheragency.no>, 2014
 # Allan Nordhøy <epost@anotheragency.no>, 2015-2016
-# heskjestad <cato@heskjestad.xyz>, 2021,2023
+# Kaci Heskjestad, 2021,2023
 # Harald H. <haarektrans@gmail.com>, 2014-2015
-# heskjestad <cato@heskjestad.xyz>, 2019
+# Kaci Heskjestad, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-30 00:53+0200\n"
+"POT-Creation-Date: 2024-04-06 00:52+0200\n"
 "PO-Revision-Date: 2013-07-03 19:07+0000\n"
-"Last-Translator: heskjestad <cato@heskjestad.xyz>, 2021,2023\n"
+"Last-Translator: Kaci Heskjestad, 2021,2023\n"
 "Language-Team: Norwegian Bokmål (http://app.transifex.com/xfce/xfce-panel-plugins/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -157,11 +157,3 @@ msgstr "<b><i>Utganger</i></b>"
 #: ../panel-plugin/xfce4-mpc-plugin.c:920
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "En enkelt paneltilleggsklient for Music Player Deamon"
-
-#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
-msgid "MPD Client Plugin"
-msgstr "MPD-klienttillegg"
-
-#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
-msgid "A client for MPD, The Music Player Daemon"
-msgstr "Klient for MPD, The Music Player Daemon"
