@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-30 00:53+0200\n"
+"POT-Creation-Date: 2024-04-06 00:52+0200\n"
 "PO-Revision-Date: 2013-07-03 19:07+0000\n"
 "Last-Translator: Casper, 2023\n"
 "Language-Team: Spanish (http://app.transifex.com/xfce/xfce-panel-plugins/language/es/)\n"
@@ -162,11 +162,3 @@ msgstr "<b><i>Salidas</i></b>"
 #: ../panel-plugin/xfce4-mpc-plugin.c:920
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "Un sencillo complemento del panel para el servicio de reproducción de música (MPD)"
-
-#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
-msgid "MPD Client Plugin"
-msgstr "Cliente para MPD"
-
-#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
-msgid "A client for MPD, The Music Player Daemon"
-msgstr "Un cliente para MPD, el servicio de reproducción de música"
