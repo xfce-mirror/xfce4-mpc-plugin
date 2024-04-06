@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-30 00:53+0200\n"
+"POT-Creation-Date: 2024-04-06 00:52+0200\n"
 "PO-Revision-Date: 2013-07-03 19:07+0000\n"
 "Last-Translator: Marek Adamski, 2023\n"
 "Language-Team: Polish (http://app.transifex.com/xfce/xfce-panel-plugins/language/pl/)\n"
@@ -157,11 +157,3 @@ msgstr "<b><i>Dane wyjściowe</i></b>"
 #: ../panel-plugin/xfce4-mpc-plugin.c:920
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "Prosty klient o charakterze wtyczki do panelu dla demona odtwarzacza muzycznego"
-
-#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
-msgid "MPD Client Plugin"
-msgstr "Wtyczka klienta MPD"
-
-#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
-msgid "A client for MPD, The Music Player Daemon"
-msgstr "Klient MPD, Music Player Daemon"
