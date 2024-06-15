@@ -1,5 +1,4 @@
 m4/
-po/.intltool-merge-cache*
 po/POTFILES
 po/*.gmo
 *Makefile
@@ -8,6 +7,7 @@ po/*.gmo
 stamp*
 */.deps
 .libs
+*~
 *.orig
 *.o
 *.lo
@@ -15,9 +15,7 @@ stamp*
 configure
 config.*
 \[config.h\].in
-configure.ac
 libtool
-intltool*
 mkinstalldirs
 missing
 compile
