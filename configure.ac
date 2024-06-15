@@ -3,21 +3,19 @@ dnl
 dnl xfce4-mpc-plugin - mpd client plugin for the XFce4 panel
 dnl
 
-m4_define([mpc_version_major], [0])
-m4_define([mpc_version_minor], [5])
-m4_define([mpc_version_micro], [3])
-m4_define([mpc_version_tag], [git]) # Leave empty for releases
-m4_define([mpc_version_build], [@REVISION@])
-m4_define([mpc_version], [mpc_version_major().mpc_version_minor().mpc_version_micro()ifelse(mpc_version_tag(), [], [], [mpc_version_tag()-mpc_version_build()])])
+XDT_VERSION_INIT([0.5.3], [git])
 
 AC_COPYRIGHT([Copyright (c) 2006-2023 The Xfce development team. All rights reserved.])
-AC_INIT([xfce4-mpc-plugin], [mpc_version], [https://gitlab.xfce.org/panel-plugins/xfce4-mpc-plugin])
+AC_INIT([xfce4-mpc-plugin], [xdt_version], [https://gitlab.xfce.org/panel-plugins/xfce4-mpc-plugin])
+AC_REVISION([xdt_version_build])
+AC_PREREQ([2.69])
 
 MPC_VERSION=mpc_version()
 AM_INIT_AUTOMAKE([1.8 dist-bzip2 tar-ustar no-dist-gzip foreign])
 AC_CONFIG_HEADERS([config.h])
 AM_MAINTAINER_MODE
 AC_CONFIG_MACRO_DIRS([m4])
+m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 
 dnl Check for basic programs
 AC_PROG_CC
@@ -76,7 +74,7 @@ AM_GNU_GETTEXT([external])
 AM_GNU_GETTEXT_VERSION([0.19.8])
 
 dnl Check for debugging support
-XDT_FEATURE_DEBUG()
+XDT_FEATURE_DEBUG([xdt_debug_default])
 AC_CONFIG_FILES([
 Makefile
 panel-plugin/Makefile
