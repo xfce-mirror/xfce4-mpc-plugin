@@ -449,6 +449,13 @@ mpc_repeat_toggled(GtkWidget *widget, t_mpc* mpc)
 }
 
 static void
+mpc_single_toggled(GtkWidget *widget, t_mpc* mpc)
+{
+   DBG("!");
+   mpd_player_set_single(mpc->mo, gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(widget)));
+}
+
+static void
 mpc_stream_toggled(GtkWidget *widget, t_mpc* mpc)
 {
    DBG("!");
@@ -600,6 +607,7 @@ enter_cb(GtkWidget *widget, GdkEventCrossing* event, t_mpc* mpc)
 
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->random), mpd_player_get_random(mpc->mo));
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->repeat), mpd_player_get_repeat(mpc->mo));
+   gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->single), mpd_player_get_single(mpc->mo));
    gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(mpc->stream), mpc->is_streaming && mpc->streaming_child_pid);
    mpc_update_outputs(mpc);
 
@@ -888,16 +896,20 @@ mpc_create (XfcePanelPlugin * plugin)
    g_signal_connect (G_OBJECT(mpc->stream), "toggled", G_CALLBACK (mpc_stream_toggled), mpc);
    mpc->appl = gtk_menu_item_new_with_label (_("Launch"));
    g_signal_connect (G_OBJECT(mpc->appl), "activate", G_CALLBACK (mpc_launch_client), mpc);
+   mpc->single = gtk_check_menu_item_new_with_label (_("Single"));
+   g_signal_connect (G_OBJECT(mpc->single), "toggled", G_CALLBACK (mpc_single_toggled), mpc);
 
    add_separator_and_label_with_markup(plugin, _("<b><i>Commands</i></b>"));
    xfce_panel_plugin_menu_insert_item(plugin,GTK_MENU_ITEM(mpc->random));
    xfce_panel_plugin_menu_insert_item(plugin,GTK_MENU_ITEM(mpc->repeat));
+   xfce_panel_plugin_menu_insert_item(plugin,GTK_MENU_ITEM(mpc->single));
    xfce_panel_plugin_menu_insert_item(plugin,GTK_MENU_ITEM(mpc->stream));
    xfce_panel_plugin_menu_insert_item(plugin,GTK_MENU_ITEM(mpc->appl));
    add_separator_and_label_with_markup(plugin, _("<b><i>Outputs</i></b>"));
    gtk_widget_show (mpc->repeat);
    gtk_widget_show (mpc->random);
    gtk_widget_show (mpc->stream);
+   gtk_widget_show (mpc->single);
    gtk_widget_show (mpc->appl);
    gtk_widget_show_all (mpc->box);
 

@@ -56,6 +56,7 @@ MpdObj* mpd_new(char* host, int port, char* pass)
    mo->pass = g_strdup(pass);
    mo->socket = 0;
    mo->status = 0;
+   mo->single = 0;
    mo->repeat = 0;
    mo->random = 0;
    mo->curvol = 0;
@@ -625,6 +626,20 @@ int mpd_player_set_repeat(MpdObj* mo, int repeat)
    DBG("!");
    snprintf(outbuf, sizeof(outbuf), "repeat %d\n",repeat);
    return mpd_send_single_cmd(mo,outbuf);
+}
+
+int mpd_player_set_single(MpdObj* mo, int single)
+{
+   char outbuf[15];
+   DBG("!");
+   snprintf(outbuf, sizeof(outbuf), "single %d\n",single);
+   return mpd_send_single_cmd(mo,outbuf);
+}
+
+int mpd_player_get_single(MpdObj* mo)
+{
+   DBG("! return %d",mo->single);
+   return mo->single;
 }
 
 int mpd_player_get_repeat(MpdObj* mo)
