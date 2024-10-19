@@ -142,15 +142,19 @@ msgstr "Repeat"
 msgid "Stream"
 msgstr "Stream"
 
-#: panel-plugin/xfce4-mpc-plugin.c:896
+#: panel-plugin/xfce4-mpc-plugin.c:899
+msgid "Single"
+msgstr "Single"
+
+#: panel-plugin/xfce4-mpc-plugin.c:902
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>Commands</i></b>"
 
-#: panel-plugin/xfce4-mpc-plugin.c:901
+#: panel-plugin/xfce4-mpc-plugin.c:908
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>Outputs</i></b>"
 
-#: panel-plugin/xfce4-mpc-plugin.c:920
+#: panel-plugin/xfce4-mpc-plugin.c:928
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "A simple panel-plugin client for Music Player Daemon"
 
