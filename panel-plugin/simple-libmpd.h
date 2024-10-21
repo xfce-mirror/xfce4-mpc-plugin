@@ -66,6 +66,7 @@ typedef struct {
    int song;
    int songid;
    int repeat;
+   int single;
    int random;
    int playlistlength;
    mpd_Song* cursong;
@@ -125,3 +126,5 @@ int mpd_player_set_random(MpdObj*,int);
 int mpd_player_get_random(MpdObj*);
 int mpd_player_set_repeat(MpdObj*,int);
 int mpd_player_get_repeat(MpdObj*);
+int mpd_player_set_single(MpdObj*,int);
+int mpd_player_get_single(MpdObj*);
