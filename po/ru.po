@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-04-06 12:54+0200\n"
+"POT-Creation-Date: 2024-12-24 00:53+0100\n"
 "PO-Revision-Date: 2013-07-03 19:07+0000\n"
 "Last-Translator: Andrei Stepanov, 2022-2023\n"
 "Language-Team: Russian (http://app.transifex.com/xfce/xfce-panel-plugins/language/ru/)\n"
@@ -29,134 +29,142 @@ msgstr ""
 msgid "... not connected?"
 msgstr "...не подключён?"
 
-#: panel-plugin/xfce4-mpc-plugin.c:132 panel-plugin/xfce4-mpc-plugin.c:219
-#: panel-plugin/xfce4-mpc-plugin.c:893
+#: panel-plugin/xfce4-mpc-plugin.c:128 panel-plugin/xfce4-mpc-plugin.c:215
+#: panel-plugin/xfce4-mpc-plugin.c:896
 msgid "Launch"
 msgstr "Запустить"
 
-#: panel-plugin/xfce4-mpc-plugin.c:277
+#: panel-plugin/xfce4-mpc-plugin.c:273
 msgid "Mpd Client Plugin"
 msgstr "Модуль клиента MPD"
 
-#: panel-plugin/xfce4-mpc-plugin.c:283
+#: panel-plugin/xfce4-mpc-plugin.c:276
+msgid "_Close"
+msgstr "_Закрыть"
+
+#: panel-plugin/xfce4-mpc-plugin.c:278
 msgid "Properties"
 msgstr "Настройки"
 
-#: panel-plugin/xfce4-mpc-plugin.c:299
+#: panel-plugin/xfce4-mpc-plugin.c:294
 msgid "Host: "
 msgstr "Сервер: "
 
-#: panel-plugin/xfce4-mpc-plugin.c:309
+#: panel-plugin/xfce4-mpc-plugin.c:304
 msgid "Port: "
 msgstr "Порт: "
 
-#: panel-plugin/xfce4-mpc-plugin.c:319
+#: panel-plugin/xfce4-mpc-plugin.c:314
 msgid "Password: "
 msgstr "Пароль: "
 
-#: panel-plugin/xfce4-mpc-plugin.c:329
+#: panel-plugin/xfce4-mpc-plugin.c:324
 msgid "MPD Client: "
 msgstr "Клиент MPD: "
 
-#: panel-plugin/xfce4-mpc-plugin.c:338
+#: panel-plugin/xfce4-mpc-plugin.c:333
 msgid "Streaming Client: "
 msgstr "Клиент трансляции: "
 
-#: panel-plugin/xfce4-mpc-plugin.c:347
+#: panel-plugin/xfce4-mpc-plugin.c:342
 msgid "Tooltip Format: "
 msgstr "Формат подсказок: "
 
-#: panel-plugin/xfce4-mpc-plugin.c:356
+#: panel-plugin/xfce4-mpc-plugin.c:351
 msgid "Playlist Format: "
 msgstr "Формат списка: "
 
-#: panel-plugin/xfce4-mpc-plugin.c:365
+#: panel-plugin/xfce4-mpc-plugin.c:360
 msgid "Show _frame"
 msgstr "Показывать _рамку"
 
-#: panel-plugin/xfce4-mpc-plugin.c:377
+#: panel-plugin/xfce4-mpc-plugin.c:372
 msgid "Hostname or IP address"
 msgstr "Имя хоста или IP адрес"
 
-#: panel-plugin/xfce4-mpc-plugin.c:378
+#: panel-plugin/xfce4-mpc-plugin.c:373
 msgid "Graphical MPD Client to launch in plugin context menu"
 msgstr "Графический клиент MPD, для запуска из контекстного меню"
 
-#: panel-plugin/xfce4-mpc-plugin.c:379
+#: panel-plugin/xfce4-mpc-plugin.c:374
 msgid "Command with url to stream MPD HTTP output"
 msgstr "Команда с URL-адресом для вывода потоковой передачи MPD по HTTP"
 
-#: panel-plugin/xfce4-mpc-plugin.c:380
+#: panel-plugin/xfce4-mpc-plugin.c:375
 msgid "Variables: %artist%, %album%, %file%, %track% and %title%"
 msgstr "Переменные: %artist%, %album%, %file%, %track% и %title%"
 
-#: panel-plugin/xfce4-mpc-plugin.c:381
+#: panel-plugin/xfce4-mpc-plugin.c:376
 msgid ""
 "Variables: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
 msgstr "Переменные: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% и %title%"
 
-#: panel-plugin/xfce4-mpc-plugin.c:414
+#: panel-plugin/xfce4-mpc-plugin.c:409
 msgid "Execution error"
 msgstr "Ошибка выполнения"
 
-#: panel-plugin/xfce4-mpc-plugin.c:540
+#: panel-plugin/xfce4-mpc-plugin.c:542
 msgid "Unknown Artist"
 msgstr "Неизвестный Исполнитель"
 
-#: panel-plugin/xfce4-mpc-plugin.c:544
+#: panel-plugin/xfce4-mpc-plugin.c:546
 msgid "Unknown Album"
 msgstr "Неизвестный Альбом"
 
-#: panel-plugin/xfce4-mpc-plugin.c:548
+#: panel-plugin/xfce4-mpc-plugin.c:550
 msgid "Unknown Title"
 msgstr "Неизвестное Название"
 
-#: panel-plugin/xfce4-mpc-plugin.c:552
+#: panel-plugin/xfce4-mpc-plugin.c:554
 msgid "Unknown Track"
 msgstr "Неизвестная Дорожка"
 
-#: panel-plugin/xfce4-mpc-plugin.c:556
+#: panel-plugin/xfce4-mpc-plugin.c:558
 msgid "Unknown File"
 msgstr "Неизвестный Файл"
 
-#: panel-plugin/xfce4-mpc-plugin.c:587
+#: panel-plugin/xfce4-mpc-plugin.c:589
 msgid "Playing"
 msgstr "Играет"
 
-#: panel-plugin/xfce4-mpc-plugin.c:590
+#: panel-plugin/xfce4-mpc-plugin.c:592
 msgid "Paused"
 msgstr "Приостановлено"
 
-#: panel-plugin/xfce4-mpc-plugin.c:593
+#: panel-plugin/xfce4-mpc-plugin.c:595
 msgid "Stopped"
 msgstr "Остановлено"
 
-#: panel-plugin/xfce4-mpc-plugin.c:658
+#: panel-plugin/xfce4-mpc-plugin.c:661
 msgid "Mpd playlist"
 msgstr "Список воспроизведения MPD"
 
-#: panel-plugin/xfce4-mpc-plugin.c:887
+#: panel-plugin/xfce4-mpc-plugin.c:890
 msgid "Random"
 msgstr "Случайный режим"
 
-#: panel-plugin/xfce4-mpc-plugin.c:889
+#: panel-plugin/xfce4-mpc-plugin.c:892
 msgid "Repeat"
 msgstr "Повтор"
 
-#: panel-plugin/xfce4-mpc-plugin.c:891
+#: panel-plugin/xfce4-mpc-plugin.c:894
 msgid "Stream"
 msgstr "Поток"
 
-#: panel-plugin/xfce4-mpc-plugin.c:896
+#: panel-plugin/xfce4-mpc-plugin.c:898
+msgid "Single"
+msgstr ""
+
+#: panel-plugin/xfce4-mpc-plugin.c:901
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>Команды</i></b>"
 
-#: panel-plugin/xfce4-mpc-plugin.c:901
+#: panel-plugin/xfce4-mpc-plugin.c:907
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>Результаты</i></b>"
 
-#: panel-plugin/xfce4-mpc-plugin.c:920
+#: panel-plugin/xfce4-mpc-plugin.c:927
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "Простой модуль клиента MPD для панели Xfce"
 
