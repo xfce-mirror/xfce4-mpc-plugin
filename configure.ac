@@ -36,8 +36,6 @@ AC_ARG_WITH(libmpd,
         LIBMPD_PATH="$withval", LIBMPD_PATH="")
 
 use_libmpd=false
-AM_CONDITIONAL([HAVE_LIBMPD], [test "$use_libmpd" = true])
-AC_DEFINE([HAVE_LIBMPD], [0], [no libmpd found])
 
 AC_MSG_CHECKING([whether --with-libmpd was used])
 if test x"$LIBMPD_PATH" != x"" ; then
@@ -48,7 +46,6 @@ if test x"$LIBMPD_PATH" != x"" ; then
       AC_MSG_RESULT([yes, using $LIBMPD_PATH])
       LIBMPD_CFLAGS="-I${LIBMPD_PATH}/include/"
       LIBMPD_LIBS="-L${LIBMPD_PATH}/lib/ -lmpd"
-      AC_DEFINE([HAVE_LIBMPD], [1], [libmpd found])
       use_libmpd=true
       AC_SUBST([LIBMPD_CFLAGS])
       AC_SUBST([LIBMPD_LIBS])
@@ -57,7 +54,6 @@ else
    AC_MSG_RESULT([no, falling back to pkg-config])
    XDT_CHECK_OPTIONAL_PACKAGE([LIBMPD], [libmpd], [0.12], [libmpd], [libmpd])
    if test x"$LIBMPD_FOUND" = x"yes"; then
-      AC_DEFINE([HAVE_LIBMPD], [1], [libmpd found])
       use_libmpd=true
       echo "* Build with libmpd: yes"
    else
@@ -65,6 +61,8 @@ else
    fi
 fi
 AM_CONDITIONAL(USE_LIBMPD, [test "$use_libmpd" = true])
+AS_IF([test "$use_libmpd" = true],
+  AC_DEFINE([HAVE_LIBMPD], [1], [Define to 1 if libmpd is found]))
 dnl Translations
 GETTEXT_PACKAGE="$PACKAGE"
 AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$GETTEXT_PACKAGE"], [Name of default gettext domain])

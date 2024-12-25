@@ -937,7 +937,7 @@ mpc_construct (XfcePanelPlugin * plugin)
 
    DBG("!");
 #ifdef DEBUG
-#if HAVE_LIBMPD
+#ifdef HAVE_LIBMPD
    debug_set_level(10);
 #endif
 #endif
