@@ -3,7 +3,7 @@ dnl
 dnl xfce4-mpc-plugin - mpd client plugin for the XFce4 panel
 dnl
 
-XDT_VERSION_INIT([0.5.5])
+XDT_VERSION_INIT([0.5.5], [git])
 
 AC_COPYRIGHT([Copyright (c) 2006-2024 The Xfce development team. All rights reserved.])
 AC_INIT([xfce4-mpc-plugin], [xdt_version], [https://gitlab.xfce.org/panel-plugins/xfce4-mpc-plugin])
