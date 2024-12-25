@@ -20,9 +20,9 @@
 #include <gtk/gtk.h>
 #include <libxfce4panel/libxfce4panel.h>
 
-#ifdef HAVE_LIBMPD
+#if HAVE_LIBMPD
 #include <libmpd/libmpd.h>
-#ifdef DEBUG
+#if DEBUG
 #include <libmpd/debug_printf.h>
 #endif
 #else
@@ -69,3 +69,4 @@ typedef struct {
    GtkWidget *textbox_playlist_format;
    GtkWidget *checkbox_frame;
 } t_mpc_dialog;
+
