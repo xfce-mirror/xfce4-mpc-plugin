@@ -161,7 +161,7 @@ msgstr "<b><i>Output-e</i></b>"
 
 #: panel-plugin/xfce4-mpc-plugin.c:927
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr "Shtojcë klient paneli e thjeshtë për \"The Music Player Daemon\""
+msgstr "Shtojcë klient paneli e thjeshtë për “The Music Player Daemon”"
 
 #: panel-plugin/xfce4-mpc-plugin.desktop.in:5
 msgid "MPD Client Plugin"
@@ -169,4 +169,4 @@ msgstr "Shtojcë Klienti MPD"
 
 #: panel-plugin/xfce4-mpc-plugin.desktop.in:6
 msgid "A client for MPD, The Music Player Daemon"
-msgstr "Klient për MPD, \"The Music Player Daemon\""
+msgstr "Klient për MPD, “The Music Player Daemon”"
