@@ -6,7 +6,7 @@
 # Dušan Kazik <prescott66@gmail.com>, 2015-2016
 # 785411ef824cced88d3e197f5af1b61a_da6a977 <e5fae5b35c0c625157d991b31e113de3_956341>, 2021
 # Robert Hartl <hartl.robert@gmail.com>, 2009-2010
-# Slavko <linux@slavino.sk>, 2015,2019,2023
+# Slavko <linux@slavino.sk>, 2015,2019,2023,2025
 # 7dcd6f74323fe8d9c477949ff8fcbb1c_c427b63 <3fcd202e3dfab15fda15b8e88e54d449_7173>, 2011
 msgid ""
 msgstr ""
@@ -14,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2024-12-24 00:53+0100\n"
 "PO-Revision-Date: 2013-07-03 19:07+0000\n"
-"Last-Translator: Slavko <linux@slavino.sk>, 2015,2019,2023\n"
+"Last-Translator: Slavko <linux@slavino.sk>, 2015,2019,2023,2025\n"
 "Language-Team: Slovak (http://app.transifex.com/xfce/xfce-panel-plugins/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: panel-plugin/xfce4-mpc-plugin.c:36
 msgid "... not connected?"
-msgstr ""
+msgstr ".... nie je pripojený?"
 
 #: panel-plugin/xfce4-mpc-plugin.c:128 panel-plugin/xfce4-mpc-plugin.c:215
 #: panel-plugin/xfce4-mpc-plugin.c:896
@@ -45,31 +45,31 @@ msgstr "Vlastnosti"
 
 #: panel-plugin/xfce4-mpc-plugin.c:294
 msgid "Host: "
-msgstr ""
+msgstr "Hostiteľ : "
 
 #: panel-plugin/xfce4-mpc-plugin.c:304
 msgid "Port: "
-msgstr ""
+msgstr "Port : "
 
 #: panel-plugin/xfce4-mpc-plugin.c:314
 msgid "Password: "
-msgstr ""
+msgstr "Heslo : "
 
 #: panel-plugin/xfce4-mpc-plugin.c:324
 msgid "MPD Client: "
-msgstr ""
+msgstr "Klient MPD : "
 
 #: panel-plugin/xfce4-mpc-plugin.c:333
 msgid "Streaming Client: "
-msgstr ""
+msgstr "Streamovací klient : "
 
 #: panel-plugin/xfce4-mpc-plugin.c:342
 msgid "Tooltip Format: "
-msgstr ""
+msgstr "Formát popisu : "
 
 #: panel-plugin/xfce4-mpc-plugin.c:351
 msgid "Playlist Format: "
-msgstr ""
+msgstr "Formát zoznamu skladieb : "
 
 #: panel-plugin/xfce4-mpc-plugin.c:360
 msgid "Show _frame"
@@ -89,13 +89,13 @@ msgstr "Príkaz s adresou URL na streamovanie výstupu MPD HTTP"
 
 #: panel-plugin/xfce4-mpc-plugin.c:375
 msgid "Variables: %artist%, %album%, %file%, %track% and %title%"
-msgstr ""
+msgstr "Premenné : %artist%, %album%, %file%, %track% a %title%"
 
 #: panel-plugin/xfce4-mpc-plugin.c:376
 msgid ""
 "Variables: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
-msgstr ""
+msgstr "Premenné : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% a %title%"
 
 #: panel-plugin/xfce4-mpc-plugin.c:409
 msgid "Execution error"
@@ -123,7 +123,7 @@ msgstr "Neznámy súbor"
 
 #: panel-plugin/xfce4-mpc-plugin.c:589
 msgid "Playing"
-msgstr ""
+msgstr "Prehávanie"
 
 #: panel-plugin/xfce4-mpc-plugin.c:592
 msgid "Paused"
