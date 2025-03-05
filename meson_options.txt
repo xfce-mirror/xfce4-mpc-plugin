@@ -1,0 +1,6 @@
+option(
+  'libmpd',
+  type: 'feature',
+  value: 'auto',
+  description: 'libmpd support',
+)
