@@ -9,6 +9,7 @@ AC_COPYRIGHT([Copyright (c) 2006-2024 The Xfce development team. All rights rese
 AC_INIT([xfce4-mpc-plugin], [xdt_version], [https://gitlab.xfce.org/panel-plugins/xfce4-mpc-plugin])
 AC_REVISION([xdt_version_build])
 AC_PREREQ([2.69])
+AC_DEFINE([VERSION_FULL], [PACKAGE_VERSION], [Alias for VERSION and PACKAGE_VERSION for meson compatibility])
 
 AM_INIT_AUTOMAKE([1.8 dist-bzip2 tar-ustar no-dist-gzip foreign])
 AC_CONFIG_HEADERS([config.h])
