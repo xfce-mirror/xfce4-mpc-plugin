@@ -4,10 +4,12 @@ plugin_LTLIBRARIES = libmpc.la
 libmpc_la_CFLAGS =							\
 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"				\
 	@LIBXFCE4UI_CFLAGS@						\
+	@LIBXFCE4UTIL_CFLAGS@						\
 	@LIBXFCE4PANEL_CFLAGS@
 
 libmpc_la_LIBADD =							\
 	@LIBXFCE4UI_LIBS@						\
+	@LIBXFCE4UTIL_LIBS@						\
 	@LIBXFCE4PANEL_LIBS@
 
 libmpc_la_LDFLAGS = \
