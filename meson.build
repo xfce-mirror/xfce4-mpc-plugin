@@ -1,14 +1,10 @@
 project(
   'xfce4-mpc-plugin',
   'c',
-  version: '0.5.5-dev',
-  license: '0BSD',
-  meson_version: '>= 0.54.0',
-  default_options: [
-    'c_std=gnu11',
-    'buildtype=debugoptimized',
-    'warning_level=2',
-  ]
+version : '0.6.0',
+  license : '0BSD',
+  meson_version : '>= 0.54.0',
+  default_options : ['c_std=gnu11', 'buildtype=debugoptimized', 'warning_level=2']
 )
 
 project_namespace = 'panel-plugins'
