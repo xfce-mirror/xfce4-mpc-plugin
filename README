@@ -25,9 +25,11 @@ If libmpd is not installed in a standard directory, use --with-libmpd=path_to_li
 Since 0.2.0, i implemented a simple interface with mpd, using plain old sockets.
 If libmpd is not found, it will be used as a fallback (or if you specify --without-libmpd)
 
-./configure && make && su -c make install should suffice in most cases.
+meson setup build && meson compile -C build && su -c meson install -C build
 
-If it crashes, recompile it with --enable-debug=full, add it to the panel, attach gdb to it
+should suffice in most cases.
+
+If it crashes, recompile it with --buildtype=debug, add it to the panel, attach gdb to it
 (gdb -p `pgrep -f libmpc` , continue) and report a bug with a complete backtrace.
 
 This little piece of code is licensed under a BSD-style licence.
