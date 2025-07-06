@@ -4,14 +4,14 @@
 # 
 # Translators:
 # Steve Harris <steve@jbs.ca>, 2020
-# Steve Harris <steve@jbs.ca>, 2023
+# Steve Harris <steve@jbs.ca>, 2023,2025
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2024-12-24 00:53+0100\n"
 "PO-Revision-Date: 2013-07-03 19:07+0000\n"
-"Last-Translator: Steve Harris <steve@jbs.ca>, 2023\n"
+"Last-Translator: Steve Harris <steve@jbs.ca>, 2023,2025\n"
 "Language-Team: English (Canada) (http://app.transifex.com/xfce/xfce-panel-plugins/language/en_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: panel-plugin/xfce4-mpc-plugin.c:36
 msgid "... not connected?"
-msgstr ""
+msgstr "... not connected?"
 
 #: panel-plugin/xfce4-mpc-plugin.c:128 panel-plugin/xfce4-mpc-plugin.c:215
 #: panel-plugin/xfce4-mpc-plugin.c:896
@@ -42,31 +42,31 @@ msgstr "Properties"
 
 #: panel-plugin/xfce4-mpc-plugin.c:294
 msgid "Host: "
-msgstr ""
+msgstr "Host: "
 
 #: panel-plugin/xfce4-mpc-plugin.c:304
 msgid "Port: "
-msgstr ""
+msgstr "Port: "
 
 #: panel-plugin/xfce4-mpc-plugin.c:314
 msgid "Password: "
-msgstr ""
+msgstr "Password: "
 
 #: panel-plugin/xfce4-mpc-plugin.c:324
 msgid "MPD Client: "
-msgstr ""
+msgstr "MPD Client: "
 
 #: panel-plugin/xfce4-mpc-plugin.c:333
 msgid "Streaming Client: "
-msgstr ""
+msgstr "Streaming Client: "
 
 #: panel-plugin/xfce4-mpc-plugin.c:342
 msgid "Tooltip Format: "
-msgstr ""
+msgstr "Tooltip Format: "
 
 #: panel-plugin/xfce4-mpc-plugin.c:351
 msgid "Playlist Format: "
-msgstr ""
+msgstr "Playlist Format: "
 
 #: panel-plugin/xfce4-mpc-plugin.c:360
 msgid "Show _frame"
@@ -86,13 +86,13 @@ msgstr "Command with url to stream MPD HTTP output"
 
 #: panel-plugin/xfce4-mpc-plugin.c:375
 msgid "Variables: %artist%, %album%, %file%, %track% and %title%"
-msgstr ""
+msgstr "Variables: %artist%, %album%, %file%, %track% and %title%"
 
 #: panel-plugin/xfce4-mpc-plugin.c:376
 msgid ""
 "Variables: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
-msgstr ""
+msgstr "Variables: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% and %title%"
 
 #: panel-plugin/xfce4-mpc-plugin.c:409
 msgid "Execution error"
@@ -100,27 +100,27 @@ msgstr "Execution error"
 
 #: panel-plugin/xfce4-mpc-plugin.c:542
 msgid "Unknown Artist"
-msgstr ""
+msgstr "Unknown Artist"
 
 #: panel-plugin/xfce4-mpc-plugin.c:546
 msgid "Unknown Album"
-msgstr ""
+msgstr "Unknown Album"
 
 #: panel-plugin/xfce4-mpc-plugin.c:550
 msgid "Unknown Title"
-msgstr ""
+msgstr "Unknown Title"
 
 #: panel-plugin/xfce4-mpc-plugin.c:554
 msgid "Unknown Track"
-msgstr ""
+msgstr "Unknown Track"
 
 #: panel-plugin/xfce4-mpc-plugin.c:558
 msgid "Unknown File"
-msgstr ""
+msgstr "Unknown File"
 
 #: panel-plugin/xfce4-mpc-plugin.c:589
 msgid "Playing"
-msgstr ""
+msgstr "Playing"
 
 #: panel-plugin/xfce4-mpc-plugin.c:592
 msgid "Paused"
@@ -128,7 +128,7 @@ msgstr "Paused"
 
 #: panel-plugin/xfce4-mpc-plugin.c:595
 msgid "Stopped"
-msgstr ""
+msgstr "Stopped"
 
 #: panel-plugin/xfce4-mpc-plugin.c:661
 msgid "Mpd playlist"
@@ -148,7 +148,7 @@ msgstr "Stream"
 
 #: panel-plugin/xfce4-mpc-plugin.c:898
 msgid "Single"
-msgstr ""
+msgstr "Single"
 
 #: panel-plugin/xfce4-mpc-plugin.c:901
 msgid "<b><i>Commands</i></b>"
