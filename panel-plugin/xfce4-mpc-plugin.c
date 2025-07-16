@@ -238,7 +238,6 @@ mpc_dialog_response (GtkWidget * dlg, int response, t_mpc_dialog * dialog)
    g_free (dialog);
 
    gtk_widget_destroy (dlg);
-   xfce_panel_plugin_unblock_menu (mpc->plugin);
    mpc_write_config (mpc->plugin, mpc);
 }
 
@@ -265,17 +264,21 @@ mpc_create_options (XfcePanelPlugin * plugin, t_mpc* mpc)
 
    DBG("!");
 
+    if (mpc->settings_dialog != NULL) {
+        gtk_window_present (GTK_WINDOW (mpc->settings_dialog));
+        return;
+    }
+
    dialog = g_new0 (t_mpc_dialog, 1);
 
    dialog->mpc = mpc;
 
-   xfce_panel_plugin_block_menu (plugin);
-
-   dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Mpd Client Plugin"),
+   mpc->settings_dialog = dlg = xfce_titled_dialog_new_with_mixed_buttons (_("Mpd Client Plugin"),
                                                     GTK_WINDOW(gtk_widget_get_toplevel(GTK_WIDGET(plugin))),
                                                     GTK_DIALOG_DESTROY_WITH_PARENT,
                                                     "window-close-symbolic", _("_Close"), GTK_RESPONSE_OK,
                                                     NULL);
+   g_object_add_weak_pointer (G_OBJECT (mpc->settings_dialog), (gpointer *) &mpc->settings_dialog);
    xfce_titled_dialog_set_subtitle (XFCE_TITLED_DIALOG (dlg), _("Properties"));
 
    gtk_window_set_position   (GTK_WINDOW (dlg), GTK_WIN_POS_CENTER);
