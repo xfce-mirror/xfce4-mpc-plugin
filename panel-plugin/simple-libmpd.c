@@ -18,10 +18,6 @@
  */
 
 /* double inclusion ?*/
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 #include "simple-libmpd.h"
 
 /* for DBG(..) macros */
