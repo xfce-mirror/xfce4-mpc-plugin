@@ -38,6 +38,7 @@ typedef struct {
 
 typedef struct {
    XfcePanelPlugin *plugin;
+   GtkWidget *settings_dialog;
    GtkWidget *frame,*box,*prev,*stop,*toggle,*next,*random,*repeat,*single,*stream,*appl,*about;
    GtkWidget *playlist;
    gboolean show_frame;
