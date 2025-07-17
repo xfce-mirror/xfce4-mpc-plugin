@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Xfce
-# This file is distributed under the same license as the xfce-panel-plugins.xfce4-mpc-plugin package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
 # Daniel Nylander <po@danielnylander.se>, 2008
@@ -10,8 +10,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-12-24 00:53+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-17 00:53+0200\n"
 "PO-Revision-Date: 2013-07-03 19:07+0000\n"
 "Last-Translator: Luna Jernberg <droidbittin@gmail.com>, 2024\n"
 "Language-Team: Swedish (http://app.transifex.com/xfce/xfce-panel-plugins/language/sv/)\n"
@@ -21,153 +21,146 @@ msgstr ""
 "Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: panel-plugin/xfce4-mpc-plugin.c:36
+#: ../panel-plugin/xfce4-mpc-plugin.c:37
 msgid "... not connected?"
 msgstr "... inte ansluten?"
 
-#: panel-plugin/xfce4-mpc-plugin.c:128 panel-plugin/xfce4-mpc-plugin.c:215
-#: panel-plugin/xfce4-mpc-plugin.c:896
+#: ../panel-plugin/xfce4-mpc-plugin.c:129
+#: ../panel-plugin/xfce4-mpc-plugin.c:216
+#: ../panel-plugin/xfce4-mpc-plugin.c:900
 msgid "Launch"
 msgstr "Kör"
 
-#: panel-plugin/xfce4-mpc-plugin.c:273
+#: ../panel-plugin/xfce4-mpc-plugin.c:276
 msgid "Mpd Client Plugin"
 msgstr "Insticksprogram för Mpd-klient"
 
-#: panel-plugin/xfce4-mpc-plugin.c:276
+#: ../panel-plugin/xfce4-mpc-plugin.c:279
 msgid "_Close"
 msgstr "_Stäng"
 
-#: panel-plugin/xfce4-mpc-plugin.c:278
+#: ../panel-plugin/xfce4-mpc-plugin.c:282
 msgid "Properties"
 msgstr "Egenskaper"
 
-#: panel-plugin/xfce4-mpc-plugin.c:294
+#: ../panel-plugin/xfce4-mpc-plugin.c:298
 msgid "Host: "
 msgstr "Värd:"
 
-#: panel-plugin/xfce4-mpc-plugin.c:304
+#: ../panel-plugin/xfce4-mpc-plugin.c:308
 msgid "Port: "
 msgstr "Port:"
 
-#: panel-plugin/xfce4-mpc-plugin.c:314
+#: ../panel-plugin/xfce4-mpc-plugin.c:318
 msgid "Password: "
 msgstr "Lösenord:"
 
-#: panel-plugin/xfce4-mpc-plugin.c:324
+#: ../panel-plugin/xfce4-mpc-plugin.c:328
 msgid "MPD Client: "
 msgstr "MPD klient:"
 
-#: panel-plugin/xfce4-mpc-plugin.c:333
+#: ../panel-plugin/xfce4-mpc-plugin.c:337
 msgid "Streaming Client: "
 msgstr "Strömmande klient:"
 
-#: panel-plugin/xfce4-mpc-plugin.c:342
+#: ../panel-plugin/xfce4-mpc-plugin.c:346
 msgid "Tooltip Format: "
 msgstr "Format för verktygstips:"
 
-#: panel-plugin/xfce4-mpc-plugin.c:351
+#: ../panel-plugin/xfce4-mpc-plugin.c:355
 msgid "Playlist Format: "
 msgstr "Format för spellista:"
 
-#: panel-plugin/xfce4-mpc-plugin.c:360
+#: ../panel-plugin/xfce4-mpc-plugin.c:364
 msgid "Show _frame"
 msgstr "Visa _ram"
 
-#: panel-plugin/xfce4-mpc-plugin.c:372
+#: ../panel-plugin/xfce4-mpc-plugin.c:376
 msgid "Hostname or IP address"
 msgstr "Värdnamn eller IP-adress"
 
-#: panel-plugin/xfce4-mpc-plugin.c:373
+#: ../panel-plugin/xfce4-mpc-plugin.c:377
 msgid "Graphical MPD Client to launch in plugin context menu"
 msgstr "Grafisk MPD-klient att starta i insticksmodulens sammanhangsmeny"
 
-#: panel-plugin/xfce4-mpc-plugin.c:374
+#: ../panel-plugin/xfce4-mpc-plugin.c:378
 msgid "Command with url to stream MPD HTTP output"
 msgstr "Kommando med url för att strömma MPD HTTP-utdata"
 
-#: panel-plugin/xfce4-mpc-plugin.c:375
+#: ../panel-plugin/xfce4-mpc-plugin.c:379
 msgid "Variables: %artist%, %album%, %file%, %track% and %title%"
 msgstr "Variabler: %artist%, %album%, %fil% %titel%"
 
-#: panel-plugin/xfce4-mpc-plugin.c:376
+#: ../panel-plugin/xfce4-mpc-plugin.c:380
 msgid ""
 "Variables: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
 msgstr "Variabler: %vol%, %status%, %nyrad%, %artist%, %album%, %fil%, %spår% och %titel%"
 
-#: panel-plugin/xfce4-mpc-plugin.c:409
+#: ../panel-plugin/xfce4-mpc-plugin.c:413
 msgid "Execution error"
 msgstr "Körningsfel"
 
-#: panel-plugin/xfce4-mpc-plugin.c:542
+#: ../panel-plugin/xfce4-mpc-plugin.c:546
 msgid "Unknown Artist"
 msgstr "Okänd artist"
 
-#: panel-plugin/xfce4-mpc-plugin.c:546
+#: ../panel-plugin/xfce4-mpc-plugin.c:550
 msgid "Unknown Album"
 msgstr "Okänt album"
 
-#: panel-plugin/xfce4-mpc-plugin.c:550
+#: ../panel-plugin/xfce4-mpc-plugin.c:554
 msgid "Unknown Title"
 msgstr "Okänd titel"
 
-#: panel-plugin/xfce4-mpc-plugin.c:554
+#: ../panel-plugin/xfce4-mpc-plugin.c:558
 msgid "Unknown Track"
 msgstr "Okänt spår"
 
-#: panel-plugin/xfce4-mpc-plugin.c:558
+#: ../panel-plugin/xfce4-mpc-plugin.c:562
 msgid "Unknown File"
 msgstr "Okänd fil"
 
-#: panel-plugin/xfce4-mpc-plugin.c:589
+#: ../panel-plugin/xfce4-mpc-plugin.c:593
 msgid "Playing"
 msgstr "Spelar"
 
-#: panel-plugin/xfce4-mpc-plugin.c:592
+#: ../panel-plugin/xfce4-mpc-plugin.c:596
 msgid "Paused"
 msgstr "Pausad"
 
-#: panel-plugin/xfce4-mpc-plugin.c:595
+#: ../panel-plugin/xfce4-mpc-plugin.c:599
 msgid "Stopped"
 msgstr "Stoppad"
 
-#: panel-plugin/xfce4-mpc-plugin.c:661
+#: ../panel-plugin/xfce4-mpc-plugin.c:665
 msgid "Mpd playlist"
 msgstr "Mpd-spellista"
 
-#: panel-plugin/xfce4-mpc-plugin.c:890
+#: ../panel-plugin/xfce4-mpc-plugin.c:894
 msgid "Random"
 msgstr "Slumpmässigt"
 
-#: panel-plugin/xfce4-mpc-plugin.c:892
+#: ../panel-plugin/xfce4-mpc-plugin.c:896
 msgid "Repeat"
 msgstr "Upprepa"
 
-#: panel-plugin/xfce4-mpc-plugin.c:894
+#: ../panel-plugin/xfce4-mpc-plugin.c:898
 msgid "Stream"
 msgstr "Ström"
 
-#: panel-plugin/xfce4-mpc-plugin.c:898
+#: ../panel-plugin/xfce4-mpc-plugin.c:902
 msgid "Single"
 msgstr "Singel"
 
-#: panel-plugin/xfce4-mpc-plugin.c:901
+#: ../panel-plugin/xfce4-mpc-plugin.c:905
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>Kommandon</i></b>"
 
-#: panel-plugin/xfce4-mpc-plugin.c:907
+#: ../panel-plugin/xfce4-mpc-plugin.c:911
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>Utmatningar</i></b>"
 
-#: panel-plugin/xfce4-mpc-plugin.c:927
+#: ../panel-plugin/xfce4-mpc-plugin.c:931
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "En enkel Music Player Daemon-klient som panelinsticksmodul"
-
-#: panel-plugin/xfce4-mpc-plugin.desktop.in:5
-msgid "MPD Client Plugin"
-msgstr "Insticksprogrammet MPD-klient"
-
-#: panel-plugin/xfce4-mpc-plugin.desktop.in:6
-msgid "A client for MPD, The Music Player Daemon"
-msgstr "En klient för MPD, The Music Player Daemon"
