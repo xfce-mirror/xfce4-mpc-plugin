@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-mpc-plugin package.
 # 
 # Translators:
 # Alois Nešpor <info@aloisnespor.info>, 2013
@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-17 00:53+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2025-07-18 11:07+0200\n"
 "PO-Revision-Date: 2013-07-03 19:07+0000\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>, 2015-2016,2019,2021,2024\n"
 "Language-Team: Czech (http://app.transifex.com/xfce/xfce-panel-plugins/language/cs/)\n"
@@ -19,146 +19,153 @@ msgstr ""
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:37
+#: panel-plugin/xfce4-mpc-plugin.c:37
 msgid "... not connected?"
 msgstr "... nepřipojeno?"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:129
-#: ../panel-plugin/xfce4-mpc-plugin.c:216
-#: ../panel-plugin/xfce4-mpc-plugin.c:900
+#: panel-plugin/xfce4-mpc-plugin.c:129 panel-plugin/xfce4-mpc-plugin.c:216
+#: panel-plugin/xfce4-mpc-plugin.c:900
 msgid "Launch"
 msgstr "Spustit"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:276
+#: panel-plugin/xfce4-mpc-plugin.c:276
 msgid "Mpd Client Plugin"
 msgstr "Zásuvný modul klient Mpd"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:279
+#: panel-plugin/xfce4-mpc-plugin.c:279
 msgid "_Close"
 msgstr "_Zavřít"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:282
+#: panel-plugin/xfce4-mpc-plugin.c:282
 msgid "Properties"
 msgstr "Vlastnosti"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:298
+#: panel-plugin/xfce4-mpc-plugin.c:298
 msgid "Host: "
 msgstr "Hostitel:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:308
+#: panel-plugin/xfce4-mpc-plugin.c:308
 msgid "Port: "
 msgstr "Port:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:318
+#: panel-plugin/xfce4-mpc-plugin.c:318
 msgid "Password: "
 msgstr "Heslo:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:328
+#: panel-plugin/xfce4-mpc-plugin.c:328
 msgid "MPD Client: "
 msgstr "Klient MPD:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:337
+#: panel-plugin/xfce4-mpc-plugin.c:337
 msgid "Streaming Client: "
 msgstr "Streamovací klient:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:346
+#: panel-plugin/xfce4-mpc-plugin.c:346
 msgid "Tooltip Format: "
 msgstr "Formát tipu:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:355
+#: panel-plugin/xfce4-mpc-plugin.c:355
 msgid "Playlist Format: "
 msgstr "Formát seznamu médií:"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:364
+#: panel-plugin/xfce4-mpc-plugin.c:364
 msgid "Show _frame"
 msgstr "Zobrazit _rámeček"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:376
+#: panel-plugin/xfce4-mpc-plugin.c:376
 msgid "Hostname or IP address"
 msgstr "Název hostitele nebo adresa IP"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:377
+#: panel-plugin/xfce4-mpc-plugin.c:377
 msgid "Graphical MPD Client to launch in plugin context menu"
 msgstr "Grafický klient MPD ke spuštění v kontextové nabídce zásuvného modulu"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:378
+#: panel-plugin/xfce4-mpc-plugin.c:378
 msgid "Command with url to stream MPD HTTP output"
 msgstr "Příkaz s umístěním URL ke streamování výstupu MPD HTTP"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:379
+#: panel-plugin/xfce4-mpc-plugin.c:379
 msgid "Variables: %artist%, %album%, %file%, %track% and %title%"
 msgstr "Proměnné: %artist%, %album%, %file%, %track% a %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:380
+#: panel-plugin/xfce4-mpc-plugin.c:380
 msgid ""
 "Variables: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
 msgstr "Proměnné: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% a %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:413
+#: panel-plugin/xfce4-mpc-plugin.c:413
 msgid "Execution error"
 msgstr "Chyba spuštění"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:546
+#: panel-plugin/xfce4-mpc-plugin.c:546
 msgid "Unknown Artist"
 msgstr "Neznámý umělec"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:550
+#: panel-plugin/xfce4-mpc-plugin.c:550
 msgid "Unknown Album"
 msgstr "Neznámé album"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:554
+#: panel-plugin/xfce4-mpc-plugin.c:554
 msgid "Unknown Title"
 msgstr "Neznámý titul"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:558
+#: panel-plugin/xfce4-mpc-plugin.c:558
 msgid "Unknown Track"
 msgstr "Neznámá stopa"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:562
+#: panel-plugin/xfce4-mpc-plugin.c:562
 msgid "Unknown File"
 msgstr "Neznámý soubor"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:593
+#: panel-plugin/xfce4-mpc-plugin.c:593
 msgid "Playing"
 msgstr "Přehrávání"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:596
+#: panel-plugin/xfce4-mpc-plugin.c:596
 msgid "Paused"
 msgstr "Pozastaveno"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:599
+#: panel-plugin/xfce4-mpc-plugin.c:599
 msgid "Stopped"
 msgstr "Zastaveno"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:665
+#: panel-plugin/xfce4-mpc-plugin.c:665
 msgid "Mpd playlist"
 msgstr "Seznam médií Mpd"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:894
+#: panel-plugin/xfce4-mpc-plugin.c:894
 msgid "Random"
 msgstr "Náhodně"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:896
+#: panel-plugin/xfce4-mpc-plugin.c:896
 msgid "Repeat"
 msgstr "Opakovat"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:898
+#: panel-plugin/xfce4-mpc-plugin.c:898
 msgid "Stream"
 msgstr "Stream"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:902
+#: panel-plugin/xfce4-mpc-plugin.c:902
 msgid "Single"
 msgstr "Jeden"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:905
+#: panel-plugin/xfce4-mpc-plugin.c:905
 msgid "<b><i>Commands</i></b>"
 msgstr "<b><i>Příkazy</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:911
+#: panel-plugin/xfce4-mpc-plugin.c:911
 msgid "<b><i>Outputs</i></b>"
 msgstr "<b><i>Výstupy</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:931
+#: panel-plugin/xfce4-mpc-plugin.c:931
 msgid "A simple panel-plugin client for Music Player Daemon"
 msgstr "Jednoduchý klient v podobě zásuvného modulu panelu pro službu přehrávače hudby MPD"
+
+#: panel-plugin/xfce4-mpc-plugin.desktop.in:5
+msgid "MPD Client Plugin"
+msgstr "Zásuvný modul klienta MPD"
+
+#: panel-plugin/xfce4-mpc-plugin.desktop.in:6
+msgid "A client for MPD, The Music Player Daemon"
+msgstr "Klient pro MPD, The Music Player Daemon"
