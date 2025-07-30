@@ -163,7 +163,7 @@ msgstr "<b><i>Dane wyjściowe</i></b>"
 
 #: panel-plugin/xfce4-mpc-plugin.c:931
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr "Prosty klient o charakterze wtyczki do panelu dla demona odtwarzacza muzycznego"
+msgstr "Prosty klient MPD w formie wtyczki panelu."
 
 #: panel-plugin/xfce4-mpc-plugin.desktop.in:5
 msgid "MPD Client Plugin"
