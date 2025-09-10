@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
-"POT-Creation-Date: 2024-10-21 12:52+0200\n"
+"POT-Creation-Date: 2025-07-18 11:07+0200\n"
 "PO-Revision-Date: 2013-07-03 19:07+0000\n"
 "Last-Translator: Gheyret Kenji <gheyret@yahoo.com>, 2013\n"
 "Language-Team: Uyghur (http://app.transifex.com/xfce/xfce-panel-plugins/language/ug/)\n"
@@ -18,144 +18,148 @@ msgstr ""
 "Language: ug\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: panel-plugin/xfce4-mpc-plugin.c:36
+#: panel-plugin/xfce4-mpc-plugin.c:37
 msgid "... not connected?"
-msgstr ""
+msgstr "…باغلانمىدىمۇ؟"
 
-#: panel-plugin/xfce4-mpc-plugin.c:128 panel-plugin/xfce4-mpc-plugin.c:215
-#: panel-plugin/xfce4-mpc-plugin.c:897
+#: panel-plugin/xfce4-mpc-plugin.c:129 panel-plugin/xfce4-mpc-plugin.c:216
+#: panel-plugin/xfce4-mpc-plugin.c:900
 msgid "Launch"
-msgstr "ئىجرا قىلىش"
+msgstr "قوزغات"
 
-#: panel-plugin/xfce4-mpc-plugin.c:273
+#: panel-plugin/xfce4-mpc-plugin.c:276
 msgid "Mpd Client Plugin"
 msgstr "Mpd خېرىدار قىستۇرمىسى"
 
 #: panel-plugin/xfce4-mpc-plugin.c:279
+msgid "_Close"
+msgstr "ياپ(_C)"
+
+#: panel-plugin/xfce4-mpc-plugin.c:282
 msgid "Properties"
 msgstr "خاسلىق"
 
-#: panel-plugin/xfce4-mpc-plugin.c:295
+#: panel-plugin/xfce4-mpc-plugin.c:298
 msgid "Host: "
-msgstr ""
+msgstr "مۇلازىمېتىر: "
 
-#: panel-plugin/xfce4-mpc-plugin.c:305
+#: panel-plugin/xfce4-mpc-plugin.c:308
 msgid "Port: "
-msgstr ""
+msgstr "ئېغىز: "
 
-#: panel-plugin/xfce4-mpc-plugin.c:315
+#: panel-plugin/xfce4-mpc-plugin.c:318
 msgid "Password: "
-msgstr ""
+msgstr "ئىم: "
 
-#: panel-plugin/xfce4-mpc-plugin.c:325
+#: panel-plugin/xfce4-mpc-plugin.c:328
 msgid "MPD Client: "
-msgstr ""
+msgstr "MPD خېرىدارى: "
 
-#: panel-plugin/xfce4-mpc-plugin.c:334
+#: panel-plugin/xfce4-mpc-plugin.c:337
 msgid "Streaming Client: "
-msgstr ""
+msgstr "ئېقىم خېرىدارى: "
 
-#: panel-plugin/xfce4-mpc-plugin.c:343
+#: panel-plugin/xfce4-mpc-plugin.c:346
 msgid "Tooltip Format: "
-msgstr ""
+msgstr "كۆرسەتمە پىچىمى: "
 
-#: panel-plugin/xfce4-mpc-plugin.c:352
+#: panel-plugin/xfce4-mpc-plugin.c:355
 msgid "Playlist Format: "
-msgstr ""
+msgstr "قويۇش تىزىمىنىڭ پىچىمى: "
 
-#: panel-plugin/xfce4-mpc-plugin.c:361
+#: panel-plugin/xfce4-mpc-plugin.c:364
 msgid "Show _frame"
 msgstr "كاندۇكنى كۆرسەت(_F)"
 
-#: panel-plugin/xfce4-mpc-plugin.c:373
+#: panel-plugin/xfce4-mpc-plugin.c:376
 msgid "Hostname or IP address"
 msgstr "كومپيۇتېر ئاتى ياكى IP ئادرېسى"
 
-#: panel-plugin/xfce4-mpc-plugin.c:374
-msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr "قىستۇرما مەزمۇن تىزىملىكىدە ئىجرا بولىدىغان گرافىكىلىق MPD خېرىدارى"
-
-#: panel-plugin/xfce4-mpc-plugin.c:375
-msgid "Command with url to stream MPD HTTP output"
-msgstr ""
-
-#: panel-plugin/xfce4-mpc-plugin.c:376
-msgid "Variables: %artist%, %album%, %file%, %track% and %title%"
-msgstr ""
-
 #: panel-plugin/xfce4-mpc-plugin.c:377
+msgid "Graphical MPD Client to launch in plugin context menu"
+msgstr "قىستۇرما مەزمۇن تىزىملىكىدە ئىجرا بولىدىغان گىرافىكىلىق MPD خېرىدارى"
+
+#: panel-plugin/xfce4-mpc-plugin.c:378
+msgid "Command with url to stream MPD HTTP output"
+msgstr "MPD HTTP ئېقىم تارقىتىشىقا ئىشلىتىدىغان تور ئادرېس بۇيرۇقى"
+
+#: panel-plugin/xfce4-mpc-plugin.c:379
+msgid "Variables: %artist%, %album%, %file%, %track% and %title%"
+msgstr "ئۆزگەرگۈچى: %artist%، %album%، %file%، %track% ۋە %title%"
+
+#: panel-plugin/xfce4-mpc-plugin.c:380
 msgid ""
 "Variables: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
-msgstr ""
+msgstr "ئۆزگەرگۈچى: %vol%، %status%، %newline%، %artist%، %album%، %file%، %track% ۋە %title%"
 
-#: panel-plugin/xfce4-mpc-plugin.c:410
+#: panel-plugin/xfce4-mpc-plugin.c:413
 msgid "Execution error"
-msgstr ""
+msgstr "ئىجرا قىلىشتا خاتالىق كۆرۈلدى"
 
-#: panel-plugin/xfce4-mpc-plugin.c:543
+#: panel-plugin/xfce4-mpc-plugin.c:546
 msgid "Unknown Artist"
-msgstr ""
+msgstr "نامەلۇم ئورۇنلىغۇچى"
 
-#: panel-plugin/xfce4-mpc-plugin.c:547
+#: panel-plugin/xfce4-mpc-plugin.c:550
 msgid "Unknown Album"
-msgstr ""
+msgstr "نامەلۇم ئالبوم"
 
-#: panel-plugin/xfce4-mpc-plugin.c:551
+#: panel-plugin/xfce4-mpc-plugin.c:554
 msgid "Unknown Title"
-msgstr ""
+msgstr "نامەلۇم ماۋزۇ"
 
-#: panel-plugin/xfce4-mpc-plugin.c:555
+#: panel-plugin/xfce4-mpc-plugin.c:558
 msgid "Unknown Track"
-msgstr ""
+msgstr "نامەلۇم ئاۋاز يولى"
 
-#: panel-plugin/xfce4-mpc-plugin.c:559
+#: panel-plugin/xfce4-mpc-plugin.c:562
 msgid "Unknown File"
-msgstr ""
-
-#: panel-plugin/xfce4-mpc-plugin.c:590
-msgid "Playing"
-msgstr ""
+msgstr "نامەلۇم ھۆججەت"
 
 #: panel-plugin/xfce4-mpc-plugin.c:593
+msgid "Playing"
+msgstr "ياڭرىتىۋاتىدۇ"
+
+#: panel-plugin/xfce4-mpc-plugin.c:596
 msgid "Paused"
 msgstr "ۋاقىتلىق توختىدى"
 
-#: panel-plugin/xfce4-mpc-plugin.c:596
+#: panel-plugin/xfce4-mpc-plugin.c:599
 msgid "Stopped"
 msgstr "توختىدى"
 
-#: panel-plugin/xfce4-mpc-plugin.c:662
+#: panel-plugin/xfce4-mpc-plugin.c:665
 msgid "Mpd playlist"
 msgstr "Mpd قويۇش تىزىملىكى"
 
-#: panel-plugin/xfce4-mpc-plugin.c:891
+#: panel-plugin/xfce4-mpc-plugin.c:894
 msgid "Random"
-msgstr "تەرتىپسىز"
+msgstr "ئىختىيارىي"
 
-#: panel-plugin/xfce4-mpc-plugin.c:893
+#: panel-plugin/xfce4-mpc-plugin.c:896
 msgid "Repeat"
 msgstr "قايتىلا"
 
-#: panel-plugin/xfce4-mpc-plugin.c:895
+#: panel-plugin/xfce4-mpc-plugin.c:898
 msgid "Stream"
-msgstr ""
-
-#: panel-plugin/xfce4-mpc-plugin.c:899
-msgid "Single"
-msgstr ""
+msgstr "ئېقىم"
 
 #: panel-plugin/xfce4-mpc-plugin.c:902
+msgid "Single"
+msgstr "يەككە"
+
+#: panel-plugin/xfce4-mpc-plugin.c:905
 msgid "<b><i>Commands</i></b>"
-msgstr "<b><i>بۇيرۇقلار</i></b>"
+msgstr "<b><i>بۇيرۇق</i></b>"
 
-#: panel-plugin/xfce4-mpc-plugin.c:908
+#: panel-plugin/xfce4-mpc-plugin.c:911
 msgid "<b><i>Outputs</i></b>"
-msgstr "<b><i>چىقىرىشلار</i></b>"
+msgstr "<b><i>چىقىرىش</i></b>"
 
-#: panel-plugin/xfce4-mpc-plugin.c:928
+#: panel-plugin/xfce4-mpc-plugin.c:931
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr "مۇزىكا قويغۇ مۇئەككىلى ئۈچۈن ئاددىي تاختا-قىستۇرما خېرىدارى"
+msgstr "مۇزىكا قويغۇچ نازارەتچىسى ئۈچۈن ئاددىي كۆزنەكچە قىستۇرما خېرىدارى"
 
 #: panel-plugin/xfce4-mpc-plugin.desktop.in:5
 msgid "MPD Client Plugin"
@@ -163,4 +167,4 @@ msgstr "MPD خېرىدار قىستۇرمىسى"
 
 #: panel-plugin/xfce4-mpc-plugin.desktop.in:6
 msgid "A client for MPD, The Music Player Daemon"
-msgstr "MPD خېرىدار پروگراممىسى، مۇزىكا قويغۇ مۇئەككىلى"
+msgstr "MPD خېرىدار پىروگراممىسى، مۇزىكا قويغۇچ نازارەتچىسى"
