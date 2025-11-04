@@ -164,7 +164,7 @@ msgstr "<b><i>Sortides</i></b>"
 
 #: panel-plugin/xfce4-mpc-plugin.c:931
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr "Un connector de tauler senzill per al MPD (Music Player Daemon)"
+msgstr "Un connector de panell senzill per al MPD (Music Player Daemon)"
 
 #: panel-plugin/xfce4-mpc-plugin.desktop.in:5
 msgid "MPD Client Plugin"
