@@ -5,7 +5,9 @@
 # Translators:
 # Andhika Padmawan <andhika.padmawan@gmail.com>, 2008
 # Ardjuna <Asyura.x@gmail.com>, 2013
+# Arif Budiman <arifpedia@gmail.com>, 2026
 # Faisal Rachmadin <frachmadin@gmail.com>, 2021
+# Muhammad Akbar Yanuar Mantari, 2023
 # Muhammad Akbar Yanuar Mantari, 2023
 # Triyan W. Nugroho <triyan.wn@gmail.com>, 2020
 msgid ""
@@ -14,7 +16,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
 "POT-Creation-Date: 2025-07-18 11:07+0200\n"
 "PO-Revision-Date: 2013-07-03 19:07+0000\n"
-"Last-Translator: Muhammad Akbar Yanuar Mantari, 2023\n"
+"Last-Translator: Arif Budiman <arifpedia@gmail.com>, 2026\n"
 "Language-Team: Indonesian (http://app.transifex.com/xfce/xfce-panel-plugins/language/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -151,7 +153,7 @@ msgstr "Pengaliran"
 
 #: panel-plugin/xfce4-mpc-plugin.c:902
 msgid "Single"
-msgstr ""
+msgstr "Tunggal"
 
 #: panel-plugin/xfce4-mpc-plugin.c:905
 msgid "<b><i>Commands</i></b>"
