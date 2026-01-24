@@ -1,0 +1,169 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-mpc-plugin package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2025-07-18 11:07+0200\n"
+"PO-Revision-Date: 2013-07-03 19:07+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Kazakh (http://app.transifex.com/xfce/xfce-panel-plugins/language/kk/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: kk\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: panel-plugin/xfce4-mpc-plugin.c:37
+msgid "... not connected?"
+msgstr "... қосылмаған ба?"
+
+#: panel-plugin/xfce4-mpc-plugin.c:129 panel-plugin/xfce4-mpc-plugin.c:216
+#: panel-plugin/xfce4-mpc-plugin.c:900
+msgid "Launch"
+msgstr "Жөнелту"
+
+#: panel-plugin/xfce4-mpc-plugin.c:276
+msgid "Mpd Client Plugin"
+msgstr "Mpd клиент плагині"
+
+#: panel-plugin/xfce4-mpc-plugin.c:279
+msgid "_Close"
+msgstr "_Жабу"
+
+#: panel-plugin/xfce4-mpc-plugin.c:282
+msgid "Properties"
+msgstr "Қасиеттері"
+
+#: panel-plugin/xfce4-mpc-plugin.c:298
+msgid "Host: "
+msgstr "Хост: "
+
+#: panel-plugin/xfce4-mpc-plugin.c:308
+msgid "Port: "
+msgstr "Порт: "
+
+#: panel-plugin/xfce4-mpc-plugin.c:318
+msgid "Password: "
+msgstr "Пароль: "
+
+#: panel-plugin/xfce4-mpc-plugin.c:328
+msgid "MPD Client: "
+msgstr "MPD клиенті: "
+
+#: panel-plugin/xfce4-mpc-plugin.c:337
+msgid "Streaming Client: "
+msgstr "Стриминг клиенті: "
+
+#: panel-plugin/xfce4-mpc-plugin.c:346
+msgid "Tooltip Format: "
+msgstr "Қалқымалы көмек пішімі: "
+
+#: panel-plugin/xfce4-mpc-plugin.c:355
+msgid "Playlist Format: "
+msgstr "Ойнату тізімінің пішімі: "
+
+#: panel-plugin/xfce4-mpc-plugin.c:364
+msgid "Show _frame"
+msgstr "_Жақтауды көрсету"
+
+#: panel-plugin/xfce4-mpc-plugin.c:376
+msgid "Hostname or IP address"
+msgstr "Хост аты немесе IP адресі"
+
+#: panel-plugin/xfce4-mpc-plugin.c:377
+msgid "Graphical MPD Client to launch in plugin context menu"
+msgstr "Плагин контекстік мәзірінде жөнелтілетін графикалық MPD клиенті"
+
+#: panel-plugin/xfce4-mpc-plugin.c:378
+msgid "Command with url to stream MPD HTTP output"
+msgstr "MPD HTTP шығысын стримдеуге арналған url-і бар команда"
+
+#: panel-plugin/xfce4-mpc-plugin.c:379
+msgid "Variables: %artist%, %album%, %file%, %track% and %title%"
+msgstr "Айнымалылар: %artist%, %album%, %file%, %track% және %title%"
+
+#: panel-plugin/xfce4-mpc-plugin.c:380
+msgid ""
+"Variables: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
+"and %title%"
+msgstr "Айнымалылар: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% және %title%"
+
+#: panel-plugin/xfce4-mpc-plugin.c:413
+msgid "Execution error"
+msgstr "Орындалу қатесі"
+
+#: panel-plugin/xfce4-mpc-plugin.c:546
+msgid "Unknown Artist"
+msgstr "Белгісіз орындаушы"
+
+#: panel-plugin/xfce4-mpc-plugin.c:550
+msgid "Unknown Album"
+msgstr "Белгісіз альбом"
+
+#: panel-plugin/xfce4-mpc-plugin.c:554
+msgid "Unknown Title"
+msgstr "Белгісіз атау"
+
+#: panel-plugin/xfce4-mpc-plugin.c:558
+msgid "Unknown Track"
+msgstr "Белгісіз трек"
+
+#: panel-plugin/xfce4-mpc-plugin.c:562
+msgid "Unknown File"
+msgstr "Белгісіз файл"
+
+#: panel-plugin/xfce4-mpc-plugin.c:593
+msgid "Playing"
+msgstr "Ойнатылуда"
+
+#: panel-plugin/xfce4-mpc-plugin.c:596
+msgid "Paused"
+msgstr "Аялдатылған"
+
+#: panel-plugin/xfce4-mpc-plugin.c:599
+msgid "Stopped"
+msgstr "Тоқтатылған"
+
+#: panel-plugin/xfce4-mpc-plugin.c:665
+msgid "Mpd playlist"
+msgstr "Mpd ойнату тізімі"
+
+#: panel-plugin/xfce4-mpc-plugin.c:894
+msgid "Random"
+msgstr "Кездейсоқ"
+
+#: panel-plugin/xfce4-mpc-plugin.c:896
+msgid "Repeat"
+msgstr "Қайталау"
+
+#: panel-plugin/xfce4-mpc-plugin.c:898
+msgid "Stream"
+msgstr "Стрим"
+
+#: panel-plugin/xfce4-mpc-plugin.c:902
+msgid "Single"
+msgstr "Жалғыз"
+
+#: panel-plugin/xfce4-mpc-plugin.c:905
+msgid "<b><i>Commands</i></b>"
+msgstr "<b><i>Командалар</i></b>"
+
+#: panel-plugin/xfce4-mpc-plugin.c:911
+msgid "<b><i>Outputs</i></b>"
+msgstr "<b><i>Шығыстар</i></b>"
+
+#: panel-plugin/xfce4-mpc-plugin.c:931
+msgid "A simple panel-plugin client for Music Player Daemon"
+msgstr "Music Player Daemon үшін қарапайым панель-плагин клиенті"
+
+#: panel-plugin/xfce4-mpc-plugin.desktop.in:5
+msgid "MPD Client Plugin"
+msgstr "MPD клиент плагині"
+
+#: panel-plugin/xfce4-mpc-plugin.desktop.in:6
+msgid "A client for MPD, The Music Player Daemon"
+msgstr "MPD, Music Player Daemon үшін клиент"
