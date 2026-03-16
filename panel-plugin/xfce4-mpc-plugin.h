@@ -42,6 +42,8 @@ typedef struct {
    GtkWidget *frame,*box,*prev,*stop,*toggle,*next,*random,*repeat,*single,*stream,*appl,*about;
    GtkWidget *playlist;
    gboolean show_frame;
+   guint status_poll_id;
+   gint last_state;
    /* mpd handle */
    MpdObj *mo;
    gchar* client_appl;

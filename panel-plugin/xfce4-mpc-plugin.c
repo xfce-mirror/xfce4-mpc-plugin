@@ -39,12 +39,16 @@
 #define PLAYLIST_FORMAT "%artist% - %album% -/- (#%track%) %title%"
 
 static void resize_button(GtkWidget *, gint, gint);
+static void set_toggle_icon(t_mpc *, const gchar *);
+static gboolean mpc_poll_status(gpointer);
 
 static void
 mpc_free (XfcePanelPlugin * plugin, t_mpc * mpc)
 {
    DBG ("!");
 
+   if (mpc->status_poll_id != 0)
+      g_source_remove(mpc->status_poll_id);
    mpd_free(mpc->mo);
    g_free (mpc);
 }
@@ -833,6 +837,60 @@ resize_button(GtkWidget *btn, gint size, gint icon_size)
    gtk_widget_set_size_request (btn, size, size);
 }
 
+static void
+set_toggle_icon(t_mpc *mpc, const gchar *icon)
+{
+   GtkWidget *image;
+
+   if (mpc == NULL || mpc->toggle == NULL)
+      return;
+
+   image = g_object_get_data(G_OBJECT(mpc->toggle), "image");
+   if (image == NULL)
+      return;
+
+   gtk_image_set_from_icon_name(GTK_IMAGE(image), icon, GTK_ICON_SIZE_BUTTON);
+   g_object_set_data(G_OBJECT(image), "icon-name", (gpointer)icon);
+}
+
+static gboolean
+mpc_poll_status(gpointer data)
+{
+   t_mpc *mpc = data;
+   int state;
+
+   if (mpc == NULL || mpc->mo == NULL)
+      return TRUE;
+
+   if (mpd_status_update(mpc->mo) != MPD_OK)
+   {
+      if (!mpc_plugin_reconnect(mpc) || mpd_status_update(mpc->mo) != MPD_OK)
+      {
+         set_toggle_icon(mpc, "media-playback-start-symbolic");
+         mpc->last_state = -1;
+         return TRUE;
+      }
+   }
+
+   state = mpd_player_get_state(mpc->mo);
+   if (state == mpc->last_state)
+      return TRUE;
+
+   switch (state)
+   {
+      case MPD_PLAYER_PLAY:
+         set_toggle_icon(mpc, "media-playback-pause-symbolic");
+         break;
+      case MPD_PLAYER_PAUSE:
+      case MPD_PLAYER_STOP:
+      default:
+         set_toggle_icon(mpc, "media-playback-start-symbolic");
+         break;
+   }
+   mpc->last_state = state;
+   return TRUE;
+}
+
 static GtkWidget*
 new_button_with_cbk(XfcePanelPlugin * plugin, GtkWidget *parent, gchar* icon, gpointer cb, gpointer data)
 {
@@ -888,7 +946,7 @@ mpc_create (XfcePanelPlugin * plugin)
 
    mpc->prev = new_button_with_cbk(plugin, mpc->box, "media-skip-backward-symbolic", G_CALLBACK(prev), mpc);
    mpc->stop = new_button_with_cbk(plugin, mpc->box, "media-playback-stop-symbolic", G_CALLBACK(stop), mpc);
-   mpc->toggle = new_button_with_cbk(plugin, mpc->box, "media-playback-pause-symbolic", G_CALLBACK(toggle), mpc);
+   mpc->toggle = new_button_with_cbk(plugin, mpc->box, "media-playback-start-symbolic", G_CALLBACK(toggle), mpc);
    mpc->next = new_button_with_cbk(plugin, mpc->box, "media-skip-forward-symbolic", G_CALLBACK(next), mpc);
 
    mpc->random = gtk_check_menu_item_new_with_label (_("Random"));
@@ -963,16 +1021,37 @@ mpc_construct (XfcePanelPlugin * plugin)
    mpc->playlist = NULL;
    mpc->mpd_outputs = g_new(t_mpd_output*,1);
    mpc->nb_outputs = 0;
+   mpc->last_state = -1;
+   mpc->status_poll_id = 0;
 
    mpc_read_config (plugin, mpc);
 
    /* create a connection*/
    mpc->mo = mpd_new(mpc->mpd_host,mpc->mpd_port,mpc->mpd_password);
    if (mpc_plugin_reconnect (mpc)) {
-      if (mpd_status_update (mpc->mo) == MPD_OK &&
-          mpd_player_get_state(mpc->mo) == MPD_PLAYER_PLAY)
-          mpc_launch_streaming(mpc);
+      if (mpd_status_update (mpc->mo) == MPD_OK)
+      {
+         int state = mpd_player_get_state(mpc->mo);
+         switch (state)
+         {
+            case MPD_PLAYER_PLAY:
+               set_toggle_icon(mpc, "media-playback-pause-symbolic");
+               mpc_launch_streaming(mpc);
+               break;
+            case MPD_PLAYER_PAUSE:
+            case MPD_PLAYER_STOP:
+            default:
+               set_toggle_icon(mpc, "media-playback-start-symbolic");
+               break;
+         }
+         mpc->last_state = state;
+      }
+      else
+         set_toggle_icon(mpc, "media-playback-start-symbolic");
    }
+
+   if (mpc->status_poll_id == 0)
+      mpc->status_poll_id = g_timeout_add_seconds(1, mpc_poll_status, mpc);
 
    gtk_container_add (GTK_CONTAINER (plugin), mpc->frame);
    gtk_frame_set_shadow_type (GTK_FRAME (mpc->frame), ((mpc->show_frame) ? GTK_SHADOW_IN : GTK_SHADOW_NONE));
