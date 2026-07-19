@@ -1,0 +1,2 @@
+memleak:panel-plugin/simple-libmpd.c:519
+memleak:panel-plugin/simple-libmpd.c:575
