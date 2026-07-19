@@ -430,7 +430,7 @@ void parse_playlistinfo_answer(MpdObj *mo, void *param)
          else if (!ms->title  && 0 == strcmp("Title", tokens[0])) ms->title = g_strdup(tokens[1]);
          else if (!ms->track  && 0 == strcmp("Track", tokens[0])) ms->track = g_strdup(tokens[1]);
          else if (ms->pos < 0 && 0 == strcmp("Pos",   tokens[0])) ms->pos   = atoi(tokens[1]);
-         else if (ms->id < 0  && 0 == strcmp("Id",    tokens[0])) ms->id    = atoi(tokens[1]);
+         else if (0 == strcmp("Id",    tokens[0])) ms->id    = atoi(tokens[1]);
          i++;
          g_strfreev(tokens);
       }
