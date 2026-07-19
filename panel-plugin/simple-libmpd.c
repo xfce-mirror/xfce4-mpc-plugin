@@ -302,9 +302,9 @@ void send_complex_cmd(MpdObj* mo, char* cmd, void (*parse_answer_fct)(), void *r
          }
 
          tmp_buffer = (char*) calloc (MAXBUFLEN*2, sizeof(char));
-         strcpy(tmp_buffer, ptr);
+         g_strlcpy(tmp_buffer, ptr, sizeof(tmp_buffer));
          tmp_bufsize = strlen(tmp_buffer);
-         strcpy(ptr, "OK\n");
+         g_strlcpy(ptr, "OK\n", sizeof(ptr));
          DBG("tmp_buffer contains \"%s\"", tmp_buffer);
          DBG("buffer now contains \"%s\"", mo->buffer);
          /* parse buffer */
@@ -315,9 +315,9 @@ void send_complex_cmd(MpdObj* mo, char* cmd, void (*parse_answer_fct)(), void *r
          /* append the saved end to the beginning of buffer */
          /* ugly memory management. really. */
          tmp = (char*) calloc (MAXBUFLEN*2, sizeof(char));
-         strcpy(tmp, mo->buffer);
-         strcpy(mo->buffer, tmp_buffer);
-         strcpy(mo->buffer + tmp_bufsize, tmp);
+         g_strlcpy(tmp, mo->buffer, sizeof(tmp));
+         g_strlcpy(mo->buffer, tmp_buffer, sizeof(mo->buffer));
+         g_strlcpy(mo->buffer + tmp_bufsize, tmp, sizeof(mo->buffer));
          mo->buffer[tmp_bufsize + nbread] = '\0';
          DBG("added tmp_buffer at the beginning of buffer, now contains \"%s\"", mo->buffer);
          free(tmp_buffer);
