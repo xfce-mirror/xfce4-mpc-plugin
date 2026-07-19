@@ -236,10 +236,9 @@ int mpd_wait_for_answer(MpdObj *mo)
 
 int mpd_send_single_cmd(MpdObj*mo, char* cmd)
 {
-   int nbwri = 0;
-
    if (mo->socket)
    {
+      int nbwri;
       DBG("Sending \"%s\"",cmd);
       if ((nbwri = send(mo->socket, cmd, strlen(cmd), 0)) <= 0)
       {
