@@ -107,18 +107,12 @@ mpc_read_config (XfcePanelPlugin * plugin, t_mpc * mpc)
 
    xfce_rc_set_group (rc, "Settings");
 
-   if (mpc->mpd_host != NULL)
-      g_free (mpc->mpd_host);
-   if (mpc->mpd_password != NULL)
-      g_free (mpc->mpd_password);
-   if (mpc->tooltip_format != NULL)
-      g_free (mpc->tooltip_format);
-   if (mpc->playlist_format != NULL)
-      g_free (mpc->playlist_format);
-   if (mpc->client_appl != NULL)
-      g_free (mpc->client_appl);
-   if (mpc->streaming_appl != NULL)
-      g_free (mpc->streaming_appl);
+   g_free (mpc->mpd_host);
+   g_free (mpc->mpd_password);
+   g_free (mpc->tooltip_format);
+   g_free (mpc->playlist_format);
+   g_free (mpc->client_appl);
+   g_free (mpc->streaming_appl);
 
    mpc->mpd_host = g_strdup(xfce_rc_read_entry (rc, "mpd_host",  DEFAULT_MPD_HOST));
    mpc->mpd_port = xfce_rc_read_int_entry (rc, "mpd_port", DEFAULT_MPD_PORT);
