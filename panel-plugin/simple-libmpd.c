@@ -300,7 +300,7 @@ void send_complex_cmd(MpdObj* mo, char* cmd, void (*parse_answer_fct)(), void *r
             return;
          }
 
-         tmp_buffer = (char*) calloc (MAXBUFLEN*2, sizeof(char));
+         tmp_buffer = g_new0 (char, MAXBUFLEN * 2);
          g_strlcpy(tmp_buffer, ptr, sizeof(tmp_buffer));
          tmp_bufsize = strlen(tmp_buffer);
          g_strlcpy(ptr, "OK\n", sizeof(ptr));
@@ -313,7 +313,7 @@ void send_complex_cmd(MpdObj* mo, char* cmd, void (*parse_answer_fct)(), void *r
          nbread = mpd_wait_for_answer(mo);
          /* append the saved end to the beginning of buffer */
          /* ugly memory management. really. */
-         tmp = (char*) calloc (MAXBUFLEN*2, sizeof(char));
+         tmp = g_new0 (char, MAXBUFLEN * 2);
          g_strlcpy(tmp, mo->buffer, sizeof(tmp));
          g_strlcpy(mo->buffer, tmp_buffer, sizeof(mo->buffer));
          g_strlcpy(mo->buffer + tmp_bufsize, tmp, sizeof(mo->buffer));
