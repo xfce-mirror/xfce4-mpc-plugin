@@ -647,12 +647,14 @@ show_playlist (t_mpc* mpc)
    MpdData *mpd_data;
    DBG("!");
 
-   str = g_string_new(NULL);
    if (mpc->playlist)
    {
       gtk_window_present(GTK_WINDOW(mpc->playlist));
       return;
    }
+
+   str = g_string_new(NULL);
+
    /* create playlist window only if playlist is not empty */
    if (0 != mpd_playlist_get_playlist_length(mpc->mo))
    {
@@ -681,6 +683,7 @@ show_playlist (t_mpc* mpc)
       if (!mpc_plugin_reconnect(mpc))
       {
          gtk_widget_destroy(mpc->playlist);
+         g_string_free(str, TRUE);
          return;
       }
 
