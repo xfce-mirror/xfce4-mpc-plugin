@@ -486,8 +486,7 @@ mpd_Song* mpd_playlist_get_current_song(MpdObj* mo)
       if (mo->cursong->album)  free(mo->cursong->album);
       if (mo->cursong->title)  free(mo->cursong->title);
       if (mo->cursong->track)  free(mo->cursong->track);
-      free(mo->cursong);
-      mo->cursong = NULL;
+      g_clear_pointer (&mo->cursong, free);
    }
    if (mo->cursong == NULL)
    {
