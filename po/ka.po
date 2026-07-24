@@ -1,0 +1,169 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-mpc-plugin package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Xfce Panel Plugins\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2025-07-18 11:07+0200\n"
+"PO-Revision-Date: 2013-07-03 19:07+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Georgian (http://app.transifex.com/xfce/xfce-panel-plugins/language/ka/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ka\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: panel-plugin/xfce4-mpc-plugin.c:37
+msgid "... not connected?"
+msgstr "... დაკავშირებული არ ბრძანდებით?"
+
+#: panel-plugin/xfce4-mpc-plugin.c:129 panel-plugin/xfce4-mpc-plugin.c:216
+#: panel-plugin/xfce4-mpc-plugin.c:900
+msgid "Launch"
+msgstr "გაშვება"
+
+#: panel-plugin/xfce4-mpc-plugin.c:276
+msgid "Mpd Client Plugin"
+msgstr "MPD-ის კლიენტის დამატება"
+
+#: panel-plugin/xfce4-mpc-plugin.c:279
+msgid "_Close"
+msgstr "და_ხურვა"
+
+#: panel-plugin/xfce4-mpc-plugin.c:282
+msgid "Properties"
+msgstr "თვისებები"
+
+#: panel-plugin/xfce4-mpc-plugin.c:298
+msgid "Host: "
+msgstr "ჰოსტი: "
+
+#: panel-plugin/xfce4-mpc-plugin.c:308
+msgid "Port: "
+msgstr "პორტი: "
+
+#: panel-plugin/xfce4-mpc-plugin.c:318
+msgid "Password: "
+msgstr "პაროლი: "
+
+#: panel-plugin/xfce4-mpc-plugin.c:328
+msgid "MPD Client: "
+msgstr "MPD-ის კლიენტი: "
+
+#: panel-plugin/xfce4-mpc-plugin.c:337
+msgid "Streaming Client: "
+msgstr "სტრიმინგის კლიენტი: "
+
+#: panel-plugin/xfce4-mpc-plugin.c:346
+msgid "Tooltip Format: "
+msgstr "მინიშნების ფორმატი: "
+
+#: panel-plugin/xfce4-mpc-plugin.c:355
+msgid "Playlist Format: "
+msgstr "დასაკრავი სიის ფაილის ფორმატი: "
+
+#: panel-plugin/xfce4-mpc-plugin.c:364
+msgid "Show _frame"
+msgstr "_ჩარჩოს ჩვენება"
+
+#: panel-plugin/xfce4-mpc-plugin.c:376
+msgid "Hostname or IP address"
+msgstr "ჰოსტის სახელი ან IP მისამართი"
+
+#: panel-plugin/xfce4-mpc-plugin.c:377
+msgid "Graphical MPD Client to launch in plugin context menu"
+msgstr "გრაფიკული MPD-ის კლიენტი დამატების კონტექსტურ მენიუში გასაშვებად"
+
+#: panel-plugin/xfce4-mpc-plugin.c:378
+msgid "Command with url to stream MPD HTTP output"
+msgstr "ბრძანება URL-ით MPT HTTP-ის სტრიმინგისთვის"
+
+#: panel-plugin/xfce4-mpc-plugin.c:379
+msgid "Variables: %artist%, %album%, %file%, %track% and %title%"
+msgstr "ცვლადები: %artist%, %album%, %file%, %track% და %title%"
+
+#: panel-plugin/xfce4-mpc-plugin.c:380
+msgid ""
+"Variables: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
+"and %title%"
+msgstr "ცვლადები: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% და %title%"
+
+#: panel-plugin/xfce4-mpc-plugin.c:413
+msgid "Execution error"
+msgstr "შესრულების შეცდომა"
+
+#: panel-plugin/xfce4-mpc-plugin.c:546
+msgid "Unknown Artist"
+msgstr "უცნობი შემსრულებელი"
+
+#: panel-plugin/xfce4-mpc-plugin.c:550
+msgid "Unknown Album"
+msgstr "უცნობი ალბომი"
+
+#: panel-plugin/xfce4-mpc-plugin.c:554
+msgid "Unknown Title"
+msgstr "უცნობი სათაური"
+
+#: panel-plugin/xfce4-mpc-plugin.c:558
+msgid "Unknown Track"
+msgstr "უცნობი ტრეკი"
+
+#: panel-plugin/xfce4-mpc-plugin.c:562
+msgid "Unknown File"
+msgstr "უცნობი ფაილი"
+
+#: panel-plugin/xfce4-mpc-plugin.c:593
+msgid "Playing"
+msgstr "მიმდინარეობს დაკვრა"
+
+#: panel-plugin/xfce4-mpc-plugin.c:596
+msgid "Paused"
+msgstr "შეჩერებულია"
+
+#: panel-plugin/xfce4-mpc-plugin.c:599
+msgid "Stopped"
+msgstr "გაჩერებულია"
+
+#: panel-plugin/xfce4-mpc-plugin.c:665
+msgid "Mpd playlist"
+msgstr "Mpd-ის დასაკრავი სია"
+
+#: panel-plugin/xfce4-mpc-plugin.c:894
+msgid "Random"
+msgstr "შემთხვევითი"
+
+#: panel-plugin/xfce4-mpc-plugin.c:896
+msgid "Repeat"
+msgstr "გამეორება"
+
+#: panel-plugin/xfce4-mpc-plugin.c:898
+msgid "Stream"
+msgstr "ნაკადი"
+
+#: panel-plugin/xfce4-mpc-plugin.c:902
+msgid "Single"
+msgstr "ერთი"
+
+#: panel-plugin/xfce4-mpc-plugin.c:905
+msgid "<b><i>Commands</i></b>"
+msgstr "<b><i>ბრძანებები</i></b>"
+
+#: panel-plugin/xfce4-mpc-plugin.c:911
+msgid "<b><i>Outputs</i></b>"
+msgstr "<b><i>გამოტანები</i></b>"
+
+#: panel-plugin/xfce4-mpc-plugin.c:931
+msgid "A simple panel-plugin client for Music Player Daemon"
+msgstr "მარტივი პანელის დამატება Music Player Daemon-ისთვის"
+
+#: panel-plugin/xfce4-mpc-plugin.desktop.in:5
+msgid "MPD Client Plugin"
+msgstr "MPD-ის კლიენტის დამატება"
+
+#: panel-plugin/xfce4-mpc-plugin.desktop.in:6
+msgid "A client for MPD, The Music Player Daemon"
+msgstr "კლიენტი MPD-ისთვის, Music Player Daemon-ისთვის"
