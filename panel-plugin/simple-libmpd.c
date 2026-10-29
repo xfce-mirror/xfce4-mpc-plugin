@@ -156,7 +156,7 @@ void mpd_connect(MpdObj* mo)
       return;
    }
 
-   if (strncmp(mo->buffer,MPD_WELCOME_MESSAGE, strlen(MPD_WELCOME_MESSAGE)))
+   if (strncmp(mo->buffer,MPD_WELCOME_MESSAGE, strlen(MPD_WELCOME_MESSAGE)) != 0)
    {
       mo->error = MPD_ERROR_NOTMPD;
       DBG("ERROR @strncmp() -> answer didn't come from mpd");
@@ -227,7 +227,7 @@ int mpd_wait_for_answer(MpdObj *mo)
       DBG("ERROR @select(), timeoute'ed -> err=%s",strerror(errno));
       return -1;
    }
-   if (!strncmp(mo->buffer,"ACK",3))
+   if (strncmp(mo->buffer,"ACK",3) == 0)
       mo->error = MPD_NOTOK;
    else
       mo->error = MPD_OK;
@@ -342,7 +342,7 @@ void parse_status_answer(MpdObj *mo, void* unused_param)
    int i;
    mo->songid = -1;
    lines = g_strsplit(mo->buffer, "\n", 0);
-   for (i = 0 ; lines[i] && strncmp(lines[i], "OK", 2) ; i++)
+   for (i = 0 ; lines[i] && strncmp(lines[i], "OK", 2) != 0 ; i++)
    {
       tokens = g_strsplit(lines[i], ":", 2);
       /* remove leading whitespace */
@@ -383,7 +383,7 @@ void parse_one_song(MpdObj *mo, void* param)
    ms->id = ms->pos = -1;
 
    lines = g_strsplit(mo->buffer, "\n", 0);
-   for (i = 0 ; lines[i] && strcmp(lines[i], "OK") ; i++)
+   for (i = 0 ; lines[i] && strcmp(lines[i], "OK") != 0 ; i++)
    {
       tokens = g_strsplit(lines[i], ":", 2);
       /* remove leading whitespace */
@@ -411,14 +411,14 @@ void parse_playlistinfo_answer(MpdObj *mo, void *param)
    int i = 0;
 
    lines = g_strsplit(mo->buffer, "\n", 0);
-   while(lines[i] && strcmp(lines[i],"OK"))
+   while(lines[i] && strcmp(lines[i],"OK") != 0)
    {
       ms = &md->allsongs[md->nb];
       ms->file = ms->artist = ms->album = ms->title = ms->track = NULL;
       ms->id = ms->pos = -1;
       DBG("Going to parse song #%d", md->nb);
 
-      while(lines[i] && strcmp(lines[i],"OK") && ms->id < 0)
+      while(lines[i] && strcmp(lines[i],"OK") != 0 && ms->id < 0)
       {
          tokens = g_strsplit(lines[i], ":", 2);
          /* remove leading whitespace */
@@ -446,12 +446,12 @@ void parse_outputs_answer(MpdObj *mo, void *param)
    gchar **lines, **tokens;
    int i = 0;
    lines = g_strsplit(mo->buffer, "\n", 0);
-   while(lines[i] && strcmp(lines[i],"OK"))
+   while(lines[i] && strcmp(lines[i],"OK") != 0)
    {
       md->alloutputs[md->nb] = g_new(mpd_Output, 1);
       md->alloutputs[md->nb]->enabled = -1;
       DBG("Going to parse output #%d", md->nb);
-      while(lines[i] && strcmp(lines[i],"OK") && md->alloutputs[md->nb]->enabled < 0)
+      while(lines[i] && strcmp(lines[i],"OK") != 0 && md->alloutputs[md->nb]->enabled < 0)
       {
          tokens = g_strsplit(lines[i], ":", 2);
          /* remove leading whitespace */
@@ -465,7 +465,7 @@ void parse_outputs_answer(MpdObj *mo, void *param)
       }
       md->nb++;
       /* ignore extra lines with 'attribute:' */
-      while (lines[i] != NULL && strcmp(lines[i],"OK") && 0 == strncmp(lines[i], "attribute:", 10))
+      while (lines[i] != NULL && strcmp(lines[i],"OK") != 0 && strncmp(lines[i], "attribute:", 10) == 0)
          i++;
       if (strcmp(lines[i],"OK") != 0) {
          /* make room for the next output ptr */
