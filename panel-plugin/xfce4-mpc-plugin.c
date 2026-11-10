@@ -978,7 +978,12 @@ static void
 mpc_show_about(XfcePanelPlugin *plugin, t_mpc* mpc)
 {
    const gchar *auth[] = { "Landry Breuil <landry at xfce.org>", NULL };
+
+#if LIBXFCE4PANEL_CHECK_VERSION(4, 21, 4)
+   xfce_panel_gtk_show_about_dialog(
+#else
    gtk_show_about_dialog(NULL,
+#endif
       "logo-icon-name", "applications-multimedia",
       "license", xfce_get_license_text (XFCE_LICENSE_TEXT_BSD),
       "version", VERSION_FULL,
