@@ -1,137 +1,176 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR Xfce
+# This file is distributed under the same license as the xfce-panel-plugins.xfce4-mpc-plugin package.
 # 
 # Translators:
 # Rihards Priedītis <rprieditis@gmail.com>, 2009
+# Rihards Priedītis <rprieditis@gmail.com>, 2007,2009,2026
 # Rihards Prieditis <rprieditis@inbox.lv>, 2007
 msgid ""
 msgstr ""
 "Project-Id-Version: Xfce Panel Plugins\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-11 12:49+0200\n"
-"PO-Revision-Date: 2021-07-11 10:49+0000\n"
-"Last-Translator: Xfce Bot <transifex@xfce.org>\n"
-"Language-Team: Latvian (http://www.transifex.com/xfce/xfce-panel-plugins/language/lv/)\n"
+"Report-Msgid-Bugs-To: https://gitlab.xfce.org/\n"
+"POT-Creation-Date: 2026-10-30 01:01+0100\n"
+"PO-Revision-Date: 2013-07-03 19:07+0000\n"
+"Last-Translator: Rihards Priedītis <rprieditis@gmail.com>, 2007,2009,2026\n"
+"Language-Team: Latvian (http://app.transifex.com/xfce/xfce-panel-plugins/language/lv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: lv\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:129
-#: ../panel-plugin/xfce4-mpc-plugin.c:216
-#: ../panel-plugin/xfce4-mpc-plugin.c:876
+#: panel-plugin/xfce4-mpc-plugin.c:37
+msgid "... not connected?"
+msgstr "... nav savienojuma?"
+
+#: panel-plugin/xfce4-mpc-plugin.c:127 panel-plugin/xfce4-mpc-plugin.c:214
+#: panel-plugin/xfce4-mpc-plugin.c:955
 msgid "Launch"
 msgstr "Palaist"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:274
+#: panel-plugin/xfce4-mpc-plugin.c:274
 msgid "Mpd Client Plugin"
-msgstr "Mpd klienta spraudnis"
+msgstr "MPD klienta spraudnis"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:280
+#: panel-plugin/xfce4-mpc-plugin.c:277
+msgid "_Close"
+msgstr "_Aizvērt"
+
+#: panel-plugin/xfce4-mpc-plugin.c:280
 msgid "Properties"
-msgstr "Rekvizīti"
+msgstr "Īpašības"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:296
-msgid "Host : "
+#: panel-plugin/xfce4-mpc-plugin.c:296
+msgid "Host: "
 msgstr "Resursdators: "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:306
-msgid "Port : "
+#: panel-plugin/xfce4-mpc-plugin.c:306
+msgid "Port: "
 msgstr "Ports: "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:316
-msgid "Password : "
+#: panel-plugin/xfce4-mpc-plugin.c:316
+msgid "Password: "
 msgstr "Parole: "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:326
-msgid "MPD Client : "
+#: panel-plugin/xfce4-mpc-plugin.c:326
+msgid "MPD Client: "
 msgstr "MPD klients: "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:335
-msgid "Streaming Client : "
-msgstr ""
+#: panel-plugin/xfce4-mpc-plugin.c:335
+msgid "Streaming Client: "
+msgstr "Straumēšanas klients: "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:344
-msgid "Tooltip Format : "
+#: panel-plugin/xfce4-mpc-plugin.c:344
+msgid "Tooltip Format: "
 msgstr "Paskaidres formāts: "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:353
-msgid "Playlist Format : "
-msgstr "Atskaņošanas formāts: "
+#: panel-plugin/xfce4-mpc-plugin.c:353
+msgid "Playlist Format: "
+msgstr "Atskaņošanas saraksta formāts: "
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:362
+#: panel-plugin/xfce4-mpc-plugin.c:362
 msgid "Show _frame"
-msgstr "Rādīt _kadru"
+msgstr "Rādīt _rāmi"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:374
+#: panel-plugin/xfce4-mpc-plugin.c:374
 msgid "Hostname or IP address"
-msgstr "Resursdators vai IP adrese"
+msgstr "Resursdatora nosaukums vai IP adrese"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:375
+#: panel-plugin/xfce4-mpc-plugin.c:375
 msgid "Graphical MPD Client to launch in plugin context menu"
-msgstr "Grafiskais MPD klientes, lai palaistu spraudni konteksta izvēlnē"
+msgstr "Grafiskais MPD klients, ko palaist no spraudņa konteksta izvēlnes"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:376
+#: panel-plugin/xfce4-mpc-plugin.c:376
 msgid "Command with url to stream MPD HTTP output"
-msgstr ""
+msgstr "Komanda ar URL MPD HTTP izvades straumēšanai"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:377
-msgid "Variables : %artist%, %album%, %file%, %track% and %title%"
-msgstr ""
+#: panel-plugin/xfce4-mpc-plugin.c:377
+msgid "Variables: %artist%, %album%, %file%, %track% and %title%"
+msgstr "Mainīgie: %artist%, %album%, %file%, %track% un %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:378
+#: panel-plugin/xfce4-mpc-plugin.c:378
 msgid ""
-"Variables : %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
+"Variables: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% "
 "and %title%"
-msgstr ""
+msgstr "Mainīgie: %vol%, %status%, %newline%, %artist%, %album%, %file%, %track% un %title%"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:411
+#: panel-plugin/xfce4-mpc-plugin.c:411
 msgid "Execution error"
-msgstr ""
+msgstr "Izpildes kļūda"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:556
-#: ../panel-plugin/xfce4-mpc-plugin.c:790
-msgid ".... not connected ?"
-msgstr ".... nav savienots?"
+#: panel-plugin/xfce4-mpc-plugin.c:544
+msgid "Unknown Artist"
+msgstr "Nezināms izpildītājs"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:642
+#: panel-plugin/xfce4-mpc-plugin.c:548
+msgid "Unknown Album"
+msgstr "Nezināms albums"
+
+#: panel-plugin/xfce4-mpc-plugin.c:552
+msgid "Unknown Title"
+msgstr "Nezināms nosaukums"
+
+#: panel-plugin/xfce4-mpc-plugin.c:556
+msgid "Unknown Track"
+msgstr "Nezināms celiņš"
+
+#: panel-plugin/xfce4-mpc-plugin.c:560
+msgid "Unknown File"
+msgstr "Nezināms fails"
+
+#: panel-plugin/xfce4-mpc-plugin.c:591
+msgid "Playing"
+msgstr "Atskaņo"
+
+#: panel-plugin/xfce4-mpc-plugin.c:594
+msgid "Paused"
+msgstr "Pauzēts"
+
+#: panel-plugin/xfce4-mpc-plugin.c:597
+msgid "Stopped"
+msgstr "Apturēts"
+
+#: panel-plugin/xfce4-mpc-plugin.c:607
+msgid "Failed to get song info?"
+msgstr "Neizdevās iegūt dziesmas informāciju?"
+
+#: panel-plugin/xfce4-mpc-plugin.c:665
 msgid "Mpd playlist"
-msgstr "Mpd atskaņošanas saraksts"
+msgstr "MPD atskaņošanas saraksts"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:870
+#: panel-plugin/xfce4-mpc-plugin.c:949
 msgid "Random"
 msgstr "Nejauši"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:872
+#: panel-plugin/xfce4-mpc-plugin.c:951
 msgid "Repeat"
 msgstr "Atkārtot"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:874
+#: panel-plugin/xfce4-mpc-plugin.c:953
 msgid "Stream"
-msgstr ""
+msgstr "Straume"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:879
+#: panel-plugin/xfce4-mpc-plugin.c:957
+msgid "Single"
+msgstr "Viens celiņš"
+
+#: panel-plugin/xfce4-mpc-plugin.c:960
 msgid "<b><i>Commands</i></b>"
-msgstr ""
+msgstr "<b><i>Komandas</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:884
+#: panel-plugin/xfce4-mpc-plugin.c:966
 msgid "<b><i>Outputs</i></b>"
-msgstr ""
+msgstr "<b><i>Izvades</i></b>"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:905
+#: panel-plugin/xfce4-mpc-plugin.c:986
 msgid "A simple panel-plugin client for Music Player Daemon"
-msgstr "Mūzikas atskaņošanas dēmona vienkāršs spraudnis panelī"
+msgstr "Vienkāršs Music Player Daemon klients paneļa spraudņa veidā"
 
-#: ../panel-plugin/xfce4-mpc-plugin.c:907
-msgid "Copyright (c) 2006-2021 Landry Breuil\n"
-msgstr ""
-
-#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:1
+#: panel-plugin/xfce4-mpc-plugin.desktop.in:5
 msgid "MPD Client Plugin"
 msgstr "MPD klienta spraudnis"
 
-#: ../panel-plugin/xfce4-mpc-plugin.desktop.in.h:2
+#: panel-plugin/xfce4-mpc-plugin.desktop.in:6
 msgid "A client for MPD, The Music Player Daemon"
-msgstr "Klients MPD, mūzikas atskaņošanas dēmons"
+msgstr "Klients MPD — Music Player Daemon"
